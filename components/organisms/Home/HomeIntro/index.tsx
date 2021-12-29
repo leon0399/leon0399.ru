@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { SocialAccount } from "../../../../types/social-account"
+import type { SocialAccount } from "../../../../types/social-account"
 
 interface Props {
   id?: string

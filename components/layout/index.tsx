@@ -4,7 +4,7 @@ const Layout: FunctionComponent = ({ children }) => {
   return (
     <>
       <div className="min-h-screen">
-        <main>{children}</main>
+        <main className='container mx-auto'>{children}</main>
       </div>
     </>
   )

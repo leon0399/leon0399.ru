@@ -7,11 +7,19 @@ import TelegramIcon from '~icons/fa-brands/telegram.jsx'
 import LinkedInIcon from '~icons/fa-brands/linkedin.jsx'
 import GitHubIcon from '~icons/fa-brands/github.jsx'
 
-import Layout from '../components/layout'
 import HomeIntro from '../components/organisms/Home/HomeIntro'
-import { SocialAccount } from '../types/social-account'
+import HomeProjects from '../components/organisms/Home/HomeProjects'
 
-const Home: NextPage = () => {
+import type { SocialAccount } from '../types/social-account'
+import type { Project } from '../types/project'
+
+import { frontMatter as allProjects } from './projects/*.mdx'
+
+interface Props {
+  projects: Project[]
+}
+
+const Home: NextPage<Props> = ({ projects }) => {
   const socials: Record<string, SocialAccount> = {
     email: {
       icon: EmailIcon,
@@ -37,15 +45,22 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Layout>
-        <Head>
-          <title>Leonid Meleshin</title>
-        </Head>
+      <Head>
+        <title>Leonid Meleshin</title>
+      </Head>
 
-        <HomeIntro id="intro" className="mx-auto max-w-2xl my-18" socials={socials} />
-      </Layout>
+      <HomeIntro id="intro" className="mx-auto max-w-2xl my-18" socials={socials} />
+      <HomeProjects id="projects" className="mx-auto max-w-2xl my-18" projects={projects} />
     </>
   )
 }
 
 export default Home
+
+export const getStaticProps = async () => {
+  return {
+    props: {
+      projects: allProjects,
+    }
+  }
+}
