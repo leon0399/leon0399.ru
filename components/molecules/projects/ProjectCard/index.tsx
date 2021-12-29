@@ -1,4 +1,5 @@
   import type { Project } from "../../../../types/project"
+import Tag from "../../../atoms/Tag"
 
 interface Props {
   className: string
@@ -26,6 +27,11 @@ const ProjectCard: React.FC<Props> = ({ project }) => (
     <div className="flex-grow">
       <h3 className="text-lg font-bold">{ project.title }</h3>
       <p className="text-sm leading-5 text-gray-600 line-clamp-3">{ project.description }</p>
+      { Array.isArray(project.tags) && project.tags.length && (
+        <div className="flex flex-row space-x-3 my-2">
+          { project.tags.map((tag, i) => <Tag key={i} >{ tag }</Tag>) }
+        </div>
+      ) }
       <div className="flex flex-row space-x-4 text-xs leading-relaxed">
         <a
           href={project.url}
