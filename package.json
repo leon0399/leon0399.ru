@@ -8,7 +8,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.22",
+    "@next/mdx": "^12.0.7",
+    "babel-plugin-import-glob-array": "^0.2.0",
     "next": "12.0.7",
+    "next-compose-plugins": "^2.2.1",
+    "next-mdx-builder": "^0.4.4",
+    "next-mdx-enhanced": "^5.0.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^7.1.0",
     "react": "17.0.2",

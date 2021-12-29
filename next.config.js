@@ -1,6 +1,12 @@
+const withPlugins = require('next-compose-plugins')
+
+// const withMDX = require('@next/mdx')
+const withMdxBuilder = require("next-mdx-builder")
+
 /** @type {import('next').NextConfig} */
-module.exports = {
+const config = {
   reactStrictMode: true,
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   webpack(config) {
     config.plugins.push(
       require('unplugin-icons/webpack')({
@@ -12,3 +18,10 @@ module.exports = {
     return config;
   },
 }
+
+module.exports =  withPlugins(
+  [
+    withMdxBuilder({})
+  ],
+  config,
+)
