@@ -3,7 +3,7 @@ import Tag from "../../atoms/Tag";
 
 const TheHeader: React.FC = () => (
   <header className="sticky top-0 z-30 filter saturate-150 backdrop-filter backdrop-blur-lg bg-white bg-opacity-80">
-    <div className="container max-w-2xl flex flex-row mx-auto my-8 py-8">
+    <div className="container max-w-2xl flex flex-row mx-auto my-8 p-6">
       <Link href="/">
         <a className="text-2xl">
           <div className="inline-flex items-center">

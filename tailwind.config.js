@@ -1,5 +1,6 @@
 module.exports = {
   content: [
+    './layouts/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
@@ -19,6 +20,10 @@ module.exports = {
           '800': '#8b123b',
           '900': '#720f30',
         },
+      },
+      spacing: {
+        '18': '4.5rem',
+        '19': '4.75rem',
       },
       container: {
         padding: '1rem',

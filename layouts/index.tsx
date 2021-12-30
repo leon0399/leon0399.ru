@@ -5,7 +5,7 @@ const Layout: FunctionComponent = ({ children }) => {
   return (
     <div className="">
       <TheHeader />
-      <main className='container mx-auto'>
+      <main className='container mx-auto pt-8'>
         {children}
       </main>
     </div>

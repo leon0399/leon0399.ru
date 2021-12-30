@@ -15,7 +15,7 @@ const HomeProjects: React.FC<Props> = ({ id, className, projects }) => (
 
     <div>
       { projects.map((project, i) => (
-        <ProjectCard key={`home-project-${i}`} className="my-5" project={project} />
+        <ProjectCard key={`home-project-${i}`} className="mb-5" project={project} />
       )) }
     </div>
   </section>

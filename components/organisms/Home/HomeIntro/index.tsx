@@ -33,7 +33,7 @@ const HomeIntro: React.FC<Props> = ({ id, className, socials }) => (
         Moscow,&nbsp;Russia
       </a>
     </p>
-    <ul className="flex flex-row space-x-6 my-6">
+    <ul className="flex flex-row space-x-4 my-6">
       { Object.entries(socials).map(([platform, social]) => (
         <li
           key={`home-social-${platform}`}
@@ -43,10 +43,12 @@ const HomeIntro: React.FC<Props> = ({ id, className, socials }) => (
             target="_blank"
             rel="noopener noreferrer"
             className="
+              block
               text-gray-500
               hover:text-gray-700
               transition-colors
               duration-300
+              p-1
             "
             aria-label={social.label}
           >

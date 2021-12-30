@@ -9,9 +9,9 @@ const config = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   webpack(config) {
     config.plugins.push(
-      require('unplugin-icons/webpack')({
-        compiler: 'jsx',
-        jsx: 'react',
+      require("unplugin-icons/webpack")({
+        compiler: "jsx",
+        jsx: "react",
       }),
     );
 
