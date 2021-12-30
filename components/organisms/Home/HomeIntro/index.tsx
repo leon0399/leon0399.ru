@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Icon } from '@iconify/react';
 import type { SocialAccount } from "../../../../types/social-account"
 
 interface Props {
@@ -52,7 +53,7 @@ const HomeIntro: React.FC<Props> = ({ id, className, socials }) => (
             "
             aria-label={social.label}
           >
-            <social.icon className="block w-6 h-6" />
+            <Icon icon={social.icon} className="block w-6 h-6" />
           </a>
         </li>
       )) }

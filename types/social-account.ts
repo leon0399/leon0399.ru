@@ -1,7 +1,5 @@
-import React from "react";
-
 export interface SocialAccount {
-  icon: React.FunctionComponent<any>
+  icon: string
   url: string
   label: string
 }

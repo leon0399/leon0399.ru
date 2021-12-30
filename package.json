@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@iconify/json": "^1.1.449",
+    "@iconify/react": "^3.1.1",
     "@svgr/core": "^6.1.2",
     "@types/node": "17.0.5",
     "@types/react": "17.0.38",
