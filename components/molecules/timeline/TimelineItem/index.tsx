@@ -19,10 +19,10 @@ interface Props {
 }
 
 const IconWrapper = styled.div<{ color: string }>(({ color }) => [
-  tw`p-1.5 text-white rounded-full`,
-  color === 'green' && tw`bg-green-600`,
-  color === 'gray' && tw`bg-gray-600`,
-  color === 'pink' && tw`bg-pink-600`,
+  tw`p-1.5 rounded-full text-white dark:text-gray-900`,
+  color === 'green' && tw`bg-green-600 dark:bg-green-400`,
+  color === 'gray' && tw`bg-gray-600 dark:bg-gray-400`,
+  color === 'pink' && tw`bg-pink-600 dark:bg-pink-400`,
 ])
 
 const ItemContainer = styled.article([
@@ -37,7 +37,7 @@ const TimelineItem: React.FC<Props> = ({ item, className }) => (
         <Icon icon={item.icon} className="block h-5 w-5" />
       </IconWrapper>
     </div>
-    <div className="w-full text-sm text-gray-600 py-1.5">
+    <div className="w-full text-sm py-1.5 text-gray-600 dark:text-gray-300">
       <div className="flex flex-col md:flex-row">
         <h3>
           <MDXRemote {...item.title} components={({

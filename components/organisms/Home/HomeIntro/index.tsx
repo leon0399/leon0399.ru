@@ -14,7 +14,7 @@ const HomeIntro: React.FC<Props> = ({ id, className, socials }) => (
       I’m&nbsp;the
       Developer
     </h1>
-    <p className="leading-[1.75] text-gray-800 my-4">
+    <p className="leading-[1.75] text-gray-800 dark:text-gray-200 my-4">
       Hi there! My name is{' '}
       <strong>Leonid Meleshin</strong>, and I am a{' '}
       <Link href="#">
@@ -29,7 +29,10 @@ const HomeIntro: React.FC<Props> = ({ id, className, socials }) => (
         href="https://www.timeanddate.com/worldclock/converter.html?p1=224&amp;p2=179&amp;p3=168&amp;p4=166"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-primary-600 hover:text-primary-700"
+        className="
+          text-primary-600 hover:text-primary-700
+          dark:text-primary-400 hover:text-primary-300
+        "
       >
         Moscow,&nbsp;Russia
       </a>
@@ -45,8 +48,8 @@ const HomeIntro: React.FC<Props> = ({ id, className, socials }) => (
             rel="noopener noreferrer"
             className="
               block
-              text-gray-500
-              hover:text-gray-700
+              text-gray-500 hover:text-gray-700
+              dark:text-gray-400 hover:dark:text-gray-200
               transition-colors
               duration-300
               p-1
