@@ -8,6 +8,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^12.0.7",
     "babel-plugin-import-glob-array": "^0.2.0",
@@ -19,17 +21,23 @@
     "postcss-preset-env": "^7.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "tailwindcss": "^3.0.8"
+    "tailwindcss": "^3.0.8",
+    "twin.macro": "^2.8.2"
   },
   "devDependencies": {
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
     "@iconify/json": "^1.1.449",
     "@iconify/react": "^3.1.1",
     "@svgr/core": "^6.1.2",
     "@types/node": "17.0.5",
     "@types/react": "17.0.38",
+    "autoprefixer": "^10.4.1",
+    "babel-plugin-macros": "^3.1.0",
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
+    "postcss": "^8.4.5",
     "typescript": "4.5.4",
-    "unplugin-icons": "^0.13.0"
+    "unplugin-icons": "^0.13.0",
+    "xwind": "^0.8.0"
   }
 }

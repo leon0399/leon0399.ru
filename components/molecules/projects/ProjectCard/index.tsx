@@ -1,29 +1,20 @@
 import type { Project } from "../../../../types/project"
 import Tag from "../../../atoms/Tag"
 
+import tw, { styled } from 'twin.macro'
 interface Props {
   className: string
   project: Project
 }
 
+const ProjectContainer = styled.article([
+  tw`relative flex flex-row py-4 px-6 gap-4 border rounded-lg shadow-lg`,
+  tw`transition-colors duration-300`,
+  tw`bg-white dark:bg-gray-900 dark:text-gray-300`,
+])
+
 const ProjectCard: React.FC<Props> = ({ project, className }) => (
-  <article
-    className={`
-      relative
-      flex flex-row
-      py-4
-      px-6
-      gap-4
-      border
-      rounded-lg
-      bg-white dark:bg-gray-900
-      text-gray-600 dark:text-gray-300
-      transition-colors
-      duration-300
-      shadow-lg
-      ${className}
-    `}
-  >
+  <ProjectContainer className={className}>
     <div className="hidden md:inline-block flex-shrink-0">
       <div className="w-16 h-16 rounded bg-gray-200" />
     </div>
@@ -32,7 +23,7 @@ const ProjectCard: React.FC<Props> = ({ project, className }) => (
       <p className="text-sm leading-5 text-gray-600 dark:text-gray-400 line-clamp-3">{ project.description }</p>
       { Array.isArray(project.tags) && project.tags.length && (
         <div className="flex flex-row space-x-3 my-2">
-          { project.tags.map((tag, i) => <Tag key={i} >{ tag }</Tag>) }
+          { project.tags.map((tag, i) => <Tag key={i}>{ tag }</Tag>) }
         </div>
       ) }
       <div className="flex flex-row space-x-4 text-xs leading-relaxed">
@@ -50,7 +41,7 @@ const ProjectCard: React.FC<Props> = ({ project, className }) => (
         <span>{ project.category }</span>
       </div>
     </div>
-  </article>
+  </ProjectContainer>
 )
 
 export default ProjectCard

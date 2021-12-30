@@ -14,7 +14,7 @@ const HomeIntro: React.FC<Props> = ({ id, className, socials }) => (
       I’m&nbsp;the
       Developer
     </h1>
-    <p className="leading-relaxed text-gray-800 my-4">
+    <p className="leading-[1.75] text-gray-800 my-4">
       Hi there! My name is{' '}
       <strong>Leonid Meleshin</strong>, and I am a{' '}
       <Link href="#">

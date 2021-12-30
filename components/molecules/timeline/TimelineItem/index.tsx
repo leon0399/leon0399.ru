@@ -1,6 +1,8 @@
 import { Icon } from "@iconify/react"
 import { MDXRemote } from 'next-mdx-remote'
 
+import tw, { styled } from 'twin.macro'
+
 import Tag from "../../../atoms/Tag"
 
 import type { TimelineItem as TTimelineItem } from "../../../../types/timeline"
@@ -16,12 +18,24 @@ interface Props {
   className?: string
 }
 
+const IconWrapper = styled.div<{ color: string }>(({ color }) => [
+  tw`p-1.5 text-white rounded-full`,
+  color === 'green' && tw`bg-green-600`,
+  color === 'gray' && tw`bg-gray-600`,
+  color === 'pink' && tw`bg-pink-600`,
+])
+
+const ItemContainer = styled.article([
+  tw`relative flex flex-row gap-3 pb-6 mb-2 last:pb-0 last:mb-0`,
+  tw`after:absolute after:block after:top-10 after:bottom-0 after:left-[15px] after:w-[2px] after:bg-gray-200 after:last:bg-transparent`,
+])
+
 const TimelineItem: React.FC<Props> = ({ item, className }) => (
-  <article className={`relative flex flex-row gap-3 pb-6 mb-2 last:pb-0 last:mb-0 ${className} after:absolute after:block after:top-10 after:bottom-0 after:left-[15px] after:w-[2px] after:bg-gray-200 after:last:bg-transparent`}>
+  <ItemContainer className={className}>
     <div className="relative">
-      <div className={`p-2 text-white rounded-full bg-gray-600 bg-${item.color}-600`}>
-        <Icon icon={item.icon} className="block h-4 w-4" />
-      </div>
+      <IconWrapper color={item.color || 'gray'}>
+        <Icon icon={item.icon} className="block h-5 w-5" />
+      </IconWrapper>
     </div>
     <div className="w-full text-sm text-gray-600 py-1.5">
       <div className="flex flex-col md:flex-row">
@@ -56,7 +70,7 @@ const TimelineItem: React.FC<Props> = ({ item, className }) => (
         </div>
       ) }
     </div>
-  </article>
+  </ItemContainer>
 )
 
 export default TimelineItem
