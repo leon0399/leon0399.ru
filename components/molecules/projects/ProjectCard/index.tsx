@@ -6,9 +6,9 @@ interface Props {
   project: Project
 }
 
-const ProjectCard: React.FC<Props> = ({ project }) => (
+const ProjectCard: React.FC<Props> = ({ project, className }) => (
   <article
-    className="
+    className={`
       relative
       flex flex-row
       py-4
@@ -19,7 +19,8 @@ const ProjectCard: React.FC<Props> = ({ project }) => (
       transition-colors
       duration-300
       shadow-lg
-    "
+      ${className}
+    `}
   >
     <div className="hidden md:inline-block flex-shrink-0">
       <div className="w-16 h-16 rounded bg-gray-300" />
