@@ -5,7 +5,7 @@ import type { SocialAccount } from "../../../../types/social-account"
 interface Props {
   id?: string
   className?: string
-  socials: Record<string, SocialAccount>
+  socials: SocialAccount[]
 }
 
 const HomeIntro: React.FC<Props> = ({ id, className, socials }) => (
@@ -38,9 +38,9 @@ const HomeIntro: React.FC<Props> = ({ id, className, socials }) => (
       </a>
     </p>
     <ul className="flex flex-row space-x-4 my-6">
-      { Object.entries(socials).map(([platform, social]) => (
+      { socials.map((social, i) => (
         <li
-          key={`home-social-${platform}`}
+          key={`home-social-${i}`}
         >
           <a
             href={social.url}
@@ -53,6 +53,8 @@ const HomeIntro: React.FC<Props> = ({ id, className, socials }) => (
               transition-colors
               duration-300
               p-1
+              rounded ring-offset-2
+              focus:outline-none focus:ring
             "
             aria-label={social.label}
           >

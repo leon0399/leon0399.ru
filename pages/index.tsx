@@ -15,6 +15,7 @@ import type { TimelineItem as ITimelineItem } from '../types/timeline'
 import type { TimelineItem } from '../components/molecules/timeline/TimelineItem'
 
 import { frontMatter as allProjects } from './projects/*.mdx'
+import HomeSocials from '../components/organisms/Home/HomeSocials'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -28,6 +29,7 @@ const Home: NextPage<Props> = ({ socials, projects, timeline }) => {
       <HomeIntro id="intro" className="mx-auto max-w-2xl mb-19" socials={socials} />
       <HomeProjects id="projects" className="mx-auto max-w-2xl my-19" projects={projects} />
       <HomeTimeline id="timeline" className="mx-auto max-w-2xl my-19" timeline={timeline} />
+      <HomeSocials id="socials" className="mx-auto max-w-2xl my-19" socials={socials} />
     </>
   )
 }
@@ -35,28 +37,32 @@ const Home: NextPage<Props> = ({ socials, projects, timeline }) => {
 export default Home
 
 export const getStaticProps = async () => {
-  const socials: Record<string, SocialAccount> = {
-    email: {
+  const socials: SocialAccount[] = [
+    {
       icon: 'heroicons-solid:mail',
       url: 'mailto:hello@leon0399.ru',
       label: 'Email',
+      username: 'hello@leon0399.ru',
     },
-    telegram: {
+    {
       icon: 'fa-brands:telegram',
       url: 'https://t.me/leon0399',
       label: 'Telegram',
+      username: '@leon0399',
     },
-    linkedin: {
+    {
       icon: 'fa-brands:linkedin',
       url: 'https://www.linkedin.com/in/leonid-meleshin-9604111a9/',
       label: 'LinkedIn',
+      username: '@leon0399',
     },
-    github: {
+    {
       icon: 'fa-brands:github',
       url: 'https://github.com/leon0399',
       label: 'GitHub',
+      username: '@leon0399',
     },
-  }
+  ]
 
   const allTimeline: ITimelineItem[] = [
     {
