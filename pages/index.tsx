@@ -20,6 +20,7 @@ import type { TimelineItem } from '../components/molecules/timeline/TimelineItem
 // Content
 import { primarySocials, homeSocials } from '../content/socials'
 import HomeLife from '../components/organisms/Home/HomeLife'
+import TheContactBanner from '../components/organisms/TheContactBanner'
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ primarySocials, projects, timeline, socials }) => {
   return (
@@ -52,6 +53,8 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ primar
           href: '#',
         },
       ]} />
+
+      <TheContactBanner className="my-19" />
     </>
   )
 }
