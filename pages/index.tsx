@@ -1,32 +1,33 @@
+// Utils
 import { serialize } from 'next-mdx-remote/serialize'
+import { frontMatter as allProjects } from './projects/*.mdx'
 
+// Components
 import Head from 'next/head'
 
 import HomeIntro from '../components/organisms/Home/HomeIntro'
 import HomeProjects from '../components/organisms/Home/HomeProjects'
 import HomeTimeline from '../components/organisms/Home/HomeTimeline'
-
-import type { InferGetStaticPropsType, NextPage } from 'next'
-
-import type { SocialAccount } from '../types/social-account'
-import type { Project } from '../types/project'
-import type { TimelineItem as ITimelineItem } from '../types/timeline'
-
-import type { TimelineItem } from '../components/molecules/timeline/TimelineItem'
-
-import { frontMatter as allProjects } from './projects/*.mdx'
 import HomeSocials from '../components/organisms/Home/HomeSocials'
 
-type Props = InferGetStaticPropsType<typeof getStaticProps>
+// Types
+import type { InferGetStaticPropsType, NextPage } from 'next'
 
-const Home: NextPage<Props> = ({ socials, projects, timeline }) => {
+import type { Project } from '../types/project'
+import type { TimelineItem as ITimelineItem } from '../types/timeline'
+import type { TimelineItem } from '../components/molecules/timeline/TimelineItem'
+
+// Content
+import { primarySocials, homeSocials } from '../content/socials'
+
+const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ primarySocials, projects, timeline, socials }) => {
   return (
     <>
       <Head>
         <title>Leonid Meleshin</title>
       </Head>
 
-      <HomeIntro id="intro" className="mx-auto max-w-2xl mb-19" socials={socials} />
+      <HomeIntro id="intro" className="mx-auto max-w-2xl mb-19" socials={primarySocials} />
       <HomeProjects id="projects" className="mx-auto max-w-2xl my-19" projects={projects} />
       <HomeTimeline id="timeline" className="mx-auto max-w-2xl my-19" timeline={timeline} />
       <HomeSocials id="socials" className="mx-auto max-w-2xl my-19" socials={socials} />
@@ -37,33 +38,6 @@ const Home: NextPage<Props> = ({ socials, projects, timeline }) => {
 export default Home
 
 export const getStaticProps = async () => {
-  const socials: SocialAccount[] = [
-    {
-      icon: 'heroicons-solid:mail',
-      url: 'mailto:hello@leon0399.ru',
-      label: 'Email',
-      username: 'hello@leon0399.ru',
-    },
-    {
-      icon: 'fa-brands:telegram',
-      url: 'https://t.me/leon0399',
-      label: 'Telegram',
-      username: '@leon0399',
-    },
-    {
-      icon: 'fa-brands:linkedin',
-      url: 'https://www.linkedin.com/in/leonid-meleshin-9604111a9/',
-      label: 'LinkedIn',
-      username: '@leon0399',
-    },
-    {
-      icon: 'fa-brands:github',
-      url: 'https://github.com/leon0399',
-      label: 'GitHub',
-      username: '@leon0399',
-    },
-  ]
-
   const allTimeline: ITimelineItem[] = [
     {
       title: 'Living in Munich, Germany',
@@ -119,9 +93,10 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      socials,
+      primarySocials,
       projects,
       timeline: await Promise.all(timeline),
+      socials: homeSocials,
     }
   }
 }
