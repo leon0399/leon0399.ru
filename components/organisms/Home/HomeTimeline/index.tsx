@@ -2,6 +2,7 @@ import SectionHeader from "../../../molecules/SectionHeader"
 import TimelineItem from "../../../molecules/timeline/TimelineItem"
 
 import type { TimelineItem as ITimelineItem } from '../../../molecules/timeline/TimelineItem'
+import React from "react"
 
 interface Props {
   id?: string

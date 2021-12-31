@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Icon } from '@iconify/react';
 import type { SocialAccount } from "../../../../types/social-account"
+import React from "react";
 
 interface Props {
   id?: string

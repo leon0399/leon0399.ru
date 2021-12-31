@@ -1,3 +1,4 @@
+import React from "react"
 import type { SocialAccount } from "../../../../types/social-account"
 import SectionHeader from "../../../molecules/SectionHeader"
 import SocialTile from "../../../molecules/socials/SocialTile"

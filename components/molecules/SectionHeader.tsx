@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { UrlObject } from 'url';
 
 type Url = string | UrlObject;
@@ -8,7 +9,7 @@ interface Props {
   href?: Url
 }
 
-const SectionHeader: React.FC<Props> = ({ title, href, children }) => (
+const SectionHeader: React.FC<Props> = ({ title, children }) => (
   <div className="flex flex-row justify-between items-end my-4 text-gray-900 dark:text-gray-100">
     { children
       ? children

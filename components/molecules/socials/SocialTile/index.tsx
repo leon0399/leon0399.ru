@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react'
+import React from 'react'
 import tw, { styled } from 'twin.macro'
 
 import type { SocialAccount } from "../../../../types/social-account"

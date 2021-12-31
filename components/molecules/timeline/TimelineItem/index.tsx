@@ -7,7 +7,9 @@ import Tag from "../../../atoms/Tag"
 
 import type { TimelineItem as TTimelineItem } from "../../../../types/timeline"
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
+import React from "react"
 
+// eslint-disable-next-line no-undef
 export type TimelineItem = Modify<TTimelineItem, {
   title: MDXRemoteSerializeResult
   description?: MDXRemoteSerializeResult
@@ -31,6 +33,7 @@ const ItemContainer = styled.article([
   tw`dark:after:bg-gray-700`
 ])
 
+// eslint-disable-next-line no-redeclare
 const TimelineItem: React.FC<Props> = ({ item, className }) => (
   <ItemContainer className={className}>
     <div className="relative">
