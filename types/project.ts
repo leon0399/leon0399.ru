@@ -6,4 +6,6 @@ export interface Project {
 
   url: string
   displayUrl?: string
+
+  logo?: string
 }

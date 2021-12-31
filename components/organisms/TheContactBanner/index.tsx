@@ -1,3 +1,5 @@
+import React from "react"
+
 import tw, { styled } from "twin.macro"
 
 const ContactBannerContainer = styled.section([
@@ -19,6 +21,7 @@ const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
         rel="noopener noreferrer"
         className="
           dark:bg-gray-900 dark:text-gray-100
+          hover:bg-gray-200 dark:hover:bg-gray-800
           ring-offset-2 focus:outline-none focus:ring
           flex md:inline-flex justify-center items-center
           px-6 h-12

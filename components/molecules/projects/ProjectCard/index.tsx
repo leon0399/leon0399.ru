@@ -2,6 +2,8 @@ import type { Project } from "../../../../types/project"
 import Tag from "../../../atoms/Tag"
 
 import tw, { styled } from 'twin.macro'
+import React from "react"
+import Image from "next/image"
 interface Props {
   className: string
   project: Project
@@ -16,11 +18,14 @@ const ProjectContainer = styled.article([
 const ProjectCard: React.FC<Props> = ({ project, className }) => (
   <ProjectContainer className={className}>
     <div className="hidden shrink-0 md:inline-block">
-      <div className="w-16 h-16 bg-gray-200 rounded" />
+      { project.logo
+        ? <Image src={project.logo} width={64} height={64} className="w-16 h-16 rounded" alt={project.title} />
+        : <div className="w-16 h-16 bg-gray-200 rounded" />
+      }
     </div>
     <div className="grow">
       <h3 className="text-lg font-bold tracking-tight">{ project.title }</h3>
-      <p className="text-sm leading-5 text-gray-600 dark:text-gray-400 line-clamp-3">{ project.description }</p>
+      <p className="text-sm leading-5 text-gray-600 dark:text-gray-400">{ project.description }</p>
       { Array.isArray(project.tags) && project.tags.length && (
         <div className="flex flex-row my-2 space-x-3">
           { project.tags.map((tag, i) => <Tag key={i}>{ tag }</Tag>) }
