@@ -18,7 +18,7 @@ const IconWrapper = styled.div<{ color: string }>(({ color }) => [
 
 const LifeItemCard: React.FC<Props> = ({ icon, color, label, href }) => (
   <Link href={href}>
-    <a className="group flex flex-col items-start p-6 space-y-8 ring-offset-2 focus:outline-none focus:ring hover:bg-gray-100 dark:hover:bg-gray-800">
+    <a className="group flex flex-col items-start p-6 space-y-8 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring ring-offset-2">
       <div className="flex flex-row">
         <IconWrapper color={color}>
           <Icon icon={icon} className="w-6 h-6" />

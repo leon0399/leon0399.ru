@@ -29,11 +29,11 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ primar
         <title>Leonid Meleshin</title>
       </Head>
 
-      <HomeIntro id="intro" className="mx-auto max-w-2xl mb-19" socials={primarySocials} />
-      <HomeProjects id="projects" className="mx-auto max-w-2xl my-19" projects={projects} />
-      <HomeTimeline id="timeline" className="mx-auto max-w-2xl my-19" timeline={timeline} />
-      <HomeSocials id="socials" className="mx-auto max-w-2xl my-19" socials={socials} />
-      <HomeLife id="life" className="mx-auto max-w-2xl my-19" items={[
+      <HomeIntro id="intro" className="mx-auto mb-19 max-w-2xl" socials={primarySocials} />
+      <HomeProjects id="projects" className="my-19 mx-auto max-w-2xl" projects={projects} />
+      <HomeTimeline id="timeline" className="my-19 mx-auto max-w-2xl" timeline={timeline} />
+      <HomeSocials id="socials" className="my-19 mx-auto max-w-2xl" socials={socials} />
+      <HomeLife id="life" className="my-19 mx-auto max-w-2xl" items={[
         {
           icon: 'heroicons-outline:check',
           color: 'indigo',

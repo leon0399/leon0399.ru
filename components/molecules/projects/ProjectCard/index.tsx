@@ -15,14 +15,14 @@ const ProjectContainer = styled.article([
 
 const ProjectCard: React.FC<Props> = ({ project, className }) => (
   <ProjectContainer className={className}>
-    <div className="hidden md:inline-block flex-shrink-0">
-      <div className="w-16 h-16 rounded bg-gray-200" />
+    <div className="hidden shrink-0 md:inline-block">
+      <div className="w-16 h-16 bg-gray-200 rounded" />
     </div>
-    <div className="flex-grow">
+    <div className="grow">
       <h3 className="text-lg font-bold tracking-tight">{ project.title }</h3>
       <p className="text-sm leading-5 text-gray-600 dark:text-gray-400 line-clamp-3">{ project.description }</p>
       { Array.isArray(project.tags) && project.tags.length && (
-        <div className="flex flex-row space-x-3 my-2">
+        <div className="flex flex-row my-2 space-x-3">
           { project.tags.map((tag, i) => <Tag key={i}>{ tag }</Tag>) }
         </div>
       ) }

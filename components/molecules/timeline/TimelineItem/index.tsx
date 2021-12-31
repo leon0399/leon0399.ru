@@ -35,17 +35,17 @@ const TimelineItem: React.FC<Props> = ({ item, className }) => (
   <ItemContainer className={className}>
     <div className="relative">
       <IconWrapper color={item.color || 'gray'}>
-        <Icon icon={item.icon} className="block h-5 w-5" />
+        <Icon icon={item.icon} className="block w-5 h-5" />
       </IconWrapper>
     </div>
-    <div className="w-full text-sm py-1.5 text-gray-600 dark:text-gray-300">
+    <div className="py-1.5 w-full text-sm text-gray-600 dark:text-gray-300">
       <div className="flex flex-col md:flex-row">
         <h3>
           <MDXRemote {...item.title} components={({
             'p': (({ children }) => <>{ children }</>) as React.FC
           })} />
         </h3>
-        <div className="flex-grow text-xs md:ml-auto md:text-sm md:text-right">
+        <div className="grow text-xs md:ml-auto md:text-sm md:text-right">
           <span>
             { item.duration.start }
             { item.duration.end && (
@@ -64,7 +64,7 @@ const TimelineItem: React.FC<Props> = ({ item, className }) => (
       ) }
 
       { Array.isArray(item.tags) && item.tags.length && (
-        <div className="flex flex-row space-x-3 mt-2">
+        <div className="flex flex-row mt-2 space-x-3">
           { item.tags.map((tag, i) => (
             <Tag key={`project-tag-${i}`}>{ tag }</Tag>
           )) }

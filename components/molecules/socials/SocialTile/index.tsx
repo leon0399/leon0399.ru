@@ -14,16 +14,16 @@ const IconWrapper = styled.div([
 
 const SocialTile: React.FC<Props> = ({ social }) => (
   <a href={social.url} target="_blank" rel='noopener noreferrer' className="
-    group flex flex-row items-center
-    text-gray-600 hover:text-gray-700 hover:underline
     dark:text-gray-300 dark:hover:text-gray-200
-    rounded ring-offset-2
+    text-gray-600 hover:text-gray-700 hover:underline
     focus:outline-none focus:ring
+    group flex flex-row items-center
+    rounded ring-offset-2
   ">
     <IconWrapper>
       <Icon icon={social.icon} className='w-6 h-6' />
     </IconWrapper>
-    <div className="flex-grow flex flex-col">
+    <div className="flex flex-col grow">
       <span className='text-sm'>{ social.label }</span>
       <span className='text-xs'>{ social.username }</span>
     </div>

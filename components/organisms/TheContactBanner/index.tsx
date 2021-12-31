@@ -8,8 +8,8 @@ const ContactBannerContainer = styled.section([
 
 const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
   <ContactBannerContainer className={className}>
-    <h2 className="text-3xl md:text-5xl font-bold leading-[150%]">Contact me</h2>
-    <p className="md:text-lg my-2 text-gray-200 dark:text-gray-800">
+    <h2 className="text-3xl font-bold leading-[150%] md:text-5xl">Contact me</h2>
+    <p className="my-2 text-gray-200 dark:text-gray-800 md:text-lg">
       I’m not currently looking for any new opportunities, however my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
     </p>
     <div className="mt-6">
@@ -18,12 +18,12 @@ const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
         target="_blank"
         rel="noopener noreferrer"
         className="
+          dark:bg-gray-900 dark:text-gray-100
+          ring-offset-2 focus:outline-none focus:ring
           flex md:inline-flex justify-center items-center
           px-6 h-12
           rounded-lg font-semibold text-sm text-center
-          ring-offset-2 focus:outline-none focus:ring
           bg-gray-100 text-gray-900
-          dark:bg-gray-900 dark:text-gray-100
         "
       >
         Hit me an email

@@ -19,7 +19,7 @@ const HomeLife: React.FC<Props> = ({ items, id, className }) => (
   <article id={id} className={`w-full ${className}`}>
     <SectionHeader title="Life" />
 
-    <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-300 dark:divide-gray-600">
+    <div className="grid divide-y divide-gray-300 dark:divide-gray-600 md:grid-cols-3 md:divide-y-0 md:divide-x">
       { items.map((item, i) => (
         <LifeItemCard key={`life-item-${i}`} { ...item } />
       )) }
