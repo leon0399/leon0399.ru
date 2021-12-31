@@ -19,6 +19,7 @@ import type { TimelineItem } from '../components/molecules/timeline/TimelineItem
 
 // Content
 import { primarySocials, homeSocials } from '../content/socials'
+import HomeLife from '../components/organisms/Home/HomeLife'
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ primarySocials, projects, timeline, socials }) => {
   return (
@@ -31,6 +32,26 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ primar
       <HomeProjects id="projects" className="mx-auto max-w-2xl my-19" projects={projects} />
       <HomeTimeline id="timeline" className="mx-auto max-w-2xl my-19" timeline={timeline} />
       <HomeSocials id="socials" className="mx-auto max-w-2xl my-19" socials={socials} />
+      <HomeLife id="life" className="mx-auto max-w-2xl my-19" items={[
+        {
+          icon: 'heroicons-outline:check',
+          color: 'indigo',
+          label: 'Goals',
+          href: '#',
+        },
+        {
+          icon: 'heroicons-outline:check',
+          color: 'indigo',
+          label: 'Goals',
+          href: '#',
+        },
+        {
+          icon: 'heroicons-outline:check',
+          color: 'indigo',
+          label: 'Goals',
+          href: '#',
+        },
+      ]} />
     </>
   )
 }
