@@ -9,7 +9,7 @@ const ContactBannerContainer = styled.section([
 const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
   <ContactBannerContainer className={className}>
     <h2 className="text-3xl md:text-5xl font-bold leading-[150%]">Contact me</h2>
-    <p className="md:text-lg my-2 text-gray-300 dark:text-gray-800">
+    <p className="md:text-lg my-2 text-gray-200 dark:text-gray-800">
       I’m not currently looking for any new opportunities, however my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
     </p>
     <div className="mt-6">
