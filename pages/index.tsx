@@ -63,19 +63,19 @@ export default Home
 
 export const getStaticProps = async () => {
   const allTimeline: ITimelineItem[] = [
+    // {
+    //   title: 'Living in Munich, Germany',
+    //   duration: {
+    //     start: 'January 2022',
+    //     end: 'Present',
+    //   },
+    //   icon: 'heroicons-outline:globe',
+    //   color: 'green',
+    //   homepage: true,
+    // },
     {
-      title: 'Living in Munich, Germany',
-      duration: {
-        start: 'January 2022',
-        end: 'Present',
-      },
-      icon: 'heroicons-outline:globe',
-      color: 'green',
-      homepage: true,
-    },
-    {
-      title: 'Senior Developer at [Innoscripta GmbH](https://www.innoscripta.com/)',
-      description: 'Turnkey websites Development on Wordpress and Laravel. Theme development, layout and integration.',
+      title: 'Developer at [Innoscripta GmbH](https://www.innoscripta.com/)',
+      // description: 'Turnkey websites Development on Wordpress and Laravel. Theme development, layout and integration.',
       tags: ['Laravel', 'React.js'],
       duration: {
         start: 'October 2020',
