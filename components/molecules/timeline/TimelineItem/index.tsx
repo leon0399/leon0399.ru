@@ -28,6 +28,7 @@ const IconWrapper = styled.div<{ color: string }>(({ color }) => [
 const ItemContainer = styled.article([
   tw`relative flex flex-row gap-3 pb-6 mb-2 last:pb-0 last:mb-0`,
   tw`after:absolute after:block after:top-10 after:bottom-0 after:left-[15px] after:w-[2px] after:bg-gray-200 after:last:bg-transparent`,
+  tw`dark:after:bg-gray-700`
 ])
 
 const TimelineItem: React.FC<Props> = ({ item, className }) => (
