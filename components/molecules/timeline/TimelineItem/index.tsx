@@ -34,8 +34,8 @@ const ItemContainer = styled.article([
 ])
 
 // eslint-disable-next-line no-redeclare
-const TimelineItem: React.FC<Props> = ({ item, className }) => (
-  <ItemContainer className={className}>
+const TimelineItem: React.FC<Props> = ({ item, ...props }) => (
+  <ItemContainer {...props} >
     <div className="relative">
       <IconWrapper color={item.color || 'gray'}>
         <Icon icon={item.icon} className="block w-5 h-5" />

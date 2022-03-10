@@ -15,8 +15,8 @@ const ProjectContainer = styled.article([
   tw`bg-white dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700`,
 ])
 
-const ProjectCard: React.FC<Props> = ({ project, className }) => (
-  <ProjectContainer className={className}>
+const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
+  <ProjectContainer {...props} >
     <div className="hidden shrink-0 md:inline-block">
       { project.logo
         ? <Image src={project.logo} width={64} height={64} className="w-16 h-16 rounded" alt={project.title} />

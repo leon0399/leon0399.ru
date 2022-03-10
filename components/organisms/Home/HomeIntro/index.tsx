@@ -9,8 +9,8 @@ interface Props {
   socials: SocialAccount[]
 }
 
-const HomeIntro: React.FC<Props> = ({ id, className, socials }) => (
-  <section id={id} className={`w-full ${className}`}>
+const HomeIntro: React.FC<Props> = ({ socials, className, ...props }) => (
+  <section className={`w-full ${className}`} {...props} >
     <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
       I’m&nbsp;the
       Developer

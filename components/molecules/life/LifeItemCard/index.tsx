@@ -9,6 +9,7 @@ interface Props {
   color: string
   label: string
   href: string
+  className?: string
 }
 
 const IconWrapper = styled.div<{ color: string }>(({ color }) => [
@@ -17,9 +18,9 @@ const IconWrapper = styled.div<{ color: string }>(({ color }) => [
   color === 'indigo' && tw`bg-indigo-50 text-indigo-600 dark:bg-indigo-900 dark:text-indigo-200`,
 ])
 
-const LifeItemCard: React.FC<Props> = ({ icon, color, label, href }) => (
+const LifeItemCard: React.FC<Props> = ({ icon, color, label, href, className }) => (
   <Link href={href}>
-    <a className="group flex flex-col items-start p-6 space-y-8 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring ring-offset-2">
+    <a className={`group flex flex-col items-start p-6 space-y-8 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring ring-offset-2 ${className}`}>
       <div className="flex flex-row">
         <IconWrapper color={color}>
           <Icon icon={icon} className="w-6 h-6" />
