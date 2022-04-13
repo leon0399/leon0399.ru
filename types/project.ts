@@ -8,4 +8,7 @@ export interface Project {
   displayUrl?: string
 
   logo?: string
+
+  display?: boolean
+  sort: number
 }

@@ -1,6 +1,5 @@
 // Utils
 import { serialize } from 'next-mdx-remote/serialize'
-import { frontMatter as allProjects } from './projects/*.mdx'
 
 // Components
 import Head from 'next/head'
@@ -19,6 +18,7 @@ import type { TimelineItem } from '../components/molecules/timeline/TimelineItem
 
 // Content
 import { primarySocials, homeSocials } from '../content/socials'
+import { frontMatter as allProjects } from './projects/*.mdx'
 import HomeLife from '../components/organisms/Home/HomeLife'
 import TheContactBanner from '../components/organisms/TheContactBanner'
 
@@ -107,7 +107,9 @@ export const getStaticProps = async () => {
       return _t
     })
 
-  const projects = allProjects as unknown as Project[]
+  const projects = (allProjects as unknown as Project[])
+    .filter((p) => p.display === undefined || p.display === true)
+    .sort((a, b) => a.sort - b.sort)
     // @ts-ignore
     // .map((v: Project) => {
     //   v.description = ...

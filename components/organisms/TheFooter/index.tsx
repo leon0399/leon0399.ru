@@ -1,5 +1,5 @@
 import Link from "next/link"
-import React from "react"
+import React, { useMemo } from "react"
 import { Icon } from '@iconify/react'
 
 import tw, { styled } from "twin.macro"
@@ -20,13 +20,26 @@ interface FooterMenuItemProps {
   title: string
 }
 
-const FooterMenuItem: React.FC<FooterMenuItemProps> = ({ href, title, ...props }) => (
-  <li className="py-2 px-6" {...props}>
-    <Link href={href}>
-      <a className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300">{ title }</a>
-    </Link>
-  </li>
-)
+const FooterMenuItem: React.FC<FooterMenuItemProps> = ({ href, title, ...props }) => {
+  const outer: boolean = useMemo(
+    () => href.startsWith('http'),
+    [ href ]
+  )
+
+  return (
+    <li className="py-2 px-6" {...props}>
+      <Link href={href}>
+        <a
+          className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+          target={outer ? '_blank' : undefined}
+          rel={outer ? 'nofollow' : undefined}
+        >
+          { title }
+        </a>
+      </Link>
+    </li>
+  )
+}
 
 interface Props {
   socials: SocialAccount[]
