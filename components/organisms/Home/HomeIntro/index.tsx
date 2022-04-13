@@ -1,7 +1,11 @@
+import 'react-typist/dist/Typist.css'
+
 import Link from "next/link"
-import { Icon } from '@iconify/react';
+import { Icon } from '@iconify/react'
+import Typist from 'react-typist'
+
+import type { FC } from "react"
 import type { SocialAccount } from "../../../../types/social-account"
-import React from "react";
 
 interface Props {
   id?: string
@@ -9,11 +13,25 @@ interface Props {
   socials: SocialAccount[]
 }
 
-const HomeIntro: React.FC<Props> = ({ socials, className, ...props }) => (
+const words = [
+  'Developer',
+  'Builder',
+  'Engineer',
+  'Developer',
+]
+
+const HomeIntro: FC<Props> = ({ socials, className, ...props }) => (
   <section className={`w-full ${className}`} {...props} >
     <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-      I’m&nbsp;the
-      Developer
+      <Typist className="inline">
+        I’m&nbsp;the{' '}
+        { words.map((w, i, a) => (
+          <span key={i}>
+            { w }
+            { (i < (a.length - 1)) && <Typist.Backspace count={w.length} delay={800} /> || '' }
+          </span>
+        ))}
+      </Typist>
     </h1>
     <p className="my-4 leading-[1.75] text-gray-800 dark:text-gray-200">
       Hi there! My name is{' '}

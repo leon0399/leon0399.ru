@@ -19,7 +19,7 @@ const Socials: NextPage<Props> = ({ socials }) => {
   return (
     <>
       <Head>
-        <title></title>
+        <title>Socials - Leonid Meleshin</title>
       </Head>
 
       <article className='mx-auto mb-19 max-w-2xl'>

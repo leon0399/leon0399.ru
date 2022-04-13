@@ -21,6 +21,7 @@
     "postcss-preset-env": "^7.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-typist": "^2.0.5",
     "tailwindcss": "^3.0.8",
     "twin.macro": "^2.8.2"
   },
