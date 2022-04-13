@@ -2,6 +2,7 @@ import 'react-typist/dist/Typist.css'
 
 import Link from "next/link"
 import { Icon } from '@iconify/react'
+// @ts-ignore
 import Typist from 'react-typist'
 
 import type { FC } from "react"
