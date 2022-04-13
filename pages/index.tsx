@@ -8,21 +8,28 @@ import HomeIntro from '../components/organisms/Home/HomeIntro'
 import HomeProjects from '../components/organisms/Home/HomeProjects'
 import HomeTimeline from '../components/organisms/Home/HomeTimeline'
 import HomeSocials from '../components/organisms/Home/HomeSocials'
+import TheContactBanner from '../components/organisms/TheContactBanner'
 
 // Types
-import type { InferGetStaticPropsType, NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 
 import type { Project } from '../types/project'
 import type { TimelineItem as ITimelineItem } from '../types/timeline'
+import type { SocialAccount } from '../types/social-account'
 import type { TimelineItem } from '../components/molecules/timeline/TimelineItem'
 
 // Content
 import { primarySocials, homeSocials } from '../content/socials'
 import { frontMatter as allProjects } from './projects/*.mdx'
-import HomeLife from '../components/organisms/Home/HomeLife'
-import TheContactBanner from '../components/organisms/TheContactBanner'
 
-const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ primarySocials, projects, timeline, socials }) => {
+interface Props {
+  primarySocials: SocialAccount[]
+  socials: SocialAccount[]
+  timeline: TimelineItem[]
+  projects: Project[]
+}
+
+const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials }) => {
   return (
     <>
       <Head>
@@ -33,7 +40,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ primar
       <HomeProjects id="projects" className="my-19 mx-auto max-w-2xl" projects={projects} />
       <HomeTimeline id="timeline" className="my-19 mx-auto max-w-2xl" timeline={timeline} />
       <HomeSocials id="socials" className="my-19 mx-auto max-w-2xl" socials={socials} />
-      <HomeLife id="life" className="my-19 mx-auto max-w-2xl" items={[
+      {/* <HomeLife id="life" className="my-19 mx-auto max-w-2xl" items={[
         {
           icon: 'heroicons-outline:check',
           color: 'indigo',
@@ -52,7 +59,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ primar
           label: 'Goals',
           href: '#',
         },
-      ]} />
+      ]} /> */}
 
       <TheContactBanner className="my-19" />
     </>
@@ -61,7 +68,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ primar
 
 export default Home
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const allTimeline: ITimelineItem[] = [
     // {
     //   title: 'Living in Munich, Germany',
@@ -98,7 +105,7 @@ export const getStaticProps = async () => {
 
   const timeline = allTimeline
     .filter(t => t.homepage)
-    .map(async (t: ITimelineItem) => {
+    .map(async (t: ITimelineItem): Promise<TimelineItem> => {
       const _t: TimelineItem = Object.assign<ITimelineItem, Partial<TimelineItem>>(t, {})
 
       t.description && (_t.description = await serialize(t.description))

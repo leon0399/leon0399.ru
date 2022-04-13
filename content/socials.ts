@@ -53,9 +53,9 @@ export const homeSocials: SocialAccount[] = [
     username: '@leon0399',
   },
   {
-    icon: 'fa-brands:gitlab',
-    url: 'https://gitlab.com/leon0399',
-    label: 'GitLab',
+    icon: 'fa-brands:twitter',
+    url: 'https://twitter.com/leon0399',
+    label: 'Twitter',
     username: '@leon0399',
   },
   {
@@ -65,3 +65,33 @@ export const homeSocials: SocialAccount[] = [
     username: '@leon0399',
   },
 ]
+
+const allSocials = [
+  ...homeSocials,
+  {
+    icon: 'fa-brands:gitlab',
+    url: 'https://gitlab.com/leon0399',
+    label: 'GitLab',
+    username: '@leon0399',
+  },
+  {
+    icon: 'fa-brands:ethereum',
+    url: 'https://etherscan.io/address/0xd0428c1385c86461104272a7049ee79c561d326b',
+    label: 'Ethereum',
+    username: '0xd0428c1385...',
+  },
+  {
+    icon: 'fa-brands:facebook',
+    url: 'https://www.facebook.com/meleshin.l',
+    label: 'Facebook',
+    username: '@leon0399',
+  },
+  {
+    icon: 'fa-brands:discord',
+    url: 'https://discordapp.com/users/249980731676164096/',
+    label: 'Discord',
+    username: 'leon0399#4450',
+  },
+]
+
+export default allSocials
