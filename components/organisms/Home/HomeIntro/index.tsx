@@ -2,8 +2,7 @@ import 'react-typist/dist/Typist.css'
 
 import Link from "next/link"
 import { Icon } from '@iconify/react'
-// @ts-ignore
-import Typist from 'react-typist'
+import Typical from 'react-typical'
 
 import type { FC } from "react"
 import type { SocialAccount } from "../../../../types/social-account"
@@ -24,15 +23,12 @@ const words = [
 const HomeIntro: FC<Props> = ({ socials, className, ...props }) => (
   <section className={`w-full ${className}`} {...props} >
     <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-      <Typist className="inline">
-        I’m&nbsp;the{' '}
-        { words.map((w, i, a) => (
-          <span key={i}>
-            { w }
-            { (i < (a.length - 1)) && <Typist.Backspace count={w.length} delay={800} /> || '' }
-          </span>
-        ))}
-      </Typist>
+      I’m&nbsp;the{' '}
+      <Typical
+        steps={words.flatMap((word) => [word, 800])}
+        loop={Infinity}
+        wrapper="span"
+      />
     </h1>
     <p className="my-4 leading-[1.75] text-gray-800 dark:text-gray-200">
       Hi there! My name is{' '}
