@@ -21,12 +21,15 @@ import type { TimelineItem } from '../components/molecules/timeline/TimelineItem
 // Content
 import { primarySocials, homeSocials } from '../content/socials'
 import { frontMatter as allProjects } from './projects/*.mdx'
+import { getUserPosts } from '../utils/hashnode'
+import { Post } from '../types/hashnode'
 
 interface Props {
   primarySocials: SocialAccount[]
+  projects: Project[]
+  posts: Post[]
   socials: SocialAccount[]
   timeline: TimelineItem[]
-  projects: Project[]
 }
 
 const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials }) => {
@@ -69,6 +72,12 @@ const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials }) 
 export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
+  const projects = (allProjects as unknown as Project[])
+    .filter((p) => p.display === undefined || p.display === true)
+    .sort((a, b) => a.sort - b.sort)
+
+  const posts = await getUserPosts("leon0399")
+
   const allTimeline: ITimelineItem[] = [
     {
       title: 'Living in Istanbul, Turkey',
@@ -114,20 +123,11 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       return _t
     })
 
-  const projects = (allProjects as unknown as Project[])
-    .filter((p) => p.display === undefined || p.display === true)
-    .sort((a, b) => a.sort - b.sort)
-    // @ts-ignore
-    // .map((v: Project) => {
-    //   v.description = ...
-
-    //   return v
-    // })
-
   return {
     props: {
       primarySocials,
       projects,
+      posts,
       timeline: await Promise.all(timeline),
       socials: homeSocials,
     }
