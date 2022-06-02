@@ -40,9 +40,11 @@ const HomeIntro: FC<Props> = ({ socials, className, ...props }) => (
       <a href="https://github.com/leon0399" target="_blank" rel="noopener noreferrer" className="underline">
         hacker
       </a>{' '}
-      from{' '}
+      , currently located in{' '}
+      <strong>Istanbul,&nbsp;Turkey</strong>
+      ,{' '}
       <a
-        href="https://www.timeanddate.com/worldclock/converter.html?p1=224&amp;p2=179&amp;p3=168&amp;p4=166"
+        href="https://www.timeanddate.com/worldclock/converter.html?p1=224&amp;p2=179&amp;p3=168&amp;p4=166&amp;p5=107"
         target="_blank"
         rel="noopener noreferrer"
         className="
@@ -50,7 +52,7 @@ const HomeIntro: FC<Props> = ({ socials, className, ...props }) => (
           dark:text-primary-400 dark:hover:text-primary-300
         "
       >
-        Moscow,&nbsp;Russia
+        UTC+3 timezone
       </a>
     </p>
     <ul className="flex flex-row my-6 space-x-4">

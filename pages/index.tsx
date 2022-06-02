@@ -70,16 +70,16 @@ export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const allTimeline: ITimelineItem[] = [
-    // {
-    //   title: 'Living in Munich, Germany',
-    //   duration: {
-    //     start: 'January 2022',
-    //     end: 'Present',
-    //   },
-    //   icon: 'heroicons-outline:globe',
-    //   color: 'green',
-    //   homepage: true,
-    // },
+    {
+      title: 'Living in Istanbul, Turkey',
+      duration: {
+        start: 'May 2022',
+        end: 'Present',
+      },
+      icon: 'heroicons-outline:globe',
+      color: 'green',
+      homepage: true,
+    },
     {
       title: 'Developer at [Innoscripta GmbH](https://www.innoscripta.com/)',
       // description: 'Turnkey websites Development on Wordpress and Laravel. Theme development, layout and integration.',

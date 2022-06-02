@@ -10,7 +10,7 @@ interface Props {
 }
 
 const IconWrapper = styled.div([
-  tw`p-2 rounded mr-2`,
+  tw`p-2 rounded mr-2 w-10 h-10`,
   tw`group-hover:bg-gray-100 dark:group-hover:bg-gray-800`
 ])
 
