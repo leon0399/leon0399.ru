@@ -14,7 +14,7 @@ const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
     <p className="my-2 text-gray-200 dark:text-gray-800 md:text-lg">
       I’m not currently looking for any new opportunities, however my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
     </p>
-    <div className="mt-6">
+    <div className="mt-6 space-x-4">
       <a
         href="mailto:hello@leon0399.ru"
         target="_blank"
@@ -30,6 +30,21 @@ const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
         "
       >
         Hit me an email
+      </a>
+      <a
+        href="https://t.me/leon0399"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="
+          text-gray-100 dark:text-gray-900
+          bg-transparent hover:bg-indigo-500 dark:hover:bg-indigo-200
+          ring-offset-2 focus:outline-none focus:ring
+          flex md:inline-flex justify-center items-center
+          px-6 h-12
+          rounded-lg font-semibold text-sm text-center
+        "
+      >
+        Telegram me
       </a>
     </div>
   </ContactBannerContainer>
