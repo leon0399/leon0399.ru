@@ -17,12 +17,13 @@ import type { Project } from '../types/project'
 import type { TimelineItem as ITimelineItem } from '../types/timeline'
 import type { SocialAccount } from '../types/social-account'
 import type { TimelineItem } from '../components/molecules/timeline/TimelineItem'
+import type { Post } from '../types/hashnode'
 
 // Content
 import { primarySocials, homeSocials } from '../content/socials'
 import { frontMatter as allProjects } from './projects/*.mdx'
+import { timeline as allTimeline } from '../content/timeline'
 import { getUserPosts } from '../utils/hashnode'
-import { Post } from '../types/hashnode'
 
 interface Props {
   primarySocials: SocialAccount[]
@@ -77,40 +78,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     .sort((a, b) => a.sort - b.sort)
 
   const posts = await getUserPosts("leon0399")
-
-  const allTimeline: ITimelineItem[] = [
-    {
-      title: 'Living in Istanbul, Turkey',
-      duration: {
-        start: 'May 2022',
-        end: 'Present',
-      },
-      icon: 'heroicons-outline:globe',
-      color: 'green',
-      homepage: true,
-    },
-    {
-      title: 'Developer at [Innoscripta GmbH](https://www.innoscripta.com/)',
-      // description: 'Turnkey websites Development on Wordpress and Laravel. Theme development, layout and integration.',
-      tags: ['Laravel', 'React.js'],
-      duration: {
-        start: 'October 2020',
-        end: 'Present',
-      },
-      icon: 'heroicons-outline:briefcase',
-      color: 'gray',
-      homepage: true,
-    },
-    {
-      title: 'Born at Moscow, Russia',
-      duration: {
-        start: '30th April 1999 ',
-      },
-      icon: 'heroicons-outline:cake',
-      color: 'pink',
-      homepage: true,
-    },
-  ]
 
   const timeline = allTimeline
     .filter(t => t.homepage)

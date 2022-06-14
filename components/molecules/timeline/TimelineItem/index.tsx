@@ -7,7 +7,7 @@ import Tag from "../../../atoms/Tag"
 
 import type { TimelineItem as TTimelineItem } from "../../../../types/timeline"
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
-import React from "react"
+import { FC, useEffect, useMemo, useRef, useState } from "react"
 
 // eslint-disable-next-line no-undef
 export type TimelineItem = Modify<TTimelineItem, {
@@ -25,6 +25,9 @@ const IconWrapper = styled.div<{ color: string }>(({ color }) => [
   color === 'green' && tw`bg-green-600 dark:bg-green-400`,
   color === 'gray' && tw`bg-gray-600 dark:bg-gray-400`,
   color === 'pink' && tw`bg-pink-600 dark:bg-pink-400`,
+  color === 'blue' && tw`bg-blue-600 dark:bg-blue-400`,
+  color === 'yellow' && tw`bg-yellow-600 dark:bg-yellow-400`,
+  color === 'red' && tw`bg-red-600 dark:bg-red-400`,
 ])
 
 const ItemContainer = styled.article([
@@ -33,8 +36,59 @@ const ItemContainer = styled.article([
   tw`dark:after:bg-gray-700`
 ])
 
+const ReadMore: FC<{ className?: string }> = ({ children, className }) => {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+
+  const [ height, setHeight ] = useState<number>();
+
+  useEffect(
+    () => setHeight(contentRef.current?.clientHeight),
+    [ contentRef ],
+  )
+
+  const [ isOpen, setOpen ] = useState<boolean>()
+  const shouldCover = useMemo<boolean>(
+    () => !!height && (height > 100),
+    [ height ],
+  )
+
+  return (
+    <div
+      ref={containerRef}
+      className={`
+        relative overflow-hidden
+        ${isOpen || !shouldCover ? '' : 'h-[80px]'}
+      `}
+    >
+      <div className={`${className} `} ref={contentRef}>
+        { children }
+      </div>
+      {
+        shouldCover && !isOpen && (
+          <div
+            className={`
+              absolute bottom-0
+              flex flex-col justify-end items-start
+              w-full
+              bg-gradient-to-b from-transparent via-white to-white
+            `}
+          >
+            <button
+              className="text-gray-800"
+              onClick={() => setOpen(!isOpen)}
+            >
+              Read more
+            </button>
+          </div>
+        )
+      }
+    </div>
+  )
+}
+
 // eslint-disable-next-line no-redeclare
-const TimelineItem: React.FC<Props> = ({ item, ...props }) => (
+const TimelineItem: FC<Props> = ({ item, ...props }) => (
   <ItemContainer {...props} >
     <div className="relative">
       <IconWrapper color={item.color || 'gray'}>
@@ -45,7 +99,17 @@ const TimelineItem: React.FC<Props> = ({ item, ...props }) => (
       <div className="flex flex-col md:flex-row">
         <h3>
           <MDXRemote {...item.title} components={({
-            'p': (({ children }) => <>{ children }</>) as React.FC
+            'p': (({ children }) => <>{ children }</>) as FC,
+            'a': (({ children, ...props }) =>
+              <a
+                {...props}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+              >
+                { children }
+              </a>
+            ) as FC,
           })} />
         </h3>
         <div className="grow text-xs md:ml-auto md:text-sm md:text-right">
@@ -58,20 +122,32 @@ const TimelineItem: React.FC<Props> = ({ item, ...props }) => (
         </div>
       </div>
 
-      { item.description && (
-        <p className="mt-2">
-          <MDXRemote {...item.description} components={({
-            'p': (({ children }) => <>{ children }</>) as React.FC
-          })} />
-        </p>
-      ) }
-
       { Array.isArray(item.tags) && item.tags.length && (
         <div className="flex flex-row mt-2 space-x-3">
           { item.tags.map((tag, i) => (
             <Tag key={`project-tag-${i}`}>{ tag }</Tag>
           )) }
         </div>
+      ) }
+
+      { item.description && (
+        <ReadMore className="mt-2 prose prose-sm dark:prose-invert">
+          <MDXRemote
+            {...item.description}
+            components={({
+              'a': (({ children, ...props }) =>
+                <a
+                  {...props}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                >
+                  { children }
+                </a>
+              ) as FC,
+            })}
+          />
+        </ReadMore>
       ) }
     </div>
   </ItemContainer>
