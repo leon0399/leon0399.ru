@@ -75,6 +75,7 @@ export const timeline: TimelineItem[] = [
       start: '2016',
       end: '2020',
     },
+    homepage: true,
     icon: 'heroicons-outline:chip',
     color: 'blue',
   },

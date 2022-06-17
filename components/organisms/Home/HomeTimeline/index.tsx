@@ -12,7 +12,7 @@ interface Props {
 
 const HomeTimeline: React.FC<Props> = ({ timeline, id, className }) => (
   <section id={id} className={`w-full ${className}`}>
-    <SectionHeader title="Timeline" />
+    <SectionHeader title="Timeline" href="/timeline" />
 
     <div className="flex flex-col">
       { timeline.map(((item, i) => (
