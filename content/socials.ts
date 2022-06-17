@@ -96,7 +96,7 @@ const allSocials = [
     icon: 'fa-brands:discord',
     url: 'https://discordapp.com/users/249980731676164096/',
     label: 'Discord',
-    username: 'leon0399#4450',
+    username: 'leon0399#0399',
   },
 ]
 

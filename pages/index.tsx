@@ -34,6 +34,10 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials }) => {
+  const displayProjects = projects
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 3)
+
   return (
     <>
       <Head>
@@ -41,7 +45,7 @@ const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials }) 
       </Head>
 
       <HomeIntro id="intro" className="mx-auto mb-19 max-w-2xl" socials={primarySocials} />
-      <HomeProjects id="projects" className="my-19 mx-auto max-w-2xl" projects={projects} />
+      <HomeProjects id="projects" className="my-19 mx-auto max-w-2xl" projects={displayProjects} />
       <HomeTimeline id="timeline" className="my-19 mx-auto max-w-2xl" timeline={timeline} />
       <HomeSocials id="socials" className="my-19 mx-auto max-w-2xl" socials={socials} />
       {/* <HomeLife id="life" className="my-19 mx-auto max-w-2xl" items={[
