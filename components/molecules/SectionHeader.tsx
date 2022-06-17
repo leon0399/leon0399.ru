@@ -3,9 +3,8 @@ import Link from 'next/link';
 import { Icon } from '@iconify/react'
 
 import type { FC } from 'react';
-import type { UrlObject } from 'url';
 
-type Url = string | UrlObject;
+type Url = string;
 
 interface Props {
   title?: string
@@ -21,7 +20,7 @@ const SectionHeader: FC<Props> = ({ title, children, className, href }) => (
     }
     { href && (
       <Link href={href}>
-        <a className='text-gray-500 hover:text-gray-600'>
+        <a target={href.startsWith('http') ? '_blank' : '_self'} className='text-gray-500 hover:text-gray-600'>
           <Icon icon="heroicons-solid:arrow-right" className='w-6 h-6' />
         </a>
       </Link>

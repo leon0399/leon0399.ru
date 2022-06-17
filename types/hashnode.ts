@@ -14,6 +14,7 @@ export interface Publication {
 
 export interface Post {
   _id: string
+  dateAdded: string
   slug: string
   title: string
   brief: string

@@ -17,6 +17,11 @@ const config = {
 
     return config;
   },
+  images: {
+    domains: [
+      'cdn.hashnode.com',
+    ],
+  },
 }
 
 module.exports =  withPlugins(

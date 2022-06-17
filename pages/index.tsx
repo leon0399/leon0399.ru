@@ -24,6 +24,7 @@ import { primarySocials, homeSocials } from '../content/socials'
 import { frontMatter as allProjects } from './projects/*.mdx'
 import { timeline as allTimeline } from '../content/timeline'
 import { getUserPosts } from '../utils/hashnode'
+import HomeBlog from '../components/organisms/Home/HomeBlog'
 
 interface Props {
   primarySocials: SocialAccount[]
@@ -33,7 +34,7 @@ interface Props {
   timeline: TimelineItem[]
 }
 
-const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials }) => {
+const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials, posts }) => {
   const displayProjects = projects
     .sort(() => 0.5 - Math.random())
     .slice(0, 3)
@@ -46,6 +47,7 @@ const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials }) 
 
       <HomeIntro id="intro" className="mx-auto mb-19 max-w-2xl" socials={primarySocials} />
       <HomeProjects id="projects" className="my-19 mx-auto max-w-2xl" projects={displayProjects} />
+      <HomeBlog id="blog" className="my-19 mx-auto max-w-2xl" posts={posts} />
       <HomeTimeline id="timeline" className="my-19 mx-auto max-w-2xl" timeline={timeline} />
       <HomeSocials id="socials" className="my-19 mx-auto max-w-2xl" socials={socials} />
       {/* <HomeLife id="life" className="my-19 mx-auto max-w-2xl" items={[
