@@ -10,7 +10,7 @@ interface Props {
 }
 
 const PostContainer = styled.article([
-  tw`relative flex flex-row py-4 px-6 gap-4 border rounded-lg shadow-lg`,
+  tw`relative flex flex-col-reverse md:flex-row py-4 px-6 gap-4 border rounded-lg shadow-lg`,
   tw`transition-colors duration-300`,
   tw`bg-white dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700 focus-within:ring ring-offset-2`,
 ])
@@ -38,9 +38,10 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
         </p>
       </div>
       { post.coverImage && (
-        <figure className="w-56">
+        <figure className="relative md:w-56">
           <Image
             className="rounded"
+            layout="responsive"
             src={post.coverImage}
             width={224}
             height={126}

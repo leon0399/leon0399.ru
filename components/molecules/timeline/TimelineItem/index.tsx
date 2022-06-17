@@ -71,11 +71,11 @@ const ReadMore: FC<{ className?: string }> = ({ children, className }) => {
               absolute bottom-0
               flex flex-col justify-end items-start
               w-full
-              bg-gradient-to-b from-transparent via-white to-white
+              bg-gradient-to-b from-transparent via-white to-white dark:via-gray-900 dark:to-gray-900
             `}
           >
             <button
-              className="text-gray-800"
+              className="text-gray-800 dark:text-gray-300"
               onClick={() => setOpen(!isOpen)}
             >
               Read more
