@@ -20,7 +20,10 @@ const SectionHeader: FC<Props> = ({ title, children, className, href }) => (
     }
     { href && (
       <Link href={href}>
-        <a target={href.startsWith('http') ? '_blank' : '_self'} className='text-gray-500 hover:text-gray-600'>
+        <a
+          target={href.startsWith('http') ? '_blank' : '_self'}
+          className='w-6 h-6 text-gray-500 hover:text-gray-600 rounded focus:outline-none focus:ring ring-offset-2'
+        >
           <Icon icon="heroicons-solid:arrow-right" className='w-6 h-6' />
         </a>
       </Link>

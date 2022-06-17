@@ -12,7 +12,7 @@ interface Props {
 const PostContainer = styled.article([
   tw`relative flex flex-row py-4 px-6 gap-4 border rounded-lg shadow-lg`,
   tw`transition-colors duration-300`,
-  tw`bg-white dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700`,
+  tw`bg-white dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700 focus-within:ring ring-offset-2`,
 ])
 
 const PostItem: FC<Props> = ({ post, ...props }) => {
@@ -38,7 +38,7 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
         </p>
       </div>
       { post.coverImage && (
-        <figure className="flex-0 w-56">
+        <figure className="w-56">
           <Image
             className="rounded"
             src={post.coverImage}
@@ -50,7 +50,7 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
         </figure>
       ) }
       <a
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full focus:outline-none"
         href={`https://blog.leon0399.ru/${post.slug}`}
         target="_blank"
         rel="noreferrer"
