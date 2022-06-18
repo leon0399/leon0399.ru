@@ -39,7 +39,7 @@ const HomeIntro: FC<Props> = ({ socials, className, ...props }) => (
       &amp;{' '}
       <a href="https://github.com/leon0399" target="_blank" rel="noopener noreferrer" className="underline">
         hacker
-      </a>{' '}
+      </a>
       , currently located in{' '}
       <strong>Istanbul,&nbsp;Turkey</strong>
       ,{' '}
