@@ -33,7 +33,7 @@ const HomeIntro: FC<Props> = ({ socials, className, ...props }) => (
     <p className="my-4 leading-[1.75] text-gray-800 dark:text-gray-200">
       Hi there! My name is{' '}
       <strong>Leonid Meleshin</strong>, and I am a{' '}
-      <Link href="#">
+      <Link href="/projects">
         <a className="underline">builder</a>
       </Link>{' '}
       &amp;{' '}

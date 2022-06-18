@@ -25,6 +25,12 @@ export const primarySocials: SocialAccount[] = [
     label: 'GitHub',
     username: '@leon0399',
   },
+  {
+    icon: 'fa-brands:keybase',
+    url: 'https://keybase.io/leon0399',
+    label: 'Keybase',
+    username: '@leon0399',
+  },
 ]
 
 export const homeSocials: SocialAccount[] = [
