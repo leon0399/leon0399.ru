@@ -3,10 +3,10 @@ import Tag from '../components/atoms/Tag'
 import { Project } from '../types/project'
 
 interface Props {
-  frontMatter: Project
+  project: Project
 }
 
-const Layout: FunctionComponent<Props> = ({ children, frontMatter: project }) => {
+const Layout: FunctionComponent<Props> = ({ children, project }) => {
   return (
     <article className='mx-auto max-w-2xl'>
       <header className='mb-12'>

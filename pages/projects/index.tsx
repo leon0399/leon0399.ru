@@ -9,7 +9,7 @@ import type { GetStaticProps, NextPage } from 'next'
 import { Project } from '../../types/project'
 
 // Content
-import { frontMatter as allProjects } from './*.mdx'
+import allProjects from '../../content/projects'
 
 interface Props {
   projects: Project[]
@@ -42,7 +42,6 @@ export default Socials
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const projects = (allProjects as unknown as Project[])
     .filter((p) => p.display === undefined || p.display === true)
-    .sort((a, b) => a.sort - b.sort)
 
   return {
     props: {

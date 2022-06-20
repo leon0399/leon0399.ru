@@ -22,7 +22,7 @@ import type { Post } from '../types/hashnode'
 
 // Content
 import { primarySocials, homeSocials } from '../content/socials'
-import { frontMatter as allProjects, _importMeta as _allProjectsImportMeta } from './projects/*.mdx'
+import allProjects from '../content/projects'
 import { timeline as allTimeline } from '../content/timeline'
 import { getUserPosts } from '../utils/hashnode'
 
@@ -81,17 +81,8 @@ const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials, po
 export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const projects = (allProjects as unknown as Project[])
-    .map((p, i) => {
-      const metadata = _allProjectsImportMeta[i]
-
-      const regex = /\/projects\/(\S+)\.mdx/
-      p.slug = metadata.importedPath.match(regex)![1]
-
-      return p
-    })
+  const projects = allProjects
     .filter((p) => p.display === undefined || p.display === true)
-    .sort((a, b) => a.sort - b.sort)
 
   const posts = await getUserPosts("leon0399")
 
