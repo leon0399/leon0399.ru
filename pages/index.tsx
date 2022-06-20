@@ -6,6 +6,7 @@ import Head from 'next/head'
 
 import HomeIntro from '../components/organisms/Home/HomeIntro'
 import HomeProjects from '../components/organisms/Home/HomeProjects'
+import HomeBlog from '../components/organisms/Home/HomeBlog'
 import HomeTimeline from '../components/organisms/Home/HomeTimeline'
 import HomeSocials from '../components/organisms/Home/HomeSocials'
 import TheContactBanner from '../components/organisms/TheContactBanner'
@@ -21,10 +22,9 @@ import type { Post } from '../types/hashnode'
 
 // Content
 import { primarySocials, homeSocials } from '../content/socials'
-import { frontMatter as allProjects } from './projects/*.mdx'
+import { frontMatter as allProjects, _importMeta as _allProjectsImportMeta } from './projects/*.mdx'
 import { timeline as allTimeline } from '../content/timeline'
 import { getUserPosts } from '../utils/hashnode'
-import HomeBlog from '../components/organisms/Home/HomeBlog'
 
 interface Props {
   primarySocials: SocialAccount[]
@@ -35,9 +35,11 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials, posts }) => {
-  const displayProjects = projects
+  const pinProjects = projects.filter((p) => p.pin)
+  const otherProjects = projects
+    .filter((p) => !p.pin)
     .sort(() => 0.5 - Math.random())
-    .slice(0, 3)
+    .slice(0, (3 - pinProjects.length))
 
   return (
     <>
@@ -46,7 +48,7 @@ const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials, po
       </Head>
 
       <HomeIntro id="intro" className="mx-auto mb-19 max-w-2xl" socials={primarySocials} />
-      <HomeProjects id="projects" className="my-19 mx-auto max-w-2xl" projects={displayProjects} />
+      <HomeProjects id="projects" className="my-19 mx-auto max-w-2xl" projects={[ ...pinProjects, ...otherProjects ]} />
       <HomeBlog id="blog" className="my-19 mx-auto max-w-2xl" posts={posts} />
       <HomeTimeline id="timeline" className="my-19 mx-auto max-w-2xl" timeline={timeline} />
       <HomeSocials id="socials" className="my-19 mx-auto max-w-2xl" socials={socials} />
@@ -80,6 +82,14 @@ export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const projects = (allProjects as unknown as Project[])
+    .map((p, i) => {
+      const metadata = _allProjectsImportMeta[i]
+
+      const regex = /\/projects\/(\S+)\.mdx/
+      p.slug = metadata.importedPath.match(regex)![1]
+
+      return p
+    })
     .filter((p) => p.display === undefined || p.display === true)
     .sort((a, b) => a.sort - b.sort)
 

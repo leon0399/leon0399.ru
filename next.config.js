@@ -26,7 +26,9 @@ const config = {
 
 module.exports =  withPlugins(
   [
-    withMdxBuilder({})
+    withMdxBuilder({
+      //
+    })
   ],
   config,
 )

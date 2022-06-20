@@ -4,6 +4,8 @@ import Tag from "../../../atoms/Tag"
 import tw, { styled } from 'twin.macro'
 import React from "react"
 import Image from "next/image"
+import { Icon } from "@iconify/react"
+import Link from "next/link"
 interface Props {
   className: string
   project: Project
@@ -13,6 +15,7 @@ const ProjectContainer = styled.article([
   tw`relative flex flex-row py-4 px-6 gap-4 border rounded-lg shadow-lg`,
   tw`transition-colors duration-300`,
   tw`bg-white dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700`,
+  tw`focus-within:ring ring-offset-2`,
 ])
 
 const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
@@ -52,6 +55,52 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
         </span>
       </div>
     </div>
+    {
+      project.isExternalUrl &&
+      <div className="text-gray-500">
+        <Icon icon={'heroicons-outline:external-link'} className="w-6 h-6" />
+      </div>
+    }
+    {
+      project.pin &&
+      <div className="absolute text-gray-500 -top-2 right-6">
+        <svg
+          aria-hidden="true"
+          role="img"
+          className="fill-white w-6 h-6"
+          width="1em"
+          height="1em"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M5 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16l-7-3.5L5 21V5Z"
+          />
+        </svg>
+      </div>
+    }
+    {
+      project.isExternalUrl
+        ? (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute inset-0 w-full h-full focus:outline-none"
+          />
+        )
+        : (
+          <Link href={`/projects/${project.slug}`} >
+            <a
+              className="absolute inset-0 w-full h-full focus:outline-none"
+            />
+          </Link>
+        )
+    }
   </ProjectContainer>
 )
 

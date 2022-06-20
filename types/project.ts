@@ -1,4 +1,5 @@
 export interface Project {
+  slug: string
   title: string
   description: string
   category: string
@@ -6,6 +7,9 @@ export interface Project {
 
   url: string
   displayUrl?: string
+
+  pin: true
+  isExternalUrl?: boolean
 
   logo?: string
 
