@@ -20,7 +20,7 @@ const Profile: FC<Props> = ({ className, ...props }) => {
   const { disconnect } = useDisconnect()
 
   const displayAddress = useMemo(
-    () => `${account?.address?.slice(0, 6)}...${account?.address?.slice(-4)}`,
+    () => `${account?.address?.slice(0, 6)}…${account?.address?.slice(-4)}`,
     [ account ]
   )
   const displayName = useMemo(

@@ -5,10 +5,10 @@ const projects: Project[] = [
     slug: 'mini-degens',
     title: 'Mini DeGens',
     description: 'Collection of 10.000 generative AI Art NFT',
-    category: 'Blockchain',
+    category: 'Web3',
     tags: [
-      'NFT',
-      'AI',
+      'TypeScript',
+      'React.js',
     ],
     url: 'https://twitter.com/mini_degens',
     logo: '/images/projects/minidegens/logo.gif',
@@ -19,7 +19,7 @@ const projects: Project[] = [
     slug: 'thrace',
     title: 'Thrace',
     description: 'Comprehensive blockchain visual explorer and doxxing tool',
-    category: 'Blockchain',
+    category: 'Web3',
     tags: [
       'TypeScript',
       'React.js',
