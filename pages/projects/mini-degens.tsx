@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
+
 // Utils
 import { InjectedConnector } from 'wagmi/connectors/injected'
-import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
+// import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 
@@ -16,6 +18,7 @@ import { WagmiConfig } from 'wagmi'
 import { NextPage } from "next";
 import { FC } from 'react';
 import Connect from '../../components/organisms/web3/Connect';
+import ProjectHeader from '../../components/molecules/projects/ProjectHeader'
 
 const contractAddress = '0x24F6328cdDDdad9475c9a3DC2675b5ef851A7C5E'
 
@@ -49,6 +52,7 @@ const web3Client = createClient({
 const MiniDegens: NextPage = () => (
   <WagmiConfig client={web3Client}>
     <article className='mx-auto max-w-2xl'>
+      <ProjectHeader title="Mini DeGens" category='Web3' tags={['TypeScript', 'React.js']} url="https://twitter.com/mini_degens" />
       <MintCollection />
     </article>
   </WagmiConfig>

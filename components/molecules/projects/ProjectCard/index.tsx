@@ -43,7 +43,7 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
             underline hover:text-gray-900 dark:hover:text-gray-200
           "
         >
-          { project.displayUrl || project?.url?.replace(/^https?:\/\//, '').split('?')[0].replace(/^[\\/]+|[\\/]+$/g, '') }
+          { project.displayUrl || project.url?.replace(/^https?:\/\//, '').split('?')[0].replace(/^[\\/]+|[\\/]+$/g, '') }
         </a>
 
         <span
