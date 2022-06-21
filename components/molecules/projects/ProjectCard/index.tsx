@@ -43,7 +43,7 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
             underline hover:text-gray-900 dark:hover:text-gray-200
           "
         >
-          { project.displayUrl || project.url.replace(/^https?:\/\//, '').split('?')[0].replace(/^[\\/]+|[\\/]+$/g, '') }
+          { project.displayUrl || project?.url?.replace(/^https?:\/\//, '').split('?')[0].replace(/^[\\/]+|[\\/]+$/g, '') }
         </a>
 
         <span
@@ -63,11 +63,11 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
     }
     {
       project.pin &&
-      <div className="absolute text-gray-500 -top-2 right-6">
+      <div className="absolute -top-2 right-6 text-gray-500">
         <svg
           aria-hidden="true"
           role="img"
-          className="fill-white w-6 h-6"
+          className="w-6 h-6 fill-white"
           width="1em"
           height="1em"
           preserveAspectRatio="xMidYMid meet"
