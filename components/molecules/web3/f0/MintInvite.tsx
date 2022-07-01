@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react'
 import Button from '../../../atoms/Button'
 
 import type { DetailedHTMLProps, FC, HTMLAttributes } from 'react'
-import type { Invite } from '@f0ts/core'
+import type { Invite } from 'f0ts'
 
 interface Props
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
