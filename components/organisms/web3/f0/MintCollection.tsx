@@ -23,7 +23,7 @@ const MintCollection: FC<Props> = ({ contractAddress }) => {
   const { data: account } = useAccount()
 
   const f0factory = useMemo(
-    () => signer ? new F0Factory(signer, 'rinkeby') : undefined,
+    () => signer ? new F0Factory(signer, 'mainnet') : undefined,
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [ account, signer ]
   )

@@ -5,23 +5,21 @@ import { InjectedConnector } from 'wagmi/connectors/injected'
 // import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
-import { F0, F0Factory, Invite } from 'f0ts'
 
 // Hooks
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import { createClient, useAccount, useProvider, useSigner } from 'wagmi'
+import { createClient, useAccount } from 'wagmi'
 
 // Components
 import { WagmiConfig } from 'wagmi'
 import Connect from '../../components/organisms/web3/Connect';
 import ProjectHeader from '../../components/molecules/projects/ProjectHeader'
+import MintCollection from '../../components/organisms/web3/f0/MintCollection'
 
 // Types
 import type { NextPage } from "next";
 import type { FC } from 'react';
-import MintCollection from '../../components/organisms/web3/f0/MintCollection'
 
-const contractAddress = '0x39CF8198614Ce4710Ed2c3C95C0cE009EAdC8416'
+const contractAddress = '0x24F6328cdDDdad9475c9a3DC2675b5ef851A7C5E'
 
 const web3Client = createClient({
   connectors: [

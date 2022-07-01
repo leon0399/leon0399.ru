@@ -12,7 +12,7 @@ const throttle = createThrottle({
 })
 
 const fetchAsset = throttle(async (contractAddress: string, tokenId: number): Promise<NFTData> => {
-  const response = await fetch(`https://rinkeby-api.opensea.io/api/v1/asset/${contractAddress}/${tokenId}/`)
+  const response = await fetch(`https://api.opensea.io/api/v1/asset/${contractAddress}/${tokenId}/`)
 
   if (!response.ok) {
     throw Error(`OpenSea request failed with status: ${response.status}. Make sure you are on mainnet.`);
@@ -100,7 +100,7 @@ const NFT: FC<Props> = ({ contractAddress, tokenId }) => {
         <div className='flex flex-row justify-end mt-2'>
           <Button
             className='py-2 px-4'
-            href={`https://testnets.opensea.io/assets/rinkeby/${contractAddress}/${tokenId}`}
+            href={`https://opensea.io/assets/ethereum/${contractAddress}/${tokenId}`}
             target="_blank"
             rel='noopener noreferrer'
           >
