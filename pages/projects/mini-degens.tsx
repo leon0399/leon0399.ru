@@ -1,4 +1,6 @@
 // Utils
+import dynamic from 'next/dynamic'
+
 import { InjectedConnector } from 'wagmi/connectors/injected'
 // import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
@@ -9,7 +11,7 @@ import { createClient, useAccount } from 'wagmi'
 
 // Components
 import { WagmiConfig } from 'wagmi'
-import Connect from '../../components/organisms/web3/Connect'
+// import Connect from '../../components/organisms/web3/Connect'
 import ProjectHeader from '../../components/molecules/projects/ProjectHeader'
 import MintCollection from '../../components/organisms/web3/f0/MintCollection'
 
@@ -18,6 +20,8 @@ import type { NextPage } from 'next'
 import type { FC } from 'react'
 
 const contractAddress = '0x24F6328cdDDdad9475c9a3DC2675b5ef851A7C5E'
+
+const DynamicConnect = dynamic(() => import('../../components/organisms/web3/Connect'))
 
 const web3Client = createClient({
   connectors: [
@@ -47,7 +51,7 @@ const MiniDegens: FC = () => {
         tags={['TypeScript', 'React.js']}
         url="https://twitter.com/mini_degens"
       />
-      <Connect className="my-4" />
+      <DynamicConnect className="my-4" />
 
       {account && <MintCollection contractAddress={contractAddress} />}
     </article>

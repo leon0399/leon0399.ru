@@ -1,5 +1,6 @@
 // Hooks
 import { useAccount, useConnect } from 'wagmi'
+import useIsMounted from '../../../utils/useIsMounted'
 
 // Components
 import Profile from './Profile'
@@ -11,6 +12,7 @@ import { DetailedHTMLProps, FC, HTMLAttributes } from 'react'
 type Props = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
 const Connect: FC<Props> = ({ ...props }) => {
+  const isMounted = useIsMounted()
   const { connect, connectors, error, isConnecting, pendingConnector } =
     useConnect()
 
@@ -29,14 +31,14 @@ const Connect: FC<Props> = ({ ...props }) => {
         return (
           <Button
             key={connector.id}
-            disabled={!connector.ready || isPendingConnector}
+            disabled={isMounted ? (!connector.ready || isPendingConnector) : false!}
             className="
               block px-16 mb-4 w-full h-14
             "
             onClick={() => connect(connector)}
           >
             {connector.name}
-            {!connector.ready && ' (unsupported)'}
+            {isMounted && !connector.ready && ' (unsupported)'}
             {isPendingConnector && ' (connecting)'}
           </Button>
         )
