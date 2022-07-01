@@ -48,6 +48,7 @@ const Button: FC<Props> = ({ children, className, ...props }) => {
 
   return (
     <>
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
       {/* @ts-ignore */}
       <a
         className={`
