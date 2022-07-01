@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 // Utils
 import { InjectedConnector } from 'wagmi/connectors/injected'
 // import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
