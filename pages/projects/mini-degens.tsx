@@ -21,7 +21,9 @@ import type { FC } from 'react'
 
 const contractAddress = '0x24F6328cdDDdad9475c9a3DC2675b5ef851A7C5E'
 
-const DynamicConnect = dynamic(() => import('../../components/organisms/web3/Connect'))
+const DynamicConnect = dynamic(
+  () => import('../../components/organisms/web3/Connect'),
+)
 
 const web3Client = createClient({
   connectors: [

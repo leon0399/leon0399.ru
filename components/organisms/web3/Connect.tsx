@@ -31,7 +31,9 @@ const Connect: FC<Props> = ({ ...props }) => {
         return (
           <Button
             key={connector.id}
-            disabled={isMounted ? (!connector.ready || isPendingConnector) : false!}
+            disabled={
+              isMounted ? !connector.ready || isPendingConnector : false!
+            }
             className="
               block px-16 mb-4 w-full h-14
             "
