@@ -1,6 +1,6 @@
 import { formatEther } from "ethers/lib/utils"
+import { Invite } from "f0ts"
 import { DetailedHTMLProps, FC, HTMLAttributes } from "react"
-import { Invite } from "../../../../utils/f0/F0"
 import Button from "../../../atoms/Button"
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {

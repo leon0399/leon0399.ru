@@ -11,6 +11,7 @@ import type { Invite } from "@f0ts/core"
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   invite: Invite
   onClose: () => void
+  // eslint-disable-next-line no-unused-vars
   onMint: (key: string, count: number) => Promise<void>
 }
 
