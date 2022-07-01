@@ -1,8 +1,8 @@
-import React from "react"
-import type { Project } from "../../../../types/project"
-import ProjectCard from "../../../molecules/projects/ProjectCard"
+import React from 'react'
+import type { Project } from '../../../../types/project'
+import ProjectCard from '../../../molecules/projects/ProjectCard'
 
-import SectionHeader from "../../../molecules/SectionHeader"
+import SectionHeader from '../../../molecules/SectionHeader'
 
 interface Props {
   id?: string
@@ -15,9 +15,13 @@ const HomeProjects: React.FC<Props> = ({ id, className, projects }) => (
     <SectionHeader title="Projects" href="/projects" />
 
     <div>
-      { projects.map((project, i) => (
-        <ProjectCard key={`home-project-${i}`} className="mb-5" project={project} />
-      )) }
+      {projects.map((project, i) => (
+        <ProjectCard
+          key={`home-project-${i}`}
+          className="mb-5"
+          project={project}
+        />
+      ))}
     </div>
   </section>
 )

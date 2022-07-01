@@ -1,10 +1,10 @@
-import Link from "next/link"
-import React, { useMemo } from "react"
+import Link from 'next/link'
+import React, { useMemo } from 'react'
 import { Icon } from '@iconify/react'
 
-import tw, { styled } from "twin.macro"
+import tw, { styled } from 'twin.macro'
 
-import type { SocialAccount } from "../../../types/social-account"
+import type { SocialAccount } from '../../../types/social-account'
 
 const commitSha =
   process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ||
@@ -12,7 +12,7 @@ const commitSha =
 
 const Footer = styled.footer([
   tw`w-full bg-gray-200 px-6 py-8 mt-19 flex flex-col justify-center items-center space-y-4`,
-  tw`dark:bg-gray-800`
+  tw`dark:bg-gray-800`,
 ])
 
 interface FooterMenuItemProps {
@@ -20,11 +20,12 @@ interface FooterMenuItemProps {
   title: string
 }
 
-const FooterMenuItem: React.FC<FooterMenuItemProps> = ({ href, title, ...props }) => {
-  const outer: boolean = useMemo(
-    () => href.startsWith('http'),
-    [ href ]
-  )
+const FooterMenuItem: React.FC<FooterMenuItemProps> = ({
+  href,
+  title,
+  ...props
+}) => {
+  const outer: boolean = useMemo(() => href.startsWith('http'), [href])
 
   return (
     <li className="py-2 px-6" {...props}>
@@ -34,7 +35,7 @@ const FooterMenuItem: React.FC<FooterMenuItemProps> = ({ href, title, ...props }
           target={outer ? '_blank' : undefined}
           rel={outer ? 'nofollow' : undefined}
         >
-          { title }
+          {title}
         </a>
       </Link>
     </li>
@@ -60,10 +61,8 @@ const TheFooter: React.FC<Props> = ({ socials }) => (
 
     <nav>
       <ul className="flex flex-row space-x-4">
-        { socials.map((social, i) => (
-          <li
-            key={`home-social-${i}`}
-          >
+        {socials.map((social, i) => (
+          <li key={`home-social-${i}`}>
             <a
               href={social.url}
               target="_blank"
@@ -83,23 +82,22 @@ const TheFooter: React.FC<Props> = ({ socials }) => (
               <Icon icon={social.icon} className="block w-6 h-6" />
             </a>
           </li>
-        )) }
+        ))}
       </ul>
     </nav>
 
     <p className="text-xs text-gray-800 dark:text-gray-400">
-      &copy; Leonid Meleshin. All rights reserved
-      {' '} &bull; {' '}
+      &copy; Leonid Meleshin. All rights reserved &bull;{' '}
       <a
         href={`https://github.com/leon0399/leon0399.ru/commit/${commitSha}`}
         className="font-mono hover:text-gray-800 dark:hover:text-gray-300 hover:underline"
         target="_blank"
         rel="noreferrer"
       >
-        { commitSha.substring(0, 7) }
+        {commitSha.substring(0, 7)}
       </a>
     </p>
   </Footer>
-);
+)
 
-export default TheFooter;
+export default TheFooter

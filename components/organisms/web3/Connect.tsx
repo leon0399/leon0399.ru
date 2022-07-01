@@ -1,32 +1,30 @@
 // Hooks
-import { useAccount, useConnect } from "wagmi";
+import { useAccount, useConnect } from 'wagmi'
 
 // Components
-import Profile from "./Profile";
-import Button from "../../atoms/Button";
+import Profile from './Profile'
+import Button from '../../atoms/Button'
 
 // Types
-import { DetailedHTMLProps, FC, HTMLAttributes } from "react";
+import { DetailedHTMLProps, FC, HTMLAttributes } from 'react'
 
-interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  //
-}
+type Props = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
 const Connect: FC<Props> = ({ ...props }) => {
-  const { connect, connectors, error, isConnecting, pendingConnector } = useConnect()
+  const { connect, connectors, error, isConnecting, pendingConnector } =
+    useConnect()
 
   const { data: account } = useAccount()
 
   if (account) {
-    return (
-      <Profile {...props} />
-    )
+    return <Profile {...props} />
   }
 
   return (
     <div {...props}>
-      { connectors.map((connector) => {
-        const isPendingConnector = isConnecting && connector.id === pendingConnector?.id
+      {connectors.map((connector) => {
+        const isPendingConnector =
+          isConnecting && connector.id === pendingConnector?.id
 
         return (
           <Button
@@ -37,18 +35,14 @@ const Connect: FC<Props> = ({ ...props }) => {
             "
             onClick={() => connect(connector)}
           >
-            { connector.name }
-            { !connector.ready && ' (unsupported)' }
-            { isPendingConnector && ' (connecting)' }
+            {connector.name}
+            {!connector.ready && ' (unsupported)'}
+            {isPendingConnector && ' (connecting)'}
           </Button>
         )
-      }) }
+      })}
 
-      {error && (
-        <div className="text-red-700">
-          Error: {error.message}
-        </div>
-      )}
+      {error && <div className="text-red-700">Error: {error.message}</div>}
     </div>
   )
 }

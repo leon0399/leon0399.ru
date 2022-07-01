@@ -1,8 +1,8 @@
-import SectionHeader from "../../../molecules/SectionHeader"
-import TimelineItem from "../../../molecules/timeline/TimelineItem"
+import SectionHeader from '../../../molecules/SectionHeader'
+import TimelineItem from '../../../molecules/timeline/TimelineItem'
 
 import type { TimelineItem as ITimelineItem } from '../../../molecules/timeline/TimelineItem'
-import React from "react"
+import React from 'react'
 
 interface Props {
   id?: string
@@ -15,9 +15,9 @@ const HomeTimeline: React.FC<Props> = ({ timeline, id, className }) => (
     <SectionHeader title="Timeline" href="/timeline" />
 
     <div className="flex flex-col">
-      { timeline.map(((item, i) => (
+      {timeline.map((item, i) => (
         <TimelineItem key={`home-timeline-item-${i}`} item={item} />
-      ))) }
+      ))}
     </div>
   </section>
 )

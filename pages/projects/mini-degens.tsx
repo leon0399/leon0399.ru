@@ -11,13 +11,13 @@ import { createClient, useAccount } from 'wagmi'
 
 // Components
 import { WagmiConfig } from 'wagmi'
-import Connect from '../../components/organisms/web3/Connect';
+import Connect from '../../components/organisms/web3/Connect'
 import ProjectHeader from '../../components/molecules/projects/ProjectHeader'
 import MintCollection from '../../components/organisms/web3/f0/MintCollection'
 
 // Types
-import type { NextPage } from "next";
-import type { FC } from 'react';
+import type { NextPage } from 'next'
+import type { FC } from 'react'
 
 const contractAddress = '0x24F6328cdDDdad9475c9a3DC2675b5ef851A7C5E'
 
@@ -28,27 +28,30 @@ const web3Client = createClient({
     new CoinbaseWalletConnector({
       options: {
         appName: 'Mini DeGens',
-      }
+      },
     }),
     new WalletConnectConnector({
       options: {
         qrcode: true,
       },
     }),
-  ]
+  ],
 })
 
 const MiniDegens: FC = () => {
   const { data: account } = useAccount()
 
   return (
-    <article className='mx-auto max-w-2xl'>
-      <ProjectHeader title="Mini DeGens" category='Web3' tags={['TypeScript', 'React.js']} url="https://twitter.com/mini_degens" />
+    <article className="mx-auto max-w-2xl">
+      <ProjectHeader
+        title="Mini DeGens"
+        category="Web3"
+        tags={['TypeScript', 'React.js']}
+        url="https://twitter.com/mini_degens"
+      />
       <Connect className="my-4" />
 
-      {
-        account && <MintCollection contractAddress={contractAddress} />
-      }
+      {account && <MintCollection contractAddress={contractAddress} />}
     </article>
   )
 }

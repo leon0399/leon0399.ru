@@ -1,7 +1,7 @@
-import { FC, useMemo } from "react";
-import { Post } from "../../../types/hashnode";
+import { FC, useMemo } from 'react'
+import { Post } from '../../../types/hashnode'
 import tw, { styled } from 'twin.macro'
-import Image from "next/image";
+import Image from 'next/image'
 
 interface Props {
   id?: string
@@ -16,28 +16,29 @@ const PostContainer = styled.article([
 ])
 
 const PostItem: FC<Props> = ({ post, ...props }) => {
-  const datePosted = useMemo(
-    () => new Date(post.dateAdded),
-    [post]
-  )
+  const datePosted = useMemo(() => new Date(post.dateAdded), [post])
 
   return (
-    <PostContainer {...props} >
+    <PostContainer {...props}>
       <div className="flex-1">
-        <h3 className="mb-1 text-lg font-bold tracking-tight">{ post.title }</h3>
+        <h3 className="mb-1 text-lg font-bold tracking-tight">{post.title}</h3>
         <div className="my-1 text-xs">
           <time
             className="text-gray-400 dark:text-gray-600"
             dateTime={post.dateAdded}
           >
-            { datePosted.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) }
+            {datePosted.toLocaleDateString(undefined, {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
           </time>
         </div>
         <p className="my-1 text-sm leading-5 text-gray-600 dark:text-gray-400">
-          { post.brief }
+          {post.brief}
         </p>
       </div>
-      { post.coverImage && (
+      {post.coverImage && (
         <figure className="relative md:w-56">
           <Image
             className="rounded"
@@ -49,15 +50,13 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
           />
           <figcaption className="hidden">{post.title}</figcaption>
         </figure>
-      ) }
+      )}
       <a
         className="absolute inset-0 w-full h-full focus:outline-none"
         href={`https://blog.leon0399.ru/${post.slug}`}
         target="_blank"
         rel="noopener noreferrer"
-      >
-
-      </a>
+      ></a>
     </PostContainer>
   )
 }

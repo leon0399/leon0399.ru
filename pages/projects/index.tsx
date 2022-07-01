@@ -22,13 +22,17 @@ const Socials: NextPage<Props> = ({ projects }) => {
         <title>Projects - Leonid Meleshin</title>
       </Head>
 
-      <article className='mx-auto mb-19 max-w-2xl'>
+      <article className="mx-auto mb-19 max-w-2xl">
         <PageHeader>Projects</PageHeader>
 
         <div>
-          { projects.map((project, i) => (
-            <ProjectCard key={`home-project-${i}`} className="mb-5" project={project} />
-          )) }
+          {projects.map((project, i) => (
+            <ProjectCard
+              key={`home-project-${i}`}
+              className="mb-5"
+              project={project}
+            />
+          ))}
         </div>
       </article>
 
@@ -40,12 +44,13 @@ const Socials: NextPage<Props> = ({ projects }) => {
 export default Socials
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const projects = (allProjects as unknown as Project[])
-    .filter((p) => p.display === undefined || p.display === true)
+  const projects = (allProjects as unknown as Project[]).filter(
+    (p) => p.display === undefined || p.display === true,
+  )
 
   return {
     props: {
       projects,
-    }
+    },
   }
 }

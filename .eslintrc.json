@@ -2,8 +2,15 @@
   "extends": [
     "eslint:recommended",
     "next/core-web-vitals",
+    "plugin:eslint-comments/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:react-hooks/recommended",
     "plugin:tailwindcss/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/react",
+    "plugin:prettier/recommended",
     "prettier"
   ],
-  "plugins": ["@emotion"]
+  "plugins": ["@emotion", "@typescript-eslint", "jest"]
 }

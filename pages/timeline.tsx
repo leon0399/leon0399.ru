@@ -26,13 +26,13 @@ const Socials: NextPage<Props> = ({ timeline }) => {
         <title>Timeline - Leonid Meleshin</title>
       </Head>
 
-      <article className='mx-auto mb-19 max-w-2xl'>
+      <article className="mx-auto mb-19 max-w-2xl">
         <PageHeader>Timeline</PageHeader>
 
         <div className="flex flex-col">
-          { timeline.map(((item, i) => (
+          {timeline.map((item, i) => (
             <TimelineItem key={`home-timeline-item-${i}`} item={item} />
-          ))) }
+          ))}
         </div>
       </article>
 
@@ -44,19 +44,23 @@ const Socials: NextPage<Props> = ({ timeline }) => {
 export default Socials
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const timeline = allTimeline
-    .map(async (t: ITimelineItem): Promise<IITimelineItem> => {
-      const _t: IITimelineItem = Object.assign<ITimelineItem, Partial<IITimelineItem>>(t, {})
+  const timeline = allTimeline.map(
+    async (t: ITimelineItem): Promise<IITimelineItem> => {
+      const _t: IITimelineItem = Object.assign<
+        ITimelineItem,
+        Partial<IITimelineItem>
+      >(t, {})
 
       t.description && (_t.description = await serialize(t.description))
       _t.title = await serialize(t.title)
 
       return _t
-    })
+    },
+  )
 
   return {
     props: {
       timeline: await Promise.all(timeline),
-    }
+    },
   }
 }

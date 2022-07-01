@@ -1,11 +1,28 @@
-import { FC, DetailedHTMLProps, ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
+import {
+  FC,
+  DetailedHTMLProps,
+  ButtonHTMLAttributes,
+  AnchorHTMLAttributes,
+} from 'react'
 
-type BaseProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
-  | DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>
+type BaseProps =
+  | DetailedHTMLProps<
+      ButtonHTMLAttributes<HTMLButtonElement>,
+      HTMLButtonElement
+    >
+  | DetailedHTMLProps<
+      AnchorHTMLAttributes<HTMLAnchorElement>,
+      HTMLAnchorElement
+    >
 
 type Props = BaseProps
 
-const isButton = (props: BaseProps) : props is DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> => {
+const isButton = (
+  props: BaseProps,
+): props is DetailedHTMLProps<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+> => {
   return !('href' in props)
 }
 
@@ -22,16 +39,16 @@ const Button: FC<Props> = ({ children, className, ...props }) => {
           px-4 py-2
           ${className && className}
         `}
-        { ...props }
+        {...props}
       >
-        { children }
+        {children}
       </button>
     )
   }
 
   return (
     <>
-      { /* @ts-ignore */ }
+      {/* @ts-ignore */}
       <a
         className={`
           bg-gray-200 hover:bg-gray-300 disabled:bg-gray-100
@@ -42,9 +59,9 @@ const Button: FC<Props> = ({ children, className, ...props }) => {
           px-4 py-2
           ${className && className}
         `}
-        { ...props }
+        {...props}
       >
-        { children }
+        {children}
       </a>
     </>
   )

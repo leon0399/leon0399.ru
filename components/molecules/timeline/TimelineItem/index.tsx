@@ -1,19 +1,22 @@
-import { Icon } from "@iconify/react"
+import { Icon } from '@iconify/react'
 import { MDXRemote } from 'next-mdx-remote'
 
 import tw, { styled } from 'twin.macro'
 
-import Tag from "../../../atoms/Tag"
+import Tag from '../../../atoms/Tag'
 
-import type { TimelineItem as TTimelineItem } from "../../../../types/timeline"
+import type { TimelineItem as TTimelineItem } from '../../../../types/timeline'
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
-import { FC, useEffect, useMemo, useRef, useState } from "react"
+import { FC, useEffect, useMemo, useRef, useState } from 'react'
 
 // eslint-disable-next-line no-undef
-export type TimelineItem = Modify<TTimelineItem, {
-  title: MDXRemoteSerializeResult
-  description?: MDXRemoteSerializeResult
-}>
+export type TimelineItem = Modify<
+  TTimelineItem,
+  {
+    title: MDXRemoteSerializeResult
+    description?: MDXRemoteSerializeResult
+  }
+>
 
 interface Props {
   item: TimelineItem
@@ -33,25 +36,19 @@ const IconWrapper = styled.div<{ color: string }>(({ color }) => [
 const ItemContainer = styled.article([
   tw`relative flex flex-row gap-3 pb-6 mb-2 last:pb-0 last:mb-0`,
   tw`after:absolute after:block after:top-10 after:bottom-0 after:left-[15px] after:w-[2px] after:bg-gray-200 after:last:bg-transparent`,
-  tw`dark:after:bg-gray-700`
+  tw`dark:after:bg-gray-700`,
 ])
 
 const ReadMore: FC<{ className?: string }> = ({ children, className }) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
 
-  const [ height, setHeight ] = useState<number>();
+  const [height, setHeight] = useState<number>()
 
-  useEffect(
-    () => setHeight(contentRef.current?.clientHeight),
-    [ contentRef ],
-  )
+  useEffect(() => setHeight(contentRef.current?.clientHeight), [contentRef])
 
-  const [ isOpen, setOpen ] = useState<boolean>()
-  const shouldCover = useMemo<boolean>(
-    () => !!height && (height > 100),
-    [ height ],
-  )
+  const [isOpen, setOpen] = useState<boolean>()
+  const shouldCover = useMemo<boolean>(() => !!height && height > 100, [height])
 
   return (
     <div
@@ -62,34 +59,32 @@ const ReadMore: FC<{ className?: string }> = ({ children, className }) => {
       `}
     >
       <div className={`${className} `} ref={contentRef}>
-        { children }
+        {children}
       </div>
-      {
-        shouldCover && !isOpen && (
-          <div
-            className={`
+      {shouldCover && !isOpen && (
+        <div
+          className={`
               absolute bottom-0
               flex flex-col justify-end items-start
               w-full
               bg-gradient-to-b from-transparent via-white to-white dark:via-gray-900 dark:to-gray-900
             `}
+        >
+          <button
+            className="text-gray-800 dark:text-gray-300"
+            onClick={() => setOpen(!isOpen)}
           >
-            <button
-              className="text-gray-800 dark:text-gray-300"
-              onClick={() => setOpen(!isOpen)}
-            >
-              Read more
-            </button>
-          </div>
-        )
-      }
+            Read more
+          </button>
+        </div>
+      )}
     </div>
   )
 }
 
 // eslint-disable-next-line no-redeclare
 const TimelineItem: FC<Props> = ({ item, ...props }) => (
-  <ItemContainer {...props} >
+  <ItemContainer {...props}>
     <div className="relative">
       <IconWrapper color={item.color || 'gray'}>
         <Icon icon={item.icon} className="block w-5 h-5" />
@@ -98,57 +93,58 @@ const TimelineItem: FC<Props> = ({ item, ...props }) => (
     <div className="py-1.5 w-full text-sm text-gray-600 dark:text-gray-300">
       <div className="flex flex-col md:flex-row">
         <h3>
-          <MDXRemote {...item.title} components={({
-            'p': (({ children }) => <>{ children }</>) as FC,
-            'a': (({ children, ...props }) =>
-              <a
-                {...props}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
-              >
-                { children }
-              </a>
-            ) as FC,
-          })} />
-        </h3>
-        <div className="grow text-xs md:ml-auto md:text-sm md:text-right">
-          <span>
-            { item.duration.start }
-            { item.duration.end && (
-              <>&nbsp;&mdash;&nbsp;{ item.duration.end }</>
-            )}
-          </span>
-        </div>
-      </div>
-
-      { Array.isArray(item.tags) && item.tags.length && (
-        <div className="flex flex-row mt-2 space-x-3">
-          { item.tags.map((tag, i) => (
-            <Tag key={`project-tag-${i}`}>{ tag }</Tag>
-          )) }
-        </div>
-      ) }
-
-      { item.description && (
-        <ReadMore className="mt-2 prose prose-sm dark:prose-invert">
           <MDXRemote
-            {...item.description}
-            components={({
-              'a': (({ children, ...props }) =>
+            {...item.title}
+            components={{
+              p: (({ children }) => <>{children}</>) as FC,
+              a: (({ children, ...props }) => (
                 <a
                   {...props}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
                 >
-                  { children }
+                  {children}
                 </a>
-              ) as FC,
-            })}
+              )) as FC,
+            }}
+          />
+        </h3>
+        <div className="grow text-xs md:ml-auto md:text-sm md:text-right">
+          <span>
+            {item.duration.start}
+            {item.duration.end && <>&nbsp;&mdash;&nbsp;{item.duration.end}</>}
+          </span>
+        </div>
+      </div>
+
+      {Array.isArray(item.tags) && item.tags.length && (
+        <div className="flex flex-row mt-2 space-x-3">
+          {item.tags.map((tag, i) => (
+            <Tag key={`project-tag-${i}`}>{tag}</Tag>
+          ))}
+        </div>
+      )}
+
+      {item.description && (
+        <ReadMore className="mt-2 prose prose-sm dark:prose-invert">
+          <MDXRemote
+            {...item.description}
+            components={{
+              a: (({ children, ...props }) => (
+                <a
+                  {...props}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                >
+                  {children}
+                </a>
+              )) as FC,
+            }}
           />
         </ReadMore>
-      ) }
+      )}
     </div>
   </ItemContainer>
 )

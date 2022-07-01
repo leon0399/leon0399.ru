@@ -1,6 +1,6 @@
-import React from "react"
-import LifeItemCard from "../../../molecules/life/LifeItemCard"
-import SectionHeader from "../../../molecules/SectionHeader"
+import React from 'react'
+import LifeItemCard from '../../../molecules/life/LifeItemCard'
+import SectionHeader from '../../../molecules/SectionHeader'
 
 interface LifeItem {
   icon: string
@@ -10,7 +10,7 @@ interface LifeItem {
 }
 
 interface Props {
-  items: [ LifeItem, LifeItem, LifeItem ]
+  items: [LifeItem, LifeItem, LifeItem]
 
   id?: string
   className?: string
@@ -21,9 +21,9 @@ const HomeLife: React.FC<Props> = ({ items, id, className }) => (
     <SectionHeader title="Life" />
 
     <div className="grid divide-y divide-gray-300 dark:divide-gray-600 md:grid-cols-3 md:divide-y-0 md:divide-x">
-      { items.map((item, i) => (
-        <LifeItemCard key={`life-item-${i}`} { ...item } />
-      )) }
+      {items.map((item, i) => (
+        <LifeItemCard key={`life-item-${i}`} {...item} />
+      ))}
     </div>
   </article>
 )

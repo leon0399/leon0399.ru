@@ -1,8 +1,8 @@
-import SectionHeader from "../../../molecules/SectionHeader"
-import SocialTile from "../../../molecules/socials/SocialTile"
+import SectionHeader from '../../../molecules/SectionHeader'
+import SocialTile from '../../../molecules/socials/SocialTile'
 
-import type { FC } from "react"
-import type { SocialAccount } from "../../../../types/social-account"
+import type { FC } from 'react'
+import type { SocialAccount } from '../../../../types/social-account'
 interface Props {
   id?: string
   className?: string
@@ -14,12 +14,11 @@ const HomeSocials: FC<Props> = ({ socials, id, className }) => (
     <SectionHeader title="Socials" href="/socials" />
 
     <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
-      { socials.map((social, i) => (
+      {socials.map((social, i) => (
         <SocialTile key={`social-tile-${i}`} social={social} />
-      )) }
+      ))}
     </div>
   </section>
 )
 
 export default HomeSocials
-

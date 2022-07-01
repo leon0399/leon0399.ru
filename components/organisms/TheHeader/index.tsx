@@ -1,11 +1,11 @@
-import Link from "next/link"
-import React from "react"
-import tw, { styled } from "twin.macro"
-import Tag from "../../atoms/Tag"
+import Link from 'next/link'
+import React from 'react'
+import tw, { styled } from 'twin.macro'
+import Tag from '../../atoms/Tag'
 
 const Header = styled.header([
   tw`sticky top-0 z-30 filter backdrop-filter backdrop-blur-lg`,
-  tw`bg-white saturate-150 bg-opacity-80 dark:bg-gray-900 dark:bg-opacity-80 dark:saturate-100`
+  tw`bg-white saturate-150 bg-opacity-80 dark:bg-gray-900 dark:bg-opacity-80 dark:saturate-100`,
 ])
 
 const TheHeader: React.FC = () => (
@@ -15,7 +15,9 @@ const TheHeader: React.FC = () => (
         <a className="text-2xl">
           <div className="inline-flex items-center">
             Leonid Meleshin
-            <Tag className="mt-1 ml-3 font-mono font-medium bg-gray-200">beta</Tag>
+            <Tag className="mt-1 ml-3 font-mono font-medium bg-gray-200">
+              beta
+            </Tag>
           </div>
         </a>
       </Link>

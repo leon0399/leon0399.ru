@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { Post } from "../../../../types/hashnode";
-import PostItem from "../../../molecules/blog/PostItem";
-import SectionHeader from "../../../molecules/SectionHeader";
+import { FC } from 'react'
+import { Post } from '../../../../types/hashnode'
+import PostItem from '../../../molecules/blog/PostItem'
+import SectionHeader from '../../../molecules/SectionHeader'
 
 interface Props {
   id?: string
@@ -15,7 +15,7 @@ const HomeBlog: FC<Props> = ({ id, className, posts }) => {
       <SectionHeader title="Blog" href="https://blog.leon0399.ru" />
 
       <div>
-        { posts.map((post, i) => {
+        {posts.map((post, i) => {
           return (
             <PostItem
               id={`home-post-${post._id}`}

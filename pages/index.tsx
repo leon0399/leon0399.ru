@@ -34,12 +34,18 @@ interface Props {
   timeline: TimelineItem[]
 }
 
-const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials, posts }) => {
+const Home: NextPage<Props> = ({
+  primarySocials,
+  projects,
+  timeline,
+  socials,
+  posts,
+}) => {
   const pinProjects = projects.filter((p) => p.pin)
   const otherProjects = projects
     .filter((p) => !p.pin)
     .sort(() => 0.5 - Math.random())
-    .slice(0, (3 - pinProjects.length))
+    .slice(0, 3 - pinProjects.length)
 
   return (
     <>
@@ -47,11 +53,27 @@ const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials, po
         <title>Leonid Meleshin</title>
       </Head>
 
-      <HomeIntro id="intro" className="mx-auto mb-19 max-w-2xl" socials={primarySocials} />
-      <HomeProjects id="projects" className="my-19 mx-auto max-w-2xl" projects={[ ...pinProjects, ...otherProjects ]} />
+      <HomeIntro
+        id="intro"
+        className="mx-auto mb-19 max-w-2xl"
+        socials={primarySocials}
+      />
+      <HomeProjects
+        id="projects"
+        className="my-19 mx-auto max-w-2xl"
+        projects={[...pinProjects, ...otherProjects]}
+      />
       <HomeBlog id="blog" className="my-19 mx-auto max-w-2xl" posts={posts} />
-      <HomeTimeline id="timeline" className="my-19 mx-auto max-w-2xl" timeline={timeline} />
-      <HomeSocials id="socials" className="my-19 mx-auto max-w-2xl" socials={socials} />
+      <HomeTimeline
+        id="timeline"
+        className="my-19 mx-auto max-w-2xl"
+        timeline={timeline}
+      />
+      <HomeSocials
+        id="socials"
+        className="my-19 mx-auto max-w-2xl"
+        socials={socials}
+      />
       {/* <HomeLife id="life" className="my-19 mx-auto max-w-2xl" items={[
         {
           icon: 'heroicons-outline:check',
@@ -81,15 +103,19 @@ const Home: NextPage<Props> = ({ primarySocials, projects, timeline, socials, po
 export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const projects = allProjects
-    .filter((p) => p.display === undefined || p.display === true)
+  const projects = allProjects.filter(
+    (p) => p.display === undefined || p.display === true,
+  )
 
-  const posts = await getUserPosts("leon0399")
+  const posts = await getUserPosts('leon0399')
 
   const timeline = allTimeline
-    .filter(t => t.homepage)
+    .filter((t) => t.homepage)
     .map(async (t: ITimelineItem): Promise<TimelineItem> => {
-      const _t: TimelineItem = Object.assign<ITimelineItem, Partial<TimelineItem>>(t, {})
+      const _t: TimelineItem = Object.assign<
+        ITimelineItem,
+        Partial<TimelineItem>
+      >(t, {})
 
       t.description && (_t.description = await serialize(t.description))
       _t.title = await serialize(t.title)
@@ -104,6 +130,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       posts,
       timeline: await Promise.all(timeline),
       socials: homeSocials,
-    }
+    },
   }
 }
