@@ -54,7 +54,7 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
         className="absolute inset-0 w-full h-full focus:outline-none"
         href={`https://blog.leon0399.ru/${post.slug}`}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
       >
 
       </a>

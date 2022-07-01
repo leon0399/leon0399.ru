@@ -6,19 +6,23 @@ import { Icon } from "@iconify/react"
 import Button from "../../../atoms/Button"
 
 import type { DetailedHTMLProps, FC, HTMLAttributes } from "react"
-import type { Invite } from "../../../../utils/f0/F0"
+import type { Invite } from "@f0ts/core"
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   invite: Invite
   onClose: () => void
+  onMint: (key: string, count: number) => Promise<void>
 }
 
-const MintInvite: FC<Props> = ({ invite, onClose, className, ...props }) => {
-  const [ mintNumber, setMintNumber ] = useState(1)
+const MintInvite: FC<Props> = ({ invite, onClose, onMint, className, ...props }) => {
+  const [ mintNumber, setMintNumber ] = useState(invite.condition.limit)
   const mintPrice = useMemo(
     () => invite.condition.price.mul(mintNumber),
     [ invite, mintNumber ]
   )
+
+  const [ error, setError ] = useState<Error>()
+  const [ isMinting, setIsMinting ] = useState(false)
 
   return (
     <div
@@ -58,10 +62,31 @@ const MintInvite: FC<Props> = ({ invite, onClose, className, ...props }) => {
               focus:outline-none focus:ring ring-offset-2
             "
           />
-          <Button className="px-8 rounded-l-none">
-            Mint!
+          <Button
+            className="px-8 rounded-l-none"
+            onClick={() => {
+              setError(undefined)
+              setIsMinting(true)
+
+              onMint(invite.key, mintNumber)
+                .catch((e) => {
+                  setError(e)
+                })
+                .finally(() => {
+                  setIsMinting(false)
+                })
+            }}
+          >
+            {
+              isMinting
+                ? <Icon icon={'heroicons-outline:refresh'} className="animate-spin w-4 h-4" />
+                : 'Mint!'
+            }
           </Button>
         </div>
+        { error && (
+          <div className="my-2 text-red-800">Error: { error.message }</div>
+        ) }
       </div>
     </div>
   )
