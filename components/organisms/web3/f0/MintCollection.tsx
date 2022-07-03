@@ -16,9 +16,10 @@ import NFT from '../../../molecules/web3/NFT'
 
 interface Props {
   contractAddress: string
+  className?: string
 }
 
-const MintCollection: FC<Props> = ({ contractAddress }) => {
+const MintCollection: FC<Props> = ({ contractAddress, className }) => {
   const { data: signer } = useSigner()
   const { data: account } = useAccount()
 
@@ -110,7 +111,7 @@ const MintCollection: FC<Props> = ({ contractAddress }) => {
 
   if (f0data) {
     return (
-      <>
+      <div className={className}>
         <div className="my-4 text-center">
           <h3 className="mb-2 text-2xl font-medium">
             {f0data.name}&nbsp;
@@ -170,7 +171,7 @@ const MintCollection: FC<Props> = ({ contractAddress }) => {
             onMint={mint}
           />
         )}
-      </>
+      </div>
     )
   }
 

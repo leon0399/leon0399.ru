@@ -1,6 +1,9 @@
-import { Post, User } from "../types/hashnode";
+import { Post, User } from '../types/hashnode'
 
-const gql = async <T>(query: string, variables: Record<string, unknown>): Promise<T> => {
+const gql = async <T>(
+  query: string,
+  variables: Record<string, unknown>,
+): Promise<T> => {
   const data = await fetch('https://api.hashnode.com/', {
     method: 'POST',
     headers: {
@@ -8,14 +11,14 @@ const gql = async <T>(query: string, variables: Record<string, unknown>): Promis
     },
     body: JSON.stringify({
       query,
-      variables
-    })
-  });
+      variables,
+    }),
+  })
 
-  return (await data.json()).data as T;
+  return (await data.json()).data as T
 }
 
-const PUBLOCATIOINS_QUERY = `
+const PUBLOCATIONS_QUERY = `
   query Publications($username: String!, $page: Int){
     user(username: $username) {
       publicationDomain
@@ -43,10 +46,50 @@ const PUBLOCATIOINS_QUERY = `
   }
 `
 
-export const getUserPosts = async (username: string, page?: number): Promise<Post[]> => {
-  const data = await gql<{ user: User }>(PUBLOCATIOINS_QUERY, {
-    username, page
+const PUBLOCATION_QUERY = `
+  query Publication($hostname: String!, $slug: String!) {
+    post(hostname: $hostname, slug: $slug) {
+      _id
+      cuid
+      slug
+
+      type
+      title
+      contentMarkdown
+      brief
+      coverImage
+
+      tags {
+        name
+        slug
+      }
+
+      dateAdded
+      isActive
+    }
+  }
+`
+
+export const getUserPosts = async (
+  username: string,
+  page?: number,
+): Promise<Post[]> => {
+  const data = await gql<{ user: User }>(PUBLOCATIONS_QUERY, {
+    username,
+    page,
   })
 
   return data.user.publication.posts
+}
+
+export const getPost = async (
+  hostname: string,
+  slug: string,
+): Promise<Post> => {
+  const data = await gql<{ post: Post }>(PUBLOCATION_QUERY, {
+    hostname,
+    slug,
+  })
+
+  return data.post
 }
