@@ -1,12 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Leonid Meleshin
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
@@ -14,7 +12,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## ToDo
 
-- [ ] Post from hashnode
-- [ ] Timeline page
+- [x] Post from hashnode
+- [x] Timeline page
   - [ ] Filters by milestone type
+- [ ] Projects
+  - [ ] Mini DeGens
+  - [ ] Benchmarks
 - [ ] QR Code page
