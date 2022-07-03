@@ -55,7 +55,7 @@ const MiniDegens: FC<Props> = ({ contractAddress, article }) => {
   const { data: account } = useAccount()
 
   return (
-    <article className="mx-auto max-w-2xl prose">
+    <article className="mx-auto max-w-2xl prose dark:prose-invert">
       <ProjectHeader
         title="Mini DeGens"
         category="Web3"
