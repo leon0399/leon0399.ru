@@ -14,7 +14,7 @@ const HomeBlog: FC<Props> = ({ id, className, posts }) => {
     <section id={id} className={`w-full ${className}`}>
       <SectionHeader title="Blog" href="https://blog.leon0399.ru" />
 
-      <div>
+      <div className="space-y-5">
         {posts.map((post, i) => {
           return (
             <PostItem

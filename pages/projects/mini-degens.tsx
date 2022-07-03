@@ -125,7 +125,10 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       contractAddress: '0x24F6328cdDDdad9475c9a3DC2675b5ef851A7C5E',
-      article: await getPost('leon0399', 'silentless-x-devs-riddle'),
+      article: await getPost(
+        'leon0399',
+        'launching-nft-collection-with-factoria',
+      ),
     },
   }
 }

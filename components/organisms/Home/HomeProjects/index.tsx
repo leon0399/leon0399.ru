@@ -14,13 +14,9 @@ const HomeProjects: React.FC<Props> = ({ id, className, projects }) => (
   <section id={id} className={`w-full ${className}`}>
     <SectionHeader title="Projects" href="/projects" />
 
-    <div>
+    <div className="space-y-5">
       {projects.map((project, i) => (
-        <ProjectCard
-          key={`home-project-${i}`}
-          className="mb-5"
-          project={project}
-        />
+        <ProjectCard key={`home-project-${i}`} project={project} />
       ))}
     </div>
   </section>
