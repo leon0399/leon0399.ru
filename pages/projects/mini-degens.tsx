@@ -59,6 +59,7 @@ const MiniDegens: FC<Props> = ({ contractAddress, article }) => {
       <ProjectHeader
         title="Mini DeGens"
         category="Web3"
+        logo="/images/projects/minidegens/logo.gif"
         tags={['TypeScript', 'React.js']}
         url="https://twitter.com/mini_degens"
       />
