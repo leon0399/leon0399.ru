@@ -1,7 +1,7 @@
 const withPlugins = require('next-compose-plugins')
 
 // const withMDX = require('@next/mdx')
-const withMdxBuilder = require("next-mdx-builder")
+const withMdxBuilder = require('next-mdx-builder')
 
 /** @type {import('next').NextConfig} */
 const config = {
@@ -9,26 +9,33 @@ const config = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   webpack(config) {
     config.plugins.push(
-      require("unplugin-icons/webpack")({
-        compiler: "jsx",
-        jsx: "react",
+      require('unplugin-icons/webpack')({
+        compiler: 'jsx',
+        jsx: 'react',
       }),
-    );
+    )
 
-    return config;
+    return config
+  },
+  redirects() {
+    return [
+      {
+        source: '/qr',
+        destination: '/qr/right',
+        permanent: true,
+      },
+    ]
   },
   images: {
-    domains: [
-      'cdn.hashnode.com',
-    ],
+    domains: ['cdn.hashnode.com'],
   },
 }
 
-module.exports =  withPlugins(
+module.exports = withPlugins(
   [
     withMdxBuilder({
       //
-    })
+    }),
   ],
   config,
 )
