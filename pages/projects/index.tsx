@@ -17,7 +17,7 @@ interface Props {
 
 const Socials: NextPage<Props> = ({ projects }) => {
   return (
-    <>
+    <div className="container">
       <Head>
         <title>Projects - Leonid Meleshin</title>
       </Head>
@@ -37,7 +37,7 @@ const Socials: NextPage<Props> = ({ projects }) => {
       </article>
 
       <TheContactBanner />
-    </>
+    </div>
   )
 }
 

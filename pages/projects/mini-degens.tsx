@@ -109,14 +109,14 @@ const MiniDegens: FC<Props> = ({ contractAddress, article }) => {
 }
 
 const MiniDegensPage: NextPage<Props> = (props) => (
-  <>
+  <div className="container">
     <Head>
       <title>Mini Degens NFT</title>
     </Head>
     <WagmiConfig client={web3Client}>
       <MiniDegens {...props} />
     </WagmiConfig>
-  </>
+  </div>
 )
 
 export default MiniDegensPage

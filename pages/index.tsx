@@ -48,7 +48,7 @@ const Home: NextPage<Props> = ({
     .slice(0, 3 - pinProjects.length)
 
   return (
-    <>
+    <div className="container">
       <Head>
         <title>Leonid Meleshin</title>
       </Head>
@@ -96,7 +96,7 @@ const Home: NextPage<Props> = ({
       ]} /> */}
 
       <TheContactBanner className="my-19" />
-    </>
+    </div>
   )
 }
 

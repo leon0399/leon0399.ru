@@ -10,9 +10,7 @@ const Layout: FunctionComponent = ({ children }) => {
   return (
     <div className="">
       <TheHeader />
-      <main className='container pt-8 mx-auto'>
-        {children}
-      </main>
+      <main className="pt-8 mx-auto">{children}</main>
       <TheFooter socials={primarySocials} />
     </div>
   )
