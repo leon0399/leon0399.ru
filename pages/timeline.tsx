@@ -21,7 +21,7 @@ interface Props {
 
 const Socials: NextPage<Props> = ({ timeline }) => {
   return (
-    <div className="container">
+    <div className="container mx-auto">
       <Head>
         <title>Timeline - Leonid Meleshin</title>
       </Head>

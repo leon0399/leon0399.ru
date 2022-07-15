@@ -17,7 +17,7 @@ interface Props {
 
 const Socials: NextPage<Props> = ({ projects }) => {
   return (
-    <div className="container">
+    <div className="container mx-auto">
       <Head>
         <title>Projects - Leonid Meleshin</title>
       </Head>

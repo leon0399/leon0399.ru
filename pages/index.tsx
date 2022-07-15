@@ -48,7 +48,7 @@ const Home: NextPage<Props> = ({
     .slice(0, 3 - pinProjects.length)
 
   return (
-    <div className="container">
+    <div className="container mx-auto">
       <Head>
         <title>Leonid Meleshin</title>
       </Head>

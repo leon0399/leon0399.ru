@@ -109,7 +109,7 @@ const MiniDegens: FC<Props> = ({ contractAddress, article }) => {
 }
 
 const MiniDegensPage: NextPage<Props> = (props) => (
-  <div className="container">
+  <div className="container mx-auto">
     <Head>
       <title>Mini Degens NFT</title>
     </Head>
