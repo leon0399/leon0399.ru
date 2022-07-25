@@ -21,26 +21,19 @@ import type { TimelineItem } from '../components/molecules/timeline/TimelineItem
 import type { Post } from '../types/hashnode'
 
 // Content
-import { primarySocials, homeSocials } from '../content/socials'
+import { homeSocials } from '../content/socials'
 import allProjects from '../content/projects'
 import { timeline as allTimeline } from '../content/timeline'
 import { getUserPosts } from '../utils/hashnode'
 
 interface Props {
-  primarySocials: SocialAccount[]
   projects: Project[]
   posts: Post[]
   socials: SocialAccount[]
   timeline: TimelineItem[]
 }
 
-const Home: NextPage<Props> = ({
-  primarySocials,
-  projects,
-  timeline,
-  socials,
-  posts,
-}) => {
+const Home: NextPage<Props> = ({ projects, timeline, socials, posts }) => {
   const pinProjects = projects.filter((p) => p.pin)
   const otherProjects = projects
     .filter((p) => !p.pin)
@@ -53,11 +46,7 @@ const Home: NextPage<Props> = ({
         <title>Leonid Meleshin</title>
       </Head>
 
-      <HomeIntro
-        id="intro"
-        className="mx-auto mb-19 max-w-2xl"
-        socials={primarySocials}
-      />
+      <HomeIntro id="intro" className="mx-auto mb-19 max-w-2xl" />
       <HomeProjects
         id="projects"
         className="my-19 mx-auto max-w-2xl"
@@ -125,7 +114,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      primarySocials,
       projects,
       posts,
       timeline: await Promise.all(timeline),
