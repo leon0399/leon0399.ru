@@ -11,6 +11,7 @@ import type { SocialAccount } from '../../types/social-account'
 
 // Content
 import { primarySocials, homeSocials } from '../../content/socials'
+import { PrimarySocials } from '../../components/organisms/socials/PrimarySocials'
 
 const Section = styled.section(tw`w-full`)
 type SectionProps = ComponentProps<typeof Section> & {
@@ -32,6 +33,7 @@ const Intro: FC<SectionProps> = (props) => (
     <p className="my-4 leading-[1.75] text-gray-800 dark:text-gray-200">
       I hope nothing bad happend, but anyway, there is some useful info below.
     </p>
+    <PrimarySocials className="my-6" />
   </Section>
 )
 

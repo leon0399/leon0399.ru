@@ -1,9 +1,11 @@
-import Link from 'next/link'
-import React, { useMemo } from 'react'
-import { Icon } from '@iconify/react'
-
+import { useMemo } from 'react'
 import tw, { styled } from 'twin.macro'
 
+import Link from 'next/link'
+import { Icon } from '@iconify/react'
+import { PrimarySocials } from '../socials/PrimarySocials'
+
+import type { FC } from 'react'
 import type { SocialAccount } from '../../../types/social-account'
 
 const commitSha =
@@ -20,11 +22,7 @@ interface FooterMenuItemProps {
   title: string
 }
 
-const FooterMenuItem: React.FC<FooterMenuItemProps> = ({
-  href,
-  title,
-  ...props
-}) => {
+const FooterMenuItem: FC<FooterMenuItemProps> = ({ href, title, ...props }) => {
   const outer: boolean = useMemo(() => href.startsWith('http'), [href])
 
   return (
@@ -60,30 +58,7 @@ const TheFooter: React.FC<Props> = ({ socials }) => (
     </nav>
 
     <nav>
-      <ul className="flex flex-row space-x-4">
-        {socials.map((social, i) => (
-          <li key={`home-social-${i}`}>
-            <a
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                block
-                p-1
-                text-gray-500 hover:text-gray-700
-                dark:text-gray-400 hover:dark:text-gray-200
-                focus:outline-none focus:ring
-                transition-colors
-                duration-300
-                rounded ring-offset-2
-              "
-              aria-label={social.label}
-            >
-              <Icon icon={social.icon} className="block w-6 h-6" />
-            </a>
-          </li>
-        ))}
-      </ul>
+      <PrimarySocials />
     </nav>
 
     <p className="text-xs text-gray-800 dark:text-gray-400">

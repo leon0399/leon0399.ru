@@ -1,4 +1,4 @@
-import { TimelineItem } from "../types/timeline";
+import { TimelineItem } from '../types/timeline'
 
 export const timeline: TimelineItem[] = [
   {
@@ -25,7 +25,7 @@ export const timeline: TimelineItem[] = [
 * Organized an internal library of dependencies and packgages (Composer & NPM)`,
     duration: {
       start: 'October 2020',
-      end: 'Present',
+      end: 'July 2022',
     },
     icon: 'heroicons-outline:briefcase',
     color: 'gray',
@@ -52,7 +52,8 @@ export const timeline: TimelineItem[] = [
   },
   {
     title: 'Web Developer at [#VA](https://va-promotion.ru/)',
-    description: 'Turnkey websites Development on Wordpress and Laravel. Theme development, layout and integration.',
+    description:
+      'Turnkey websites Development on Wordpress and Laravel. Theme development, layout and integration.',
     duration: {
       start: 'October 2017',
       end: 'August 2018',
@@ -70,7 +71,8 @@ export const timeline: TimelineItem[] = [
     color: 'gray',
   },
   {
-    title: 'Informational Security at [Moscow Technological University](https://english.mirea.ru/)',
+    title:
+      'Informational Security at [Moscow Technological University](https://english.mirea.ru/)',
     duration: {
       start: '2016',
       end: '2020',
