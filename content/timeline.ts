@@ -1,16 +1,16 @@
 import { TimelineItem } from '../types/timeline'
 
 export const timeline: TimelineItem[] = [
-  {
-    title: 'Living in Istanbul, Turkey',
-    duration: {
-      start: 'May 2022',
-      end: 'Present',
-    },
-    icon: 'heroicons-outline:globe',
-    color: 'green',
-    homepage: true,
-  },
+  // {
+  //   title: 'Living in Istanbul, Turkey',
+  //   duration: {
+  //     start: 'May 2022',
+  //     end: 'Present',
+  //   },
+  //   icon: 'heroicons-outline:globe',
+  //   color: 'green',
+  //   homepage: true,
+  // },
   {
     title: 'Developer at [Innoscripta GmbH](https://www.innoscripta.com/)',
     tags: ['Laravel', 'React.js'],

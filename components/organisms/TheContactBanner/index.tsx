@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react'
 import React from 'react'
 
 import tw, { styled } from 'twin.macro'
@@ -20,7 +21,7 @@ const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
     </p>
     <div className="mt-6 space-y-4 md:space-y-0 md:space-x-4">
       <a
-        href="mailto:hello@leon0399.ru"
+        href="/resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="
@@ -33,7 +34,11 @@ const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
           bg-gray-100 text-gray-900
         "
       >
-        Hit me an email
+        Download Résumé
+        <Icon
+          icon={'heroicons-outline:arrow-down-tray'}
+          className="ml-2 w-6 h-6"
+        />
       </a>
       <a
         href="https://t.me/leon0399"
@@ -49,6 +54,21 @@ const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
         "
       >
         Telegram me
+      </a>
+      <a
+        href="mailto:hello@leon0399.ru"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="
+          text-gray-100 dark:text-gray-900
+          bg-transparent hover:bg-indigo-500 dark:hover:bg-indigo-200
+          ring-offset-2 focus:outline-none focus:ring
+          flex md:inline-flex justify-center items-center
+          px-6 h-12
+          rounded-lg font-semibold text-sm text-center
+        "
+      >
+        Hit me an email
       </a>
     </div>
   </ContactBannerContainer>

@@ -1,18 +1,20 @@
 import { FunctionComponent } from 'react'
 
-import TheFooter from '../components/organisms/TheFooter'
+import TheAnnouncementBar from '../components/organisms/TheAnnouncementBar'
 import TheHeader from '../components/organisms/TheHeader'
+import TheFooter from '../components/organisms/TheFooter'
 
 // Content
 import { primarySocials } from '../content/socials'
 
 const Layout: FunctionComponent = ({ children }) => {
   return (
-    <div className="">
+    <>
+      <TheAnnouncementBar />
       <TheHeader />
       <main className="pt-8 mx-auto">{children}</main>
       <TheFooter socials={primarySocials} />
-    </div>
+    </>
   )
 }
 

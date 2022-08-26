@@ -37,7 +37,7 @@ const HomeIntro: FC<Props> = ({ className, ...props }) => (
       >
         hacker
       </a>
-      , currently located in <strong>Istanbul,&nbsp;Turkey</strong>,{' '}
+      , currently located in <strong>Moscow,&nbsp;Russia</strong>,{' '}
       <a
         href="https://www.timeanddate.com/worldclock/converter.html?p1=224&amp;p2=179&amp;p3=168&amp;p4=166&amp;p5=107"
         target="_blank"
