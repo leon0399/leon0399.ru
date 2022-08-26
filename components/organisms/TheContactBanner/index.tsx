@@ -15,9 +15,9 @@ const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
       Contact me
     </h2>
     <p className="my-2 text-gray-200 dark:text-gray-800 md:text-lg">
-      I’m not currently looking for any new opportunities, however my inbox is
-      always open. Whether you have a question or just want to say hi, I’ll try
-      my best to get back to you!
+      I’m always looking forward for new opportunities, and my inbox is always
+      open. Whether you have a question or just want to say hi, I’ll try my best
+      to get back to you!
     </p>
     <div className="mt-6 space-y-4 md:space-y-0 md:space-x-4">
       <a
@@ -37,7 +37,7 @@ const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
         Download Résumé
         <Icon
           icon={'heroicons-outline:arrow-down-tray'}
-          className="ml-2 w-6 h-6"
+          className="ml-4 w-6 h-6"
         />
       </a>
       <a
