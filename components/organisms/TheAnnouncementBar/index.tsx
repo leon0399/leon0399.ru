@@ -9,7 +9,7 @@ const TheAnnouncementBar: FC = () => (
     className="text-gray-100 dark:text-gray-900 bg-indigo-600 dark:bg-indigo-300"
   >
     <span className="flex gap-2 items-center px-3">
-      I’m looking for new opportunities{' '}
+      Hey, I’m looking for new opportunities!{' '}
     </span>
     <span className="hidden items-center px-3 space-x-2 lg:flex">
       <span>Download Résumé</span>

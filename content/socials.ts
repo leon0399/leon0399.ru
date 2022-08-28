@@ -87,12 +87,6 @@ const allSocials = [
     username: '0xd0428c1385...',
   },
   {
-    icon: 'fa:h',
-    url: 'https://hh.ru/resume/7e8d384bff084694aa0039ed1f486f50304f71',
-    label: 'HeadHunter',
-    username: 'Leonid Meleshin',
-  },
-  {
     icon: 'fa-brands:facebook',
     url: 'https://www.facebook.com/meleshin.l',
     label: 'Facebook',
@@ -103,6 +97,30 @@ const allSocials = [
     url: 'https://discordapp.com/users/249980731676164096/',
     label: 'Discord',
     username: 'leon0399#0399',
+  },
+  {
+    icon: 'fa-brands:behance',
+    url: 'https://www.behance.net/leon0399',
+    label: 'Behance',
+    username: 'leon0399',
+  },
+  {
+    icon: 'fa-brands:dribbble',
+    url: 'https://dribbble.com/leon0399',
+    label: 'Dribbble',
+    username: 'leon0399',
+  },
+  {
+    icon: 'fa:h',
+    url: 'https://hh.ru/resume/7e8d384bff084694aa0039ed1f486f50304f71',
+    label: 'HeadHunter',
+    username: 'Leonid Meleshin',
+  },
+  {
+    icon: 'fa:h',
+    url: 'https://career.habr.com/leon0399',
+    label: 'Habr Carreer',
+    username: 'Leonid Meleshin',
   },
 ]
 
