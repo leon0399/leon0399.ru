@@ -103,7 +103,25 @@ const MiniDegens: FC<Props> = ({ contractAddress, article }) => {
 
       <h3>Read full article</h3>
 
-      <PostItem className="not-prose" post={article} />
+      <PostItem className="my-3 not-prose" post={article} />
+
+      <a
+        className="inline-block my-4 not-prose"
+        href="https://opensea.io/collection/mini-degens"
+        title="Buy on OpenSea"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img
+          style={{
+            width: '220px',
+            borderRadius: '5px',
+            boxShadow: '0px 1px 6px rgba(0, 0, 0, 0.25)',
+          }}
+          src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png"
+          alt="Available on OpenSea"
+        />
+      </a>
     </article>
   )
 }
