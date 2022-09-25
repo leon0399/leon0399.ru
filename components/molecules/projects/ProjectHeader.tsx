@@ -24,10 +24,10 @@ const ProjectHeader: FC<Props> = ({
   return (
     <header
       className="
-        flex flex-col md:flex-row
-        items-start
-        space-y-4 md:space-y-0 md:space-x-4
-        mt-8 mb-12
+        mt-8 mb-12 flex
+        flex-col
+        items-start space-y-4 md:flex-row
+        md:space-y-0 md:space-x-4
       "
     >
       {logo ? (
@@ -35,11 +35,11 @@ const ProjectHeader: FC<Props> = ({
           src={logo}
           width={84}
           height={84}
-          className="w-[84px] h-[84px] rounded"
+          className="h-[84px] w-[84px] rounded"
           alt="Project logo"
         />
       ) : (
-        <div className="w-[84px] h-[84px] bg-gray-200 rounded" />
+        <div className="h-[84px] w-[84px] rounded bg-gray-200" />
       )}
       <div>
         <h1 className="mb-4 text-4xl font-bold md:text-5xl">{title}</h1>
@@ -62,7 +62,7 @@ const ProjectHeader: FC<Props> = ({
 
             <span
               className="
-                before:content-['·'] before:pr-4 before:no-underline
+                before:pr-4 before:no-underline before:content-['·']
               "
             >
               {category}

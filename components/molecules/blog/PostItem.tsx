@@ -52,11 +52,12 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
         </figure>
       )}
       <a
-        className="absolute inset-0 w-full h-full focus:outline-none"
+        className="absolute inset-0 h-full w-full focus:outline-none"
         href={`https://blog.leon0399.ru/${post.slug}`}
         target="_blank"
         rel="noopener noreferrer"
-      ></a>
+        aria-label={post.title}
+      />
     </PostContainer>
   )
 }

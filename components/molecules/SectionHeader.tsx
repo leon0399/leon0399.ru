@@ -13,16 +13,17 @@ interface Props {
 
 const SectionHeader: FC<Props> = ({ title, children, className, href }) => (
   <div
-    className={`flex flex-row justify-between items-end my-4 text-gray-900 dark:text-gray-100 ${className}`}
+    className={`my-4 flex flex-row items-end justify-between text-gray-900 dark:text-gray-100 ${className}`}
   >
     {children ? children : <h2 className="text-xl font-semibold">{title}</h2>}
     {href && (
       <Link href={href}>
         <a
           target={href.startsWith('http') ? '_blank' : '_self'}
-          className="w-6 h-6 text-gray-500 hover:text-gray-600 rounded focus:outline-none focus:ring ring-offset-2"
+          className="h-6 w-6 rounded text-gray-500 ring-offset-2 hover:text-gray-600 focus:outline-none focus:ring"
+          aria-label={title}
         >
-          <Icon icon="heroicons-solid:arrow-right" className="w-6 h-6" />
+          <Icon icon="heroicons-solid:arrow-right" className="h-6 w-6" />
         </a>
       </Link>
     )}

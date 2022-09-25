@@ -26,11 +26,11 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
           src={project.logo}
           width={64}
           height={64}
-          className="w-16 h-16 rounded"
+          className="h-16 w-16 rounded"
           alt={project.title}
         />
       ) : (
-        <div className="w-16 h-16 bg-gray-200 rounded" />
+        <div className="h-16 w-16 rounded bg-gray-200" />
       )}
     </div>
     <div className="grow">
@@ -39,7 +39,7 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
         {project.description}
       </p>
       {Array.isArray(project.tags) && project.tags.length && (
-        <div className="flex flex-row my-2 space-x-3">
+        <div className="my-2 flex flex-row space-x-3">
           {project.tags.map((tag, i) => (
             <Tag key={i}>{tag}</Tag>
           ))}
@@ -63,7 +63,7 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
 
         <span
           className="
-            before:content-['·'] before:pr-4 before:no-underline
+            before:pr-4 before:no-underline before:content-['·']
           "
         >
           {project.category}
@@ -72,7 +72,7 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
     </div>
     {project.isExternalUrl && (
       <div className="text-gray-500">
-        <Icon icon={'heroicons-outline:external-link'} className="w-6 h-6" />
+        <Icon icon={'heroicons-outline:external-link'} className="h-6 w-6" />
       </div>
     )}
     {project.pin && (
@@ -80,7 +80,7 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
         <svg
           aria-hidden="true"
           role="img"
-          className="w-6 h-6 fill-white"
+          className="h-6 w-6 fill-white"
           width="1em"
           height="1em"
           preserveAspectRatio="xMidYMid meet"
@@ -101,11 +101,14 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
         href={project.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute inset-0 w-full h-full focus:outline-none"
+        className="absolute inset-0 h-full w-full focus:outline-none"
       />
     ) : (
       <Link href={`/projects/${project.slug}`}>
-        <a className="absolute inset-0 w-full h-full focus:outline-none" />
+        <a
+          className="absolute inset-0 h-full w-full focus:outline-none"
+          aria-label={project.title}
+        />
       </Link>
     )}
   </ProjectContainer>
