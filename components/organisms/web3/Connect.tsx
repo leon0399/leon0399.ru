@@ -1,3 +1,8 @@
+import { InjectedConnector } from 'wagmi/connectors/injected'
+// import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
+import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
+import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
+
 // Hooks
 import { useAccount, useConnect } from 'wagmi'
 import useIsMounted from '../../../utils/useIsMounted'
@@ -13,12 +18,11 @@ type Props = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
 const Connect: FC<Props> = ({ ...props }) => {
   const isMounted = useIsMounted()
-  const { connect, connectors, error, isConnecting, pendingConnector } =
-    useConnect()
+  const { connect, connectors, error, pendingConnector } = useConnect({})
 
-  const { data: account } = useAccount()
+  const { address, isConnecting } = useAccount()
 
-  if (account) {
+  if (address) {
     return <Profile {...props} />
   }
 
@@ -37,7 +41,7 @@ const Connect: FC<Props> = ({ ...props }) => {
             className="
               mb-4 block h-14 w-full px-16
             "
-            onClick={() => connect(connector)}
+            onClick={() => connect({ connector })}
           >
             {connector.name}
             {isMounted && !connector.ready && ' (unsupported)'}

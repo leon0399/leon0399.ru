@@ -22,14 +22,16 @@
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@heroicons/react": "^1.0.6",
+    "@next/bundle-analyzer": "^12.3.1",
     "@next/mdx": "^12.0.7",
     "@tailwindcss/typography": "^0.5.2",
+    "@tanstack/react-query": "^4.6.0",
     "babel-plugin-import-glob-array": "^0.2.0",
     "ethers": "^5.6.9",
     "f0ts": "^0.0.1",
     "lodash": "^4.17.21",
     "merkletreejs": "^0.2.32",
-    "next": "12.0.7",
+    "next": "^12.0.7",
     "next-compose-plugins": "^2.2.1",
     "next-mdx-builder": "^0.4.4",
     "p-throttle": "^5.0.0",
@@ -41,7 +43,7 @@
     "react-typist": "^2.0.5",
     "tailwindcss": "^3.0.8",
     "twin.macro": "^2.8.2",
-    "wagmi": "^0.4.12"
+    "wagmi": "^0.6.7"
   },
   "devDependencies": {
     "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",

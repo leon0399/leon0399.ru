@@ -1,11 +1,17 @@
-const withPlugins = require('next-compose-plugins')
-
-// const withMDX = require('@next/mdx')
 const withMdxBuilder = require('next-mdx-builder')
+const withBundleAnalyzer = require('@next/bundle-analyzer')
+
+const plugins = [
+  withMdxBuilder({}),
+  withBundleAnalyzer({
+    enabled: process.env.ANALYZE === 'true',
+  }),
+]
 
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
+  productionBrowserSourceMaps: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   webpack(config) {
     config.plugins.push(
@@ -31,11 +37,4 @@ const config = {
   },
 }
 
-module.exports = withPlugins(
-  [
-    withMdxBuilder({
-      //
-    }),
-  ],
-  config,
-)
+module.exports = () => plugins.reduce((acc, next) => next(acc), config)

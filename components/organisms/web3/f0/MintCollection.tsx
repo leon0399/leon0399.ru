@@ -21,12 +21,12 @@ interface Props {
 
 const MintCollection: FC<Props> = ({ contractAddress, className }) => {
   const { data: signer } = useSigner()
-  const { data: account } = useAccount()
+  const { address } = useAccount()
 
   const f0factory = useMemo(
     () => (signer ? new F0Factory(signer, 'mainnet') : undefined),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [account, signer],
+    [address, signer],
   )
 
   const [f0, setF0] = useState<F0>()
@@ -36,7 +36,7 @@ const MintCollection: FC<Props> = ({ contractAddress, className }) => {
       f0factory && setF0(await f0factory.connect(contractAddress))
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [account, signer, contractAddress],
+    [address, signer, contractAddress],
   )
 
   useEffect(
@@ -50,12 +50,12 @@ const MintCollection: FC<Props> = ({ contractAddress, className }) => {
   const f0data = useMemo(
     () => f0?.getData(),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [account, f0, contractAddress],
+    [address, f0, contractAddress],
   )
 
   const myInvitesFilter = useCallback(
     (i) => {
-      if (!account?.address) {
+      if (!address) {
         return false
       }
 
@@ -70,19 +70,19 @@ const MintCollection: FC<Props> = ({ contractAddress, className }) => {
         return true
       }
 
-      if (account?.address && i.list.addresses.includes(account.address)) {
+      if (address && i.list.addresses.includes(address)) {
         return true
       }
 
       return false
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [account, contractAddress],
+    [address, contractAddress],
   )
   const myInvites = useMemo(
     () => f0?.getData()!.invites?.filter(myInvitesFilter) || [],
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [f0, myInvitesFilter, account, contractAddress],
+    [f0, myInvitesFilter, address, contractAddress],
   )
 
   const [selectedInvite, selectInvite] = useState<Invite>()
@@ -106,7 +106,7 @@ const MintCollection: FC<Props> = ({ contractAddress, className }) => {
       setMintedTokens(tokens)
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [f0, account],
+    [f0, address],
   )
 
   if (f0data) {
