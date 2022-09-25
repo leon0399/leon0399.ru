@@ -30,14 +30,14 @@ const Profile: FC<Props> = ({ className, ...props }) => {
 
   return (
     <div className={`flex flex-row items-center ${className}`} {...props}>
-      <div className="mr-4 bg-gray-100 rounded-full">
+      <div className="mr-4 rounded-full bg-gray-100">
         {ensAvatar ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={ensAvatar} alt={displayName} />
         ) : (
           <Icon
             icon={'heroicons-outline:user'}
-            className="m-2 w-8 h-8 text-gray-600"
+            className="m-2 h-8 w-8 text-gray-600"
           />
         )}
       </div>
