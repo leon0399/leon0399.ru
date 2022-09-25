@@ -41,18 +41,18 @@ const EmergencySection = styled.section(tw`w-full py-6 bg-[#B22432]`)
 type EmergencySectionProps = ComponentProps<typeof EmergencySection>
 const EmergencyInfo: FC<EmergencySectionProps> = (props) => (
   <EmergencySection {...props}>
-    <div className="container flex flex-col gap-6 mx-auto max-w-2xl text-white md:flex-row">
+    <div className="container mx-auto flex max-w-2xl flex-col gap-6 text-white md:flex-row">
       <div
         className="
-          text-4xl
-          font-bold
-          text-center
-          md:w-1/2
-          flex flex-row
-          border-4 border-white
+          flex
+          flex-row
+          border-4
+          border-white
+          text-center text-4xl
+          font-bold md:w-1/2
         "
       >
-        <div className="flex-1 py-4 px-8 border-r-4 border-white">0(I)</div>
+        <div className="flex-1 border-r-4 border-white py-4 px-8">0(I)</div>
         <div className="py-4 px-8">Rh+</div>
       </div>
       <div className="md:w-1/2">

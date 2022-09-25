@@ -73,13 +73,13 @@ const NFT: FC<Props> = ({ contractAddress, tokenId }) => {
   if (!nftData) {
     return (
       <div className="rounded-lg border">
-        <div className="aspect-square bg-gray-200 rounded-lg animate-pulse" />
+        <div className="aspect-square animate-pulse rounded-lg bg-gray-200" />
         <div className="p-4">
-          <div className="mb-1 w-48 h-6 bg-gray-200 rounded animate-pulse" />
-          <div className="w-32 h-5 bg-gray-200 rounded animate-pulse" />
+          <div className="mb-1 h-6 w-48 animate-pulse rounded bg-gray-200" />
+          <div className="h-5 w-32 animate-pulse rounded bg-gray-200" />
 
-          <div className="flex flex-row justify-end mt-2">
-            <div className="w-24 h-10 bg-gray-200 rounded-2xl animate-pulse" />
+          <div className="mt-2 flex flex-row justify-end">
+            <div className="h-10 w-24 animate-pulse rounded-2xl bg-gray-200" />
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@ const NFT: FC<Props> = ({ contractAddress, tokenId }) => {
         <h5 className="mb-1 font-medium">{nftData.name}</h5>
         <p className="text-sm">{nftData.asset_contract.name}</p>
 
-        <div className="flex flex-row justify-end mt-2">
+        <div className="mt-2 flex flex-row justify-end">
           <Button
             className="py-2 px-4"
             href={`https://opensea.io/assets/ethereum/${contractAddress}/${tokenId}`}

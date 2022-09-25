@@ -22,7 +22,7 @@ class MyDocument extends Document {
             data-cf-beacon='{"token": "0d9f2493fa83432ea75505851fb28a83"}'
           ></script>
         </Head>
-        <body className="text-black dark:text-white bg-white dark:bg-gray-900">
+        <body className="bg-white text-black dark:bg-gray-900 dark:text-white">
           <Main />
           <NextScript />
         </body>

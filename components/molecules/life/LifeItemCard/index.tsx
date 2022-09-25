@@ -28,11 +28,11 @@ const LifeItemCard: React.FC<Props> = ({
 }) => (
   <Link href={href}>
     <a
-      className={`group flex flex-col items-start p-6 space-y-8 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring ring-offset-2 ${className}`}
+      className={`group flex flex-col items-start space-y-8 p-6 ring-offset-2 hover:bg-gray-100 focus:outline-none focus:ring dark:hover:bg-gray-800 ${className}`}
     >
       <div className="flex flex-row">
         <IconWrapper color={color}>
-          <Icon icon={icon} className="w-6 h-6" />
+          <Icon icon={icon} className="h-6 w-6" />
         </IconWrapper>
       </div>
       <h3 className="text-lg">{label}</h3>

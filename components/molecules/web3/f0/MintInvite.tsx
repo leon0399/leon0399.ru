@@ -35,7 +35,7 @@ const MintInvite: FC<Props> = ({
   return (
     <div
       className={`
-        border rounded-2xl
+        rounded-2xl border
         py-4 px-6
         ${className}
       `}
@@ -44,7 +44,7 @@ const MintInvite: FC<Props> = ({
       <div className="flex flex-row justify-between">
         <h4 className="text-xl font-semibold">{invite.name}</h4>
         <button
-          className="p-1.5 rounded focus:outline-none focus:ring ring-offset-2"
+          className="rounded p-1.5 ring-offset-2 focus:outline-none focus:ring"
           onClick={() => onClose()}
         >
           <Icon className="" icon={'heroicons-outline:x'} />
@@ -52,11 +52,11 @@ const MintInvite: FC<Props> = ({
       </div>
 
       <div>
-        <div className="my-12 text-4xl font-semibold text-center">
+        <div className="my-12 text-center text-4xl font-semibold">
           {mintPrice.isZero() ? 'Free' : `${formatEther(mintPrice)} ETH`}
         </div>
 
-        <div className="flex flex-row my-2 h-12">
+        <div className="my-2 flex h-12 flex-row">
           <input
             type={'number'}
             max={invite.condition.limit}
@@ -64,14 +64,14 @@ const MintInvite: FC<Props> = ({
             value={mintNumber}
             onChange={(e) => setMintNumber(+e.target.value.replace(/\D/g, ''))}
             className="
-              px-4
-              block w-full
-              border border-r-0 rounded-l-2xl
-              focus:outline-none focus:ring ring-offset-2
+              block
+              w-full rounded-l-2xl
+              border border-r-0 px-4
+              ring-offset-2 focus:outline-none focus:ring
             "
           />
           <Button
-            className="px-8 rounded-l-none"
+            className="rounded-l-none px-8"
             onClick={() => {
               setError(undefined)
               setIsMinting(true)
@@ -88,7 +88,7 @@ const MintInvite: FC<Props> = ({
             {isMinting ? (
               <Icon
                 icon={'heroicons-outline:refresh'}
-                className="w-4 h-4 animate-spin"
+                className="h-4 w-4 animate-spin"
               />
             ) : (
               'Mint!'

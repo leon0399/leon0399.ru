@@ -25,19 +25,19 @@ const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
         target="_blank"
         rel="noopener noreferrer"
         className="
-          dark:bg-gray-900 dark:text-gray-100
-          hover:bg-gray-200 dark:hover:bg-gray-800
-          ring-offset-2 focus:outline-none focus:ring
-          flex md:inline-flex justify-center items-center
-          px-6 h-12
-          rounded-lg font-semibold text-sm text-center
-          bg-gray-100 text-gray-900
+          flex h-12
+          items-center justify-center
+          rounded-lg bg-gray-100 px-6
+          text-center text-sm font-semibold text-gray-900
+          ring-offset-2 hover:bg-gray-200
+          focus:outline-none focus:ring dark:bg-gray-900 dark:text-gray-100
+          dark:hover:bg-gray-800 md:inline-flex
         "
       >
         Download Résumé
         <Icon
           icon={'heroicons-outline:arrow-down-tray'}
-          className="ml-4 w-6 h-6"
+          className="ml-4 h-6 w-6"
         />
       </a>
       <a
@@ -45,12 +45,12 @@ const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
         target="_blank"
         rel="noopener noreferrer"
         className="
-          text-gray-100 dark:text-gray-900
-          bg-transparent hover:bg-indigo-500 dark:hover:bg-indigo-200
-          ring-offset-2 focus:outline-none focus:ring
-          flex md:inline-flex justify-center items-center
-          px-6 h-12
-          rounded-lg font-semibold text-sm text-center
+          flex h-12
+          items-center justify-center rounded-lg
+          bg-transparent px-6 text-center
+          text-sm font-semibold text-gray-100 ring-offset-2
+          hover:bg-indigo-500 focus:outline-none
+          focus:ring dark:text-gray-900 dark:hover:bg-indigo-200 md:inline-flex
         "
       >
         Telegram me
@@ -60,12 +60,12 @@ const TheContactBanner: React.FC<{ className?: string }> = ({ className }) => (
         target="_blank"
         rel="noopener noreferrer"
         className="
-          text-gray-100 dark:text-gray-900
-          bg-transparent hover:bg-indigo-500 dark:hover:bg-indigo-200
-          ring-offset-2 focus:outline-none focus:ring
-          flex md:inline-flex justify-center items-center
-          px-6 h-12
-          rounded-lg font-semibold text-sm text-center
+          flex h-12
+          items-center justify-center rounded-lg
+          bg-transparent px-6 text-center
+          text-sm font-semibold text-gray-100 ring-offset-2
+          hover:bg-indigo-500 focus:outline-none
+          focus:ring dark:text-gray-900 dark:hover:bg-indigo-200 md:inline-flex
         "
       >
         Hit me an email

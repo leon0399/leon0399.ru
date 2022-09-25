@@ -20,18 +20,18 @@ const SocialTile: React.FC<Props> = ({ social, className }) => (
     target="_blank"
     rel="noopener noreferrer"
     className={`
+    group flex
+    flex-row items-center rounded
+    text-gray-600 ring-offset-2
+    hover:text-gray-700 hover:underline focus:outline-none focus:ring
     dark:text-gray-300 dark:hover:text-gray-200
-    text-gray-600 hover:text-gray-700 hover:underline
-    focus:outline-none focus:ring
-    group flex flex-row items-center
-    rounded ring-offset-2
     ${className}
   `}
   >
     <IconWrapper>
-      <Icon icon={social.icon} className="w-6 h-6" />
+      <Icon icon={social.icon} className="h-6 w-6" />
     </IconWrapper>
-    <div className="flex flex-col grow">
+    <div className="flex grow flex-col">
       <span className="text-sm">{social.label}</span>
       <span className="text-xs">{social.username}</span>
     </div>

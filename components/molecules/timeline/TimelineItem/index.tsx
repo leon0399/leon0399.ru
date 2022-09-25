@@ -65,8 +65,8 @@ const ReadMore: FC<{ className?: string }> = ({ children, className }) => {
         <div
           className={`
               absolute bottom-0
-              flex flex-col justify-end items-start
-              w-full
+              flex w-full flex-col items-start
+              justify-end
               bg-gradient-to-b from-transparent via-white to-white dark:via-gray-900 dark:to-gray-900
             `}
         >
@@ -87,10 +87,10 @@ const TimelineItem: FC<Props> = ({ item, ...props }) => (
   <ItemContainer {...props}>
     <div className="relative">
       <IconWrapper color={item.color || 'gray'}>
-        <Icon icon={item.icon} className="block w-5 h-5" />
+        <Icon icon={item.icon} className="block h-5 w-5" />
       </IconWrapper>
     </div>
-    <div className="py-1.5 w-full text-sm text-gray-600 dark:text-gray-300">
+    <div className="w-full py-1.5 text-sm text-gray-600 dark:text-gray-300">
       <div className="flex flex-col md:flex-row">
         <h3>
           <MDXRemote
@@ -110,7 +110,7 @@ const TimelineItem: FC<Props> = ({ item, ...props }) => (
             }}
           />
         </h3>
-        <div className="grow text-xs md:ml-auto md:text-sm md:text-right">
+        <div className="grow text-xs md:ml-auto md:text-right md:text-sm">
           <span>
             {item.duration.start}
             {item.duration.end && <>&nbsp;&mdash;&nbsp;{item.duration.end}</>}
@@ -119,7 +119,7 @@ const TimelineItem: FC<Props> = ({ item, ...props }) => (
       </div>
 
       {Array.isArray(item.tags) && item.tags.length && (
-        <div className="flex flex-row mt-2 space-x-3">
+        <div className="mt-2 flex flex-row space-x-3">
           {item.tags.map((tag, i) => (
             <Tag key={`project-tag-${i}`}>{tag}</Tag>
           ))}
@@ -127,7 +127,7 @@ const TimelineItem: FC<Props> = ({ item, ...props }) => (
       )}
 
       {item.description && (
-        <ReadMore className="mt-2 prose prose-sm dark:prose-invert">
+        <ReadMore className="prose-sm prose mt-2 dark:prose-invert">
           <MDXRemote
             {...item.description}
             components={{

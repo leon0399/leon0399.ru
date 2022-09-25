@@ -18,11 +18,11 @@ const Announcement: FC<Props> = ({ href, className, children }) => {
       >
         <div
           className="
-            divide-white
-            lg:container lg:px-16 lg:divide-x xl:px-20
-            flex justify-center items-center
-            p-3 mx-auto
-            text-sm font-medium
+            mx-auto
+            flex items-center justify-center divide-white
+            p-3 text-sm font-medium
+            lg:container lg:divide-x
+            lg:px-16 xl:px-20
           "
         >
           {children}

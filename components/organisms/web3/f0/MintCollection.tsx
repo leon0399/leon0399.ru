@@ -121,7 +121,7 @@ const MintCollection: FC<Props> = ({ contractAddress, className }) => {
         </div>
 
         {mintedTokens ? (
-          <div className="grid grid-cols-2 gap-4 items-center p-4 my-4 w-full rounded-2xl border">
+          <div className="my-4 grid w-full grid-cols-2 items-center gap-4 rounded-2xl border p-4">
             {mintedTokens.map((tokenId) => (
               <NFT
                 key={`token-${tokenId}`}
@@ -131,12 +131,12 @@ const MintCollection: FC<Props> = ({ contractAddress, className }) => {
             ))}
           </div>
         ) : pendingTx ? (
-          <div className="flex flex-col items-center py-4 px-6 my-4 w-full rounded-2xl border">
+          <div className="my-4 flex w-full flex-col items-center rounded-2xl border py-4 px-6">
             <label>
               Pending TX{' '}
               <Icon
                 icon={'heroicons-outline:refresh'}
-                className="inline w-4 h-4 animate-spin"
+                className="inline h-4 w-4 animate-spin"
               />
             </label>
             <code>{pendingTx}</code>
@@ -177,8 +177,8 @@ const MintCollection: FC<Props> = ({ contractAddress, className }) => {
 
   return (
     <div>
-      <div className="mx-auto mb-2 w-64 h-8 bg-gray-300 rounded animate-pulse" />
-      <div className="mx-auto w-48 h-6 bg-gray-300 rounded animate-pulse" />
+      <div className="mx-auto mb-2 h-8 w-64 animate-pulse rounded bg-gray-300" />
+      <div className="mx-auto h-6 w-48 animate-pulse rounded bg-gray-300" />
     </div>
   )
 }

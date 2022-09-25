@@ -65,7 +65,7 @@ const TheFooter: React.FC<Props> = ({ socials }) => (
       &copy; Leonid Meleshin. All rights reserved &bull;{' '}
       <a
         href={`https://github.com/leon0399/leon0399.ru/commit/${commitSha}`}
-        className="font-mono hover:text-gray-800 dark:hover:text-gray-300 hover:underline"
+        className="font-mono hover:text-gray-800 hover:underline dark:hover:text-gray-300"
         target="_blank"
         rel="noreferrer"
       >

@@ -31,12 +31,12 @@ const Button: FC<Props> = ({ children, className, ...props }) => {
     return (
       <button
         className={`
-          bg-gray-200 hover:bg-gray-300 disabled:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
-          rounded-2xl
-          duration-200 hover:scale-[1.02]
-          disabled:cursor-not-allowed
-          focus:outline-none focus:ring ring-offset-2
-          px-4 py-2
+          rounded-2xl bg-gray-200 px-4 py-2 ring-offset-2
+          duration-200
+          hover:scale-[1.02] hover:bg-gray-300
+          focus:outline-none
+          focus:ring disabled:cursor-not-allowed disabled:bg-gray-100
+          dark:bg-gray-800 dark:hover:bg-gray-700
           ${className && className}
         `}
         {...props}
@@ -52,12 +52,12 @@ const Button: FC<Props> = ({ children, className, ...props }) => {
       {/* @ts-ignore */}
       <a
         className={`
-          bg-gray-200 hover:bg-gray-300 disabled:bg-gray-100
-          rounded-2xl
-          duration-200 hover:scale-[1.02]
-          disabled:cursor-not-allowed
-          focus:outline-none focus:ring ring-offset-2
-          px-4 py-2
+          rounded-2xl bg-gray-200 px-4
+          py-2
+          ring-offset-2 duration-200
+          hover:scale-[1.02]
+          hover:bg-gray-300 focus:outline-none focus:ring
+          disabled:cursor-not-allowed disabled:bg-gray-100
           ${className && className}
         `}
         {...props}

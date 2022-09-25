@@ -35,7 +35,7 @@ const Connect: FC<Props> = ({ ...props }) => {
               isMounted ? !connector.ready || isPendingConnector : false!
             }
             className="
-              block px-16 mb-4 w-full h-14
+              mb-4 block h-14 w-full px-16
             "
             onClick={() => connect(connector)}
           >
