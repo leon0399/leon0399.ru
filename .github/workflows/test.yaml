@@ -6,24 +6,6 @@ on:
     branches: [master]
 
 jobs:
-  install:
-    name: Install
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16]
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up Node ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          cache: "yarn"
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install Dependencies
-        run: yarn --prefer-offline
-
   lint:
     name: Lint
     runs-on: ubuntu-latest
@@ -40,7 +22,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install Dependencies
-        run: yarn --prefer-offline
+        run: yarn --prefer-offline --frozen-lockfile --ignore-engines --ignore-optional --no-bin-links --non-interactive --silent --ignore-scripts --production=false
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+          HUSKY_SKIP_INSTALL: true
 
       - name: Lint code
         run: yarn lint
+
+      - name: Lint types
+        run: yarn lint:types
