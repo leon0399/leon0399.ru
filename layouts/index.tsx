@@ -1,4 +1,4 @@
-import { type FC, type PropsWithChildren } from 'react'
+import type { FC, PropsWithChildren } from 'react'
 
 import TheAnnouncementBar from '../components/organisms/TheAnnouncementBar'
 import TheHeader from '../components/organisms/TheHeader'

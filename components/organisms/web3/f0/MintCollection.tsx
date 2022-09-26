@@ -1,5 +1,5 @@
 // Utils
-import { F0, F0Factory, Invite } from 'f0ts'
+import { F0, F0Factory, type Invite } from 'f0ts'
 
 // Hooks
 import { useCallback, useEffect, useMemo, useState } from 'react'
