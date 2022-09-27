@@ -46,7 +46,7 @@
     "wagmi": "^0.6.7"
   },
   "devDependencies": {
-    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.2.0",
     "@emotion/eslint-plugin": "^11.7.0",
     "@iconify/json": "^2.1.113",
     "@iconify/react": "^4.0.0",
