@@ -1,7 +1,9 @@
 import { FC, useMemo } from 'react'
-import { Post } from '../../../types/hashnode'
+import { getPlaiceholder } from 'plaiceholder'
 import tw, { styled } from 'twin.macro'
 import Image from 'next/image'
+
+import type { Post } from '../../../types/hashnode'
 
 interface Props {
   id?: string
@@ -39,7 +41,7 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
         </p>
       </div>
       {post.coverImage && (
-        <figure className="relative md:w-56">
+        <figure className="relative rounded md:w-56">
           <Image
             className="rounded"
             layout="responsive"
@@ -47,6 +49,8 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
             width={224}
             height={126}
             alt={post.title}
+            placeholder="blur"
+            blurDataURL={post.coverImageBase64}
           />
           <figcaption className="hidden">{post.title}</figcaption>
         </figure>

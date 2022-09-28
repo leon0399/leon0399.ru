@@ -1,5 +1,6 @@
 // Utils
 import { serialize } from 'next-mdx-remote/serialize'
+import { getPlaiceholder } from 'plaiceholder'
 
 // Components
 import Head from 'next/head'
@@ -96,7 +97,15 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     (p) => p.display === undefined || p.display === true,
   )
 
-  const posts = await getUserPosts('leon0399')
+  const posts = (await getUserPosts('leon0399')).map(async (post) => {
+    const { base64, blurhash } = await getPlaiceholder(post.coverImage)
+
+    return {
+      ...post,
+      coverImageBase64: base64,
+      coverImageBlurhash: blurhash,
+    }
+  })
 
   const timeline = allTimeline
     .filter((t) => t.homepage)
@@ -115,7 +124,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       projects,
-      posts,
+      posts: await Promise.all(posts),
       timeline: await Promise.all(timeline),
       socials: homeSocials,
     },

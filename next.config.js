@@ -1,11 +1,13 @@
 const withMdxBuilder = require('next-mdx-builder')
 const withBundleAnalyzer = require('@next/bundle-analyzer')
+const { withPlaiceholder } = require('@plaiceholder/next')
 
 const plugins = [
   withMdxBuilder({}),
   withBundleAnalyzer({
     enabled: process.env.ANALYZE === 'true',
   }),
+  withPlaiceholder,
 ]
 
 /** @type {import('next').NextConfig} */

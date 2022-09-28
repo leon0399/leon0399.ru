@@ -19,4 +19,6 @@ export interface Post {
   title: string
   brief: string
   coverImage: string
+  coverImageBase64: string
+  coverImageBlurhash: unknown
 }
