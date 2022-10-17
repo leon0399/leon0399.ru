@@ -46,7 +46,7 @@
     "sharp": "^0.31.1",
     "tailwindcss": "^3.0.8",
     "twin.macro": "^2.8.2",
-    "wagmi": "^0.7.2"
+    "wagmi": "^0.7.3"
   },
   "devDependencies": {
     "@emotion/babel-plugin-jsx-pragmatic": "^0.2.0",
