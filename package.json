@@ -79,7 +79,7 @@
     "postcss": "^8.4.18",
     "prettier": "^2.7.1",
     "typescript": "4.8.4",
-    "unplugin-icons": "^0.14.11",
+    "unplugin-icons": "^0.14.12",
     "xwind": "^0.8.0"
   }
 }
