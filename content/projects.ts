@@ -9,8 +9,6 @@ const projects: Project[] = [
     tags: ['TypeScript', 'React.js'],
     url: 'https://twitter.com/mini_degens',
     logo: '/images/projects/minidegens/logo.gif',
-
-    pin: true,
   },
   {
     slug: 'thrace',
@@ -39,6 +37,8 @@ const projects: Project[] = [
     tags: ['C++', 'Embedded'],
     isExternalUrl: true,
     url: 'https://github.com/openhaptics',
+
+    pin: true,
   },
   {
     slug: 'cardyo',
