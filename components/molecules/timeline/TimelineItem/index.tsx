@@ -7,7 +7,14 @@ import Tag from '../../../atoms/Tag'
 
 import type { TimelineItem as TTimelineItem } from '../../../../types/timeline'
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
-import { FC, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  type FC,
+  type PropsWithChildren,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 
 // eslint-disable-next-line no-undef
 export type TimelineItem = Modify<
@@ -39,7 +46,10 @@ const ItemContainer = styled.article([
   tw`dark:after:bg-gray-700`,
 ])
 
-const ReadMore: FC<{ className?: string }> = ({ children, className }) => {
+const ReadMore: FC<PropsWithChildren<{ className?: string }>> = ({
+  children,
+  className,
+}) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
 
@@ -96,7 +106,7 @@ const TimelineItem: FC<Props> = ({ item, ...props }) => (
           <MDXRemote
             {...item.title}
             components={{
-              p: (({ children }) => <>{children}</>) as FC,
+              p: (({ children }) => <>{children}</>) as FC<PropsWithChildren>,
               a: (({ children, ...props }) => (
                 <a
                   {...props}
@@ -106,7 +116,7 @@ const TimelineItem: FC<Props> = ({ item, ...props }) => (
                 >
                   {children}
                 </a>
-              )) as FC,
+              )) as FC<PropsWithChildren>,
             }}
           />
         </h3>
@@ -140,7 +150,7 @@ const TimelineItem: FC<Props> = ({ item, ...props }) => (
                 >
                   {children}
                 </a>
-              )) as FC,
+              )) as FC<PropsWithChildren>,
             }}
           />
         </ReadMore>

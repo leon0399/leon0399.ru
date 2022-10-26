@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
 
-import type { FC } from 'react'
+import type { FC, PropsWithChildren } from 'react'
 
 type Url = string
 
@@ -11,7 +11,12 @@ interface Props {
   className?: string
 }
 
-const SectionHeader: FC<Props> = ({ title, children, className, href }) => (
+const SectionHeader: FC<PropsWithChildren<Props>> = ({
+  title,
+  children,
+  className,
+  href,
+}) => (
   <div
     className={`my-4 flex flex-row items-end justify-between text-gray-900 dark:text-gray-100 ${className}`}
   >

@@ -1,13 +1,17 @@
 import Link from 'next/link'
 
-import type { FC } from 'react'
+import type { FC, PropsWithChildren } from 'react'
 
 interface Props {
   href: string
   className?: string
 }
 
-const Announcement: FC<Props> = ({ href, className, children }) => {
+const Announcement: FC<PropsWithChildren<Props>> = ({
+  href,
+  className,
+  children,
+}) => {
   return (
     <Link href={href}>
       <a

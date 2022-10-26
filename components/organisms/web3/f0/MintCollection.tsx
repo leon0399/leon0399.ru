@@ -54,7 +54,7 @@ const MintCollection: FC<Props> = ({ contractAddress, className }) => {
   )
 
   const myInvitesFilter = useCallback(
-    (i) => {
+    (i: Invite) => {
       if (!address) {
         return false
       }

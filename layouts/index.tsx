@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { type FC, type PropsWithChildren } from 'react'
 
 import TheAnnouncementBar from '../components/organisms/TheAnnouncementBar'
 import TheHeader from '../components/organisms/TheHeader'
@@ -7,12 +7,12 @@ import TheFooter from '../components/organisms/TheFooter'
 // Content
 import { primarySocials } from '../content/socials'
 
-const Layout: FunctionComponent = ({ children }) => {
+const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <TheAnnouncementBar />
       <TheHeader />
-      <main className="pt-8 mx-auto">{children}</main>
+      <main className="mx-auto pt-8">{children}</main>
       <TheFooter socials={primarySocials} />
     </>
   )
