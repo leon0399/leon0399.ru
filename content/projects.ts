@@ -2,13 +2,16 @@ import { Project } from '../types/project'
 
 const projects: Project[] = [
   {
-    slug: 'mini-degens',
-    title: 'Mini DeGens',
-    description: 'Collection of 10.000 generative AI Art NFT',
-    category: 'Web3',
-    tags: ['TypeScript', 'React.js'],
-    url: 'https://twitter.com/mini_degens',
-    logo: '/images/projects/minidegens/logo.gif',
+    slug: 'openhaptics',
+    title: 'OpenHaptics',
+    description: 'Wearable haptic-feedback devices firmware for VR',
+    category: 'Virtual Reality',
+    tags: ['C++', 'Embedded'],
+    isExternalUrl: true,
+    url: 'https://github.com/openhaptics',
+    logo: '/images/projects/openhaptics/logo.png',
+
+    pin: true,
   },
   {
     slug: 'thrace',
@@ -21,6 +24,15 @@ const projects: Project[] = [
     logo: '/images/projects/thrace/logo.png',
   },
   {
+    slug: 'mini-degens',
+    title: 'Mini DeGens',
+    description: 'Collection of 10.000 generative AI Art NFT',
+    category: 'Web3',
+    tags: ['TypeScript', 'React.js'],
+    url: 'https://twitter.com/mini_degens',
+    logo: '/images/projects/minidegens/logo.gif',
+  },
+  {
     slug: 'php-open-source-saver',
     title: 'PHP OpenSource Saver',
     category: 'OpenSource',
@@ -28,17 +40,6 @@ const projects: Project[] = [
     url: 'https://github.com/PHP-Open-Source-Saver',
     isExternalUrl: true,
     logo: '/images/projects/php-open-source-saver/logo.png',
-  },
-  {
-    slug: 'openhaptics',
-    title: 'OpenHaptics',
-    description: 'Wearable haptic-feedback devices firmware for VR',
-    category: 'Virtual Reality',
-    tags: ['C++', 'Embedded'],
-    isExternalUrl: true,
-    url: 'https://github.com/openhaptics',
-
-    pin: true,
   },
   {
     slug: 'cardyo',
