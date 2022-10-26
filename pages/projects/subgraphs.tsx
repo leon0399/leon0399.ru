@@ -81,8 +81,7 @@ const useSubgraph = (subgraphName: string) =>
       return indexingStatusForCurrentVersion
     },
     {
-      refetchOnWindowFocus: false,
-      retry: 0,
+      retry: false,
     },
   )
 
@@ -116,13 +115,13 @@ const SubgraphRow: React.FC<{ subgraphName: string }> = ({ subgraphName }) => {
             {subgraphName}
           </a>
         </td>
-        <td className="text-red-700">
+        <td colSpan={2} className="text-red-700">
           {error?.response.errors.map((error) => (
             <>
               {error.message}
               <br />
             </>
-          ))}
+          )) || 'Empty data'}
         </td>
       </tr>
     )
@@ -166,7 +165,7 @@ const SubgraphsPage: NextPage<Props> = ({ subgraphNames }) => {
           url="https://github.com/leon0399/subgraphs"
         />
 
-        <table>
+        <table className="table-auto">
           <thead>
             <tr>
               <th>Subgraph</th>
@@ -198,6 +197,12 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
         'leon0399/factoria-v2-goerli',
         'leon0399/cell',
         'leon0399/cell-goerli',
+        'leon0399/moneypipe-stream',
+        'leon0399/moneypipe-buffer',
+        'leon0399/moneypipe-buffer2',
+        'leon0399/moneypipe-buffer2-polygon',
+        'leon0399/moneypipe-buffer2-goerli',
+        'leon0399/moneypipe-buffer2-mumbai',
       ],
     },
   }
