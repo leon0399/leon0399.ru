@@ -101,8 +101,12 @@ const SubgraphRow: React.FC<{ subgraphName: string }> = ({ subgraphName }) => {
             {subgraphName}
           </a>
         </td>
-        <td></td>
-        <td></td>
+        <td className="text-center">
+          <span className="inline-flex animate-pulse bg-slate-200 rounded w-4 h-4 align-middle" />
+        </td>
+        <td className="text-right">
+          <span className="inline-flex animate-pulse bg-slate-200 rounded w-16 h-4 align-middle" />
+        </td>
       </tr>
     )
   }
