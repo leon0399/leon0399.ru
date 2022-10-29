@@ -279,7 +279,7 @@ const BenchmarksPage: NextPage<Props> = ({ languageColors }) => {
           title="Benchmarks"
           category="Experiments"
           tags={['Algorithms']}
-          url="https://twitter.com/mini_degens"
+          url="https://github.com/leon0399/benchmarks"
         />
         <section className="grid gap-4 md:grid-cols-2">
           <div
