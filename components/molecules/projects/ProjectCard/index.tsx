@@ -33,7 +33,7 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
         <div className="h-16 w-16 rounded bg-gray-200" />
       )}
     </div>
-    <div className="grow">
+    <div className="grow overflow-hidden">
       <h3 className="text-lg font-bold tracking-tight">{project.title}</h3>
       <p className="text-sm leading-5 text-gray-600 dark:text-gray-400">
         {project.description}
@@ -51,7 +51,7 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
           target="_blank"
           rel="noopener noreferrer"
           className="
-            underline hover:text-gray-900 dark:hover:text-gray-200
+            underline hover:text-gray-900 dark:hover:text-gray-200 truncate
           "
         >
           {project.displayUrl ||

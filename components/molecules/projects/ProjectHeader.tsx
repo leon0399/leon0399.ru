@@ -25,7 +25,7 @@ const ProjectHeader: FC<Props> = ({
     <header
       className="
         mt-8 mb-12 flex
-        flex-col
+        flex-col overflow-hidden
         items-start space-y-4 md:flex-row
         md:space-y-0 md:space-x-4
       "
@@ -41,16 +41,16 @@ const ProjectHeader: FC<Props> = ({
       ) : (
         <div className="h-[84px] w-[84px] rounded bg-gray-200" />
       )}
-      <div>
+      <div className="overflow-hidden max-w-full">
         <h1 className="mb-4 text-4xl font-bold md:text-5xl">{title}</h1>
-        <div className="flex flex-row justify-between">
-          <div className="flex flex-row space-x-4 text-xs leading-relaxed">
+        <div className="flex flex-row justify-between overflow-hidden">
+          <div className="flex flex-row space-x-4 text-xs leading-relaxed truncate">
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
               className="
-                underline hover:text-gray-900 dark:hover:text-gray-200
+                underline hover:text-gray-900 dark:hover:text-gray-200 truncate
               "
             >
               {displayUrl ||
