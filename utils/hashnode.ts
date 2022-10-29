@@ -1,4 +1,5 @@
-import { Post, User } from '../types/hashnode'
+import { type Post, type User } from '../types/hashnode'
+import { getPlaiceholder } from 'plaiceholder'
 
 const gql = async <T>(
   query: string,
@@ -91,5 +92,11 @@ export const getPost = async (
     slug,
   })
 
-  return data.post
+  const { base64, blurhash } = await getPlaiceholder(data.post.coverImage)
+
+  return {
+    ...data.post,
+    coverImageBase64: base64,
+    coverImageBlurhash: blurhash,
+  }
 }

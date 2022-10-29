@@ -49,6 +49,13 @@ const projects: Project[] = [
     logo: '/images/projects/php-open-source-saver/logo.png',
   },
   {
+    slug: 'benchmarks',
+    title: 'Benchmarks',
+    category: 'Experiments',
+    tags: ['Algorithms'],
+    url: 'https://github.com/leon0399/benchmarks',
+  },
+  {
     slug: 'cardyo',
     title: 'Cardyo',
     category: 'SaaS',
