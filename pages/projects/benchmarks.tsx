@@ -90,28 +90,39 @@ const BenchmarksPage: NextPage<Props> = ({ languageColors }) => {
         Object.entries(benchmarksQuery.data || {}).map(([script, langs]) => [
           script,
           Object.fromEntries(
-            Object.entries(langs).flatMap(([language, results]) => {
-              return Object.entries(results).map(([configuration, results]) => {
-                const title =
-                  language === configuration
-                    ? language
-                    : `${language} (${configuration})`
-                results.memory.median /= 1024 * 1024
-                results.memory.delta /= 1024 * 1024
-                results.memory.results = results.memory.results.map(
-                  (memory) => memory / (1024 * 1024),
-                )
-                const { tags } = results
-                return [
-                  title,
-                  {
-                    language,
-                    tags,
-                    configuration,
-                    results,
-                  },
-                ]
-              })
+            Object.entries(langs).flatMap(([language, _results]) => {
+              return Object.entries(_results).map(
+                ([configuration, _results]) => {
+                  const title =
+                    language === configuration
+                      ? language
+                      : `${language} (${configuration})`
+
+                  const results: BenchmarkResult = {
+                    tags: _results.tags,
+                    time: _results.time,
+                    memory: {
+                      median: _results.memory.median / 1024 ** 2,
+                      delta: _results.memory.delta / 1024 ** 2,
+                      results: _results.memory.results.map(
+                        (memory) => memory / 1024 ** 2,
+                      ),
+                    },
+                  }
+
+                  console.log(results.memory)
+                  const { tags } = results
+                  return [
+                    title,
+                    {
+                      language,
+                      tags,
+                      configuration,
+                      results,
+                    },
+                  ]
+                },
+              )
             }),
           ),
         ]),
@@ -335,6 +346,7 @@ const BenchmarksPage: NextPage<Props> = ({ languageColors }) => {
               {Object.entries(scripts).map(([script, data]) => (
                 <div key={`bench-group-${group}-script-${script}`}>
                   <Bar
+                    height={300}
                     data={data}
                     options={{
                       responsive: true,
