@@ -6,19 +6,20 @@ import { isDark } from '../../utils/colors'
 
 import Select, { type StylesConfig } from 'react-select'
 import {
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
   Tooltip,
   Legend,
-  ResponsiveContainer,
-} from 'recharts'
+} from 'chart.js'
+import { Bar } from 'react-chartjs-2'
 import Button from '../../components/atoms/Button'
 import ProjectHeader from '../../components/molecules/projects/ProjectHeader'
 import { groupBy } from '../../utils/array'
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 enum BenchmarkType {
   Time = 'Time',
@@ -169,15 +170,22 @@ const BenchmarksPage: NextPage<Props> = ({ languageColors }) => {
       }),
       multiValueLabel: (styles, { data: lang }) => ({
         ...styles,
-        color: isDark(languageColors[lang]) ? '#fff' : '#000',
+        color:
+          languageColors[lang] && isDark(languageColors[lang])
+            ? '#fff'
+            : '#000',
       }),
       multiValueRemove: (styles, { data: lang }) => ({
         ...styles,
-        color: isDark(languageColors[lang]) ? '#fff' : '#000',
+        color:
+          languageColors[lang] && isDark(languageColors[lang])
+            ? '#fff'
+            : '#000',
         ':hover': {
-          backgroundColor: isDark(languageColors[lang])
-            ? 'rgba(255, 255, 255, 0.1)'
-            : 'rgba(0, 0, 0, 0.1)',
+          backgroundColor:
+            languageColors[lang] && isDark(languageColors[lang])
+              ? 'rgba(255, 255, 255, 0.1)'
+              : 'rgba(0, 0, 0, 0.1)',
         },
       }),
     }),
@@ -227,22 +235,35 @@ const BenchmarksPage: NextPage<Props> = ({ languageColors }) => {
         Object.fromEntries(
           langs.map(([bench, confs]) => [
             BENCHMARK_TITLES[bench] ?? bench,
-            Object.entries(confs).map(([name, results]) => ({
-              name,
-              language: results.language,
-              color: languageColors[results.language],
-              time: results.results.time.median,
-              memory: results.results.memory.median,
-            })),
+            {
+              labels: Object.keys(confs),
+
+              datasets: [
+                {
+                  label:
+                    selectedType === BenchmarkType.Memory
+                      ? 'Memory, MiB'
+                      : 'Time, s',
+                  data: Object.values(confs).map((results) =>
+                    selectedType === BenchmarkType.Memory
+                      ? results.results.memory.median.toFixed(3)
+                      : results.results.time.median.toFixed(3),
+                  ),
+                  backgroundColor: Object.values(confs).map(
+                    (c) => languageColors[c.language],
+                  ),
+                },
+              ],
+            },
           ]),
         ),
       ]),
     )
-  }, [filteredResults])
+  }, [filteredResults, languageColors, selectedType])
 
   return (
     <div className="container mx-auto">
-      <article className="prose mx-auto max-w-5xl dark:prose-invert">
+      <article className="mx-auto">
         <ProjectHeader
           title="Benchmarks"
           category="Experiments"
@@ -299,7 +320,7 @@ const BenchmarksPage: NextPage<Props> = ({ languageColors }) => {
               getOptionValue={({ tag }) => tag}
               value={selectedTags.map((tag) => ({ tag }))}
               onChange={(e) => {
-                setSelectedLangs([...e].map(({ tag }) => tag))
+                setSelectedTags([...e].map(({ tag }) => tag))
               }}
               isLoading={benchmarksQuery.isInitialLoading}
             />
@@ -313,28 +334,27 @@ const BenchmarksPage: NextPage<Props> = ({ languageColors }) => {
             <div className="grid md:grid-cols-2 gap-4">
               {Object.entries(scripts).map(([script, data]) => (
                 <div key={`bench-group-${group}-script-${script}`}>
-                  <ResponsiveContainer width="100%" height="300px">
-                    <BarChart
-                      title={script}
-                      width={150}
-                      height={300}
-                      data={data}
-                      margin={{
-                        top: 5,
-                        right: 30,
-                        left: 20,
-                        bottom: 5,
-                      }}
-                    >
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="name" />
-                      <YAxis />
-                      <Tooltip />
-                      <Legend />
-                      <Bar dataKey="time" fill="#8884d8" />
-                      <Bar dataKey="memory" fill="#82ca9d" />
-                    </BarChart>
-                  </ResponsiveContainer>
+                  <Bar
+                    data={data}
+                    options={{
+                      responsive: true,
+                      scales: {
+                        y: {
+                          beginAtZero: true,
+                        },
+                      },
+                      plugins: {
+                        legend: {
+                          display: false,
+                          position: 'top' as const,
+                        },
+                        title: {
+                          display: true,
+                          text: script,
+                        },
+                      },
+                    }}
+                  />
                 </div>
               ))}
             </div>
