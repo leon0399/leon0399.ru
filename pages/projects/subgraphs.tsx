@@ -158,7 +158,7 @@ const SubgraphsPage: NextPage<Props> = ({ subgraphNames }) => {
   return (
     <div className="container mx-auto">
       <Head>
-        <title>Subgraphs</title>
+        <title>Subgraphs - Leonid Meleshin</title>
       </Head>
 
       <article className="prose mx-auto max-w-2xl dark:prose-invert">

@@ -45,6 +45,24 @@ const Home: NextPage<Props> = ({ projects, timeline, socials, posts }) => {
     <div className="container mx-auto">
       <Head>
         <title>Leonid Meleshin</title>
+
+        <meta
+          name="description"
+          content="Hi there! My name is Leonid Meleshin, and I am a software engineer and researcher, travelling across the world."
+        />
+
+        <meta name="og:title" content="Leonid Meleshin" />
+        <meta name="og:site_name" content="Leonid Meleshin" />
+        <meta
+          name="og:description"
+          content="Hi there! My name is Leonid Meleshin, and I am a software engineer and researcher, travelling across the world."
+        />
+
+        <meta name="twitter:title" content="Leonid Meleshin" />
+        <meta
+          name="twitter:description"
+          content="Hi there! My name is Leonid Meleshin, and I am a software engineer and researcher, travelling across the world."
+        />
       </Head>
 
       <HomeIntro id="intro" className="mx-auto mb-19 max-w-2xl" />

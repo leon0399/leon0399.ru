@@ -16,6 +16,14 @@ class MyDocument extends Document {
     return (
       <Html lang="en-US">
         <Head>
+          <meta property="og:type" content="website" />
+
+          <meta name="twitter:dnt" content="on" />
+          <meta name="twitter:url" content="https://leon0399.ru/" />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="@leon0399" />
+          <meta name="twitter:creator" content="@leon0399" />
+
           <script
             defer
             src="https://static.cloudflareinsights.com/beacon.min.js"

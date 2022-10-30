@@ -18,6 +18,7 @@ import { Bar } from 'react-chartjs-2'
 import Button from '../../components/atoms/Button'
 import ProjectHeader from '../../components/molecules/projects/ProjectHeader'
 import { groupBy } from '../../utils/array'
+import Head from 'next/head'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
@@ -110,7 +111,6 @@ const BenchmarksPage: NextPage<Props> = ({ languageColors }) => {
                     },
                   }
 
-                  console.log(results.memory)
                   const { tags } = results
                   return [
                     title,
@@ -274,6 +274,9 @@ const BenchmarksPage: NextPage<Props> = ({ languageColors }) => {
 
   return (
     <div className="container mx-auto">
+      <Head>
+        <title>Benchmarks - Leonid Meleshin</title>
+      </Head>
       <article className="mx-auto">
         <ProjectHeader
           title="Benchmarks"

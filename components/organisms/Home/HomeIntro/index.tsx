@@ -11,7 +11,7 @@ interface Props {
   className?: string
 }
 
-const words = ['Developer', 'Builder', 'Engineer', 'Developer']
+const words = ['Developer', 'Builder', 'Engineer', 'Researcher']
 
 const HomeIntro: FC<Props> = ({ className, ...props }) => (
   <section className={`w-full ${className}`} {...props}>
@@ -37,18 +37,7 @@ const HomeIntro: FC<Props> = ({ className, ...props }) => (
       >
         hacker
       </a>
-      , currently located in <strong>Moscow,&nbsp;Russia</strong>,{' '}
-      <a
-        href="https://www.timeanddate.com/worldclock/converter.html?p1=224&amp;p2=179&amp;p3=168&amp;p4=166&amp;p5=107"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="
-          text-primary-600 hover:text-primary-700
-          dark:text-primary-400 dark:hover:text-primary-300
-        "
-      >
-        UTC+3 timezone
-      </a>
+      , travelling across the world.
     </p>
     <PrimarySocials className="my-6" />
   </section>
