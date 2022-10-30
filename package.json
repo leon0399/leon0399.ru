@@ -65,7 +65,7 @@
     "@svgr/core": "^6.5.0",
     "@types/lodash": "^4.14.186",
     "@types/node": "18.11.7",
-    "@types/react": "^18.0.23",
+    "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.7",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
