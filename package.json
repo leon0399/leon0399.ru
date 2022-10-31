@@ -62,7 +62,7 @@
     "@emotion/eslint-plugin": "^11.7.0",
     "@iconify/json": "^2.1.129",
     "@iconify/react": "^4.0.0",
-    "@svgr/core": "^6.5.0",
+    "@svgr/core": "^6.5.1",
     "@types/lodash": "^4.14.186",
     "@types/node": "18.11.7",
     "@types/react": "^18.0.24",
