@@ -35,12 +35,6 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ projects, timeline, socials, posts }) => {
-  const pinProjects = projects.filter((p) => p.pin)
-  const otherProjects = projects
-    .filter((p) => !p.pin)
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 3 - pinProjects.length)
-
   return (
     <div className="container mx-auto">
       <Head>
@@ -69,7 +63,7 @@ const Home: NextPage<Props> = ({ projects, timeline, socials, posts }) => {
       <HomeProjects
         id="projects"
         className="my-19 mx-auto max-w-2xl"
-        projects={[...pinProjects, ...otherProjects]}
+        projects={projects.slice(0, 3)}
       />
       <HomeBlog id="blog" className="my-19 mx-auto max-w-2xl" posts={posts} />
       <HomeTimeline

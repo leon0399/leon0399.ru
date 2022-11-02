@@ -22,14 +22,13 @@ const SectionHeader: FC<PropsWithChildren<Props>> = ({
   >
     {children ? children : <h2 className="text-xl font-semibold">{title}</h2>}
     {href && (
-      <Link href={href}>
-        <a
-          target={href.startsWith('http') ? '_blank' : '_self'}
-          className="h-6 w-6 rounded text-gray-500 ring-offset-2 hover:text-gray-600 focus:outline-none focus:ring"
-          aria-label={title}
-        >
-          <Icon icon="heroicons-solid:arrow-right" className="h-6 w-6" />
-        </a>
+      <Link
+        href={href}
+        target={href.startsWith('http') ? '_blank' : '_self'}
+        className="h-6 w-6 rounded text-gray-500 ring-offset-2 hover:text-gray-600 focus:outline-none focus:ring"
+        aria-label={title}
+      >
+        <Icon icon="heroicons-solid:arrow-right" className="h-6 w-6" />
       </Link>
     )}
   </div>

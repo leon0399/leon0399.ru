@@ -25,8 +25,8 @@ const HomeIntro: FC<Props> = ({ className, ...props }) => (
     </h1>
     <p className="my-4 leading-[1.75] text-gray-800 dark:text-gray-200">
       Hi there! My name is <strong>Leonid Meleshin</strong>, and I am a{' '}
-      <Link href="/projects">
-        <a className="underline">builder</a>
+      <Link href="/projects" className="underline">
+        builder
       </Link>{' '}
       &amp;{' '}
       <a

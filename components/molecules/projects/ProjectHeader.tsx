@@ -35,8 +35,12 @@ const ProjectHeader: FC<Props> = ({
           src={logo}
           width={84}
           height={84}
-          className="h-[84px] w-[84px] rounded"
+          className="h-[84px] w-[84px] rounded mt-0"
           alt="Project logo"
+          style={{
+            maxWidth: '100%',
+            height: 'auto',
+          }}
         />
       ) : (
         <div className="h-[84px] w-[84px] rounded bg-gray-200" />

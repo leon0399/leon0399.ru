@@ -44,13 +44,17 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
         <figure className="relative rounded md:w-56">
           <Image
             className="rounded"
-            layout="responsive"
             src={post.coverImage}
             width={224}
             height={126}
             alt={post.title}
             placeholder="blur"
             blurDataURL={post.coverImageBase64}
+            sizes="100vw"
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
           />
           <figcaption className="hidden">{post.title}</figcaption>
         </figure>

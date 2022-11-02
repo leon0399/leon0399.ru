@@ -28,6 +28,10 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
           height={64}
           className="h-16 w-16 rounded"
           alt={project.title}
+          style={{
+            maxWidth: '100%',
+            height: 'auto',
+          }}
         />
       ) : (
         <div className="h-16 w-16 rounded bg-gray-200" />
@@ -104,12 +108,11 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
         className="absolute inset-0 h-full w-full focus:outline-none"
       />
     ) : (
-      <Link href={`/projects/${project.slug}`}>
-        <a
-          className="absolute inset-0 h-full w-full focus:outline-none"
-          aria-label={project.title}
-        />
-      </Link>
+      <Link
+        href={`/projects/${project.slug}`}
+        className="absolute inset-0 h-full w-full focus:outline-none"
+        aria-label={project.title}
+      ></Link>
     )}
   </ProjectContainer>
 )
