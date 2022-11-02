@@ -14,13 +14,6 @@ const projects: Project[] = [
     pin: true,
   },
   {
-    slug: 'subgraphs',
-    title: 'Subgraphs',
-    category: 'Web3',
-    tags: ['TypeScript', 'GraphQL'],
-    url: 'https://github.com/leon0399/subgraphs',
-  },
-  {
     slug: 'thrace',
     title: 'Thrace',
     description: 'Comprehensive blockchain visual explorer and doxxing tool',
@@ -38,6 +31,13 @@ const projects: Project[] = [
     tags: ['TypeScript', 'React.js'],
     url: 'https://twitter.com/mini_degens',
     logo: '/images/projects/minidegens/logo.gif',
+  },
+  {
+    slug: 'subgraphs',
+    title: 'Subgraphs',
+    category: 'Web3',
+    tags: ['TypeScript', 'GraphQL'],
+    url: 'https://github.com/leon0399/subgraphs',
   },
   {
     slug: 'php-open-source-saver',
