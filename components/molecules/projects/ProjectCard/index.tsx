@@ -3,7 +3,7 @@ import Tag from '../../../atoms/Tag'
 
 import tw, { styled } from 'twin.macro'
 import React from 'react'
-import Image from 'next/image'
+import Image from "next/image";
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 interface Props {
@@ -28,7 +28,10 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
           height={64}
           className="h-16 w-16 rounded"
           alt={project.title}
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
       ) : (
         <div className="h-16 w-16 rounded bg-gray-200" />
       )}
