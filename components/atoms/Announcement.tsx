@@ -13,13 +13,13 @@ const Announcement: FC<PropsWithChildren<Props>> = ({
   children,
 }) => {
   return (
-    (<Link
+    <Link
       href={href}
       className={`
         relative flex flex-row space-x-3 overflow-hidden
         ${className || ''}
-      `}>
-
+      `}
+    >
       <div
         className="
           mx-auto
@@ -31,9 +31,8 @@ const Announcement: FC<PropsWithChildren<Props>> = ({
       >
         {children}
       </div>
-
-    </Link>)
-  );
+    </Link>
+  )
 }
 
 export default Announcement

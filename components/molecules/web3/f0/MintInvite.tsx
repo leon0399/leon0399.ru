@@ -100,7 +100,7 @@ const MintInvite: FC<Props> = ({
         )}
       </div>
     </div>
-  );
+  )
 }
 
 export default MintInvite

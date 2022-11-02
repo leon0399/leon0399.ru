@@ -35,7 +35,6 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ projects, timeline, socials, posts }) => {
-
   return (
     <div className="container mx-auto">
       <Head>

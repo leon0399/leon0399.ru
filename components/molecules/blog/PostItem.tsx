@@ -1,7 +1,7 @@
 import { FC, useMemo } from 'react'
 import { getPlaiceholder } from 'plaiceholder'
 import tw, { styled } from 'twin.macro'
-import Image from "next/image";
+import Image from 'next/image'
 
 import type { Post } from '../../../types/hashnode'
 
@@ -52,9 +52,10 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
             blurDataURL={post.coverImageBase64}
             sizes="100vw"
             style={{
-              width: "100%",
-              height: "auto"
-            }} />
+              width: '100%',
+              height: 'auto',
+            }}
+          />
           <figcaption className="hidden">{post.title}</figcaption>
         </figure>
       )}
@@ -66,7 +67,7 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
         aria-label={post.title}
       />
     </PostContainer>
-  );
+  )
 }
 
 export default PostItem
