@@ -81,7 +81,7 @@ const ProjectHeader: FC<Props> = ({
         </div>
       </div>
     </header>
-  )
+  );
 }
 
 export default ProjectHeader

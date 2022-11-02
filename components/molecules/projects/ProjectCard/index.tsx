@@ -104,12 +104,12 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
         className="absolute inset-0 h-full w-full focus:outline-none"
       />
     ) : (
-      <Link href={`/projects/${project.slug}`}>
-        <a
-          className="absolute inset-0 h-full w-full focus:outline-none"
-          aria-label={project.title}
-        />
-      </Link>
+      (<Link
+        href={`/projects/${project.slug}`}
+        className="absolute inset-0 h-full w-full focus:outline-none"
+        aria-label={project.title}>
+
+      </Link>)
     )}
   </ProjectContainer>
 )

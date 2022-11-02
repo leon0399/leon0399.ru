@@ -27,17 +27,17 @@ const FooterMenuItem: FC<FooterMenuItemProps> = ({ href, title, ...props }) => {
 
   return (
     <li className="py-2 px-6" {...props}>
-      <Link href={href}>
-        <a
-          className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
-          target={outer ? '_blank' : undefined}
-          rel={outer ? 'nofollow' : undefined}
-        >
-          {title}
-        </a>
+      <Link
+        href={href}
+        className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+        target={outer ? '_blank' : undefined}
+        rel={outer ? 'nofollow' : undefined}>
+
+        {title}
+
       </Link>
     </li>
-  )
+  );
 }
 
 interface Props {
