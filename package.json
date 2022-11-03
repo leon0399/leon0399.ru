@@ -21,7 +21,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@heroicons/react": "^2.0.12",
+    "@heroicons/react": "^2.0.13",
     "@next/bundle-analyzer": "^13.0.1",
     "@next/mdx": "^13.0.1",
     "@plaiceholder/next": "^2.5.0",
