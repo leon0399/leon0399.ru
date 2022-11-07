@@ -14,6 +14,12 @@ export const primarySocials: SocialAccount[] = [
     username: '@leon0399',
   },
   {
+    icon: 'fa-brands:twitter',
+    url: 'https://twitter.com/leon0399',
+    label: 'Twitter',
+    username: '@leon0399',
+  },
+  {
     icon: 'fa-brands:linkedin',
     url: 'https://www.linkedin.com/in/leonid-meleshin-9604111a9/',
     label: 'LinkedIn',
