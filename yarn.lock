@@ -1243,10 +1243,12 @@
   dependencies:
     glob "7.1.7"
 
-"@next/mdx@^13.0.1":
-  version "13.0.1"
-  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-13.0.1.tgz#bf4790ddba47d7eec46cf64e334cf28ab3797a87"
-  integrity sha512-7h/EEs7JbLkDnVhvNE3D33k8vLJbQzKh+Zg0qvYulnpze96zjL4ZCd9qOeDCqNAATgZhpSbvQ9ujYLRFBJpHCQ==
+"@next/mdx@^13.0.2":
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-13.0.2.tgz#60febdab4ccd4ece87ba99694befe146f0e1307e"
+  integrity sha512-udtSlWoOLoHdJvtuGyj3ctXW4fogsQDWU2YXp4Sx4JdsS7VKvJkhTU0Df47nAJsQKCJhQ92h+j7rA+1Dulxxqg==
+  dependencies:
+    source-map "^0.7.0"
 
 "@next/swc-android-arm-eabi@13.0.1":
   version "13.0.1"
