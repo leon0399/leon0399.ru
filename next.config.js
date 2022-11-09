@@ -32,6 +32,11 @@ const config = {
         destination: '/qr/right',
         permanent: true,
       },
+      {
+        source: '/experiments/benchmarks',
+        destination: '/projects/benchmarks',
+        permanent: true,
+      },
     ]
   },
   images: {
