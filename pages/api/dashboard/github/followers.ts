@@ -2,14 +2,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Octokit } from '@octokit/core'
 
-const REPOSITORIES = [
-  'openhaptics/openhaptics-firmware',
-  'openhaptics/openhaptics-hardware',
-  'openhaptics/openhaptics.github.io',
-  'thrace-app/addresses',
-  'thrace-app/members-and-contributors',
-]
-
 const octokit = new Octokit()
 
 export default async function handler(
