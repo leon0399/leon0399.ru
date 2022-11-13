@@ -50,6 +50,7 @@ const TheFooter: React.FC<Props> = ({ socials }) => (
         <FooterMenuItem href="/about" title="About" />
         <FooterMenuItem href="https://blog.leon0399.ru/" title="Blog" />
         <FooterMenuItem href="/projects" title="Projects" />
+        <FooterMenuItem href="/dashboard" title="Dashboard" />
         <FooterMenuItem href="/timeline" title="Timeline" />
         <FooterMenuItem href="/contacts" title="Contacts" />
         <FooterMenuItem href="/socials" title="Socials" />

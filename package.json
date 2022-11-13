@@ -24,6 +24,8 @@
     "@heroicons/react": "^2.0.13",
     "@next/bundle-analyzer": "^13.0.2",
     "@next/mdx": "^13.0.2",
+    "@octokit/core": "^4.1.0",
+    "@octokit/request": "^6.2.2",
     "@plaiceholder/next": "^2.5.0",
     "@tailwindcss/typography": "^0.5.8",
     "@tanstack/react-query": "^4.14.5",
