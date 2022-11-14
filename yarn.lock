@@ -1243,10 +1243,10 @@
   dependencies:
     glob "7.1.7"
 
-"@next/mdx@^13.0.2":
-  version "13.0.2"
-  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-13.0.2.tgz#60febdab4ccd4ece87ba99694befe146f0e1307e"
-  integrity sha512-udtSlWoOLoHdJvtuGyj3ctXW4fogsQDWU2YXp4Sx4JdsS7VKvJkhTU0Df47nAJsQKCJhQ92h+j7rA+1Dulxxqg==
+"@next/mdx@^13.0.3":
+  version "13.0.3"
+  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-13.0.3.tgz#057be959fd47656e5bde8b27c2ae35e769038195"
+  integrity sha512-0NWKlwQdKsG/KdpTceC17zGlGP7deRAc2/JXpsOcy0744QWd3ai1Eg5g6YsR25giiW6EJVQr0ynfFzTLXdzg9Q==
   dependencies:
     source-map "^0.7.0"
 
@@ -6128,13 +6128,6 @@ node-cache@5.1.2:
   integrity sha512-t1QzWwnk4sjLWaQAS8CHgOJ+RAfmHpxFWmc36IWTiWHQfs0w5JDMBS1b1ZxQteo0vVVuWJvIUKHDkkeK7vIGCg==
   dependencies:
     clone "2.x"
-
-node-emoji@^1.11.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/node-emoji/-/node-emoji-1.11.0.tgz#69a0150e6946e2f115e9d7ea4df7971e2628301c"
-  integrity sha512-wo2DpQkQp7Sjm2A0cq+sN7EHKO6Sl0ctXeBdFZrL9T9+UywORbufTcTZxom8YqpLQt/FqNMUkOpkZrJVYSKD3A==
-  dependencies:
-    lodash "^4.17.21"
 
 node-fetch@2, node-fetch@2.6.7, node-fetch@^2.6.1, node-fetch@^2.6.7:
   version "2.6.7"
