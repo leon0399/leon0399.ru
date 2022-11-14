@@ -28,7 +28,7 @@
     "@octokit/request": "^6.2.2",
     "@plaiceholder/next": "^2.5.0",
     "@tailwindcss/typography": "^0.5.8",
-    "@tanstack/react-query": "^4.14.5",
+    "@tanstack/react-query": "^4.16.1",
     "@thirdweb-dev/chain-icons": "^1.0.5",
     "@vercel/analytics": "^0.1.4",
     "babel-plugin-import-glob-array": "^0.2.0",
