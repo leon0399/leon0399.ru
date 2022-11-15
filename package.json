@@ -30,7 +30,7 @@
     "@tailwindcss/typography": "^0.5.8",
     "@tanstack/react-query": "^4.16.1",
     "@thirdweb-dev/chain-icons": "^1.0.5",
-    "@vercel/analytics": "^0.1.4",
+    "@vercel/analytics": "^0.1.5",
     "babel-plugin-import-glob-array": "^0.2.0",
     "chart.js": "^3.9.1",
     "ethers": "^5.7.2",
