@@ -5619,10 +5619,10 @@ merkletreejs@^0.2.32:
     treeify "^1.1.0"
     web3-utils "^1.3.4"
 
-merkletreejs@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/merkletreejs/-/merkletreejs-0.3.5.tgz#720639dfb425ca3fb88697d6836961c65d3a3235"
-  integrity sha512-6LhCNxJvuybup/4hfgirOICdDP40bT8Qg1FiJWjoGPLhQyq1IyEFoXSh6pWjjQ5BhTVHX829o4JYUG1rZnUQJw==
+merkletreejs@^0.3.8:
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/merkletreejs/-/merkletreejs-0.3.8.tgz#2897b45484095db78635149bcdc95bab5f36a5a8"
+  integrity sha512-HrCabyH/xj6T12q3ij0Quitu1+QBwLftz3NxZNrRC/5cdiMeM6UIi3JElVYc1hjpgTOlDxLWrxGGIDsC+gPqhg==
   dependencies:
     bignumber.js "^9.0.1"
     buffer-reverse "^1.0.1"
