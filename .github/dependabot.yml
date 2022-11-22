@@ -1,18 +1,32 @@
 version: 2
 updates:
-# Fetch and update latest `npm` packages
-- package-ecosystem: npm
-  directory: '/'
-  schedule:
-    interval: daily
-    time: '00:00'
-  open-pull-requests-limit: 10
-  reviewers:
-    - leon0399
-  assignees:
-    - leon0399
-  commit-message:
-    prefix: fix
-    prefix-development: chore
-    include: scope
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    reviewers:
+      - leon0399
+    assignees:
+      - leon0399
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+      include: scope
+  # Fetch and update latest `npm` packages
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: daily
+      time: '00:00'
+    open-pull-requests-limit: 10
+    reviewers:
+      - leon0399
+    assignees:
+      - leon0399
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+      include: scope
+  
     
