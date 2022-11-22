@@ -1,0 +1,24 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {
+    "cpus": 4
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "yarn install && yarn run build",
+  "postCreateCommand": "",
+  "postAttachCommand": {
+    "server": "yarn run dev"
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["pages/index.js"]
+    }
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [3000]
+}

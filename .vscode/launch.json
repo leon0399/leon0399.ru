@@ -3,22 +3,21 @@
   "configurations": [
     {
       "name": "Next.js: debug server-side",
-      "type": "node-terminal",
+      "type": "node",
       "request": "launch",
-      "command": "npm run dev"
-    },
-    {
-      "name": "Next.js: debug client-side",
-      "type": "pwa-chrome",
-      "request": "launch",
-      "url": "http://localhost:3000"
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["run", "dev"],
+      "skipFiles": ["<node_internals>/**"]
     },
     {
       "name": "Next.js: debug full stack",
-      "type": "node-terminal",
+      "type": "node",
       "request": "launch",
-      "command": "npm run dev",
       "console": "integratedTerminal",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["run", "dev"],
       "serverReadyAction": {
         "pattern": "started server on .+, url: (https?://.+)",
         "uriFormat": "%s",
