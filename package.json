@@ -65,7 +65,7 @@
     "@iconify/json": "^2.1.143",
     "@iconify/react": "^4.0.0",
     "@svgr/core": "^6.5.1",
-    "@types/lodash": "^4.14.189",
+    "@types/lodash": "^4.14.190",
     "@types/node": "18.11.9",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
