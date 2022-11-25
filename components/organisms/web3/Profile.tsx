@@ -13,8 +13,8 @@ type Props = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
 const Profile: FC<Props> = ({ className, ...props }) => {
   const { address, connector } = useAccount()
-  const { data: ensName } = useEnsName({ address: address })
-  const { data: ensAvatar } = useEnsAvatar({ addressOrName: address })
+  const { data: ensName } = useEnsName({ address })
+  const { data: ensAvatar } = useEnsAvatar({ address })
   const { disconnect } = useDisconnect()
 
   const displayAddress = useMemo(
