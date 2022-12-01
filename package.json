@@ -66,7 +66,7 @@
     "@iconify/react": "^4.0.1",
     "@svgr/core": "^6.5.1",
     "@types/lodash": "^4.14.190",
-    "@types/node": "18.11.9",
+    "@types/node": "18.11.10",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
