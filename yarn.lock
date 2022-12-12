@@ -8058,10 +8058,10 @@ tweetnacl@^1.0.3:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-1.0.3.tgz#ac0af71680458d8a6378d0d0d050ab1407d35596"
   integrity sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==
 
-twin.macro@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-3.0.1.tgz#21fe8577d566838ddca532747ef5993fa19c1cfd"
-  integrity sha512-0mpdfQYpfCyPYa37MC/WKHCLQrwlqe6b2bM+uKaku5Iwe6bxHvEhcfXp8E8TyAdTupenYTvI6nHZvrh7msSFkQ==
+twin.macro@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-3.1.0.tgz#2056a83f7e4043c03587e664477e92feefc8df0e"
+  integrity sha512-7DSR/xdvSaAqhTM4JptBgI+1IzXQR5v+2hp0CDMmHMjlm44IBEewU8MeqPlXmFgQI06zpLyJMaKRbJu96drAJw==
   dependencies:
     "@babel/template" "^7.18.10"
     babel-plugin-macros "^3.1.0"
