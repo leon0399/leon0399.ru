@@ -1,7 +1,7 @@
 import { type NextPage } from 'next'
 import { type ReactNode, type FC, type ComponentProps } from 'react'
 import tw, { styled } from 'twin.macro'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, type QueryKey } from '@tanstack/react-query'
 
 import Head from 'next/head'
 import PageHeader from '../components/molecules/PageHeader'
@@ -10,11 +10,15 @@ import { Icon } from '@iconify/react'
 
 const DashboardHeader = styled.h2([tw`mb-6 text-xl font-semibold`])
 
-const SimpleUrlDashboardItem: FC<
-  Omit<Omit<ComponentProps<typeof DashboardItem>, 'isLoading'>, 'value'> & {
-    url: string
-  }
-> = ({ url, ...props }) => {
+interface ISimpleDashboadItemProps
+  extends Omit<ComponentProps<typeof DashboardItem>, 'isLoading' | 'value'> {
+  url: string
+  queryKey: QueryKey
+}
+const SimpleUrlDashboardItem: FC<ISimpleDashboadItemProps> = ({
+  url,
+  ...props
+}) => {
   const { isInitialLoading, isError, data } = useQuery<string>({
     queryFn: async () => {
       const response = await fetch(url)
@@ -48,28 +52,31 @@ const Dashboard: NextPage = () => {
 
         <DashboardHeader>GitHub</DashboardHeader>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+        <div className="mb-6 grid grid-cols-1 gap-5 md:grid-cols-2">
           <SimpleUrlDashboardItem
-            icon={<Icon icon="fa-brands:github" className="block w-6 h-6" />}
+            icon={<Icon icon="fa-brands:github" className="block h-6 w-6" />}
             title="GitHub Followers"
             url="/api/dashboard/github/followers"
+            queryKey={['dashboard', 'github-followers']}
           />
           <SimpleUrlDashboardItem
             icon={
-              <Icon icon="heroicons-solid:star" className="block w-6 h-6" />
+              <Icon icon="heroicons-solid:star" className="block h-6 w-6" />
             }
             title="GitHub Stars Gained"
             url="/api/dashboard/github/total_stars"
+            queryKey={['dashboard', 'github-stars']}
           />
         </div>
 
         <DashboardHeader>Twitter</DashboardHeader>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+        <div className="mb-6 grid grid-cols-1 gap-5 md:grid-cols-2">
           <SimpleUrlDashboardItem
-            icon={<Icon icon="fa-brands:twitter" className="block w-6 h-6" />}
-            title="GitHub Followers"
+            icon={<Icon icon="fa-brands:twitter" className="block h-6 w-6" />}
+            title="Twitter Subscribers"
             url="/api/dashboard/twitter/subscribers"
+            queryKey={['dashboard', 'twitter-subscribers']}
           />
         </div>
       </article>
