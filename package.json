@@ -36,7 +36,7 @@
     "ethers": "^5.7.2",
     "f0ts": "^0.0.1",
     "graphql": "^16.6.0",
-    "graphql-request": "^5.0.0",
+    "graphql-request": "^5.1.0",
     "lodash": "^4.17.21",
     "merkletreejs": "^0.3.9",
     "next": "^13.0.7",
