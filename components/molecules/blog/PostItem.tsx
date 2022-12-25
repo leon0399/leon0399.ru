@@ -1,7 +1,7 @@
 import { FC, useMemo } from 'react'
-import { getPlaiceholder } from 'plaiceholder'
 import tw, { styled } from 'twin.macro'
 import Image from 'next/image'
+import Balancer from 'react-wrap-balancer'
 
 import type { Post } from '../../../types/hashnode'
 
@@ -23,7 +23,9 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
   return (
     <PostContainer {...props}>
       <div className="flex-1">
-        <h3 className="mb-1 text-lg font-bold tracking-tight">{post.title}</h3>
+        <h3 className="mb-1 text-lg font-bold tracking-tight">
+          <Balancer>{post.title}</Balancer>
+        </h3>
         <div className="my-1 text-xs">
           <time
             className="text-gray-400 dark:text-gray-600"
@@ -37,7 +39,7 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
           </time>
         </div>
         <p className="my-1 text-sm leading-5 text-gray-600 dark:text-gray-400">
-          {post.brief}
+          <Balancer>{post.brief}</Balancer>
         </p>
       </div>
       {post.coverImage && (
