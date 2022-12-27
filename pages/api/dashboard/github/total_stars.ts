@@ -6,6 +6,8 @@ const REPOSITORIES = [
   'openhaptics/openhaptics-firmware',
   'openhaptics/openhaptics-hardware',
   'openhaptics/openhaptics.github.io',
+  'openhaptics/unihaptics-connect',
+  'openhaptics/esptool.ts',
   'thrace-app/addresses',
   'thrace-app/members-and-contributors',
 ]
