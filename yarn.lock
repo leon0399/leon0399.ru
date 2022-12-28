@@ -7095,10 +7095,10 @@ react-typist@^2.0.5:
   dependencies:
     prop-types "^15.5.10"
 
-react-wrap-balancer@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/react-wrap-balancer/-/react-wrap-balancer-0.2.3.tgz#6d1c2abcc02f9647888ca2d89adfad1ebeedad57"
-  integrity sha512-PWwo0+bMtRSsK2sDUl1NAtufz+vuB91AekruNurHsgHhxJx38RK4+vgzPN5jzGH0nufvwMxhtZXBjYRe+hFYCw==
+react-wrap-balancer@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/react-wrap-balancer/-/react-wrap-balancer-0.2.4.tgz#1f112df575958400f253186aa9a7fd5ee9528ed1"
+  integrity sha512-MVL9/Tw1X72t0i5Y/2j3YmSx1vkJJ22b5Vb+vZ/IOEdq7r9JPNzTfnfkB8wrl98Jwx+F6VCwJXmU7a1lT5PtCA==
 
 react@^18.2.0:
   version "18.2.0"
