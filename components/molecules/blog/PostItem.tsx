@@ -39,7 +39,7 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
           </time>
         </div>
         <p className="my-1 text-sm leading-5 text-gray-600 dark:text-gray-400">
-          <Balancer>{post.brief}</Balancer>
+          {post.brief}
         </p>
       </div>
       {post.coverImage && (

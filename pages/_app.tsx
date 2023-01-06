@@ -1,6 +1,7 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { Analytics } from '@vercel/analytics/react'
 import type { AppProps } from 'next/app'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { Provider as BalancerProvider } from 'react-wrap-balancer'
+import { Analytics } from '@vercel/analytics/react'
 
 import Layout from '../layouts'
 
@@ -11,10 +12,12 @@ const queryClient = new QueryClient()
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
-      <Layout>
-        <Component {...pageProps} />
-        <Analytics />
-      </Layout>
+      <BalancerProvider>
+        <Layout>
+          <Component {...pageProps} />
+          <Analytics />
+        </Layout>
+      </BalancerProvider>
     </QueryClientProvider>
   )
 }
