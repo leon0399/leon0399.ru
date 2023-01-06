@@ -7,7 +7,8 @@ import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 
 // Hooks
-import { createClient, configureChains, defaultChains, useAccount } from 'wagmi'
+import { createClient, configureChains, useAccount } from 'wagmi'
+import { mainnet } from 'wagmi/chains'
 import { publicProvider } from 'wagmi/providers/public'
 
 // Components
@@ -30,9 +31,10 @@ const DynamicConnect = dynamic(
   () => import('../../components/organisms/web3/Connect'),
 )
 
-const { provider, webSocketProvider } = configureChains(defaultChains, [
-  publicProvider(),
-])
+const { provider, webSocketProvider } = configureChains(
+  [mainnet],
+  [publicProvider()],
+)
 
 const web3Client = createClient({
   provider,
