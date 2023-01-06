@@ -1,4 +1,4 @@
-# Leonid Meleshin
+# [Leonid Meleshin](https://leon0399.ru)
 
 ## Getting Started
 
@@ -16,6 +16,17 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Timeline page
   - [ ] Filters by milestone type
 - [ ] Projects
-  - [ ] Mini DeGens
-  - [ ] Benchmarks
-- [ ] QR Code page
+  - [x] Mini DeGens
+  - [x] Benchmarks
+  - [x] Subgraphs
+  - [ ] OpenHaptics
+- [ ] Dashboard
+  - [x] GitHub Stars
+  - [x] GitHub Subscribers
+  - [x] Twitter Followers
+  - [ ] Blog Views
+- [x] QR Code page
+- [ ] Cool Experiments
+  - [ ] Webmentions
+  - [ ] [Cool nostalgia page](https://localghost.dev/blog/building-a-website-like-it-s-1999-in-2022/)
+  - [ ] Webrings: [1](https://sotb22-webring.neocities.org/), [2](https://🕸💍.ws/)
