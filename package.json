@@ -84,7 +84,7 @@
     "eslint-plugin-jest-dom": "^4.0.3",
     "eslint-plugin-mdx": "^2.0.5",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react": "^7.32.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-tailwindcss": "^3.8.0",
     "eslint-plugin-testing-library": "^5.9.1",
