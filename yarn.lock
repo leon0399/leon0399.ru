@@ -1059,10 +1059,10 @@
     "@iconify/types" "*"
     pathe "^1.0.0"
 
-"@iconify/react@^4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-4.0.1.tgz#098c7bcddb74ead7684a2a70e1f36dfaf2fee30d"
-  integrity sha512-/DBJqh5K7W4f+d4kpvyJa/OTpVa3GfgrE9bZFAKP0vIWDr0cvVU9MVvbbkek216w9nLQhpJY/FeJtc6izB1PHw==
+"@iconify/react@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-4.1.0.tgz#5ea86acae6e209a2f5b1b52922ab85d0d22f9b45"
+  integrity sha512-Mf72i3TNNKpKCKxmo7kzqyrUdCgaoljpqtWmtqpqwyxoV4ukhnDsSRNLhf2yBnqGr3cVZsdj/i0FMpXIY0Qk0g==
   dependencies:
     "@iconify/types" "^2.0.0"
 
