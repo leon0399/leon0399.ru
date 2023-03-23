@@ -1,6 +1,17 @@
 import { TimelineItem } from '../types/timeline'
 
 export const timeline: TimelineItem[] = [
+  {
+    title: 'Senior Software Engineer at [Plesk](https://www.plesk.com/)',
+    tags: ['Laravel', 'React.js', 'Golang'],
+    duration: {
+      start: 'November 2022',
+      end: 'Present',
+    },
+    icon: 'heroicons-outline:briefcase',
+    color: 'gray',
+    homepage: true,
+  },
   // {
   //   title: 'Living in Istanbul, Turkey',
   //   duration: {
@@ -42,6 +53,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     title: 'Outsource development for Russian Railways',
+    tags: ['Laravel', 'Vue.js'],
     description: `[Marketplace](http://education.rzd.ru) to purchase and schedule corporate education from external training facilities for every Russian Railways department across the country`,
     duration: {
       start: 'August 2018',
@@ -52,6 +64,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     title: 'Web Developer at [#VA](https://va-promotion.ru/)',
+    tags: ['Laravel', 'WordPress'],
     description:
       'Turnkey websites Development on Wordpress and Laravel. Theme development, layout and integration.',
     duration: {
