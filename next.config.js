@@ -15,6 +15,7 @@ const config = {
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  transpilePackages: ['@camwiegert/typical'],
   webpack(config) {
     config.plugins.push(
       require('unplugin-icons/webpack')({

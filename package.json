@@ -19,6 +19,7 @@
     ]
   },
   "dependencies": {
+    "@camwiegert/typical": "^0.1.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@heroicons/react": "^2.0.16",
@@ -33,6 +34,7 @@
     "@vercel/analytics": "^0.1.11",
     "babel-plugin-import-glob-array": "^0.2.0",
     "chart.js": "^4",
+    "clsx": "^1.2.1",
     "ethers": "^5.7.2",
     "f0ts": "^0.0.1",
     "graphql": "^16.6.0",
