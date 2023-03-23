@@ -14,5 +14,6 @@
     "typescript",
     "typescriptreact"
   ],
-  "eslint.packageManager": "yarn"
+  "eslint.packageManager": "yarn",
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass", "tw"]
 }

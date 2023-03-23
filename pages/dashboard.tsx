@@ -1,5 +1,5 @@
 import { type NextPage } from 'next'
-import { type ReactNode, type FC, type ComponentProps } from 'react'
+import React, { type FC, type ComponentProps } from 'react'
 import tw, { styled } from 'twin.macro'
 import { useQuery, type QueryKey } from '@tanstack/react-query'
 
@@ -42,17 +42,17 @@ const SimpleUrlDashboardItem: FC<ISimpleDashboadItemProps> = ({
 
 const Dashboard: NextPage = () => {
   return (
-    <div className="container mx-auto">
+    <div tw="container mx-auto">
       <Head>
         <title>Dashboard - Leonid Meleshin</title>
       </Head>
 
-      <article className="mx-auto mb-19 max-w-2xl">
+      <article tw="mx-auto mb-19 max-w-2xl">
         <PageHeader>Dashboard</PageHeader>
 
         <DashboardHeader>GitHub</DashboardHeader>
 
-        <div className="mb-6 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div tw="mb-6 grid grid-cols-1 gap-5 md:grid-cols-2">
           <SimpleUrlDashboardItem
             icon={<Icon icon="fa-brands:github" className="block h-6 w-6" />}
             title="GitHub Followers"
@@ -71,7 +71,7 @@ const Dashboard: NextPage = () => {
 
         <DashboardHeader>Twitter</DashboardHeader>
 
-        <div className="mb-6 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div tw="mb-6 grid grid-cols-1 gap-5 md:grid-cols-2">
           <SimpleUrlDashboardItem
             icon={<Icon icon="fa-brands:twitter" className="block h-6 w-6" />}
             title="Twitter Subscribers"

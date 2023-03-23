@@ -6,9 +6,9 @@ import 'twin.macro'
 const TheContactBanner: FC<JSX.IntrinsicElements['section']> = (props) => (
   <section
     tw="
-      w-full max-w-4xl mx-auto rounded-2xl px-12 py-10 border text-center md:text-left
-      bg-indigo-600 border-indigo-800 text-gray-100
-      dark:bg-indigo-300 dark:border-indigo-600 dark:text-gray-900
+      mx-auto w-full max-w-4xl rounded-2xl border border-indigo-800 bg-indigo-600 px-12 py-10
+      text-center text-gray-100 dark:border-indigo-600
+      dark:bg-indigo-300 dark:text-gray-900 md:text-left
     "
     {...props}
   >

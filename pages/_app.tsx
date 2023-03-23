@@ -5,20 +5,25 @@ import { Analytics } from '@vercel/analytics/react'
 
 import Layout from '../layouts'
 
+import GlobalStyles from '../components/GlobalStyles'
+
 import '../styles/globals.css'
 
 const queryClient = new QueryClient()
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <BalancerProvider>
-        <Layout>
-          <Component {...pageProps} />
-          <Analytics />
-        </Layout>
-      </BalancerProvider>
-    </QueryClientProvider>
+    <>
+      <GlobalStyles />
+      <QueryClientProvider client={queryClient}>
+        <BalancerProvider>
+          <Layout>
+            <Component {...pageProps} />
+            <Analytics />
+          </Layout>
+        </BalancerProvider>
+      </QueryClientProvider>
+    </>
   )
 }
 

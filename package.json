@@ -7,6 +7,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "yarn lint --fix",
+    "lint:debug": "yarn lint --debug",
     "lint:format": "prettier --write",
     "lint:types": "tsc --noEmit"
   },

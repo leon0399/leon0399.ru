@@ -1,32 +1,39 @@
-import type { Project } from '../../../../types/project'
+import React from 'react'
+
+import 'twin.macro'
+
 import Tag from '../../../atoms/Tag'
 
-import tw, { styled } from 'twin.macro'
-import React from 'react'
 import Image from 'next/image'
-import { Icon } from '@iconify/react'
 import Link from 'next/link'
+import { Icon } from '@iconify/react'
+
+import type { Project } from '../../../../types/project'
+
 interface Props {
-  className?: string
   project: Project
 }
 
-const ProjectContainer = styled.article([
-  tw`relative flex flex-row py-4 px-6 gap-4 border rounded-lg shadow-lg`,
-  tw`transition-colors duration-300`,
-  tw`bg-white dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700`,
-  tw`focus-within:ring ring-offset-2`,
-])
-
-const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
-  <ProjectContainer {...props}>
-    <div className="hidden shrink-0 md:inline-block">
+const ProjectCard: React.FC<Props & JSX.IntrinsicElements['article']> = ({
+  project,
+  ...props
+}) => (
+  <article
+    tw="
+      relative flex flex-row gap-4 rounded-lg border bg-white py-4 px-6
+      shadow-lg ring-offset-2
+      transition-colors duration-300 focus-within:ring dark:border-gray-700
+      dark:bg-gray-800 dark:text-gray-300
+    "
+    {...props}
+  >
+    <div tw="hidden shrink-0 md:inline-block">
       {project.logo ? (
         <Image
           src={project.logo}
           width={64}
           height={64}
-          className="h-16 w-16 rounded"
+          tw="h-16 w-16 rounded"
           alt={project.title}
           style={{
             maxWidth: '100%',
@@ -34,28 +41,28 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
           }}
         />
       ) : (
-        <div className="h-16 w-16 rounded bg-gray-200" />
+        <div tw="h-16 w-16 rounded bg-gray-200" />
       )}
     </div>
-    <div className="grow overflow-hidden">
-      <h3 className="text-lg font-bold tracking-tight">{project.title}</h3>
-      <p className="text-sm leading-5 text-gray-600 dark:text-gray-400">
+    <div tw="grow overflow-hidden">
+      <h3 tw="text-lg font-bold tracking-tight">{project.title}</h3>
+      <p tw="text-sm leading-5 text-gray-600 dark:text-gray-400">
         {project.description}
       </p>
       {Array.isArray(project.tags) && project.tags.length && (
-        <div className="my-2 flex flex-row space-x-3">
+        <div tw="my-2 flex flex-row space-x-3">
           {project.tags.map((tag, i) => (
             <Tag key={i}>{tag}</Tag>
           ))}
         </div>
       )}
-      <div className="flex flex-row space-x-4 text-xs leading-relaxed">
+      <div tw="flex flex-row space-x-4 text-xs leading-relaxed">
         <a
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="
-            underline hover:text-gray-900 dark:hover:text-gray-200 truncate
+          tw="
+            truncate underline hover:text-gray-900 dark:hover:text-gray-200
           "
         >
           {project.displayUrl ||
@@ -66,7 +73,7 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
         </a>
 
         <span
-          className="
+          tw="
             before:pr-4 before:no-underline before:content-['·']
           "
         >
@@ -75,16 +82,16 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
       </div>
     </div>
     {project.isExternalUrl && (
-      <div className="text-gray-500">
-        <Icon icon={'heroicons-outline:external-link'} className="h-6 w-6" />
+      <div tw="text-gray-500">
+        <Icon icon={'heroicons-outline:external-link'} tw="h-6 w-6" />
       </div>
     )}
     {project.pin && (
-      <div className="absolute -top-2 right-6 text-gray-500">
+      <div tw="absolute -top-2 right-6 text-gray-500">
         <svg
           aria-hidden="true"
           role="img"
-          className="h-6 w-6 fill-white"
+          tw="h-6 w-6 fill-white"
           width="1em"
           height="1em"
           preserveAspectRatio="xMidYMid meet"
@@ -105,16 +112,16 @@ const ProjectCard: React.FC<Props> = ({ project, ...props }) => (
         href={project.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute inset-0 h-full w-full focus:outline-none"
+        tw="absolute inset-0 h-full w-full focus:outline-none"
       />
     ) : (
       <Link
         href={`/projects/${project.slug}`}
-        className="absolute inset-0 h-full w-full focus:outline-none"
+        tw="absolute inset-0 h-full w-full focus:outline-none"
         aria-label={project.title}
       ></Link>
     )}
-  </ProjectContainer>
+  </article>
 )
 
 export default ProjectCard

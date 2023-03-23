@@ -1,4 +1,6 @@
-import type { FC, ReactNode } from 'react'
+import React, { type FC, type ReactNode } from 'react'
+
+import 'twin.macro'
 
 interface Props {
   icon: ReactNode
@@ -9,16 +11,16 @@ interface Props {
 
 const DashboardItem: FC<Props> = ({ title, icon, isLoading, value }) => {
   return (
-    <div className="relative flex flex-row p-6 border rounded-lg shadow-lg space-x-5 items-center dark:border-gray-700">
-      <div className="p-3 rounded-[4px] bg-indigo-600 dark:bg-indigo-300 text-gray-100 dark:text-gray-900">
+    <div tw="relative flex flex-row items-center space-x-5 rounded-lg border p-6 shadow-lg dark:border-gray-700">
+      <div tw="rounded-[4px] bg-indigo-600 p-3 text-gray-100 dark:bg-indigo-300  dark:text-gray-900">
         {icon}
       </div>
       <div>
-        <h5 className="text-gray-500 text-sm font-semibold">{title}</h5>
+        <h5 tw="text-sm font-semibold text-gray-500">{title}</h5>
         {isLoading ? (
-          <span className="rounded-sm w-12 h-6 my-1 block animate-pulse bg-gray-300" />
+          <span tw="my-1 block h-6 w-12 animate-pulse rounded-sm bg-gray-300" />
         ) : (
-          <span className="text-gray-900 dark:text-gray-200 font-semibold text-2xl">
+          <span tw="text-2xl font-semibold text-gray-900 dark:text-gray-200">
             {value || <>&mdash;</>}
           </span>
         )}

@@ -1,7 +1,7 @@
 import React, { type FC, type ComponentProps } from 'react'
 import Link from 'next/link'
 
-import tw, { css } from 'twin.macro'
+import tw from 'twin.macro'
 
 type BaseProps = JSX.IntrinsicElements['button'] | ComponentProps<typeof Link>
 

@@ -24,5 +24,10 @@
     "react-hooks",
     "prettier",
     "jest"
-  ]
+  ],
+  "settings": {
+    "tailwindcss": {
+      "classRegex": "^class(Name)?$|^tw$"
+    }
+  }
 }

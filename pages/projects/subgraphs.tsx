@@ -1,9 +1,13 @@
+import { type GetStaticProps, type NextPage } from 'next'
+import React, { useMemo } from 'react'
+
 import { useQuery } from '@tanstack/react-query'
 import { request, gql } from 'graphql-request'
-import { type GetStaticProps, type NextPage } from 'next'
+
 import Head from 'next/head'
-import { useMemo } from 'react'
 import ProjectHeader from '../../components/molecules/projects/ProjectHeader'
+
+import 'twin.macro'
 
 interface Subgraph {
   id: string
@@ -96,16 +100,16 @@ const SubgraphRow: React.FC<{ subgraphName: string }> = ({ subgraphName }) => {
   if (isInitialLoading) {
     return (
       <tr>
-        <td className="font-mono">
+        <td tw="font-mono">
           <a href={subgraphUrl} target="_blank" rel="noreferrer">
             {subgraphName}
           </a>
         </td>
-        <td className="text-center">
-          <span className="inline-flex animate-pulse bg-slate-200 rounded w-4 h-4 align-middle" />
+        <td tw="text-center">
+          <span tw="inline-flex h-4 w-4 animate-pulse rounded bg-slate-200 align-middle" />
         </td>
-        <td className="text-right">
-          <span className="inline-flex animate-pulse bg-slate-200 rounded w-16 h-4 align-middle" />
+        <td tw="text-right">
+          <span tw="inline-flex h-4 w-16 animate-pulse rounded bg-slate-200 align-middle" />
         </td>
       </tr>
     )
@@ -114,12 +118,12 @@ const SubgraphRow: React.FC<{ subgraphName: string }> = ({ subgraphName }) => {
   if (isError || !data) {
     return (
       <tr>
-        <td className="font-mono">
+        <td tw="font-mono">
           <a href={subgraphUrl} target="_blank" rel="noreferrer">
             {subgraphName}
           </a>
         </td>
-        <td colSpan={2} className="text-red-700">
+        <td colSpan={2} tw="text-red-700">
           {error?.response.errors.map((error) => (
             <>
               {error.message}
@@ -133,19 +137,19 @@ const SubgraphRow: React.FC<{ subgraphName: string }> = ({ subgraphName }) => {
 
   return (
     <tr>
-      <td className="font-mono">
+      <td tw="font-mono">
         <a href={subgraphUrl} target="_blank" rel="noreferrer">
           {subgraphName}
         </a>
       </td>
-      <td className="text-center">
+      <td tw="text-center">
         {data.health === 'healthy'
           ? '✅'
           : data.health === 'failed'
           ? '❌'
           : '⚠️'}
       </td>
-      <td className="text-right">{data.entityCount}</td>
+      <td tw="text-right">{data.entityCount}</td>
     </tr>
   )
 }
@@ -156,12 +160,12 @@ interface Props {
 
 const SubgraphsPage: NextPage<Props> = ({ subgraphNames }) => {
   return (
-    <div className="container mx-auto">
+    <div tw="container mx-auto">
       <Head>
         <title>Subgraphs - Leonid Meleshin</title>
       </Head>
 
-      <article className="prose mx-auto max-w-2xl dark:prose-invert">
+      <article tw="prose mx-auto max-w-2xl dark:prose-invert">
         <ProjectHeader
           title="Subgraphs"
           category="Web3"
@@ -169,12 +173,12 @@ const SubgraphsPage: NextPage<Props> = ({ subgraphNames }) => {
           url="https://github.com/leon0399/subgraphs"
         />
 
-        <table className="table-auto">
+        <table tw="table-auto">
           <thead>
             <tr>
               <th>Subgraph</th>
-              <th className="text-center">Status</th>
-              <th className="text-right">Entities</th>
+              <th tw="text-center">Status</th>
+              <th tw="text-right">Entities</th>
             </tr>
           </thead>
           <tbody>

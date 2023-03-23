@@ -4,6 +4,8 @@ import Tag from '../../atoms/Tag'
 // Types
 import type { FC, ReactNode } from 'react'
 
+import 'twin.macro'
+
 interface Props {
   title: ReactNode
   category: string
@@ -23,10 +25,10 @@ const ProjectHeader: FC<Props> = ({
 }) => {
   return (
     <header
-      className="
+      tw="
         mt-8 mb-12 flex
-        flex-col overflow-hidden
-        items-start space-y-4 md:flex-row
+        flex-col items-start
+        space-y-4 overflow-hidden md:flex-row
         md:space-y-0 md:space-x-4
       "
     >
@@ -35,7 +37,7 @@ const ProjectHeader: FC<Props> = ({
           src={logo}
           width={84}
           height={84}
-          className="h-[84px] w-[84px] rounded mt-0"
+          tw="mt-0 h-[84px] w-[84px] rounded"
           alt="Project logo"
           style={{
             maxWidth: '100%',
@@ -43,18 +45,18 @@ const ProjectHeader: FC<Props> = ({
           }}
         />
       ) : (
-        <div className="h-[84px] w-[84px] rounded bg-gray-200" />
+        <div tw="h-[84px] w-[84px] rounded bg-gray-200" />
       )}
-      <div className="overflow-hidden max-w-full">
-        <h1 className="mb-4 text-4xl font-bold md:text-5xl">{title}</h1>
-        <div className="flex flex-row justify-between overflow-hidden">
-          <div className="flex flex-row space-x-4 text-xs leading-relaxed truncate">
+      <div tw="max-w-full overflow-hidden">
+        <h1 tw="mb-4 text-4xl font-bold md:text-5xl">{title}</h1>
+        <div tw="flex flex-row justify-between overflow-hidden">
+          <div tw="flex flex-row space-x-4 truncate text-xs leading-relaxed">
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="
-                underline hover:text-gray-900 dark:hover:text-gray-200 truncate
+              tw="
+                truncate underline hover:text-gray-900 dark:hover:text-gray-200
               "
             >
               {displayUrl ||
@@ -65,7 +67,7 @@ const ProjectHeader: FC<Props> = ({
             </a>
 
             <span
-              className="
+              tw="
                 before:pr-4 before:no-underline before:content-['·']
               "
             >
@@ -74,9 +76,9 @@ const ProjectHeader: FC<Props> = ({
           </div>
 
           {Array.isArray(tags) && tags.length && (
-            <div className="flex flex-row">
+            <div tw="flex flex-row">
               {tags.map((tag, i) => (
-                <Tag key={i} className="ml-3">
+                <Tag key={i} tw="ml-3">
                   {tag}
                 </Tag>
               ))}
