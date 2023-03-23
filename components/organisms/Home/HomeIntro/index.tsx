@@ -15,7 +15,7 @@ const words = ['Developer', 'Builder', 'Engineer', 'Researcher']
 
 const HomeIntro: FC<Props & JSX.IntrinsicElements['section']> = (props) => (
   <section tw="w-full" {...props}>
-    <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+    <h1 tw="mb-4 text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
       I’m&nbsp;the{' '}
       <Typical<'span'>
         steps={words.flatMap((word) => [word, 800])}
@@ -23,9 +23,9 @@ const HomeIntro: FC<Props & JSX.IntrinsicElements['section']> = (props) => (
         wrapper="span"
       />
     </h1>
-    <p className="my-4 leading-[1.75] text-gray-800 dark:text-gray-200">
+    <p tw="my-4 leading-[1.75] text-gray-800 dark:text-gray-200">
       Hi there! My name is <strong>Leonid Meleshin</strong>, and I am a{' '}
-      <Link href="/projects" className="underline">
+      <Link href="/projects" tw="underline">
         builder
       </Link>{' '}
       &amp;{' '}
@@ -33,13 +33,13 @@ const HomeIntro: FC<Props & JSX.IntrinsicElements['section']> = (props) => (
         href="https://github.com/leon0399"
         target="_blank"
         rel="noopener noreferrer"
-        className="underline"
+        tw="underline"
       >
         hacker
       </a>
       , travelling across the world.
     </p>
-    <PrimarySocials className="my-6" />
+    <PrimarySocials tw="my-6" />
   </section>
 )
 

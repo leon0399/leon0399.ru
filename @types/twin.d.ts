@@ -18,4 +18,8 @@ declare module 'react' {
   interface SVGProps<T> extends SVGProps<SVGSVGElement> {
     css?: CSSInterpolation
   }
+
+  interface Attributes {
+    css?: CSSInterpolation
+  }
 }

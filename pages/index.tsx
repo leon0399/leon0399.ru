@@ -1,15 +1,19 @@
 // Utils
 import { serialize } from 'next-mdx-remote/serialize'
 import { getPlaiceholder } from 'plaiceholder'
+import tw, { css } from 'twin.macro'
 
 // Components
 import Head from 'next/head'
 
-import HomeIntro from '../components/organisms/Home/HomeIntro'
-import HomeProjects from '../components/organisms/Home/HomeProjects'
-import HomeBlog from '../components/organisms/Home/HomeBlog'
-import HomeTimeline from '../components/organisms/Home/HomeTimeline'
-import HomeSocials from '../components/organisms/Home/HomeSocials'
+import {
+  HomeIntro,
+  HomeProjects,
+  HomeBlog,
+  HomeTimeline,
+  HomeSocials,
+  // HomeLife,
+} from '../components/organisms/Home'
 import TheContactBanner from '../components/organisms/TheContactBanner'
 
 // Types
@@ -34,9 +38,13 @@ interface Props {
   timeline: TimelineItem[]
 }
 
+const sectionStyles = css`
+  ${tw`my-19 first:mt-0 mx-auto max-w-2xl`}
+`
+
 const Home: NextPage<Props> = ({ projects, timeline, socials, posts }) => {
   return (
-    <div className="container mx-auto">
+    <div tw="container mx-auto">
       <Head>
         <title>Leonid Meleshin</title>
 
@@ -59,24 +67,16 @@ const Home: NextPage<Props> = ({ projects, timeline, socials, posts }) => {
         />
       </Head>
 
-      <HomeIntro id="intro" className="mx-auto mb-19 max-w-2xl" />
+      <HomeIntro id="intro" css={[sectionStyles]} />
       <HomeProjects
         id="projects"
-        className="my-19 mx-auto max-w-2xl"
+        css={[sectionStyles]}
         projects={projects.slice(0, 3)}
       />
-      <HomeBlog id="blog" className="my-19 mx-auto max-w-2xl" posts={posts} />
-      <HomeTimeline
-        id="timeline"
-        className="my-19 mx-auto max-w-2xl"
-        timeline={timeline}
-      />
-      <HomeSocials
-        id="socials"
-        className="my-19 mx-auto max-w-2xl"
-        socials={socials}
-      />
-      {/* <HomeLife id="life" className="my-19 mx-auto max-w-2xl" items={[
+      <HomeBlog id="blog" css={[sectionStyles]} posts={posts} />
+      <HomeTimeline id="timeline" css={[sectionStyles]} timeline={timeline} />
+      <HomeSocials id="socials" css={[sectionStyles]} socials={socials} />
+      {/* <HomeLife id="life" css={[sectionStyles]} items={[
         {
           icon: 'heroicons-outline:check',
           color: 'indigo',
@@ -95,9 +95,10 @@ const Home: NextPage<Props> = ({ projects, timeline, socials, posts }) => {
           label: 'Goals',
           href: '#',
         },
-      ]} /> */}
+        ]}
+      />*/}
 
-      <TheContactBanner className="my-19" />
+      <TheContactBanner tw="my-19" />
     </div>
   )
 }

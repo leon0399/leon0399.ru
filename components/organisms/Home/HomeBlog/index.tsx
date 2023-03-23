@@ -1,20 +1,24 @@
-import { FC } from 'react'
-import { Post } from '../../../../types/hashnode'
+import React, { type FC } from 'react'
 import PostItem from '../../../molecules/blog/PostItem'
 import SectionHeader from '../../../molecules/SectionHeader'
 
+import type { Post } from '../../../../types/hashnode'
+
+import 'twin.macro'
+
 interface Props {
-  id?: string
-  className?: string
   posts: Post[]
 }
 
-const HomeBlog: FC<Props> = ({ id, className, posts }) => {
+const HomeBlog: FC<Props & JSX.IntrinsicElements['section']> = ({
+  posts,
+  ...props
+}) => {
   return (
-    <section id={id} className={`w-full ${className}`}>
+    <section tw="w-full" {...props}>
       <SectionHeader title="Blog" href="https://blog.leon0399.ru" />
 
-      <div className="space-y-5">
+      <div tw="space-y-5">
         {posts.map((post, i) => {
           return (
             <PostItem

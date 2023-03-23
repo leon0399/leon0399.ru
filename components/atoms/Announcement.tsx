@@ -1,27 +1,23 @@
+import React, {
+  type FC,
+  type PropsWithChildren,
+  type ComponentProps,
+} from 'react'
 import Link from 'next/link'
 
-import type { FC, PropsWithChildren } from 'react'
+import 'twin.macro'
 
 interface Props {
   href: string
-  className?: string
 }
 
-const Announcement: FC<PropsWithChildren<Props>> = ({
-  href,
-  className,
-  children,
-}) => {
+const Announcement: FC<
+  PropsWithChildren<Props> & ComponentProps<typeof Link>
+> = ({ children, ...props }) => {
   return (
-    <Link
-      href={href}
-      className={`
-        relative flex flex-row space-x-3 overflow-hidden
-        ${className || ''}
-      `}
-    >
+    <Link tw="relative flex flex-row space-x-3 overflow-hidden" {...props}>
       <div
-        className="
+        tw="
           mx-auto
           flex items-center justify-center divide-white
           p-3 text-sm font-medium
