@@ -93,7 +93,7 @@
     "lint-staged": "^13.2.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.7",
-    "typescript": "5.0.3",
+    "typescript": "5.0.4",
     "unplugin-icons": "^0.16.1",
     "xwind": "^0.8.0"
   }
