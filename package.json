@@ -92,7 +92,7 @@
     "eslint-plugin-tailwindcss": "^3.11.0",
     "eslint-plugin-testing-library": "^5.10.2",
     "lint-staged": "^13.2.1",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.22",
     "prettier": "^2.8.7",
     "typescript": "5.0.4",
     "unplugin-icons": "^0.16.1",
