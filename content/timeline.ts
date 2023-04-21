@@ -91,7 +91,7 @@ export const timeline: TimelineItem[] = [
       end: '2020',
     },
     homepage: true,
-    icon: 'heroicons-outline:chip',
+    icon: 'heroicons-outline:academic-cap',
     color: 'blue',
   },
   {
@@ -99,7 +99,7 @@ export const timeline: TimelineItem[] = [
     duration: {
       start: 'June 2016',
     },
-    icon: 'heroicons-outline:academic-cap',
+    icon: 'heroicons-outline:chip',
     color: 'yellow',
   },
   {

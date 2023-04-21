@@ -3,11 +3,11 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { Octokit } from '@octokit/core'
 
 const REPOSITORIES = [
-  'openhaptics/openhaptics-firmware',
-  'openhaptics/openhaptics-hardware',
-  'openhaptics/openhaptics.github.io',
-  // 'openhaptics/xrconnect-monorepo',
-  'openhaptics/esptool.ts',
+  'senseshift/senseshift-firmware',
+  'senseshift/senseshift-hardware',
+  'senseshift/senseshift.github.io',
+  'senseshift/xrconnect-monorepo',
+  'senseshift/esptool.ts',
   'thrace-app/addresses',
   'thrace-app/members-and-contributors',
 ]

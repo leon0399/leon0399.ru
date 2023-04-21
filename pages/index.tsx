@@ -110,15 +110,17 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     (p) => p.display === undefined || p.display === true,
   )
 
-  const posts = (await getUserPosts('leon0399')).map(async (post) => {
-    const { base64, blurhash } = await getPlaiceholder(post.coverImage)
+  const posts = (await getUserPosts('leon0399'))
+    .slice(0, 3)
+    .map(async (post) => {
+      const { base64, blurhash } = await getPlaiceholder(post.coverImage)
 
-    return {
-      ...post,
-      coverImageBase64: base64,
-      coverImageBlurhash: blurhash,
-    }
-  })
+      return {
+        ...post,
+        coverImageBase64: base64,
+        coverImageBlurhash: blurhash,
+      }
+    })
 
   const timeline = allTimeline
     .filter((t) => t.homepage)

@@ -1,26 +1,13 @@
 import { type Post, type User } from '../types/hashnode'
+import { GraphQLClient, gql } from 'graphql-request'
 import { getPlaiceholder } from 'plaiceholder'
 
-const gql = async <T>(
-  query: string,
-  variables: Record<string, unknown>,
-): Promise<T> => {
-  const data = await fetch('https://api.hashnode.com/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
-  })
+export const API_URL = 'https://api.hashnode.com/'
 
-  return (await data.json()).data as T
-}
+export const CLIENT = new GraphQLClient(API_URL)
 
-const PUBLOCATIONS_QUERY = `
-  query Publications($username: String!, $page: Int){
+const PUBLOCATIONS_QUERY = gql`
+  query Publications($username: String!, $page: Int) {
     user(username: $username) {
       publicationDomain
       publication {
@@ -47,7 +34,7 @@ const PUBLOCATIONS_QUERY = `
   }
 `
 
-const PUBLOCATION_QUERY = `
+const PUBLOCATION_QUERY = gql`
   query Publication($hostname: String!, $slug: String!) {
     post(hostname: $hostname, slug: $slug) {
       _id
@@ -75,7 +62,7 @@ export const getUserPosts = async (
   username: string,
   page?: number,
 ): Promise<Post[]> => {
-  const data = await gql<{ user: User }>(PUBLOCATIONS_QUERY, {
+  const data = await CLIENT.request<{ user: User }>(PUBLOCATIONS_QUERY, {
     username,
     page,
   })
@@ -87,7 +74,7 @@ export const getPost = async (
   hostname: string,
   slug: string,
 ): Promise<Post> => {
-  const data = await gql<{ post: Post }>(PUBLOCATION_QUERY, {
+  const data = await CLIENT.request<{ post: Post }>(PUBLOCATION_QUERY, {
     hostname,
     slug,
   })

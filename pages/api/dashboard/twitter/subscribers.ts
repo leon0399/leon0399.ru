@@ -1,22 +1,16 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { Client } from 'twitter-api-sdk'
 
-interface Widget {
-  name: string
-  screen_name: string
-
-  followers_count: number
-  formatted_followers_count: string
-}
+const twitter = new Client(process.env.TWITTER_TOKEN as string)
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<number>,
 ) {
-  const response = await fetch(
-    'https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=leon0399',
+  return res.status(200).json(
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    (await twitter.users.findMyUser({ 'user.fields': ['public_metrics'] }))
+      .data!.public_metrics!.followers_count,
   )
-  const json: Widget[] = await response.json()
-
-  res.status(200).send(json[0].followers_count)
 }

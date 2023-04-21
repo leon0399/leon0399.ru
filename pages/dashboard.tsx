@@ -79,6 +79,34 @@ const Dashboard: NextPage = () => {
             queryKey={['dashboard', 'twitter-subscribers']}
           />
         </div>
+
+        <DashboardHeader>Hashnode</DashboardHeader>
+
+        <div tw="mb-6 grid grid-cols-1 gap-5 md:grid-cols-2">
+          <SimpleUrlDashboardItem
+            icon={
+              <Icon
+                icon="heroicons-solid:document-text"
+                className="block h-6 w-6"
+              />
+            }
+            title="Hashnode Posts"
+            url="/api/dashboard/hashnode/posts"
+            queryKey={['dashboard', 'hashnode-posts']}
+          />
+          <SimpleUrlDashboardItem
+            icon={<Icon icon="fa-brands:hashnode" className="block h-6 w-6" />}
+            title="Hashnode Followers"
+            url="/api/dashboard/hashnode/followers"
+            queryKey={['dashboard', 'hashnode-followers']}
+          />
+          <SimpleUrlDashboardItem
+            icon={<Icon icon="fa-brands:twitter" className="block h-6 w-6" />}
+            title="Hashnode Reacions"
+            url="/api/dashboard/hashnode/reactions"
+            queryKey={['dashboard', 'hashnode-reactions']}
+          />
+        </div>
       </article>
     </div>
   )
