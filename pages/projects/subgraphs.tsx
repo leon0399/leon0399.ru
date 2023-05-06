@@ -29,7 +29,9 @@ const useSubgraph = (subgraphName: string) =>
   useQuery<Subgraph, SubgraphError>(
     ['subgraph', { name: subgraphName }],
     async () => {
-      const { indexingStatusForCurrentVersion } = await request(
+      const { indexingStatusForCurrentVersion } = await request<{
+        indexingStatusForCurrentVersion: Subgraph
+      }>(
         'https://api.thegraph.com/index-node/graphql',
         gql`
           query Subgraph($subgraphName: String!) {
