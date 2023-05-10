@@ -94,7 +94,7 @@
     "eslint-plugin-testing-library": "^5.10.3",
     "lint-staged": "^13.2.1",
     "postcss": "^8.4.23",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "typescript": "5.0.4",
     "unplugin-icons": "^0.16.1",
     "xwind": "^0.8.0"
