@@ -23,7 +23,7 @@
     "@camwiegert/typical": "^0.1.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@heroicons/react": "^2.0.17",
+    "@heroicons/react": "^2.0.18",
     "@next/bundle-analyzer": "^13.4.1",
     "@next/mdx": "^13.4.1",
     "@octokit/core": "^4.2.0",
