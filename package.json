@@ -67,7 +67,7 @@
   "devDependencies": {
     "@emotion/babel-plugin-jsx-pragmatic": "^0.2.1",
     "@emotion/eslint-plugin": "^11.7.0",
-    "@iconify/json": "^2.2.61",
+    "@iconify/json": "^2.2.63",
     "@iconify/react": "^4.1.0",
     "@svgr/core": "^7.0.0",
     "@types/lodash": "^4.14.194",
