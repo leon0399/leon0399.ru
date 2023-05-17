@@ -1698,10 +1698,10 @@
     deprecation "^2.0.0"
     once "^1.4.0"
 
-"@octokit/request@^6.0.0", "@octokit/request@^6.2.3":
-  version "6.2.3"
-  resolved "https://registry.yarnpkg.com/@octokit/request/-/request-6.2.3.tgz#76d5d6d44da5c8d406620a4c285d280ae310bdb4"
-  integrity sha512-TNAodj5yNzrrZ/VxP+H5HiYaZep0H3GU0O7PaF+fhDrt8FPrnkei9Aal/txsN/1P7V3CPiThG0tIvpPDYUsyAA==
+"@octokit/request@^6.0.0", "@octokit/request@^6.2.4":
+  version "6.2.4"
+  resolved "https://registry.yarnpkg.com/@octokit/request/-/request-6.2.4.tgz#b00a7185865c72bdd432e63168b1e900953ded0c"
+  integrity sha512-at92SYQstwh7HH6+Kf3bFMnHrle7aIrC0r5rTP+Bb30118B6j1vI2/M4walh6qcQgfuLIKs8NUO5CytHTnUI3A==
   dependencies:
     "@octokit/endpoint" "^7.0.0"
     "@octokit/request-error" "^3.0.0"
