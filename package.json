@@ -9,7 +9,9 @@
     "lint:fix": "yarn lint --fix",
     "lint:debug": "yarn lint --debug",
     "lint:format": "prettier --write",
-    "lint:types": "tsc --noEmit"
+    "lint:types": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
@@ -69,9 +71,20 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin-jsx-pragmatic": "^0.2.1",
+    "@emotion/babel-preset-css-prop": "^11.10.0",
     "@emotion/eslint-plugin": "^11.11.0",
     "@iconify/json": "^2.2.67",
     "@iconify/react": "^4.1.0",
+    "@storybook/addon-a11y": "^7.0.17",
+    "@storybook/addon-actions": "^7.0.17",
+    "@storybook/addon-docs": "^7.0.17",
+    "@storybook/addon-essentials": "^7.0.17",
+    "@storybook/addon-interactions": "^7.0.17",
+    "@storybook/addon-links": "^7.0.17",
+    "@storybook/blocks": "^7.0.17",
+    "@storybook/nextjs": "^7.0.17",
+    "@storybook/react": "7.0.17",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@svgr/core": "^8.0.0",
     "@types/lodash": "^4.14.194",
     "@types/node": "18.15.12",
@@ -81,6 +94,7 @@
     "@typescript-eslint/parser": "^5.59.6",
     "autoprefixer": "^10.4.14",
     "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-twin": "^1.1.0",
     "eslint": "^8.41.0",
     "eslint-config-next": "13.4.3",
     "eslint-config-prettier": "^8.8.0",
@@ -93,11 +107,15 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-tailwindcss": "^3.11.0",
     "eslint-plugin-testing-library": "^5.11.0",
     "lint-staged": "^13.2.2",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
+    "react-docgen-typescript-plugin": "^1.0.5",
+    "storybook": "^7.0.17",
+    "storybook-addon-react-docgen": "^1.2.43",
     "typescript": "5.0.4",
     "unplugin-icons": "^0.16.1"
   }

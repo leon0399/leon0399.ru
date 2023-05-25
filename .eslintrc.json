@@ -16,7 +16,8 @@
     "plugin:jest-dom/recommended",
     "plugin:testing-library/react",
     "plugin:prettier/recommended",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
   "plugins": [
     "@emotion",

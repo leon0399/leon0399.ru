@@ -6,10 +6,7 @@ import Announcement from '../../atoms/Announcement'
 import 'twin.macro'
 
 const TheAnnouncementBar: FC = () => (
-  <Announcement
-    href="/resume.pdf"
-    tw="bg-indigo-600 text-gray-100 dark:bg-indigo-300 dark:text-gray-900"
-  >
+  <Announcement href="/resume.pdf" color={'indigo'}>
     <span tw="flex items-center gap-2 px-3">
       Hey, I’m looking for new opportunities!{' '}
     </span>

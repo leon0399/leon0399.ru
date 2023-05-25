@@ -1,34 +1,50 @@
 import React, {
+  forwardRef,
   type FC,
   type PropsWithChildren,
   type ComponentProps,
 } from 'react'
 import Link from 'next/link'
 
-import 'twin.macro'
+import tw, { css, styled } from 'twin.macro'
 
-interface Props {
-  href: string
-}
+type Color = 'primary' | 'indigo'
 
-const Announcement: FC<
-  PropsWithChildren<Props> & ComponentProps<typeof Link>
-> = ({ children, ...props }) => {
-  return (
-    <Link tw="relative flex flex-row space-x-3 overflow-hidden" {...props}>
-      <div
-        tw="
-          mx-auto
-          flex items-center justify-center divide-white
-          p-3 text-sm font-medium
-          lg:container lg:divide-x
-          lg:px-16 xl:px-20
-        "
+type Props = ComponentProps<typeof Link> &
+  PropsWithChildren<{
+    href: string
+    color: Color
+  }>
+
+const Announcement = forwardRef<HTMLAnchorElement, Props>(
+  ({ children, color, ...props }, ref) => {
+    return (
+      <Link
+        css={[
+          tw`relative flex flex-row space-x-3 overflow-hidden`,
+          color === 'primary' &&
+            tw`bg-primary-600 text-gray-100 dark:bg-primary-300 dark:text-gray-900`,
+          color === 'indigo' &&
+            tw`bg-indigo-600 text-gray-100 dark:bg-indigo-300 dark:text-gray-900`,
+        ]}
+        {...props}
+        ref={ref}
       >
-        {children}
-      </div>
-    </Link>
-  )
-}
+        <div
+          tw="
+            mx-auto
+            flex items-center justify-center divide-white
+            p-3 text-sm font-medium
+            lg:container lg:divide-x
+            lg:px-16 xl:px-20
+          "
+        >
+          {children}
+        </div>
+      </Link>
+    )
+  },
+)
+Announcement.displayName = 'Announcement'
 
 export default Announcement
