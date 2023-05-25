@@ -19,7 +19,7 @@
       "yarn lint:format"
     ]
   },
-  "engines" : {
+  "engines": {
     "node": ">=18",
     "yarn": ">=1.22"
   },
@@ -64,7 +64,7 @@
     "recharts": "^2.6.2",
     "sharp": "^0.32.1",
     "tailwindcss": "^3.3.2",
-    "twin.macro": "^3.1.0",
+    "twin.macro": "^3.3.1",
     "twitter-api-sdk": "^1.2.1",
     "wagmi": "^0.11.7"
   },
