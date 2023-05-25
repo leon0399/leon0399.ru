@@ -19,6 +19,10 @@
       "yarn lint:format"
     ]
   },
+  "engines" : {
+    "node": ">=18",
+    "yarn": ">=1.22"
+  },
   "dependencies": {
     "@camwiegert/typical": "^0.1.1",
     "@emotion/react": "^11.11.0",
@@ -96,7 +100,6 @@
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
     "typescript": "5.0.4",
-    "unplugin-icons": "^0.16.1",
-    "xwind": "^0.8.0"
+    "unplugin-icons": "^0.16.1"
   }
 }
