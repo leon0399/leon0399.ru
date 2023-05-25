@@ -50,7 +50,7 @@ const ProjectHeader: FC<Props> = ({
       <div tw="max-w-full overflow-hidden">
         <h1 tw="mb-4 text-4xl font-bold md:text-5xl">{title}</h1>
         <div tw="flex flex-row justify-between overflow-hidden">
-          <div tw="flex flex-row space-x-4 truncate text-xs leading-relaxed">
+          <div tw="flex flex-row space-x-4 truncate text-xs/relaxed">
             <a
               href={url}
               target="_blank"

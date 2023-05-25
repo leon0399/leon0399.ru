@@ -46,7 +46,7 @@ const ProjectCard: React.FC<Props & JSX.IntrinsicElements['article']> = ({
     </div>
     <div tw="grow overflow-hidden">
       <h3 tw="text-lg font-bold tracking-tight">{project.title}</h3>
-      <p tw="text-sm leading-5 text-gray-600 dark:text-gray-400">
+      <p tw="text-sm/5 text-gray-600 dark:text-gray-400">
         {project.description}
       </p>
       {Array.isArray(project.tags) && project.tags.length && (
@@ -56,7 +56,7 @@ const ProjectCard: React.FC<Props & JSX.IntrinsicElements['article']> = ({
           ))}
         </div>
       )}
-      <div tw="flex flex-row space-x-4 text-xs leading-relaxed">
+      <div tw="flex flex-row space-x-4 text-xs/relaxed">
         <a
           href={project.url}
           target="_blank"

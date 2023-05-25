@@ -12,7 +12,7 @@ const TheContactBanner: FC<JSX.IntrinsicElements['section']> = (props) => (
     "
     {...props}
   >
-    <h2 tw="text-3xl font-bold leading-[150%] md:text-5xl">Contact me</h2>
+    <h2 tw="text-3xl/[150%] font-bold md:text-5xl">Contact me</h2>
     <p tw="my-2 text-gray-200 dark:text-gray-800 md:text-lg">
       I’m always looking forward for new opportunities, and my inbox is always
       open. Whether you have a question or just want to say hi, I’ll try my best
