@@ -73,7 +73,7 @@
     "@emotion/babel-plugin-jsx-pragmatic": "^0.2.1",
     "@emotion/babel-preset-css-prop": "^11.10.0",
     "@emotion/eslint-plugin": "^11.11.0",
-    "@iconify/json": "^2.2.67",
+    "@iconify/json": "^2.2.70",
     "@iconify/react": "^4.1.0",
     "@storybook/addon-a11y": "^7.0.17",
     "@storybook/addon-actions": "^7.0.17",
