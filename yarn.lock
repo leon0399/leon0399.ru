@@ -2360,10 +2360,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@iconify/json@^2.2.67":
-  version "2.2.67"
-  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.67.tgz#74d6ef24e931e090877d24204f7cd3bd036a1c71"
-  integrity sha512-yRA3PTP9JW8eT+rtUGF5HLFtKT0l9BVJsvFqKvg1zIVzPRc04fFzJVrF5qxZwSN25ttZAe3LUXUmH7rwI5GGEw==
+"@iconify/json@^2.2.70":
+  version "2.2.70"
+  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.70.tgz#451a8cc9281edfae85518c69470b98d627a596a5"
+  integrity sha512-fqmfF//bhn/78oy1xcBHDNoqOmDSjX4mX3Nye8YPVqdylN3eLKLisI3qWrHgYJ1nOqxz6ATdsKoLuqm68GOmAQ==
   dependencies:
     "@iconify/types" "*"
     pathe "^1.0.0"
@@ -12322,12 +12322,7 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-pathe@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/pathe/-/pathe-1.0.0.tgz#135fc11464fc57c84ef93d5c5ed21247e24571df"
-  integrity sha512-nPdMG0Pd09HuSsr7QOKUXO2Jr9eqaDiZvDwdyIhNG5SHYujkQHYKDfGQkulBxvbDHz8oHLsTgKN86LSwYzSHAg==
-
-pathe@^1.1.0:
+pathe@^1.0.0, pathe@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pathe/-/pathe-1.1.0.tgz#e2e13f6c62b31a3289af4ba19886c230f295ec03"
   integrity sha512-ODbEPR0KKHqECXW1GoxdDb+AZvULmXjVPy4rt+pGo2+TnjJTIPJQSVS6N63n8T2Ip+syHhbn52OewKicV0373w==
