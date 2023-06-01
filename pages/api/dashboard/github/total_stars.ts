@@ -6,7 +6,7 @@ const REPOSITORIES = [
   'senseshift/senseshift-firmware',
   'senseshift/senseshift-hardware',
   'senseshift/senseshift.github.io',
-  'senseshift/xrconnect-monorepo',
+  // 'senseshift/xrconnect-monorepo',
   'senseshift/esptool.ts',
   'thrace-app/addresses',
   'thrace-app/members-and-contributors',

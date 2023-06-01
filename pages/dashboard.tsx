@@ -95,13 +95,20 @@ const Dashboard: NextPage = () => {
             queryKey={['dashboard', 'hashnode-posts']}
           />
           <SimpleUrlDashboardItem
-            icon={<Icon icon="fa-brands:hashnode" className="block h-6 w-6" />}
+            icon={
+              <Icon icon="heroicons-solid:user" className="block h-6 w-6" />
+            }
             title="Hashnode Followers"
             url="/api/dashboard/hashnode/followers"
             queryKey={['dashboard', 'hashnode-followers']}
           />
           <SimpleUrlDashboardItem
-            icon={<Icon icon="fa-brands:twitter" className="block h-6 w-6" />}
+            icon={
+              <Icon
+                icon="heroicons-solid:hand-thumb-up"
+                className="block h-6 w-6"
+              />
+            }
             title="Hashnode Reacions"
             url="/api/dashboard/hashnode/reactions"
             queryKey={['dashboard', 'hashnode-reactions']}
