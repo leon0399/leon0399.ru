@@ -3288,15 +3288,6 @@
     "@storybook/preview-api" "7.0.18"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-highlight@7.0.17":
-  version "7.0.17"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-highlight/-/addon-highlight-7.0.17.tgz#366d3f4b5e310f6021c7e896efe7e7e0eaedbb6c"
-  integrity sha512-798MRDotyRaTPH+C4K6SxWAVUJ07zzGT17+d19X0D1+YMughi+6fPqx/QznH/Ox4NeUyO97CbL39OXwQeOWhMA==
-  dependencies:
-    "@storybook/core-events" "7.0.17"
-    "@storybook/global" "^5.0.0"
-    "@storybook/preview-api" "7.0.17"
-
 "@storybook/addon-highlight@7.0.18":
   version "7.0.18"
   resolved "https://registry.yarnpkg.com/@storybook/addon-highlight/-/addon-highlight-7.0.18.tgz#801d1242462b275aa4ba668ddcbf1474cd9f59ae"
@@ -4707,10 +4698,10 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
-"@types/lodash@^4.14.167", "@types/lodash@^4.14.194":
-  version "4.14.194"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.194.tgz#b71eb6f7a0ff11bff59fc987134a093029258a76"
-  integrity sha512-r22s9tAS7imvBt2lyHC9B8AGwWnXaYb1tY09oyLkXDs4vArpYJzw09nj8MLx5VfciBPGIb+ZwG0ssYnEPJxn/g==
+"@types/lodash@^4.14.167", "@types/lodash@^4.14.195":
+  version "4.14.195"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.195.tgz#bafc975b252eb6cea78882ce8a7b6bf22a6de632"
+  integrity sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==
 
 "@types/mdast@^3.0.0":
   version "3.0.10"
