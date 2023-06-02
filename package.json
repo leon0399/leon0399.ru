@@ -52,7 +52,7 @@
     "next-mdx-builder": "^0.4.4",
     "next-mdx-remote": "^4.4.1",
     "p-throttle": "^5.1.0",
-    "plaiceholder": "^2.5.0",
+    "plaiceholder": "^3.0.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.4.1",
     "react": "^18.2.0",
