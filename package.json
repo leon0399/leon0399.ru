@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@camwiegert/typical": "^0.1.1",
-    "@emotion/react": "^11.11.0",
+    "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@heroicons/react": "^2.0.18",
     "@next/bundle-analyzer": "^13.4.4",
