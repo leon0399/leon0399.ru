@@ -107,7 +107,7 @@
     "babel-plugin-twin": "^1.1.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.45.0",
-    "eslint-config-next": "13.4.4",
+    "eslint-config-next": "13.4.12",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-eslint-comments": "^3.2.0",
