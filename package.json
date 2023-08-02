@@ -80,7 +80,7 @@
     "@iconify/json": "^2.2.77",
     "@iconify/react": "^4.1.0",
     "@jest/globals": "^29.5.0",
-    "@storybook/addon-a11y": "^7.0.18",
+    "@storybook/addon-a11y": "^7.2.0",
     "@storybook/addon-actions": "^7.0.27",
     "@storybook/addon-docs": "^7.0.18",
     "@storybook/addon-essentials": "^7.1.0",
