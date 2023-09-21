@@ -47,7 +47,7 @@
     "clsx": "^1.2.1",
     "ethers": "^5.7.2",
     "f0ts": "^0.0.1",
-    "graphql": "^16.6.0",
+    "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "lodash": "^4.17.21",
     "merkletreejs": "^0.3.10",
