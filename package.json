@@ -89,7 +89,7 @@
     "@storybook/blocks": "^7.2.1",
     "@storybook/nextjs": "^7.0.18",
     "@storybook/react": "7.0.18",
-    "@storybook/testing-library": "^0.0.14-next.2",
+    "@storybook/testing-library": "^0.2.1",
     "@svgr/core": "^8.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
