@@ -44,7 +44,7 @@
     "@thirdweb-dev/chain-icons": "^1.0.5",
     "@vercel/analytics": "^1.0.1",
     "chart.js": "^4",
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
     "ethers": "^5.7.2",
     "f0ts": "^0.0.1",
     "graphql": "^16.8.1",
