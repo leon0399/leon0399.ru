@@ -4,7 +4,7 @@
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "(echo \"y\" | yarn install) && yarn run build",
+  "updateContentCommand": "(echo \"y\" | yarn install)",
   "postCreateCommand": "",
   "postAttachCommand": {
     "server": "yarn run dev"
@@ -16,7 +16,8 @@
     "vscode": {
       "extensions": [
         "dbaeumer.vscode-eslint",
-        "wakatime.vscode-wakatime"
+        "wakatime.vscode-wakatime",
+        "bradlc.vscode-tailwindcss"
       ]
     }
   },
