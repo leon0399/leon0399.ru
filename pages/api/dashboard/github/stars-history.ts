@@ -1,9 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import type { Endpoints } from '@octokit/types';
-import { OCTOKIT as octokit } from '../../../../utils/github';
+import type { Endpoints } from '@octokit/types'
+import { OCTOKIT as octokit } from '../../../../utils/github'
 
-type Stargazer = Endpoints['GET /repos/{owner}/{repo}/stargazers']['response']['data'][0]
+type Stargazer =
+  Endpoints['GET /repos/{owner}/{repo}/stargazers']['response']['data'][0]
 
 export default async function handler(
   req: NextApiRequest,
@@ -13,23 +14,26 @@ export default async function handler(
   if (!Array.isArray(repos)) {
     repos = [repos]
   }
-    
 
   const stargazersPerRepo = await Promise.all(
     repos.map(async (repo) => {
       const stargazers: Stargazer[] = []
       let page = 1
 
+      // eslint-disable-next-line no-constant-condition
       while (true) {
-        const response = await octokit.request('GET /repos/{owner}/{repo}/stargazers', {
-          owner: repo.substring(0, repo.indexOf('/')),
-          repo: repo.substring(repo.indexOf('/') + 1),
-          headers: {
-            accept: 'application/vnd.github.v3.star+json',
+        const response = await octokit.request(
+          'GET /repos/{owner}/{repo}/stargazers',
+          {
+            owner: repo.substring(0, repo.indexOf('/')),
+            repo: repo.substring(repo.indexOf('/') + 1),
+            headers: {
+              accept: 'application/vnd.github.v3.star+json',
+            },
+            per_page: 100,
+            page: page,
           },
-          per_page: 100,
-          page: page,
-        })
+        )
 
         stargazers.push(...response.data)
 
@@ -43,7 +47,7 @@ export default async function handler(
     }),
   )
 
-  const stargazersPerDay = stargazersPerRepo.map((stargazers) => 
+  const stargazersPerDay = stargazersPerRepo.map((stargazers) =>
     // calculate cumulative sum of stars per day
     stargazers
       .filter((stargazer) => stargazer.starred_at !== undefined)
@@ -59,13 +63,13 @@ export default async function handler(
         acc[date] += 1
 
         return acc
-      }, {} as Record<string, number>)
+      }, {} as Record<string, number>),
   )
 
   return res.status(200).json(
     stargazersPerDay.reduce((acc, stargazers, index) => {
       acc[repos[index]] = stargazers
       return acc
-    }, {} as Record<string, Record<string, number>>)
+    }, {} as Record<string, Record<string, number>>),
   )
 }

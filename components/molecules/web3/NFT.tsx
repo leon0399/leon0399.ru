@@ -100,7 +100,7 @@ const NFT: FC<Props> = ({ contractAddress, tokenId }) => {
 
         <div className="mt-2 flex flex-row justify-end">
           <Button
-            className="py-2 px-4"
+            className="px-4 py-2"
             href={`https://opensea.io/assets/ethereum/${contractAddress}/${tokenId}`}
             target="_blank"
             rel="noopener noreferrer"

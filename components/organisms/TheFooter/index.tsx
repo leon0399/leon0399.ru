@@ -26,7 +26,7 @@ const FooterMenuItem: FC<FooterMenuItemProps> = ({ href, title, ...props }) => {
   const outer: boolean = useMemo(() => href.startsWith('http'), [href])
 
   return (
-    <li className="py-2 px-6" {...props}>
+    <li className="px-6 py-2" {...props}>
       <Link
         href={href}
         className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"

@@ -11,7 +11,7 @@
     "plugin:eslint-comments/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/typescript",
-    "plugin:react-hooks/recommended",
+    // "plugin:react-hooks/recommended",
     "plugin:tailwindcss/recommended",
     "plugin:jest-dom/recommended",
     "plugin:testing-library/react",
@@ -22,7 +22,7 @@
   "plugins": [
     "@emotion",
     "@typescript-eslint",
-    "react-hooks",
+    // "react-hooks",
     "prettier",
     "jest"
   ],

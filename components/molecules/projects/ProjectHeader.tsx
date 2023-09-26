@@ -26,10 +26,10 @@ const ProjectHeader: FC<Props> = ({
   return (
     <header
       tw="
-        mt-8 mb-12 flex
+        mb-12 mt-8 flex
         flex-col items-start
         space-y-4 overflow-hidden md:flex-row
-        md:space-y-0 md:space-x-4
+        md:space-x-4 md:space-y-0
       "
     >
       {logo ? (

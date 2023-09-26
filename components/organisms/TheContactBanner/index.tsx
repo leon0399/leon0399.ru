@@ -18,7 +18,7 @@ const TheContactBanner: FC<JSX.IntrinsicElements['section']> = (props) => (
       open. Whether you have a question or just want to say hi, I’ll try my best
       to get back to you!
     </p>
-    <div tw="mt-6 space-y-4 md:space-y-0 md:space-x-4">
+    <div tw="mt-6 space-y-4 md:space-x-4 md:space-y-0">
       <a
         href="/resume.pdf"
         target="_blank"

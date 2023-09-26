@@ -12,7 +12,13 @@ interface Props {
   className?: string
 }
 
-export const DashboardItem: FC<Props> = ({ title, icon, isLoading, value, className }) => {
+export const DashboardItem: FC<Props> = ({
+  title,
+  icon,
+  isLoading,
+  value,
+  className,
+}) => {
   return (
     <DashboardCard className={className}>
       <div tw="rounded-[4px] bg-indigo-600 p-3 text-gray-100 dark:bg-indigo-300  dark:text-gray-900">

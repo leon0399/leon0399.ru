@@ -10,11 +10,11 @@ const Header = styled.header([
 
 const TheHeader: React.FC = () => (
   <Header>
-    <div className="container my-8 mx-auto flex max-w-2xl flex-row p-6">
+    <div className="container mx-auto my-8 flex max-w-2xl flex-row p-6">
       <Link href="/" className="text-2xl">
         <div className="inline-flex items-center">
           Leonid Meleshin
-          <Tag className="mt-1 ml-3 bg-gray-200 font-mono font-medium">
+          <Tag className="ml-3 mt-1 bg-gray-200 font-mono font-medium">
             beta
           </Tag>
         </div>

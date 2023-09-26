@@ -131,7 +131,7 @@ const MintCollection: FC<Props> = ({ contractAddress, className }) => {
             ))}
           </div>
         ) : pendingTx ? (
-          <div className="my-4 flex w-full flex-col items-center rounded-2xl border py-4 px-6">
+          <div className="my-4 flex w-full flex-col items-center rounded-2xl border px-6 py-4">
             <label>
               Pending TX{' '}
               <Icon

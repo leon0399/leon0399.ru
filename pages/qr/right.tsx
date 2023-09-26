@@ -50,8 +50,8 @@ const EmergencyInfo: FC<JSX.IntrinsicElements['section']> = (props) => (
           md:w-1/2
         "
       >
-        <div tw="flex-1 border-r-4 border-white py-4 px-8">0(I)</div>
-        <div tw="py-4 px-8">Rh+</div>
+        <div tw="flex-1 border-r-4 border-white px-8 py-4">0(I)</div>
+        <div tw="px-8 py-4">Rh+</div>
       </div>
       <div tw="md:w-1/2">
         <ul tw="text-lg">

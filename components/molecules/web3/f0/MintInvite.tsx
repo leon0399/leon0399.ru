@@ -36,7 +36,7 @@ const MintInvite: FC<Props> = ({
     <div
       className={`
         rounded-2xl border
-        py-4 px-6
+        px-6 py-4
         ${className}
       `}
       {...props}

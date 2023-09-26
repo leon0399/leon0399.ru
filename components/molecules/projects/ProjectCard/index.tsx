@@ -20,7 +20,7 @@ const ProjectCard: React.FC<Props & JSX.IntrinsicElements['article']> = ({
 }) => (
   <article
     tw="
-      relative flex flex-row gap-4 rounded-lg border bg-white py-4 px-6
+      relative flex flex-row gap-4 rounded-lg border bg-white px-6 py-4
       shadow-lg ring-offset-2
       transition-colors duration-300 focus-within:ring dark:border-gray-700
       dark:bg-gray-800 dark:text-gray-300

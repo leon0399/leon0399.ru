@@ -305,7 +305,7 @@ const BenchmarksPage: NextPage<Props> = ({ languageColors }) => {
           </div>
           <div />
           <div>
-            <label htmlFor="selectLanguage" className="inline-block my-2">
+            <label htmlFor="selectLanguage" className="my-2 inline-block">
               Language
             </label>
             <Select<string, true>
@@ -323,7 +323,7 @@ const BenchmarksPage: NextPage<Props> = ({ languageColors }) => {
             />
           </div>
           <div>
-            <label htmlFor="selectTags" className="inline-block my-2">
+            <label htmlFor="selectTags" className="my-2 inline-block">
               Tags
             </label>
             <Select<{ tag: string }, true>
@@ -343,9 +343,9 @@ const BenchmarksPage: NextPage<Props> = ({ languageColors }) => {
 
         {Object.entries(groupedResults).map(([group, scripts]) => (
           <section key={`bench-group-${group}`} className="my-16">
-            <h3 className="text-2xl font-bold py-2">{group}</h3>
+            <h3 className="py-2 text-2xl font-bold">{group}</h3>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid gap-4 md:grid-cols-2">
               {Object.entries(scripts).map(([script, data]) => (
                 <div key={`bench-group-${group}-script-${script}`}>
                   <Bar

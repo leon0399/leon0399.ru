@@ -21,10 +21,10 @@ const InvitesTable: FC<Props> = ({
       <table className="w-full table-auto pt-4">
         <thead>
           <tr>
-            <th className="border-b p-4 pt-0 pl-8 text-left">Name</th>
+            <th className="border-b p-4 pl-8 pt-0 text-left">Name</th>
             <th className="border-b p-4 pt-0 text-right">Price</th>
             <th className="border-b p-4 pt-0 text-right">Limit</th>
-            <th className="border-b p-4 pt-0 pr-8" />
+            <th className="border-b p-4 pr-8 pt-0" />
           </tr>
         </thead>
         <tbody className="bg-white">

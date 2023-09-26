@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { OCTOKIT as octokit } from '../../../../utils/github';
+import { OCTOKIT as octokit } from '../../../../utils/github'
 
 const REPOSITORIES = [
   'senseshift/senseshift-firmware',

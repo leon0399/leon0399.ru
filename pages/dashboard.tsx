@@ -8,7 +8,9 @@ import { DashboardChart } from '../components/organisms/dashboard'
 import { Icon } from '@iconify/react'
 
 const DashboardHeader = styled.h2([tw`mb-6 text-xl font-semibold`])
-const DashboardGrid = styled.div([tw`grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5`])
+const DashboardGrid = styled.div([
+  tw`grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5`,
+])
 
 const Dashboard: NextPage = () => {
   return (
@@ -39,13 +41,13 @@ const Dashboard: NextPage = () => {
           />
         </DashboardGrid>
         <DashboardGrid tw="mb-6">
-        <DashboardChart
+          <DashboardChart
             repos={[
               'senseshift/senseshift-firmware',
               'LucidVR/lucidgloves',
               'SlimeVR/SlimeVR-Tracker-ESP',
             ]}
-            tw='sm:col-span-2 lg:col-span-3'
+            tw="sm:col-span-2 lg:col-span-3"
           />
         </DashboardGrid>
 

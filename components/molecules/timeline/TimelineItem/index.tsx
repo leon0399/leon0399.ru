@@ -88,8 +88,8 @@ const IconWrapper = styled.div<{ $color: string }>(({ $color }) => [
 const TimelineItem: FC<Props> = ({ item, ...props }) => (
   <article
     tw="
-      relative mb-2 flex flex-row gap-3 pb-6 after:absolute after:top-10
-      after:bottom-0 after:left-[15px] after:block after:w-[2px] after:bg-gray-200 last:mb-0 last:pb-0 after:last:bg-transparent
+      relative mb-2 flex flex-row gap-3 pb-6 after:absolute after:bottom-0
+      after:left-[15px] after:top-10 after:block after:w-[2px] after:bg-gray-200 last:mb-0 last:pb-0 after:last:bg-transparent
       dark:after:bg-gray-700
     "
     {...props}
