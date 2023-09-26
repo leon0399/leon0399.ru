@@ -1,17 +1,23 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:18",
   "hostRequirements": {
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "yarn install && yarn run build",
+  "updateContentCommand": "(echo \"y\" | yarn install) && yarn run build",
   "postCreateCommand": "",
   "postAttachCommand": {
     "server": "yarn run dev"
   },
   "customizations": {
     "codespaces": {
-      "openFiles": ["pages/index.js"]
+      "openFiles": ["pages/index.tsx"]
+    },
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "wakatime.vscode-wakatime"
+      ]
     }
   },
   "portsAttributes": {
