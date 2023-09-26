@@ -1,4 +1,6 @@
 import React, { type FC, type ReactNode } from 'react'
+import { QueryKey, useQuery } from '@tanstack/react-query'
+import { DashboardCard } from './Styles'
 
 import 'twin.macro'
 
@@ -7,11 +9,12 @@ interface Props {
   title: ReactNode
   isLoading?: boolean
   value?: ReactNode
+  className?: string
 }
 
-const DashboardItem: FC<Props> = ({ title, icon, isLoading, value }) => {
+export const DashboardItem: FC<Props> = ({ title, icon, isLoading, value, className }) => {
   return (
-    <div tw="relative flex flex-row items-center space-x-5 rounded-lg border p-6 shadow-lg dark:border-gray-700">
+    <DashboardCard className={className}>
       <div tw="rounded-[4px] bg-indigo-600 p-3 text-gray-100 dark:bg-indigo-300  dark:text-gray-900">
         {icon}
       </div>
@@ -25,8 +28,37 @@ const DashboardItem: FC<Props> = ({ title, icon, isLoading, value }) => {
           </span>
         )}
       </div>
-    </div>
+    </DashboardCard>
   )
 }
 
-export default DashboardItem
+interface WithQueryDashboardItemProps
+  extends Omit<Props, 'isLoading' | 'value'> {
+  url: string
+  queryKey?: QueryKey
+}
+export const WithQueryDashboardItem: FC<WithQueryDashboardItemProps> = ({
+  url,
+  queryKey,
+  ...props
+}) => {
+  const { isInitialLoading, isError, data } = useQuery<string>({
+    queryFn: async () => {
+      const response = await fetch(url)
+      if (response.status >= 300) {
+        throw new Error()
+      }
+      return await response.text()
+    },
+    queryKey: queryKey ?? ['dashboard', { url }],
+    retry: false,
+  })
+
+  return (
+    <DashboardItem
+      isLoading={isInitialLoading}
+      value={isError ? 'Error' : data}
+      {...props}
+    />
+  )
+}

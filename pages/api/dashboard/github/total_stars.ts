@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { Octokit } from '@octokit/core'
+import { OCTOKIT as octokit } from '../../../../utils/github';
 
 const REPOSITORIES = [
   'senseshift/senseshift-firmware',
@@ -11,8 +11,6 @@ const REPOSITORIES = [
   'thrace-app/addresses',
   'thrace-app/members-and-contributors',
 ]
-
-const octokit = new Octokit()
 
 export default async function handler(
   req: NextApiRequest,

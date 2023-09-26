@@ -1,44 +1,14 @@
 import { type NextPage } from 'next'
-import React, { type FC, type ComponentProps } from 'react'
 import tw, { styled } from 'twin.macro'
-import { useQuery, type QueryKey } from '@tanstack/react-query'
 
 import Head from 'next/head'
 import PageHeader from '../components/molecules/PageHeader'
-import { DashboardItem } from '../components/molecules/dashboard'
+import { WithQueryDashboardItem } from '../components/molecules/dashboard'
+import { DashboardChart } from '../components/organisms/dashboard'
 import { Icon } from '@iconify/react'
 
 const DashboardHeader = styled.h2([tw`mb-6 text-xl font-semibold`])
-
-interface ISimpleDashboadItemProps
-  extends Omit<ComponentProps<typeof DashboardItem>, 'isLoading' | 'value'> {
-  url: string
-  queryKey: QueryKey
-}
-const SimpleUrlDashboardItem: FC<ISimpleDashboadItemProps> = ({
-  url,
-  ...props
-}) => {
-  const { isInitialLoading, isError, data } = useQuery<string>({
-    queryFn: async () => {
-      const response = await fetch(url)
-      if (response.status >= 300) {
-        throw new Error()
-      }
-      return await response.text()
-    },
-    queryKey: ['dashboard', { url }],
-    retry: false,
-  })
-
-  return (
-    <DashboardItem
-      isLoading={isInitialLoading}
-      value={isError ? 'Error' : data}
-      {...props}
-    />
-  )
-}
+const DashboardGrid = styled.div([tw`grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5`])
 
 const Dashboard: NextPage = () => {
   return (
@@ -47,19 +17,19 @@ const Dashboard: NextPage = () => {
         <title>Dashboard - Leonid Meleshin</title>
       </Head>
 
-      <article tw="mx-auto mb-19 max-w-2xl">
+      <article tw="mx-auto mb-19">
         <PageHeader>Dashboard</PageHeader>
 
         <DashboardHeader>GitHub</DashboardHeader>
 
-        <div tw="mb-6 grid grid-cols-1 gap-5 md:grid-cols-2">
-          <SimpleUrlDashboardItem
+        <DashboardGrid tw="mb-5">
+          <WithQueryDashboardItem
             icon={<Icon icon="fa-brands:github" className="block h-6 w-6" />}
             title="GitHub Followers"
             url="/api/dashboard/github/followers"
             queryKey={['dashboard', 'github-followers']}
           />
-          <SimpleUrlDashboardItem
+          <WithQueryDashboardItem
             icon={
               <Icon icon="heroicons-solid:star" className="block h-6 w-6" />
             }
@@ -67,23 +37,33 @@ const Dashboard: NextPage = () => {
             url="/api/dashboard/github/total_stars"
             queryKey={['dashboard', 'github-stars']}
           />
-        </div>
+        </DashboardGrid>
+        <DashboardGrid tw="mb-6">
+        <DashboardChart
+            repos={[
+              'senseshift/senseshift-firmware',
+              'LucidVR/lucidgloves',
+              'SlimeVR/SlimeVR-Tracker-ESP',
+            ]}
+            tw='sm:col-span-2 lg:col-span-3'
+          />
+        </DashboardGrid>
 
-        <DashboardHeader>Twitter</DashboardHeader>
+        {/* <DashboardHeader>Twitter</DashboardHeader>
 
-        <div tw="mb-6 grid grid-cols-1 gap-5 md:grid-cols-2">
-          <SimpleUrlDashboardItem
+        <DashboardGrid tw="mb-6">
+          <WithQueryDashboardItem
             icon={<Icon icon="fa-brands:twitter" className="block h-6 w-6" />}
             title="Twitter Subscribers"
             url="/api/dashboard/twitter/subscribers"
             queryKey={['dashboard', 'twitter-subscribers']}
           />
-        </div>
+        </DashboardGrid> */}
 
         <DashboardHeader>Hashnode</DashboardHeader>
 
-        <div tw="mb-6 grid grid-cols-1 gap-5 md:grid-cols-2">
-          <SimpleUrlDashboardItem
+        <DashboardGrid tw="mb-6">
+          <WithQueryDashboardItem
             icon={
               <Icon
                 icon="heroicons-solid:document-text"
@@ -94,7 +74,7 @@ const Dashboard: NextPage = () => {
             url="/api/dashboard/hashnode/posts"
             queryKey={['dashboard', 'hashnode-posts']}
           />
-          <SimpleUrlDashboardItem
+          <WithQueryDashboardItem
             icon={
               <Icon icon="heroicons-solid:user" className="block h-6 w-6" />
             }
@@ -102,7 +82,7 @@ const Dashboard: NextPage = () => {
             url="/api/dashboard/hashnode/followers"
             queryKey={['dashboard', 'hashnode-followers']}
           />
-          <SimpleUrlDashboardItem
+          <WithQueryDashboardItem
             icon={
               <Icon
                 icon="heroicons-solid:hand-thumb-up"
@@ -113,7 +93,7 @@ const Dashboard: NextPage = () => {
             url="/api/dashboard/hashnode/reactions"
             queryKey={['dashboard', 'hashnode-reactions']}
           />
-        </div>
+        </DashboardGrid>
       </article>
     </div>
   )

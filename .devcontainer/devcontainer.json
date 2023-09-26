@@ -16,8 +16,10 @@
     "vscode": {
       "extensions": [
         "dbaeumer.vscode-eslint",
-        "wakatime.vscode-wakatime",
-        "bradlc.vscode-tailwindcss"
+        "esbenp.prettier-vscode",
+        "rvest.vs-code-prettier-eslint",
+        "bradlc.vscode-tailwindcss",
+        "wakatime.vscode-wakatime"
       ]
     }
   },

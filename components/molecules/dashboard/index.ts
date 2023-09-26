@@ -1,3 +1,2 @@
-import DashboardItem from './DashboardItem'
-
-export { DashboardItem }
+export * from './DashboardItem'
+export * from './Styles'
