@@ -50,8 +50,9 @@ export default async function handler(
   const stargazersPerDay = stargazersPerRepo.map((stargazers) =>
     // calculate cumulative sum of stars per day
     stargazers
-      .filter((stargazer) => stargazer.starred_at !== undefined)
-      .map((stargazer) => stargazer.starred_at!.substring(0, 10))
+      .map((stargazer) => stargazer.starred_at)
+      .filter((starred_at): starred_at is string => starred_at !== undefined)
+      .map((starred_at) => starred_at.substring(0, 10))
       .sort()
       .reduce((acc, date) => {
         const prevDate = Object.keys(acc).pop()

@@ -6,6 +6,12 @@
         "preset-react": {
           "runtime": "automatic",
           "importSource": "@emotion/react"
+        },
+        "preset-env": {
+          "modules": "auto", // or "commonjs" if your environment doesn't support ES modules
+          "targets": {
+            "browsers": "> 0.25%, not dead"
+          }
         }
       }
     ]
