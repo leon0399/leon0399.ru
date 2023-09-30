@@ -4,7 +4,7 @@ import tw, { styled } from 'twin.macro'
 import Head from 'next/head'
 import PageHeader from '../components/molecules/PageHeader'
 import { WithQueryDashboardItem } from '../components/molecules/dashboard'
-import { DashboardChart } from '../components/organisms/dashboard'
+import { GitHubStarsChart } from '../components/organisms/dashboard'
 import { Icon } from '@iconify/react'
 
 const DashboardHeader = styled.h2([tw`mb-6 text-xl font-semibold`])
@@ -41,7 +41,7 @@ const Dashboard: NextPage = () => {
           />
         </DashboardGrid>
         <DashboardGrid tw="mb-6">
-          <DashboardChart
+          <GitHubStarsChart
             repos={[
               'senseshift/senseshift-firmware',
               'LucidVR/lucidgloves',

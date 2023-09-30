@@ -27,7 +27,12 @@ export const DashboardItem: FC<Props> = ({
       <div>
         <h5 tw="text-sm font-semibold text-gray-500">{title}</h5>
         {isLoading ? (
-          <span tw="my-1 block h-6 w-12 animate-pulse rounded-sm bg-gray-300" />
+          <span
+            role="status"
+            tw="my-1 block h-6 w-12 animate-pulse rounded-sm bg-gray-300"
+          >
+            <span tw="sr-only">Loading...</span>
+          </span>
         ) : (
           <span tw="text-2xl font-semibold text-gray-900 dark:text-gray-200">
             {value || <>&mdash;</>}

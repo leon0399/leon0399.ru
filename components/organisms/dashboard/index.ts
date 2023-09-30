@@ -1,1 +1,1 @@
-export * from './DashboardChart'
+export * from './GitHubStarsChart'
