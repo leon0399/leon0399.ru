@@ -1,13 +1,12 @@
-import { type GetStaticProps, type NextPage } from 'next'
-import React, { useMemo } from 'react'
+import 'twin.macro'
 
 import { useQuery } from '@tanstack/react-query'
-import { request, gql } from 'graphql-request'
-
+import { gql, request } from 'graphql-request'
+import { type GetStaticProps, type NextPage } from 'next'
 import Head from 'next/head'
-import ProjectHeader from '../../components/molecules/projects/ProjectHeader'
+import React, { useMemo } from 'react'
 
-import 'twin.macro'
+import ProjectHeader from '../../components/molecules/projects/ProjectHeader'
 
 interface Subgraph {
   id: string

@@ -1,15 +1,14 @@
 // Components
+// Types
+import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
+
 import PageHeader from '../components/molecules/PageHeader'
 import SocialTile from '../components/molecules/socials/SocialTile'
 import TheContactBanner from '../components/organisms/TheContactBanner'
-
-// Types
-import type { GetStaticProps, NextPage } from 'next'
-import type { SocialAccount } from '../types/social-account'
-
 // Content
 import allSocials from '../content/socials'
+import type { SocialAccount } from '../types/social-account'
 
 interface Props {
   socials: SocialAccount[]

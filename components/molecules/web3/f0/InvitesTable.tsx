@@ -1,6 +1,7 @@
 import { formatEther } from 'ethers/lib/utils'
 import { Invite } from 'f0ts'
 import { DetailedHTMLProps, FC, HTMLAttributes } from 'react'
+
 import Button from '../../../atoms/Button'
 
 interface Props

@@ -1,26 +1,28 @@
+import 'chartjs-adapter-luxon'
+
+import { useQuery } from '@tanstack/react-query'
 import {
-  useMemo,
-  type FC,
-  type HTMLAttributes,
-  type DetailedHTMLProps,
-} from 'react'
-import { DashboardCard } from '../../molecules/dashboard/Styles'
-import {
-  Chart as ChartJS,
   CategoryScale,
+  Chart as ChartJS,
+  type ChartDataset,
+  Legend,
   LinearScale,
-  TimeScale,
-  PointElement,
   LineElement,
+  PointElement,
+  TimeScale,
   Title,
   Tooltip,
-  Legend,
-  type ChartDataset,
 } from 'chart.js'
+import {
+  type DetailedHTMLProps,
+  type FC,
+  type HTMLAttributes,
+  useMemo,
+} from 'react'
 import { Line } from 'react-chartjs-2'
-import 'chartjs-adapter-luxon'
-import { useQuery } from '@tanstack/react-query'
-import { useMediaQuery } from '../../../hooks/useMediaQuery'
+
+import { DashboardCard } from '@/components/molecules/dashboard/Styles'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 ChartJS.register(
   CategoryScale,

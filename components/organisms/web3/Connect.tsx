@@ -1,18 +1,16 @@
-import { InjectedConnector } from 'wagmi/connectors/injected'
-// import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
-import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
-import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
-
-// Hooks
-import { useAccount, useConnect } from 'wagmi'
-import useIsMounted from '../../../utils/useIsMounted'
-
-// Components
-import Profile from './Profile'
-import Button from '../../atoms/Button'
-
 // Types
 import { DetailedHTMLProps, FC, HTMLAttributes } from 'react'
+// Hooks
+import { useAccount, useConnect } from 'wagmi'
+// import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
+import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
+import { InjectedConnector } from 'wagmi/connectors/injected'
+import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
+
+import useIsMounted from '../../../utils/useIsMounted'
+import Button from '../../atoms/Button'
+// Components
+import Profile from './Profile'
 
 type Props = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 

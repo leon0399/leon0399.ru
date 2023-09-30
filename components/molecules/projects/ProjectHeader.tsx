@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import Tag from '../../atoms/Tag'
+import 'twin.macro'
 
+import Image from 'next/image'
 // Types
 import type { FC, ReactNode } from 'react'
 
-import 'twin.macro'
+import Tag from '@/components/atoms/Tag'
 
 interface Props {
   title: ReactNode

@@ -1,19 +1,17 @@
 // Utils
-import { serialize } from 'next-mdx-remote/serialize'
-
-// Components
-import Head from 'next/head'
-import PageHeader from '../components/molecules/PageHeader'
-import TimelineItem from '../components/molecules/timeline/TimelineItem'
-import TheContactBanner from '../components/organisms/TheContactBanner'
-
 // Types
 import type { GetStaticProps, NextPage } from 'next'
-import type { TimelineItem as ITimelineItem } from '../types/timeline'
-import type { TimelineItem as IITimelineItem } from '../components/molecules/timeline/TimelineItem'
+// Components
+import Head from 'next/head'
+import { serialize } from 'next-mdx-remote/serialize'
 
+import PageHeader from '../components/molecules/PageHeader'
+import type { TimelineItem as IITimelineItem } from '../components/molecules/timeline/TimelineItem'
+import TimelineItem from '../components/molecules/timeline/TimelineItem'
+import TheContactBanner from '../components/organisms/TheContactBanner'
 // Content
 import { timeline as allTimeline } from '../content/timeline'
+import type { TimelineItem as ITimelineItem } from '../types/timeline'
 
 interface Props {
   timeline: IITimelineItem[]

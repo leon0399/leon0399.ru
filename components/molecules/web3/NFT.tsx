@@ -1,13 +1,11 @@
 import createThrottle from 'p-throttle'
-
+// Types
+import type { FC } from 'react'
 // Hooks
 import { useCallback, useEffect, useState } from 'react'
 
 // Components
 import Button from '../../atoms/Button'
-
-// Types
-import type { FC } from 'react'
 
 const throttle = createThrottle({
   limit: 1,

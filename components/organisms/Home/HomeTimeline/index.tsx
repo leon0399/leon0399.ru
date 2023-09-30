@@ -1,9 +1,8 @@
 import React, { type FC } from 'react'
 
 import SectionHeader from '../../../molecules/SectionHeader'
-import TimelineItem from '../../../molecules/timeline/TimelineItem'
-
 import type { TimelineItem as ITimelineItem } from '../../../molecules/timeline/TimelineItem'
+import TimelineItem from '../../../molecules/timeline/TimelineItem'
 
 interface Props {
   timeline: ITimelineItem[]

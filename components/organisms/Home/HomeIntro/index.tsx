@@ -1,12 +1,11 @@
 import 'react-typist/dist/Typist.css'
+import 'twin.macro'
 
 import Link from 'next/link'
-
 import React, { type FC } from 'react'
-import { PrimarySocials } from '../../socials/PrimarySocials'
-import Typical from '../../../atoms/Typical'
 
-import 'twin.macro'
+import Typical from '../../../atoms/Typical'
+import { PrimarySocials } from '../../socials/PrimarySocials'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {}

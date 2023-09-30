@@ -1,12 +1,11 @@
 // Hooks
-import { useMemo } from 'react'
-import { useAccount, useDisconnect, useEnsAvatar, useEnsName } from 'wagmi'
-
 // Components
 import { Icon } from '@iconify/react'
-
+import { useMemo } from 'react'
 // Types
-import { FC, DetailedHTMLProps, HTMLAttributes } from 'react'
+import { DetailedHTMLProps, FC, HTMLAttributes } from 'react'
+import { useAccount, useDisconnect, useEnsAvatar, useEnsName } from 'wagmi'
+
 import Button from '../../atoms/Button'
 
 type Props = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>

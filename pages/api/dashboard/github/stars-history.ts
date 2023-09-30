@@ -1,7 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
 import type { Endpoints } from '@octokit/types'
-import { OCTOKIT as octokit } from '../../../../utils/github'
+import type { NextApiRequest, NextApiResponse } from 'next'
+
+import { OCTOKIT as octokit } from '@/utils/github'
 
 type Stargazer =
   Endpoints['GET /repos/{owner}/{repo}/stargazers']['response']['data'][0]

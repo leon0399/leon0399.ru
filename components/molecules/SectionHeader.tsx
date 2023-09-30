@@ -1,9 +1,8 @@
-import React, { type FC, type PropsWithChildren } from 'react'
-
-import Link from 'next/link'
-import { Icon } from '@iconify/react'
-
 import 'twin.macro'
+
+import { Icon } from '@iconify/react'
+import Link from 'next/link'
+import React, { type FC, type PropsWithChildren } from 'react'
 
 type Url = string
 

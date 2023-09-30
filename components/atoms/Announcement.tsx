@@ -1,11 +1,10 @@
-import React, {
-  forwardRef,
-  type FC,
-  type PropsWithChildren,
-  type ComponentProps,
-} from 'react'
 import Link from 'next/link'
-
+import React, {
+  type ComponentProps,
+  type FC,
+  forwardRef,
+  type PropsWithChildren,
+} from 'react'
 import tw, { css, styled } from 'twin.macro'
 
 type Color = 'primary' | 'indigo'

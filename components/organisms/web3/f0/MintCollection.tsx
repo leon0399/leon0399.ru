@@ -1,17 +1,15 @@
 // Utils
+// Components
+import { Icon } from '@iconify/react'
 import { F0, F0Factory, Invite } from 'f0ts'
-
+// Types
+import type { FC } from 'react'
 // Hooks
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useAccount, useSigner } from 'wagmi'
 
-// Components
-import { Icon } from '@iconify/react'
-import MintInvite from '../../../molecules/web3/f0/MintInvite'
 import InvitesTable from '../../../molecules/web3/f0/InvitesTable'
-
-// Types
-import type { FC } from 'react'
+import MintInvite from '../../../molecules/web3/f0/MintInvite'
 import NFT from '../../../molecules/web3/NFT'
 
 interface Props {

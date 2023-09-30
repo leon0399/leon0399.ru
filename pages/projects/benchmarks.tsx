@@ -1,24 +1,23 @@
 import { useQuery } from '@tanstack/react-query'
-import { type GetStaticProps, type NextPage } from 'next'
-import { useEffect } from 'react'
-import { useMemo, useState } from 'react'
-import { isDark } from '../../utils/colors'
-
-import Select, { type StylesConfig } from 'react-select'
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
   BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LinearScale,
   Title,
   Tooltip,
-  Legend,
 } from 'chart.js'
+import { type GetStaticProps, type NextPage } from 'next'
+import Head from 'next/head'
+import { useEffect, useMemo, useState } from 'react'
 import { Bar } from 'react-chartjs-2'
+import Select, { type StylesConfig } from 'react-select'
+
 import Button from '../../components/atoms/Button'
 import ProjectHeader from '../../components/molecules/projects/ProjectHeader'
 import { groupBy } from '../../utils/array'
-import Head from 'next/head'
+import { isDark } from '../../utils/colors'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 

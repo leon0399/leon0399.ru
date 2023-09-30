@@ -1,7 +1,7 @@
-import React, { type FC } from 'react'
-import { Icon } from '@iconify/react'
-
 import 'twin.macro'
+
+import { Icon } from '@iconify/react'
+import React, { type FC } from 'react'
 
 const TheContactBanner: FC<JSX.IntrinsicElements['section']> = (props) => (
   <section

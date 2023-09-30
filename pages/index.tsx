@@ -1,34 +1,30 @@
 // Utils
+// Types
+import type { GetStaticProps, NextPage } from 'next'
+// Components
+import Head from 'next/head'
 import { serialize } from 'next-mdx-remote/serialize'
 import { getPlaiceholder } from 'plaiceholder'
 import tw, { css } from 'twin.macro'
 
-// Components
-import Head from 'next/head'
-
+import type { TimelineItem } from '../components/molecules/timeline/TimelineItem'
 import {
+  HomeBlog,
   HomeIntro,
   HomeProjects,
-  HomeBlog,
-  HomeTimeline,
   HomeSocials,
+  HomeTimeline,
   // HomeLife,
 } from '../components/organisms/Home'
 import TheContactBanner from '../components/organisms/TheContactBanner'
-
-// Types
-import type { GetStaticProps, NextPage } from 'next'
-
-import type { Project } from '../types/project'
-import type { TimelineItem as ITimelineItem } from '../types/timeline'
-import type { SocialAccount } from '../types/social-account'
-import type { TimelineItem } from '../components/molecules/timeline/TimelineItem'
-import type { Post } from '../types/hashnode'
-
+import allProjects from '../content/projects'
 // Content
 import { homeSocials } from '../content/socials'
-import allProjects from '../content/projects'
 import { timeline as allTimeline } from '../content/timeline'
+import type { Post } from '../types/hashnode'
+import type { Project } from '../types/project'
+import type { SocialAccount } from '../types/social-account'
+import type { TimelineItem as ITimelineItem } from '../types/timeline'
 import { getUserPosts } from '../utils/hashnode'
 
 interface Props {

@@ -1,12 +1,10 @@
+import { Icon } from '@iconify/react'
 import { formatEther } from 'ethers/lib/utils'
-
+import type { Invite } from 'f0ts'
+import type { DetailedHTMLProps, FC, HTMLAttributes } from 'react'
 import { useMemo, useState } from 'react'
 
-import { Icon } from '@iconify/react'
 import Button from '../../../atoms/Button'
-
-import type { DetailedHTMLProps, FC, HTMLAttributes } from 'react'
-import type { Invite } from 'f0ts'
 
 interface Props
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {

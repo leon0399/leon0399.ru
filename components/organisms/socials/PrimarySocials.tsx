@@ -1,8 +1,6 @@
-import tw, { styled } from 'twin.macro'
-
 import { Icon } from '@iconify/react'
-
-import type { FC, ComponentProps } from 'react'
+import type { ComponentProps, FC } from 'react'
+import tw, { styled } from 'twin.macro'
 
 import { primarySocials as socials } from '../../../content/socials'
 

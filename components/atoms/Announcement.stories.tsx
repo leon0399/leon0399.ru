@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import Announcement from './Announcement'
 
 const meta: Meta<typeof Announcement> = {

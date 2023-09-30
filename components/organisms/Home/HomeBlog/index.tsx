@@ -1,10 +1,10 @@
+import 'twin.macro'
+
 import React, { type FC } from 'react'
-import PostItem from '../../../molecules/blog/PostItem'
-import SectionHeader from '../../../molecules/SectionHeader'
 
 import type { Post } from '../../../../types/hashnode'
-
-import 'twin.macro'
+import PostItem from '../../../molecules/blog/PostItem'
+import SectionHeader from '../../../molecules/SectionHeader'
 
 interface Props {
   posts: Post[]

@@ -1,7 +1,7 @@
-import { FC, useMemo } from 'react'
-import tw, { styled } from 'twin.macro'
 import Image from 'next/image'
+import { FC, useMemo } from 'react'
 import Balancer from 'react-wrap-balancer'
+import tw, { styled } from 'twin.macro'
 
 import type { Post } from '../../../types/hashnode'
 

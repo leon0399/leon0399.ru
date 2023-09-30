@@ -1,17 +1,15 @@
 // Utils
-import tw, { styled } from 'twin.macro'
-
+// Types
+import type { GetStaticProps, NextPage } from 'next'
 // Components
 import Head from 'next/head'
+import type { ComponentProps, FC } from 'react'
+import tw, { styled } from 'twin.macro'
 
-// Types
-import type { NextPage, GetStaticProps } from 'next'
-import type { FC, ComponentProps } from 'react'
-import type { SocialAccount } from '../../types/social-account'
-
+import { PrimarySocials } from '../../components/organisms/socials/PrimarySocials'
 // Content
 import { primarySocials } from '../../content/socials'
-import { PrimarySocials } from '../../components/organisms/socials/PrimarySocials'
+import type { SocialAccount } from '../../types/social-account'
 
 type SectionProps = {
   socials: SocialAccount[]

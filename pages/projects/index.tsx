@@ -1,15 +1,14 @@
 // Components
+// Types
+import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
+
 import PageHeader from '../../components/molecules/PageHeader'
 import ProjectCard from '../../components/molecules/projects/ProjectCard'
 import TheContactBanner from '../../components/organisms/TheContactBanner'
-
-// Types
-import type { GetStaticProps, NextPage } from 'next'
-import { Project } from '../../types/project'
-
 // Content
 import allProjects from '../../content/projects'
+import { Project } from '../../types/project'
 
 interface Props {
   projects: Project[]

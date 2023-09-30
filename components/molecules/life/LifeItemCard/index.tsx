@@ -1,8 +1,7 @@
-import tw, { styled } from 'twin.macro'
-
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import React from 'react'
+import tw, { styled } from 'twin.macro'
 
 interface Props {
   icon: string

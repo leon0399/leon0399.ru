@@ -1,8 +1,9 @@
-import React, { type FC, type ReactNode } from 'react'
-import { QueryKey, useQuery } from '@tanstack/react-query'
-import { DashboardCard } from './Styles'
-
 import 'twin.macro'
+
+import { QueryKey, useQuery } from '@tanstack/react-query'
+import React, { type FC, type ReactNode } from 'react'
+
+import { DashboardCard } from './Styles'
 
 interface Props {
   icon: ReactNode

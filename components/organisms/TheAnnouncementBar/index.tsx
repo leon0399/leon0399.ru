@@ -1,9 +1,9 @@
-import React, { type FC } from 'react'
+import 'twin.macro'
+
 import { Icon } from '@iconify/react'
+import React, { type FC } from 'react'
 
 import Announcement from '../../atoms/Announcement'
-
-import 'twin.macro'
 
 const TheAnnouncementBar: FC = () => (
   <Announcement href="/resume.pdf" color={'indigo'}>

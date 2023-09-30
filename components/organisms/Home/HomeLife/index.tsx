@@ -1,4 +1,5 @@
 import React from 'react'
+
 import LifeItemCard from '../../../molecules/life/LifeItemCard'
 import SectionHeader from '../../../molecules/SectionHeader'
 

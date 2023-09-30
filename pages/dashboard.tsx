@@ -1,11 +1,11 @@
+import { Icon } from '@iconify/react'
 import { type NextPage } from 'next'
+import Head from 'next/head'
 import tw, { styled } from 'twin.macro'
 
-import Head from 'next/head'
-import PageHeader from '../components/molecules/PageHeader'
-import { WithQueryDashboardItem } from '../components/molecules/dashboard'
-import { GitHubStarsChart } from '../components/organisms/dashboard'
-import { Icon } from '@iconify/react'
+import { WithQueryDashboardItem } from '@/components/molecules/dashboard'
+import PageHeader from '@/components/molecules/PageHeader'
+import { GitHubStarsChart } from '@/components/organisms/dashboard'
 
 const DashboardHeader = styled.h2([tw`mb-6 text-xl font-semibold`])
 const DashboardGrid = styled.div([

@@ -1,12 +1,11 @@
+import { Icon } from '@iconify/react'
+import Link from 'next/link'
+import type { FC } from 'react'
 import { useMemo } from 'react'
 import tw, { styled } from 'twin.macro'
 
-import Link from 'next/link'
-import { Icon } from '@iconify/react'
-import { PrimarySocials } from '../socials/PrimarySocials'
-
-import type { FC } from 'react'
 import type { SocialAccount } from '../../../types/social-account'
+import { PrimarySocials } from '../socials/PrimarySocials'
 
 const commitSha =
   process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ||

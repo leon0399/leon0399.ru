@@ -1,13 +1,7 @@
 import { Icon } from '@iconify/react'
-import { MDXRemote } from 'next-mdx-remote'
-
-import tw, { styled } from 'twin.macro'
 import clsx from 'clsx'
-
-import Tag from '../../../atoms/Tag'
-
-import type { TimelineItem as TTimelineItem } from '../../../../types/timeline'
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { MDXRemote } from 'next-mdx-remote'
 import {
   type FC,
   type PropsWithChildren,
@@ -16,6 +10,10 @@ import {
   useRef,
   useState,
 } from 'react'
+import tw, { styled } from 'twin.macro'
+
+import type { TimelineItem as TTimelineItem } from '../../../../types/timeline'
+import Tag from '../../../atoms/Tag'
 
 // eslint-disable-next-line no-undef
 export type TimelineItem = Modify<

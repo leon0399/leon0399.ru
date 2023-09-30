@@ -1,11 +1,10 @@
+import 'twin.macro'
+
 import React, { type FC } from 'react'
 
+import type { SocialAccount } from '../../../../types/social-account'
 import SectionHeader from '../../../molecules/SectionHeader'
 import SocialTile from '../../../molecules/socials/SocialTile'
-
-import type { SocialAccount } from '../../../../types/social-account'
-
-import 'twin.macro'
 
 interface Props {
   socials: SocialAccount[]

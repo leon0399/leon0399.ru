@@ -1,13 +1,12 @@
-import type { AppProps } from 'next/app'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { Provider as BalancerProvider } from 'react-wrap-balancer'
-import { Analytics } from '@vercel/analytics/react'
+import '../styles/globals.css'
 
-import Layout from '../layouts'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { Analytics } from '@vercel/analytics/react'
+import type { AppProps } from 'next/app'
+import { Provider as BalancerProvider } from 'react-wrap-balancer'
 
 import GlobalStyles from '../components/GlobalStyles'
-
-import '../styles/globals.css'
+import Layout from '../layouts'
 
 const queryClient = new QueryClient()
 

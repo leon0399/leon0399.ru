@@ -1,10 +1,9 @@
-import React, {
-  forwardRef,
-  type ForwardedRef,
-  type ComponentProps,
-} from 'react'
 import Link from 'next/link'
-
+import React, {
+  type ComponentProps,
+  type ForwardedRef,
+  forwardRef,
+} from 'react'
 import tw, { css, theme } from 'twin.macro'
 
 export type Color = 'default' | 'primary'

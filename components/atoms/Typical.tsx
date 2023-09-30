@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, memo } from 'react'
 import { type } from '@camwiegert/typical'
+import React, { memo, useEffect, useRef } from 'react'
 
 // const memo: <T>(component: T) => T = baseMemo
 

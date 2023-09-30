@@ -1,5 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
 import { gql } from 'graphql-request'
+import type { NextApiRequest, NextApiResponse } from 'next'
+
 import { CLIENT } from '../../../../utils/hashnode'
 
 const QUERY = gql`

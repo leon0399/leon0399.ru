@@ -1,31 +1,27 @@
 // Utils
+// Types
+import type { GetStaticProps, NextPage } from 'next'
 import dynamic from 'next/dynamic'
-
-import { InjectedConnector } from 'wagmi/connectors/injected'
-// import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
-import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
-import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
-
-// Hooks
-import { createClient, configureChains, useAccount } from 'wagmi'
-import { mainnet } from 'wagmi/chains'
-import { publicProvider } from 'wagmi/providers/public'
-
 // Components
 import Head from 'next/head'
+import type { FC } from 'react'
+// Hooks
+import { configureChains, createClient, useAccount } from 'wagmi'
 import { WagmiConfig } from 'wagmi'
+import { mainnet } from 'wagmi/chains'
+// import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
+import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
+import { InjectedConnector } from 'wagmi/connectors/injected'
+import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
+import { publicProvider } from 'wagmi/providers/public'
+
+import PostItem from '../../components/molecules/blog/PostItem'
 // import Connect from '../../components/organisms/web3/Connect'
 import ProjectHeader from '../../components/molecules/projects/ProjectHeader'
 import MintCollection from '../../components/organisms/web3/f0/MintCollection'
-
-// Types
-import type { GetStaticProps, NextPage } from 'next'
-import type { FC } from 'react'
 import { Post } from '../../types/hashnode'
-
 // Content
 import { getPost } from '../../utils/hashnode'
-import PostItem from '../../components/molecules/blog/PostItem'
 
 const DynamicConnect = dynamic(
   () => import('../../components/organisms/web3/Connect'),

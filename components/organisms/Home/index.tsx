@@ -1,15 +1,15 @@
-import HomeIntro from './HomeIntro'
-import HomeProjects from './HomeProjects'
 import HomeBlog from './HomeBlog'
-import HomeTimeline from './HomeTimeline'
-import HomeSocials from './HomeSocials'
+import HomeIntro from './HomeIntro'
 import HomeLife from './HomeLife'
+import HomeProjects from './HomeProjects'
+import HomeSocials from './HomeSocials'
+import HomeTimeline from './HomeTimeline'
 
 export {
-  HomeIntro,
-  HomeProjects,
   HomeBlog,
-  HomeTimeline,
-  HomeSocials,
+  HomeIntro,
   HomeLife,
+  HomeProjects,
+  HomeSocials,
+  HomeTimeline,
 }
