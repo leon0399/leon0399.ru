@@ -4,14 +4,14 @@
 # This setting contains a list of rules that Sweep will check for. If any of these rules are broken in a new commit, Sweep will create an pull request to fix the broken rule.
 rules:
   - "All docstrings and comments should be up to date."
-  - "Imports should be sorted alphabetically."
-  - "There should be no commented out code."
   - "There should be no debug log or print statements in production code."
   - "All components should have a corresponding test file."
   - "There should be no unused imports."
+  - "We should have corresponding tests for all new and existing code. We use jest for tests."
+  - "There should not be large chunks of commented out code besides docstrings."
 
 # This is the branch that Sweep will develop from and make pull requests to. Most people use 'main' or 'master' but some users also use 'dev' or 'staging'.
-branch: 'main'
+branch: 'master'
 
 # By default Sweep will read the logs and outputs from your existing Github Actions. To disable this, set this to false.
 gha_enabled: True
@@ -21,7 +21,7 @@ gha_enabled: True
 # Example:
 #
 # description: sweepai/sweep is a python project. The main api endpoints are in sweepai/api.py. Write code that adheres to PEP8.
-description: ''
+description: 'This is a Next.js TypeScript project. When you write code write a separate unit test that tests the code.'
 
 # This sets whether to create pull requests as drafts. If this is set to True, then all pull requests will be created as drafts and GitHub Actions will not be triggered.
 draft: False
@@ -35,12 +35,14 @@ blocked_dirs: []
 #
 # docs:
 #   - PyGitHub: ["https://pygithub.readthedocs.io/en/latest/", "We use pygithub to interact with the GitHub API"]
-docs: []
+docs: 
+  - TailwindCSS: ["https://tailwindcss.com/docs/installation", "We use TailwindCSS for styling."]
 
 # Sandbox executes commands in a sandboxed environment to validate code changes after every edit to guarantee pristine code. For more details, see the [Sandbox](./sandbox) page.
 sandbox:
   install:
-    - trunk init
+    - yarn install --ignore-engines
   check:
-    - trunk fmt {file_path} || return 0
-    - trunk check --fix --print-failures {file_path}
+    - yarn run prettier --write {file_path}
+    - yarn run eslint --fix {file_path}
+    - yarn run tsc
