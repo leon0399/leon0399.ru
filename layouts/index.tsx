@@ -1,9 +1,8 @@
 import { type FC, type PropsWithChildren } from 'react'
 
 import TheAnnouncementBar from '../components/organisms/TheAnnouncementBar'
-import TheHeader from '../components/organisms/TheHeader'
 import TheFooter from '../components/organisms/TheFooter'
-
+import TheHeader from '../components/organisms/TheHeader'
 // Content
 import { primarySocials } from '../content/socials'
 

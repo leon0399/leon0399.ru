@@ -22,7 +22,7 @@ const babelConfigEmotion = {
 
 const customJestConfig: Config.InitialOptions = {
   verbose: true,
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'jest-environment-jsdom',
   modulePathIgnorePatterns: ['<rootDir>/dist/'],
   testPathIgnorePatterns: ['<rootDir>/e2e'],

@@ -14,7 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["unplugin-icons/types/react"],
+    "baseUrl": ".",
     "paths": {
       "@/components/*": ["./components/*"],
       "@/pages/*": ["./pages/*"],
@@ -23,6 +23,6 @@
       "@/hooks/*": ["./hooks/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts"],
   "exclude": ["node_modules"]
 }
