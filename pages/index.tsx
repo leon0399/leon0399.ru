@@ -109,12 +109,14 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const posts = (await getUserPosts('leon0399'))
     .slice(0, 3)
     .map(async (post) => {
-      const { base64, blurhash } = await getPlaiceholder(post.coverImage)
+      const plaiceholdrer = post.coverImage
+        ? await getPlaiceholder(post.coverImage)
+        : null
 
       return {
         ...post,
-        coverImageBase64: base64,
-        coverImageBlurhash: blurhash,
+        coverImageBase64: plaiceholdrer?.base64 ?? null,
+        coverImageBlurhash: plaiceholdrer?.blurhash ?? null,
       }
     })
 

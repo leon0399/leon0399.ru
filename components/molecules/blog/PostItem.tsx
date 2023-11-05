@@ -51,7 +51,7 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
             height={126}
             alt={post.title}
             placeholder="blur"
-            blurDataURL={post.coverImageBase64}
+            blurDataURL={post.coverImageBase64!}
             sizes="100vw"
             style={{
               width: '100%',

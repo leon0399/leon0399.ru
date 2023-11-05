@@ -1,6 +1,7 @@
-import { type Post, type User } from '../types/hashnode'
-import { GraphQLClient, gql } from 'graphql-request'
+import { gql, GraphQLClient } from 'graphql-request'
 import { getPlaiceholder } from 'plaiceholder'
+
+import { type Post, type User } from '../types/hashnode'
 
 export const API_URL = 'https://api.hashnode.com/'
 
@@ -79,11 +80,13 @@ export const getPost = async (
     slug,
   })
 
-  const { base64, blurhash } = await getPlaiceholder(data.post.coverImage)
+  const plaiceholder = data.post.coverImage
+    ? await getPlaiceholder(data.post.coverImage)
+    : null
 
   return {
     ...data.post,
-    coverImageBase64: base64,
-    coverImageBlurhash: blurhash,
+    coverImageBase64: plaiceholder?.base64 ?? null,
+    coverImageBlurhash: plaiceholder?.blurhash ?? null,
   }
 }

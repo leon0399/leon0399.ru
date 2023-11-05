@@ -18,7 +18,7 @@ export interface Post {
   slug: string
   title: string
   brief: string
-  coverImage: string
-  coverImageBase64: string
-  coverImageBlurhash: unknown
+  coverImage?: string
+  coverImageBase64: string | null
+  coverImageBlurhash: unknown | null
 }
