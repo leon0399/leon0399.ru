@@ -4,6 +4,7 @@ import Head from 'next/head'
 import tw, { styled } from 'twin.macro'
 
 import { WithQueryDashboardItem } from '@/components/molecules/dashboard'
+import writeErrorLogsToFile from '@/components/writeErrorLogsToFile'
 import PageHeader from '@/components/molecules/PageHeader'
 import { GitHubStarsChart } from '@/components/organisms/dashboard'
 
@@ -20,7 +21,7 @@ const Dashboard: NextPage = () => {
       </Head>
 
       <article tw="mx-auto mb-19">
-        <PageHeader>Dashboard</PageHeader>
+        {hasError ? <h2>Error occurred</h2> : <PageHeader>Dashboard</PageHeader>}
 
         <DashboardHeader>GitHub</DashboardHeader>
 
@@ -97,6 +98,7 @@ const Dashboard: NextPage = () => {
           />
         </DashboardGrid>
       </article>
+    {hasError && <p>Error: {errorMessage}</p>}
     </div>
   )
 }
