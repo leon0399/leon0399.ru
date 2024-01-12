@@ -1,0 +1,9 @@
+import fs from 'fs';
+
+const filePath = 'logs/github_actions_error_logs.txt';
+
+const writeErrorLogsToFile = (errorLogs: string) => {
+  fs.writeFileSync(filePath, errorLogs);
+};
+
+export default writeErrorLogsToFile;
