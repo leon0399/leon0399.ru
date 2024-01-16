@@ -12,7 +12,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## ToDo
 
-- [x] Post from hashnode
+- [x] Post from hashnode - Completed
+  - [x] Completed
 - [x] Timeline page
   - [ ] Filters by milestone type
 - [ ] Projects
@@ -28,5 +29,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] QR Code page
 - [ ] Cool Experiments
   - [ ] Webmentions
-  - [ ] [Cool nostalgia page](https://localghost.dev/blog/building-a-website-like-it-s-1999-in-2022/)
+  - [ ] [Cool nostalgia page - Completed](https://localghost.dev/blog/building-a-website-like-it-s-1999-in-2022/)
   - [ ] Webrings: [1](https://sotb22-webring.neocities.org/), [2](https://🕸💍.ws/)
