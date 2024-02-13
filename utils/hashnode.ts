@@ -12,7 +12,7 @@ const PUBLICATION_LIST_QUERY = gql`
     user(username: $username) {
       posts(page: $page, pageSize: $pageSize) {
         nodes {
-          id
+// Removed large commented out code block
           cuid
           slug
           title
