@@ -3,58 +3,42 @@ import { getPlaiceholder } from 'plaiceholder'
 
 import { type Post, type User } from '../types/hashnode'
 
-export const API_URL = 'https://api.hashnode.com/'
+export const API_URL = 'https://gql.hashnode.com/'
 
 export const CLIENT = new GraphQLClient(API_URL)
 
-const PUBLOCATIONS_QUERY = gql`
-  query Publications($username: String!, $page: Int) {
+const PUBLICATION_LIST_QUERY = gql`
+  query Publications($username: String!, $page: Int!, $pageSize: Int!) {
     user(username: $username) {
-      publicationDomain
-      publication {
-        posts(page: $page) {
-          _id
+      posts(page: $page, pageSize: $pageSize) {
+        nodes {
+          id
           cuid
           slug
-
-          type
           title
           brief
-          coverImage
-
-          # tags {
-          #   name
-          #   slug
-          # }
-
-          dateAdded
-          isActive
+          coverImage {
+            url
+          }
+          publishedAt
         }
       }
     }
   }
 `
 
-const PUBLOCATION_QUERY = gql`
-  query Publication($hostname: String!, $slug: String!) {
-    post(hostname: $hostname, slug: $slug) {
-      _id
+const PUBLICATION_QUERY = gql`
+  query Publication($id: ID!) {
+    post(id: $id) {
+      id
       cuid
       slug
-
-      type
       title
-      contentMarkdown
       brief
-      coverImage
-
-      tags {
-        name
-        slug
+      coverImage {
+        url
       }
-
-      dateAdded
-      isActive
+      publishedAt
     }
   }
 `
@@ -63,30 +47,31 @@ export const getUserPosts = async (
   username: string,
   page?: number,
 ): Promise<Post[]> => {
-  const data = await CLIENT.request<{ user: User }>(PUBLOCATIONS_QUERY, {
+  const data = await CLIENT.request<{ user: User }>(PUBLICATION_LIST_QUERY, {
     username,
-    page,
+    page: page ?? 1,
+    pageSize: 10,
   })
 
-  return data.user.publication.posts
+  return data.user.posts.nodes
 }
 
-export const getPost = async (
-  hostname: string,
-  slug: string,
-): Promise<Post> => {
-  const data = await CLIENT.request<{ post: Post }>(PUBLOCATION_QUERY, {
-    hostname,
-    slug,
+export const getPost = async (id: string): Promise<Post> => {
+  const data = await CLIENT.request<{ post: Post }>(PUBLICATION_QUERY, {
+    id,
   })
 
-  const plaiceholder = data.post.coverImage
-    ? await getPlaiceholder(data.post.coverImage)
-    : null
+  const plaiceholder =
+    data.post.coverImage && data.post.coverImage.url
+      ? await getPlaiceholder(data.post.coverImage.url)
+      : null
 
   return {
     ...data.post,
-    coverImageBase64: plaiceholder?.base64 ?? null,
-    coverImageBlurhash: plaiceholder?.blurhash ?? null,
+    coverImage: {
+      ...data.post.coverImage,
+      base64: plaiceholder?.base64 ?? null,
+      blurhash: plaiceholder?.base64 ?? null,
+    },
   }
 }

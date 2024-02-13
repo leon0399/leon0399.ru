@@ -18,7 +18,7 @@ const PostContainer = styled.article([
 ])
 
 const PostItem: FC<Props> = ({ post, ...props }) => {
-  const datePosted = useMemo(() => new Date(post.dateAdded), [post])
+  const datePosted = useMemo(() => new Date(post.publishedAt), [post])
 
   return (
     <PostContainer {...props}>
@@ -29,7 +29,7 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
         <div className="my-1 text-xs">
           <time
             className="text-gray-400 dark:text-gray-600"
-            dateTime={post.dateAdded}
+            dateTime={post.publishedAt}
           >
             {datePosted.toLocaleDateString(undefined, {
               year: 'numeric',
@@ -42,16 +42,15 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
           {post.brief}
         </p>
       </div>
-      {post.coverImage && (
+      {post.coverImage?.url && (
         <figure className="relative rounded md:w-56">
           <Image
             className="rounded"
-            src={post.coverImage}
+            src={post.coverImage.url}
             width={224}
             height={126}
             alt={post.title}
-            placeholder="blur"
-            blurDataURL={post.coverImageBase64!}
+            blurDataURL={post.coverImage.base64!}
             sizes="100vw"
             style={{
               width: '100%',
