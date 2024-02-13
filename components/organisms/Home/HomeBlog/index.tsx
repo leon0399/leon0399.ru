@@ -22,7 +22,7 @@ const HomeBlog: FC<Props & JSX.IntrinsicElements['section']> = ({
         {posts.map((post, i) => {
           return (
             <PostItem
-              id={`home-post-${post._id}`}
+              id={`home-post-${post.id}`}
               key={`home-post-${i}`}
               post={post}
             />
