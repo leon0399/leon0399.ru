@@ -38,7 +38,7 @@ const PUBLICATION_QUERY = gql`
       coverImage {
         url
       }
-      publishedAt
+        publishedAt
     }
   }
 `
