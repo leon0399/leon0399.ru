@@ -3,32 +3,24 @@ import { getPlaiceholder } from 'plaiceholder'
 
 import { type Post, type User } from '../types/hashnode'
 
-export const API_URL = 'https://api.hashnode.com/'
+export const API_URL = 'https://gql.hashnode.com/'
 
 export const CLIENT = new GraphQLClient(API_URL)
 
-const PUBLOCATIONS_QUERY = gql`
-  query Publications($username: String!, $page: Int) {
+const PUBLICATION_LIST_QUERY = gql`
+  query Publications($username: String!, $page: Int!, $pageSize: Int!) {
     user(username: $username) {
-      publicationDomain
-      publication {
-        posts(page: $page) {
-          _id
+      posts(page: $page, pageSize: $pageSize) {
+        nodes {
+          id
           cuid
           slug
-
-          type
           title
           brief
-          coverImage
-
-          # tags {
-          #   name
-          #   slug
-          # }
-
-          dateAdded
-          isActive
+          coverImage {
+            url
+          }
+          publishedAt
         }
       }
     }
@@ -63,19 +55,20 @@ export const getUserPosts = async (
   username: string,
   page?: number,
 ): Promise<Post[]> => {
-  const data = await CLIENT.request<{ user: User }>(PUBLOCATIONS_QUERY, {
+  const data = await CLIENT.request<{ user: User }>(PUBLICATION_LIST_QUERY, {
     username,
-    page,
+    page: page ?? 1,
+    pageSize: 10,
   })
 
-  return data.user.publication.posts
+  return data.user.posts.nodes
 }
 
 export const getPost = async (
   hostname: string,
   slug: string,
 ): Promise<Post> => {
-  const data = await CLIENT.request<{ post: Post }>(PUBLOCATION_QUERY, {
+  const data = await CLIENT.request<{ post: Post }>(PUBLICATION_LIST_QUERY, {
     hostname,
     slug,
   })

@@ -1,24 +1,19 @@
 export interface User {
-  _id: string
-  username: string
-  name: string
-  blogHandle: string
-  publicationDomain: string
-  publication: Publication
-}
-
-export interface Publication {
-  _id: string
-  posts: Post[]
+  posts: { nodes: Post[] }[]
 }
 
 export interface Post {
-  _id: string
-  dateAdded: string
+  id: string
   slug: string
   title: string
   brief: string
-  coverImage?: string
-  coverImageBase64: string | null
-  coverImageBlurhash: unknown | null
+
+  publishedAt: string
+  coverImage?: PostCoverImage
+}
+
+export interface PostCoverImage {
+  url?: string
+  base64?: string | null
+  blurhash: string | null
 }

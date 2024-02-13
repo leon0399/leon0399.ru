@@ -42,16 +42,15 @@ const PostItem: FC<Props> = ({ post, ...props }) => {
           {post.brief}
         </p>
       </div>
-      {post.coverImage && (
+      {post.coverImage?.url && (
         <figure className="relative rounded md:w-56">
           <Image
             className="rounded"
-            src={post.coverImage}
+            src={post.coverImage.url}
             width={224}
             height={126}
             alt={post.title}
-            placeholder="blur"
-            blurDataURL={post.coverImageBase64!}
+            blurDataURL={post.coverImage.base64}
             sizes="100vw"
             style={{
               width: '100%',
