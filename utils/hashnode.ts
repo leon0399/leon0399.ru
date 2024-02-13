@@ -27,22 +27,6 @@ const PUBLICATION_LIST_QUERY = gql`
   }
 `
 
-const PUBLICATION_QUERY = gql`
-  query Publication($id: ID!) {
-    post(id: $id) {
-      id
-      cuid
-      slug
-      title
-      brief
-      coverImage {
-        url
-      }
-        publishedAt
-    }
-  }
-`
-
 export const getUserPosts = async (
   username: string,
   page?: number,
