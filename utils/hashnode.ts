@@ -41,12 +41,12 @@ const PUBLOCATION_QUERY = gql`
       coverImage
 
       tags {
-        name
-        slug
-      }
 
-      dateAdded
-      isActive
+
+
+
+
+
     }
   }
 `
