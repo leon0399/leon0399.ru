@@ -47,7 +47,7 @@
     "@octokit/request": "^6.2.5",
     "@plaiceholder/next": "^2.5.0",
     "@tailwindcss/typography": "^0.5.9",
-    "@tanstack/react-query": "^4.29.12",
+    "@tanstack/react-query": "^5.21.7",
     "@thirdweb-dev/chain-icons": "^1.0.5",
     "@uidotdev/usehooks": "^2.3.1",
     "@vercel/analytics": "^1.0.1",
