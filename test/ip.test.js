@@ -15,5 +15,11 @@ describe('ip package', () => {
 
     // Test case 3: Check if the IP address is not undefined
     expect(ipAddress).not.toBeUndefined();
+    // New Test case: Ensure that the updated IP package version is installed
+  it('should return the correct version', () => {
+    const version = ip.version();
+    expect(version).toBe('2.0.1');
   });
+
+});
 });
