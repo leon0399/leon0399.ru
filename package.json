@@ -81,7 +81,7 @@
     "recharts": "^2.6.2",
     "sharp": "^0.32.1",
     "twitter-api-sdk": "^1.2.1",
-    "wagmi": "^0.11.7"
+    "wagmi": "^2.5.7"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.22.5",
