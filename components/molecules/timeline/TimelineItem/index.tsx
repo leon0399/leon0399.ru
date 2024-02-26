@@ -1,8 +1,12 @@
 import { Icon } from '@iconify/react'
+import * as mdx from '@mdx-js/react/lib'
 import clsx from 'clsx'
-import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
-import { MDXRemote } from 'next-mdx-remote'
 import {
+  MDXRemote,
+  type MDXRemoteProps,
+  MDXRemoteSerializeResult,
+} from 'next-mdx-remote'
+import React, {
   type FC,
   type PropsWithChildren,
   useEffect,
@@ -82,6 +86,21 @@ const IconWrapper = styled.div<{ $color: string }>(({ $color }) => [
   $color === 'red' && tw`bg-red-600 dark:bg-red-400`,
 ])
 
+type Anchor = NonNullable<mdx.Components['a']>
+type Paragraph = NonNullable<mdx.Components['p']>
+
+const MDXParagraphComponent: Paragraph = ({ children }) => <>{children}</>
+const MDXAnchorComponent: Anchor = ({ children, ...props }) => (
+  <a
+    {...props}
+    target="_blank"
+    rel="noopener noreferrer"
+    tw="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+  >
+    {children}
+  </a>
+)
+
 // eslint-disable-next-line no-redeclare
 const TimelineItem: FC<Props> = ({ item, ...props }) => (
   <article
@@ -103,17 +122,8 @@ const TimelineItem: FC<Props> = ({ item, ...props }) => (
           <MDXRemote
             {...item.title}
             components={{
-              p: (({ children }) => <>{children}</>) as FC<PropsWithChildren>,
-              a: (({ children, ...props }) => (
-                <a
-                  {...props}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  tw="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
-                >
-                  {children}
-                </a>
-              )) as FC<PropsWithChildren>,
+              p: MDXParagraphComponent,
+              a: MDXAnchorComponent,
             }}
           />
         </h3>
@@ -138,16 +148,7 @@ const TimelineItem: FC<Props> = ({ item, ...props }) => (
           <MDXRemote
             {...item.description}
             components={{
-              a: (({ children, ...props }) => (
-                <a
-                  {...props}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  tw="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
-                >
-                  {children}
-                </a>
-              )) as FC<PropsWithChildren>,
+              a: MDXAnchorComponent,
             }}
           />
         </ReadMore>
