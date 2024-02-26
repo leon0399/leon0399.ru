@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react'
 import * as mdx from '@mdx-js/react/lib'
 import clsx from 'clsx'
 import {
-  MDXRemote,
+  MDXRemote, MDXRemoteSerializeResult,
 } from 'next-mdx-remote'
 import React, {
   type FC,
