@@ -3,8 +3,6 @@ import * as mdx from '@mdx-js/react/lib'
 import clsx from 'clsx'
 import {
   MDXRemote,
-  type MDXRemoteProps,
-  MDXRemoteSerializeResult,
 } from 'next-mdx-remote'
 import React, {
   type FC,
@@ -23,8 +21,8 @@ import Tag from '../../../atoms/Tag'
 export type TimelineItem = Modify<
   TTimelineItem,
   {
-    title: MDXRemoteSerializeResult
-    description?: MDXRemoteSerializeResult
+    title: any
+    description?: any
   }
 >
 
