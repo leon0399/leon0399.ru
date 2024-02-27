@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install Dependencies
-        run: yarn --prefer-offline --frozen-lockfile --ignore-engines --ignore-optional --non-interactive --foreground-scripts --production=false --platform=linux --arch=x64
+        run: yarn --prefer-offline --frozen-lockfile --ignore-engines --non-interactive --foreground-scripts --production=false --platform=linux --arch=x64
         env:
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
           HUSKY_SKIP_INSTALL: true

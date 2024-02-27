@@ -79,7 +79,7 @@
     "react-typist": "^2.0.5",
     "react-wrap-balancer": "^1.0.0",
     "recharts": "^2.6.2",
-    "sharp": "^0.32.1",
+    "sharp": "^0.33.2",
     "twitter-api-sdk": "^1.2.1",
     "wagmi": "^0.11.7"
   },
