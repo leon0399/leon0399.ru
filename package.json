@@ -41,7 +41,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@heroicons/react": "^2.0.18",
-    "@next/bundle-analyzer": "^13.4.10",
+    "@next/bundle-analyzer": "^14.1.2",
     "@next/mdx": "^13.4.4",
     "@octokit/core": "^5.0.0",
     "@octokit/request": "^6.2.5",
