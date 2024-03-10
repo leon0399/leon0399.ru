@@ -90,7 +90,7 @@
     "@emotion/eslint-plugin": "^11.11.0",
     "@emotion/jest": "^11.11.0",
     "@iconify/json": "^2.2.77",
-    "@iconify/react": "^4.1.0",
+    "@iconify/react": "^4.1.1",
     "@jest/globals": "^29.7.0",
     "@storybook/addon-a11y": "^7.2.1",
     "@storybook/addon-actions": "^7.0.27",
