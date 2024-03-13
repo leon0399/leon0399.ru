@@ -30,5 +30,26 @@ jobs:
       - name: Lint code
         run: yarn lint
 
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          cache: "yarn"
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: yarn --prefer-offline --frozen-lockfile --ignore-engines --non-interactive --foreground-scripts --production=false --platform=linux --arch=x64
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+          HUSKY_SKIP_INSTALL: true
+
       - name: Jest
         run: yarn test:ci
