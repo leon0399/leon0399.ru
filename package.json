@@ -99,7 +99,7 @@
     "@storybook/addon-interactions": "^7.4.5",
     "@storybook/addon-links": "^7.0.18",
     "@storybook/blocks": "^7.2.1",
-    "@storybook/nextjs": "^7.6.5",
+    "@storybook/nextjs": "^8.0.0",
     "@storybook/react": "7.0.18",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@svgr/core": "^8.0.0",
