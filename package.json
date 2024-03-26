@@ -48,7 +48,7 @@
     "@plaiceholder/next": "^2.5.0",
     "@storybook/test": "^8.0.4",
     "@tailwindcss/typography": "^0.5.9",
-    "@tanstack/react-query": "^4.29.12",
+    "@tanstack/react-query": "^5.28.8",
     "@thirdweb-dev/chain-icons": "^1.0.5",
     "@uidotdev/usehooks": "^2.3.1",
     "@vercel/analytics": "^1.0.1",
