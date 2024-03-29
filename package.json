@@ -85,7 +85,7 @@
     "wagmi": "^0.11.7"
   },
   "devDependencies": {
-    "@babel/preset-typescript": "^7.22.5",
+    "@babel/preset-typescript": "^7.24.1",
     "@emotion/babel-plugin-jsx-pragmatic": "^0.2.1",
     "@emotion/babel-preset-css-prop": "^11.10.0",
     "@emotion/eslint-plugin": "^11.11.0",
