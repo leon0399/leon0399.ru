@@ -50,7 +50,7 @@
     "@tailwindcss/typography": "^0.5.11",
     "@tanstack/react-query": "^4.29.12",
     "@thirdweb-dev/chain-icons": "^1.0.5",
-    "@uidotdev/usehooks": "^2.3.1",
+    "@uidotdev/usehooks": "^2.4.1",
     "@vercel/analytics": "^1.2.2",
     "chart.js": "^4",
     "chartjs-adapter-dayjs-4": "^1.0.4",
