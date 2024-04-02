@@ -44,7 +44,7 @@
     "@next/bundle-analyzer": "^14.1.4",
     "@next/mdx": "^13.4.4",
     "@octokit/core": "^6.0.1",
-    "@octokit/request": "^6.2.5",
+    "@octokit/request": "^9.0.1",
     "@plaiceholder/next": "^2.5.0",
     "@storybook/test": "^8.0.4",
     "@tailwindcss/typography": "^0.5.12",
