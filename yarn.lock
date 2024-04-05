@@ -3831,12 +3831,12 @@
     "@stablelib/random" "^1.0.2"
     "@stablelib/wipe" "^1.0.1"
 
-"@storybook/addon-a11y@^8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-8.0.4.tgz#2e62ab86a016a9ed6e4b52d61e0549c2568b0923"
-  integrity sha512-5OyZNzjNXjNUD9vBfjxFnJjMMcBFYWyI4zy5qmJcbAvBv/COiXNfNg2cr2YPNtU5WfA6nsaIESfHFGBHI3GDAg==
+"@storybook/addon-a11y@^8.0.5":
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-8.0.5.tgz#53a49e2518a24e40d89472ae0fd75fb7ef86f7bf"
+  integrity sha512-QWMbFyZ3Cs859OZ4hoidfZBVHpQ+BAsyu88g/o+AKh5hP3/SRu8g+D/ZVtt2vkwN4jvIQzNDpzjIYKp1zRDczQ==
   dependencies:
-    "@storybook/addon-highlight" "8.0.4"
+    "@storybook/addon-highlight" "8.0.5"
     axe-core "^4.2.0"
 
 "@storybook/addon-actions@8.0.5", "@storybook/addon-actions@^8.0.4":
@@ -3914,13 +3914,6 @@
     "@storybook/node-logger" "8.0.5"
     "@storybook/preview-api" "8.0.5"
     ts-dedent "^2.0.0"
-
-"@storybook/addon-highlight@8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-highlight/-/addon-highlight-8.0.4.tgz#32f21a1f850394e83277a1cd553a33c86cb603f4"
-  integrity sha512-tnEiVaJlXL07v8JBox+QtRPVruoy0YovOTAOWY7fKDiKzF1I9wLaJjQF3wOsvwspHTHu00OZw2gsazgXiH4wLQ==
-  dependencies:
-    "@storybook/global" "^5.0.0"
 
 "@storybook/addon-highlight@8.0.5":
   version "8.0.5"
