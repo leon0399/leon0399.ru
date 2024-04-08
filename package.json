@@ -102,7 +102,7 @@
     "@storybook/blocks": "^8.0.4",
     "@storybook/nextjs": "^8.0.5",
     "@storybook/react": "^8.0.4",
-    "@svgr/core": "^8.0.0",
+    "@svgr/core": "^8.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.2.2",
     "@testing-library/user-event": "^14.5.2",
