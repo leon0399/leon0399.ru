@@ -3956,15 +3956,15 @@
   dependencies:
     "@storybook/global" "^5.0.0"
 
-"@storybook/addon-interactions@^8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-interactions/-/addon-interactions-8.0.4.tgz#b689790cf1afd1d610df9ee98538bb88f837e4aa"
-  integrity sha512-wTEOnVUbF1lNJxxocr5IKmpgnmwyO8YsQf6Baw3tTWCHAa/MaWWQYq1OA6CfFfmVGGRjv/w2GTuf1Vyq99O7mg==
+"@storybook/addon-interactions@^8.0.8":
+  version "8.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-interactions/-/addon-interactions-8.0.8.tgz#92f1b27b47d2488736873121a0794c3bbb2b98af"
+  integrity sha512-UOPKOe97uV4psH1O1YeE0oFuUQgD1Vkv95JjHjQG8KiPWvwdiezV7rrjPvw8RApnSKUopjFETs8F5D59i4eARw==
   dependencies:
     "@storybook/global" "^5.0.0"
-    "@storybook/instrumenter" "8.0.4"
-    "@storybook/test" "8.0.4"
-    "@storybook/types" "8.0.4"
+    "@storybook/instrumenter" "8.0.8"
+    "@storybook/test" "8.0.8"
+    "@storybook/types" "8.0.8"
     polished "^4.2.2"
     ts-dedent "^2.2.0"
 
@@ -4650,16 +4650,16 @@
   resolved "https://registry.yarnpkg.com/@storybook/icons/-/icons-1.2.9.tgz#bb4a51a79e186b62e2dd0e04928b8617ac573838"
   integrity sha512-cOmylsz25SYXaJL/gvTk/dl3pyk7yBFRfeXTsHvTA3dfhoU/LWSq0NKL9nM7WBasJyn6XPSGnLS4RtKXLw5EUg==
 
-"@storybook/instrumenter@8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@storybook/instrumenter/-/instrumenter-8.0.4.tgz#ab91a068e9ab5af2a5bafd3377e58513193ca2e7"
-  integrity sha512-lkHv1na12oMTZvuDbzufgqrtFlV1XqdXrAAg7YXZOia/oMz6Z/XMldEqwLPUCLGVodbFJofrpE67Wtw8dNTDQg==
+"@storybook/instrumenter@8.0.8":
+  version "8.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/instrumenter/-/instrumenter-8.0.8.tgz#4e9d11afe464073e142617217cb7c76f29e3e803"
+  integrity sha512-bCu9Tu48WOQ8ZNUed+FCSMr3Uw81b4yW/knD2goqx15nD33B7xXBNSI2GTHH5YaEHVyIFFggQcKHLkELXWlsoA==
   dependencies:
-    "@storybook/channels" "8.0.4"
-    "@storybook/client-logger" "8.0.4"
-    "@storybook/core-events" "8.0.4"
+    "@storybook/channels" "8.0.8"
+    "@storybook/client-logger" "8.0.8"
+    "@storybook/core-events" "8.0.8"
     "@storybook/global" "^5.0.0"
-    "@storybook/preview-api" "8.0.4"
+    "@storybook/preview-api" "8.0.8"
     "@vitest/utils" "^1.3.1"
     util "^0.12.4"
 
@@ -4999,15 +4999,15 @@
     fs-extra "^11.1.0"
     read-pkg-up "^7.0.1"
 
-"@storybook/test@8.0.4", "@storybook/test@^8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@storybook/test/-/test-8.0.4.tgz#62806e71e11f881f80847f67f3db2214907b6eb4"
-  integrity sha512-/uvE8Rtu7tIcuyQBUzKq7uuDCsjmADI18BApLdwo/qthmN8ERDxRSz0Ngj2gvBMQFv99At8ESi/xh6oFGu3rWg==
+"@storybook/test@8.0.8", "@storybook/test@^8.0.4":
+  version "8.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/test/-/test-8.0.8.tgz#041ec2164de26ae77e493d8121495c556e0ae7c8"
+  integrity sha512-YXgwgg1e8ggDg2BlgeExwdN3MjeExnDvybQIUugADgun87tRIujJFCdjh0PAxg0Qvln6+lU3w+3Y2aryvX42RA==
   dependencies:
-    "@storybook/client-logger" "8.0.4"
-    "@storybook/core-events" "8.0.4"
-    "@storybook/instrumenter" "8.0.4"
-    "@storybook/preview-api" "8.0.4"
+    "@storybook/client-logger" "8.0.8"
+    "@storybook/core-events" "8.0.8"
+    "@storybook/instrumenter" "8.0.8"
+    "@storybook/preview-api" "8.0.8"
     "@testing-library/dom" "^9.3.4"
     "@testing-library/jest-dom" "^6.4.2"
     "@testing-library/user-event" "^14.5.2"
