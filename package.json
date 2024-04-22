@@ -101,7 +101,7 @@
     "@storybook/addon-links": "^8.0.6",
     "@storybook/blocks": "^8.0.6",
     "@storybook/nextjs": "^8.0.5",
-    "@storybook/react": "^8.0.4",
+    "@storybook/react": "^8.0.8",
     "@svgr/core": "^8.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^15.0.2",
