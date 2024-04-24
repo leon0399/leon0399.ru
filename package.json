@@ -97,7 +97,7 @@
     "@storybook/addon-actions": "^8.0.4",
     "@storybook/addon-docs": "^8.0.4",
     "@storybook/addon-essentials": "^8.0.8",
-    "@storybook/addon-interactions": "^8.0.8",
+    "@storybook/addon-interactions": "^8.0.9",
     "@storybook/addon-links": "^8.0.6",
     "@storybook/blocks": "^8.0.6",
     "@storybook/nextjs": "^8.0.5",
