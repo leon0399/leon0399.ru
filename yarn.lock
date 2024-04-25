@@ -4647,6 +4647,20 @@
     doctrine "^3.0.0"
     lodash "^4.17.21"
 
+"@storybook/docs-tools@8.0.9":
+  version "8.0.9"
+  resolved "https://registry.yarnpkg.com/@storybook/docs-tools/-/docs-tools-8.0.9.tgz#4257adede62028a6e1176151a09fa4f4fa146b12"
+  integrity sha512-OzogAeOmeHea/MxSPKRBWtOQVNSpoq+OOpimO9YRA5h5GBRJ2TUOGT44Gny6QT4ll5AvQA8fIiq9KezKcLekAg==
+  dependencies:
+    "@storybook/core-common" "8.0.9"
+    "@storybook/core-events" "8.0.9"
+    "@storybook/preview-api" "8.0.9"
+    "@storybook/types" "8.0.9"
+    "@types/doctrine" "^0.0.3"
+    assert "^2.1.0"
+    doctrine "^3.0.0"
+    lodash "^4.17.21"
+
 "@storybook/global@^5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@storybook/global/-/global-5.0.0.tgz#b793d34b94f572c1d7d9e0f44fac4e0dbc9572ed"
@@ -4938,6 +4952,11 @@
   resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-8.0.8.tgz#28370b050be3e5ebea296efa6bde01a792ac96fd"
   integrity sha512-vOMlAz2HH/xfgZmSO28fCEmp5/tPxINDEdBDVLdZeYG6R1j5jlMRyaNcXt4cPNDkyc///PkB/K767hg4goca/Q==
 
+"@storybook/react-dom-shim@8.0.9":
+  version "8.0.9"
+  resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-8.0.9.tgz#9fcfcc93a41c84f5a046b0b97647684061e2ac7d"
+  integrity sha512-8011KlRuG3obr5pZZ7bcEyYYNWF3tR596YadoMd267NPoHKvwAbKL1L/DNgb6kiYjZDUf9QfaKSCWW31k0kcRQ==
+
 "@storybook/react@8.0.5":
   version "8.0.5"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-8.0.5.tgz#bc01882f10f7d3b1f2d07bd4bde0d960d4c6633a"
@@ -4965,17 +4984,17 @@
     type-fest "~2.19"
     util-deprecate "^1.0.2"
 
-"@storybook/react@^8.0.8":
-  version "8.0.8"
-  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-8.0.8.tgz#04374fd813e87763678c0c34eb1f2b91b01525e4"
-  integrity sha512-pPTlQntl09kv7qkAFYsxUq6qCLeeZC/K3yGFBGMy2Dc+PFjBYdT6mt2I8GB3twK0Cq5gJESlLj48QnYLQ/9PbA==
+"@storybook/react@^8.0.9":
+  version "8.0.9"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-8.0.9.tgz#b9e286245a4ae79ae0211d672b1143d1c73c90d3"
+  integrity sha512-NeQ6suZG3HKikwe3Tx9cAIaRx7uP8FKCmlVvIiBg4LTTI5orCt94PPakvuZukZcbkqvcCnEBkebAzwUpn8PiJw==
   dependencies:
-    "@storybook/client-logger" "8.0.8"
-    "@storybook/docs-tools" "8.0.8"
+    "@storybook/client-logger" "8.0.9"
+    "@storybook/docs-tools" "8.0.9"
     "@storybook/global" "^5.0.0"
-    "@storybook/preview-api" "8.0.8"
-    "@storybook/react-dom-shim" "8.0.8"
-    "@storybook/types" "8.0.8"
+    "@storybook/preview-api" "8.0.9"
+    "@storybook/react-dom-shim" "8.0.9"
+    "@storybook/types" "8.0.9"
     "@types/escodegen" "^0.0.6"
     "@types/estree" "^0.0.51"
     "@types/node" "^18.0.0"
