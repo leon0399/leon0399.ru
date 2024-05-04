@@ -6,15 +6,16 @@ import { Bot } from 'grammy'
 import { type NextApiRequest, type NextApiResponse } from 'next'
 
 const bot = new Bot(process.env.LOVE_TG_BOT_TOKEN!)
-const receivers = process.env.LOVE_TG_BOT_RECEIVERS?.split(',') || []
+const receivers = (process.env.LOVE_TG_BOT_RECEIVERS + '').split(',') || []
 
 const model = openai('gpt-3.5-turbo', {
   // additional settings
 })
 const prompt =
-  'Напиши любовное письмо на 100 слов своей любимой жене.\n' +
+  'Напиши короткое романтичное любовное письмо на 100 слов своей любимой жене.\n' +
+  'У нас нет детей.\n' +
   'Письмо должно быть написано на русском языке.\n' +
-  'Подпиши письмо "Твой любящий муж".\n'
+  'Подпиши письмо от имени мужа.\n'
 
 export default async function handler(
   req: NextApiRequest,
