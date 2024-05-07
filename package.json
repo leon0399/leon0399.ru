@@ -142,7 +142,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.2.2",
     "postcss": "^8.4.38",
-    "prettier": "^2.8.8",
+    "prettier": "^3.2.5",
     "react-docgen-typescript-plugin": "^1.0.6",
     "storybook": "^8.0.10",
     "storybook-addon-react-docgen": "^1.2.44",
