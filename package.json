@@ -97,7 +97,7 @@
     "@iconify/json": "^2.2.206",
     "@iconify/react": "^4.1.1",
     "@jest/globals": "^29.7.0",
-    "@storybook/addon-a11y": "^8.0.5",
+    "@storybook/addon-a11y": "^8.0.10",
     "@storybook/addon-actions": "^8.0.4",
     "@storybook/addon-docs": "^8.0.4",
     "@storybook/addon-essentials": "^8.0.9",
