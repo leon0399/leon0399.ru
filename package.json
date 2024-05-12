@@ -69,6 +69,7 @@
     "merkletreejs": "^0.3.11",
     "next": "^14.2.3",
     "next-compose-plugins": "^2.2.1",
+    "next-connect": "^1.0.0",
     "next-mdx-builder": "^0.4.4",
     "next-mdx-remote": "^4.4.1",
     "p-throttle": "^6.1.0",
@@ -86,6 +87,7 @@
     "sharp": "^0.33.3",
     "twitter-api-sdk": "^1.2.1",
     "wagmi": "^0.11.7",
+    "winston": "^3.13.0",
     "zod": "^3.23.6"
   },
   "devDependencies": {
