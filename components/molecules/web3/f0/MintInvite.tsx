@@ -86,7 +86,7 @@ const MintInvite: FC<Props> = ({
             {isMinting ? (
               <Icon
                 icon={'heroicons-outline:refresh'}
-                className="h-4 w-4 animate-spin"
+                className="size-4 animate-spin"
               />
             ) : (
               'Mint!'

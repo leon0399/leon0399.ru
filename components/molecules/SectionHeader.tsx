@@ -22,10 +22,10 @@ const SectionHeader: FC<PropsWithChildren<Props>> = ({
       <Link
         href={href}
         target={href.startsWith('http') ? '_blank' : '_self'}
-        tw="h-6 w-6 rounded text-gray-500 ring-offset-2 hover:text-gray-600 focus:outline-none focus:ring"
+        tw="size-6 rounded text-gray-500 ring-offset-2 hover:text-gray-600 focus:outline-none focus:ring"
         aria-label={title}
       >
-        <Icon icon="heroicons-solid:arrow-right" tw="h-6 w-6" />
+        <Icon icon="heroicons-solid:arrow-right" tw="size-6" />
       </Link>
     )}
   </div>

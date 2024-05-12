@@ -37,7 +37,7 @@ const ProjectHeader: FC<Props> = ({
           src={logo}
           width={84}
           height={84}
-          tw="mt-0 h-[84px] w-[84px] rounded"
+          tw="mt-0 size-[84px] rounded"
           alt="Project logo"
           style={{
             maxWidth: '100%',
@@ -45,7 +45,7 @@ const ProjectHeader: FC<Props> = ({
           }}
         />
       ) : (
-        <div tw="h-[84px] w-[84px] rounded bg-gray-200" />
+        <div tw="size-[84px] rounded bg-gray-200" />
       )}
       <div tw="max-w-full overflow-hidden">
         <h1 tw="mb-4 text-4xl font-bold md:text-5xl">{title}</h1>

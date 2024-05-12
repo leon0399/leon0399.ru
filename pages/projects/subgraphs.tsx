@@ -107,7 +107,7 @@ const SubgraphRow: React.FC<{ subgraphName: string }> = ({ subgraphName }) => {
           </a>
         </td>
         <td tw="text-center">
-          <span tw="inline-flex h-4 w-4 animate-pulse rounded bg-slate-200 align-middle" />
+          <span tw="inline-flex size-4 animate-pulse rounded bg-slate-200 align-middle" />
         </td>
         <td tw="text-right">
           <span tw="inline-flex h-4 w-16 animate-pulse rounded bg-slate-200 align-middle" />
@@ -147,8 +147,8 @@ const SubgraphRow: React.FC<{ subgraphName: string }> = ({ subgraphName }) => {
         {data.health === 'healthy'
           ? '✅'
           : data.health === 'failed'
-          ? '❌'
-          : '⚠️'}
+            ? '❌'
+            : '⚠️'}
       </td>
       <td tw="text-right">{data.entityCount}</td>
     </tr>

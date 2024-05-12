@@ -29,7 +29,7 @@ const SocialTile: React.FC<Props> = ({ social, className }) => (
   `}
   >
     <IconWrapper>
-      <Icon icon={social.icon} className="h-6 w-6" />
+      <Icon icon={social.icon} className="size-6" />
     </IconWrapper>
     <div className="flex grow flex-col">
       <span className="text-sm">{social.label}</span>

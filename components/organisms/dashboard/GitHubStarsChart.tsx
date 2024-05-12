@@ -67,7 +67,7 @@ const ChartSkeleton: FC<
     {...props}
   >
     <svg
-      tw="h-10 w-10 text-gray-200 dark:text-gray-600"
+      tw="size-10 text-gray-200 dark:text-gray-600"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"

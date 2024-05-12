@@ -29,7 +29,7 @@ export const PrimarySocials: FC<Props> = (props) => (
           "
           aria-label={social.label}
         >
-          <Icon icon={social.icon} className="block h-6 w-6" />
+          <Icon icon={social.icon} className="block size-6" />
         </a>
       </li>
     ))}

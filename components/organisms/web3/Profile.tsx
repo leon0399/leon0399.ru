@@ -36,7 +36,7 @@ const Profile: FC<Props> = ({ className, ...props }) => {
         ) : (
           <Icon
             icon={'heroicons-outline:user'}
-            className="m-2 h-8 w-8 text-gray-600"
+            className="m-2 size-8 text-gray-600"
           />
         )}
       </div>
