@@ -12,7 +12,7 @@ const TheAnnouncementBar: FC = () => (
     </span>
     <span tw="hidden items-center space-x-2 px-3 lg:flex">
       <span>Download Résumé</span>
-      <Icon icon={'heroicons-outline:arrow-down-tray'} tw="h-4 w-4" />
+      <Icon icon={'heroicons-outline:arrow-down-tray'} tw="size-4" />
     </span>
   </Announcement>
 )

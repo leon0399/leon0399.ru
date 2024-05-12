@@ -32,7 +32,7 @@ const ProjectCard: React.FC<Props & JSX.IntrinsicElements['article']> = ({
           src={project.logo}
           width={64}
           height={64}
-          tw="h-16 w-16 rounded"
+          tw="size-16 rounded"
           alt={project.title}
           style={{
             maxWidth: '100%',
@@ -40,7 +40,7 @@ const ProjectCard: React.FC<Props & JSX.IntrinsicElements['article']> = ({
           }}
         />
       ) : (
-        <div tw="h-16 w-16 rounded bg-gray-200" />
+        <div tw="size-16 rounded bg-gray-200" />
       )}
     </div>
     <div tw="grow overflow-hidden">
@@ -82,7 +82,7 @@ const ProjectCard: React.FC<Props & JSX.IntrinsicElements['article']> = ({
     </div>
     {project.isExternalUrl && (
       <div tw="text-gray-500">
-        <Icon icon={'heroicons-outline:external-link'} tw="h-6 w-6" />
+        <Icon icon={'heroicons-outline:external-link'} tw="size-6" />
       </div>
     )}
     {project.pin && (
@@ -90,7 +90,7 @@ const ProjectCard: React.FC<Props & JSX.IntrinsicElements['article']> = ({
         <svg
           aria-hidden="true"
           role="img"
-          tw="h-6 w-6 fill-white"
+          tw="size-6 fill-white"
           width="1em"
           height="1em"
           preserveAspectRatio="xMidYMid meet"
@@ -111,12 +111,12 @@ const ProjectCard: React.FC<Props & JSX.IntrinsicElements['article']> = ({
         href={project.url}
         target="_blank"
         rel="noopener noreferrer"
-        tw="absolute inset-0 h-full w-full focus:outline-none"
+        tw="absolute inset-0 size-full focus:outline-none"
       />
     ) : (
       <Link
         href={`/projects/${project.slug}`}
-        tw="absolute inset-0 h-full w-full focus:outline-none"
+        tw="absolute inset-0 size-full focus:outline-none"
         aria-label={project.title}
       ></Link>
     )}

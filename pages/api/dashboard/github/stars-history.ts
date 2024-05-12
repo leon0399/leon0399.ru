@@ -55,23 +55,29 @@ export default async function handler(
       .filter((starred_at): starred_at is string => starred_at !== undefined)
       .map((starred_at) => starred_at.substring(0, 10))
       .sort()
-      .reduce((acc, date) => {
-        const prevDate = Object.keys(acc).pop()
-        const prev = prevDate ? acc[prevDate] : 0
-        const today = acc[date] ?? 0
-        if (today === 0) {
-          acc[date] = prev
-        }
-        acc[date] += 1
+      .reduce(
+        (acc, date) => {
+          const prevDate = Object.keys(acc).pop()
+          const prev = prevDate ? acc[prevDate] : 0
+          const today = acc[date] ?? 0
+          if (today === 0) {
+            acc[date] = prev
+          }
+          acc[date] += 1
 
-        return acc
-      }, {} as Record<string, number>),
+          return acc
+        },
+        {} as Record<string, number>,
+      ),
   )
 
   return res.status(200).json(
-    stargazersPerDay.reduce((acc, stargazers, index) => {
-      acc[repos[index]] = stargazers
-      return acc
-    }, {} as Record<string, Record<string, number>>),
+    stargazersPerDay.reduce(
+      (acc, stargazers, index) => {
+        acc[repos[index]] = stargazers
+        return acc
+      },
+      {} as Record<string, Record<string, number>>,
+    ),
   )
 }

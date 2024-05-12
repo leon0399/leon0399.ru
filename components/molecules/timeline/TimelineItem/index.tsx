@@ -113,7 +113,7 @@ const TimelineItem: FC<Props> = ({ item, ...props }) => (
   >
     <div tw="relative">
       <IconWrapper $color={item.color || 'gray'}>
-        <Icon icon={item.icon} tw="block h-5 w-5" />
+        <Icon icon={item.icon} tw="block size-5" />
       </IconWrapper>
     </div>
     <div tw="w-full py-1.5 text-sm text-gray-600 dark:text-gray-300">

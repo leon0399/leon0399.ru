@@ -31,7 +31,7 @@ const LifeItemCard: React.FC<Props> = ({
   >
     <div className="flex flex-row">
       <IconWrapper color={color}>
-        <Icon icon={icon} className="h-6 w-6" />
+        <Icon icon={icon} className="size-6" />
       </IconWrapper>
     </div>
     <h3 className="text-lg">{label}</h3>

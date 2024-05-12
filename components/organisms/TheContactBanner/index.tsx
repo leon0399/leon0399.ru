@@ -7,13 +7,13 @@ const TheContactBanner: FC<JSX.IntrinsicElements['section']> = (props) => (
   <section
     tw="
       mx-auto w-full max-w-4xl rounded-2xl border border-indigo-800 bg-indigo-600 px-12 py-10
-      text-center text-gray-100 dark:border-indigo-600
-      dark:bg-indigo-300 dark:text-gray-900 md:text-left
+      text-center text-gray-100 md:text-left
+      dark:border-indigo-600 dark:bg-indigo-300 dark:text-gray-900
     "
     {...props}
   >
     <h2 tw="text-3xl/[150%] font-bold md:text-5xl">Contact me</h2>
-    <p tw="my-2 text-gray-200 dark:text-gray-800 md:text-lg">
+    <p tw="my-2 text-gray-200 md:text-lg dark:text-gray-800">
       I’m always looking forward for new opportunities, and my inbox is always
       open. Whether you have a question or just want to say hi, I’ll try my best
       to get back to you!
@@ -29,12 +29,12 @@ const TheContactBanner: FC<JSX.IntrinsicElements['section']> = (props) => (
           rounded-lg bg-gray-100 px-6
           text-center text-sm font-semibold text-gray-900
           ring-offset-2 hover:bg-gray-200
-          focus:outline-none focus:ring dark:bg-gray-900 dark:text-gray-100
-          dark:hover:bg-gray-800 md:inline-flex
+          focus:outline-none focus:ring md:inline-flex dark:bg-gray-900
+          dark:text-gray-100 dark:hover:bg-gray-800
         "
       >
         Download Résumé
-        <Icon icon={'heroicons-outline:arrow-down-tray'} tw="ml-4 h-6 w-6" />
+        <Icon icon={'heroicons-outline:arrow-down-tray'} tw="ml-4 size-6" />
       </a>
       <a
         href="https://t.me/leon0399"
@@ -46,7 +46,7 @@ const TheContactBanner: FC<JSX.IntrinsicElements['section']> = (props) => (
           bg-transparent px-6 text-center
           text-sm font-semibold text-gray-100 ring-offset-2
           hover:bg-indigo-500 focus:outline-none
-          focus:ring dark:text-gray-900 dark:hover:bg-indigo-200 md:inline-flex
+          focus:ring md:inline-flex dark:text-gray-900 dark:hover:bg-indigo-200
         "
       >
         Telegram me
@@ -61,7 +61,7 @@ const TheContactBanner: FC<JSX.IntrinsicElements['section']> = (props) => (
           bg-transparent px-6 text-center
           text-sm font-semibold text-gray-100 ring-offset-2
           hover:bg-indigo-500 focus:outline-none
-          focus:ring dark:text-gray-900 dark:hover:bg-indigo-200 md:inline-flex
+          focus:ring md:inline-flex dark:text-gray-900 dark:hover:bg-indigo-200
         "
       >
         Hit me an email

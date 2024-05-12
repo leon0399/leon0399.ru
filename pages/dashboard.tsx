@@ -26,15 +26,13 @@ const Dashboard: NextPage = () => {
 
         <DashboardGrid tw="mb-5">
           <WithQueryDashboardItem
-            icon={<Icon icon="fa-brands:github" className="block h-6 w-6" />}
+            icon={<Icon icon="fa-brands:github" className="block size-6" />}
             title="GitHub Followers"
             url="/api/dashboard/github/followers"
             queryKey={['dashboard', 'github-followers']}
           />
           <WithQueryDashboardItem
-            icon={
-              <Icon icon="heroicons-solid:star" className="block h-6 w-6" />
-            }
+            icon={<Icon icon="heroicons-solid:star" className="block size-6" />}
             title="GitHub Stars Gained"
             url="/api/dashboard/github/total_stars"
             queryKey={['dashboard', 'github-stars']}
@@ -69,7 +67,7 @@ const Dashboard: NextPage = () => {
             icon={
               <Icon
                 icon="heroicons-solid:document-text"
-                className="block h-6 w-6"
+                className="block size-6"
               />
             }
             title="Hashnode Posts"
@@ -77,9 +75,7 @@ const Dashboard: NextPage = () => {
             queryKey={['dashboard', 'hashnode-posts']}
           />
           <WithQueryDashboardItem
-            icon={
-              <Icon icon="heroicons-solid:user" className="block h-6 w-6" />
-            }
+            icon={<Icon icon="heroicons-solid:user" className="block size-6" />}
             title="Hashnode Followers"
             url="/api/dashboard/hashnode/followers"
             queryKey={['dashboard', 'hashnode-followers']}
@@ -88,7 +84,7 @@ const Dashboard: NextPage = () => {
             icon={
               <Icon
                 icon="heroicons-solid:hand-thumb-up"
-                className="block h-6 w-6"
+                className="block size-6"
               />
             }
             title="Hashnode Reacions"

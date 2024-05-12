@@ -134,7 +134,7 @@ const MintCollection: FC<Props> = ({ contractAddress, className }) => {
               Pending TX{' '}
               <Icon
                 icon={'heroicons-outline:refresh'}
-                className="inline h-4 w-4 animate-spin"
+                className="inline size-4 animate-spin"
               />
             </label>
             <code>{pendingTx}</code>
