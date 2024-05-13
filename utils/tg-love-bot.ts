@@ -6,7 +6,7 @@ import { logger } from './logger'
 
 const receivers = (process.env.LOVE_TG_BOT_RECEIVERS + '').split(',') || []
 
-const model = openai('gpt-3.5-turbo', {
+const model = openai('gpt-4o', {
   // additional settings
 })
 const prompt =
