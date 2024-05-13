@@ -12,18 +12,28 @@
   resolved "https://registry.yarnpkg.com/@adobe/css-tools/-/css-tools-4.3.3.tgz#90749bde8b89cd41764224f5aac29cd4138f75ff"
   integrity sha512-rE0Pygv0sEZ4vBWHlAgJLGDU7Pm8xoO6p3wsEceb7GYAjScrOHpEo8KK/eVkAcnSM+slAEtXjA2JpdjLp4fJQQ==
 
-"@ai-sdk/openai@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@ai-sdk/openai/-/openai-0.0.9.tgz#a8c8b4693ef45984ea16d5cc09a04674de210e1d"
-  integrity sha512-SSZGtX4KFDXWYmQ9JuhVumo1XOx1JAdHybYy08iwVXuCud9xdjZjjxgZkNPytQK9gRxFsYDOw1h0V/WXO7XgfQ==
+"@ai-sdk/openai@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/openai/-/openai-0.0.10.tgz#3a1fbc8e8c98e347b10cf92c7232a661a9f018e8"
+  integrity sha512-q6x8UVkKE67n9Apy3toPPd5SpLfqxSUQ8t+ADm1A3FXRHMCJUD/1wt8EGSkIPmLZDsLpLXW/NZG+PdgOpHYvAw==
   dependencies:
     "@ai-sdk/provider" "0.0.3"
-    "@ai-sdk/provider-utils" "0.0.5"
+    "@ai-sdk/provider-utils" "0.0.6"
 
 "@ai-sdk/provider-utils@0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@ai-sdk/provider-utils/-/provider-utils-0.0.5.tgz#3fb0f4fac88b36ad2f14efe5bb7ecae22aba3ca4"
   integrity sha512-VVy9eQS+vS2j6cqTEQ9htMHz2nW/HFAkDXLvNFPoi1pZkviknJZEzb+DZUna6Od+jBf/TVA0HZwYnyGDaeI9cQ==
+  dependencies:
+    "@ai-sdk/provider" "0.0.3"
+    eventsource-parser "1.1.2"
+    nanoid "3.3.6"
+    secure-json-parse "2.7.0"
+
+"@ai-sdk/provider-utils@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/provider-utils/-/provider-utils-0.0.6.tgz#aa9268abe3a0912d6522b0dd38b54bd0f2c601d3"
+  integrity sha512-SxOZgSxnaVlW04/SjfMoAD45kWOWTWx0QcZrHaQnePooLhyk5AqQpgauPijL803uoJPCKfzd0UBv1gSKvWiU0A==
   dependencies:
     "@ai-sdk/provider" "0.0.3"
     eventsource-parser "1.1.2"
