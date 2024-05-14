@@ -20,16 +20,6 @@
     "@ai-sdk/provider" "0.0.4"
     "@ai-sdk/provider-utils" "0.0.7"
 
-"@ai-sdk/provider-utils@0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@ai-sdk/provider-utils/-/provider-utils-0.0.5.tgz#3fb0f4fac88b36ad2f14efe5bb7ecae22aba3ca4"
-  integrity sha512-VVy9eQS+vS2j6cqTEQ9htMHz2nW/HFAkDXLvNFPoi1pZkviknJZEzb+DZUna6Od+jBf/TVA0HZwYnyGDaeI9cQ==
-  dependencies:
-    "@ai-sdk/provider" "0.0.3"
-    eventsource-parser "1.1.2"
-    nanoid "3.3.6"
-    secure-json-parse "2.7.0"
-
 "@ai-sdk/provider-utils@0.0.7":
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/@ai-sdk/provider-utils/-/provider-utils-0.0.7.tgz#530f0870dfba1c12c08e03ebdcb86dad36847e62"
@@ -39,13 +29,6 @@
     eventsource-parser "1.1.2"
     nanoid "3.3.6"
     secure-json-parse "2.7.0"
-
-"@ai-sdk/provider@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@ai-sdk/provider/-/provider-0.0.3.tgz#3b0cce48cfe183d306d6b085583a77c464d42491"
-  integrity sha512-0B8P6VZpJ6F9yS9BpmJBYSqIaIfeRtL5tD5SP+qgR8y0pPwalIbRMUFiLz9YUT6g70MJsCLpm/2/fX3cfAYCJw==
-  dependencies:
-    json-schema "0.4.0"
 
 "@ai-sdk/provider@0.0.4":
   version "0.0.4"
@@ -6782,13 +6765,13 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-ai@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/ai/-/ai-3.1.1.tgz#3d2447fe2cd38d93c8e244781dac5725f171700a"
-  integrity sha512-pJZc6q7SLd2/NenxN62iagMw9HHQ4Q8FyKqkrZUJntupRTHHgN3fL7exzJU/ICHDAbtn/EcJXOau6P61QgUtKQ==
+ai@^3.1.7:
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/ai/-/ai-3.1.7.tgz#d79355763c0796295d549f307b7ea4cabc352062"
+  integrity sha512-70qghO9u2icyuhT1jfs3XNLkY4psWebSUcE0nnvGnb4vZp22Pph4inLFwJLBXnUvD8ZZSLoZ0muhGbDkvXxjFw==
   dependencies:
-    "@ai-sdk/provider" "0.0.3"
-    "@ai-sdk/provider-utils" "0.0.5"
+    "@ai-sdk/provider" "0.0.4"
+    "@ai-sdk/provider-utils" "0.0.7"
     eventsource-parser "1.1.2"
     json-schema "0.4.0"
     jsondiffpatch "0.6.0"
