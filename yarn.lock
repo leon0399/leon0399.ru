@@ -12,13 +12,13 @@
   resolved "https://registry.yarnpkg.com/@adobe/css-tools/-/css-tools-4.3.3.tgz#90749bde8b89cd41764224f5aac29cd4138f75ff"
   integrity sha512-rE0Pygv0sEZ4vBWHlAgJLGDU7Pm8xoO6p3wsEceb7GYAjScrOHpEo8KK/eVkAcnSM+slAEtXjA2JpdjLp4fJQQ==
 
-"@ai-sdk/openai@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@ai-sdk/openai/-/openai-0.0.10.tgz#3a1fbc8e8c98e347b10cf92c7232a661a9f018e8"
-  integrity sha512-q6x8UVkKE67n9Apy3toPPd5SpLfqxSUQ8t+ADm1A3FXRHMCJUD/1wt8EGSkIPmLZDsLpLXW/NZG+PdgOpHYvAw==
+"@ai-sdk/openai@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/openai/-/openai-0.0.11.tgz#a2206a13402e05a586ba6ac4f3768fabb49dbc39"
+  integrity sha512-LZJN1wpjwx6cMwpZIdIBTONjvRl9NPp1NC99NAZ6f5t+y4BfRVkQC4YW4ISODyybmIDHOK7OyZ0NtDU4UWUBfQ==
   dependencies:
-    "@ai-sdk/provider" "0.0.3"
-    "@ai-sdk/provider-utils" "0.0.6"
+    "@ai-sdk/provider" "0.0.4"
+    "@ai-sdk/provider-utils" "0.0.7"
 
 "@ai-sdk/provider-utils@0.0.5":
   version "0.0.5"
@@ -30,12 +30,12 @@
     nanoid "3.3.6"
     secure-json-parse "2.7.0"
 
-"@ai-sdk/provider-utils@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@ai-sdk/provider-utils/-/provider-utils-0.0.6.tgz#aa9268abe3a0912d6522b0dd38b54bd0f2c601d3"
-  integrity sha512-SxOZgSxnaVlW04/SjfMoAD45kWOWTWx0QcZrHaQnePooLhyk5AqQpgauPijL803uoJPCKfzd0UBv1gSKvWiU0A==
+"@ai-sdk/provider-utils@0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/provider-utils/-/provider-utils-0.0.7.tgz#530f0870dfba1c12c08e03ebdcb86dad36847e62"
+  integrity sha512-zs/H1T2U4NCdiPBtBKI/FXQirAyrwgwI+qQ85Y8TZLAYY59+I2yVUlSb3WG7Zp+OmaXBlppUGAlEpUIDBrErXw==
   dependencies:
-    "@ai-sdk/provider" "0.0.3"
+    "@ai-sdk/provider" "0.0.4"
     eventsource-parser "1.1.2"
     nanoid "3.3.6"
     secure-json-parse "2.7.0"
@@ -44,6 +44,13 @@
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@ai-sdk/provider/-/provider-0.0.3.tgz#3b0cce48cfe183d306d6b085583a77c464d42491"
   integrity sha512-0B8P6VZpJ6F9yS9BpmJBYSqIaIfeRtL5tD5SP+qgR8y0pPwalIbRMUFiLz9YUT6g70MJsCLpm/2/fX3cfAYCJw==
+  dependencies:
+    json-schema "0.4.0"
+
+"@ai-sdk/provider@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/provider/-/provider-0.0.4.tgz#5db7b75352ef7c9cea0235b2574aa55fc720a635"
+  integrity sha512-MlKP7WsPkHsxQN5tbWrB1C9XjC3u0Pml5EH8R2hs/JEFbrCAJBprD24DnUErYh3RgFIjkaVCeAMCM+N/psEPvw==
   dependencies:
     json-schema "0.4.0"
 
