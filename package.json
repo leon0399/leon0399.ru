@@ -47,7 +47,7 @@
     "@octokit/core": "^6.1.2",
     "@octokit/request": "^6.2.5",
     "@plaiceholder/next": "^2.5.0",
-    "@storybook/test": "^8.0.10",
+    "@storybook/test": "^8.1.0",
     "@tailwindcss/typography": "^0.5.13",
     "@tanstack/react-query": "^4.29.12",
     "@thirdweb-dev/chain-icons": "^1.0.5",
