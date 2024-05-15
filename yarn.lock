@@ -3834,7 +3834,7 @@
     "@storybook/addon-highlight" "8.0.10"
     axe-core "^4.2.0"
 
-"@storybook/addon-actions@8.0.10", "@storybook/addon-actions@^8.0.4":
+"@storybook/addon-actions@8.0.10":
   version "8.0.10"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-8.0.10.tgz#df9fde0d234174eda5eb1c7af942da8e01924b50"
   integrity sha512-IEuc30UAFl7Ws0GwaY/whjBnGaViVEVjmPc+MXUym2wwwJbnCbI+BKJxPoYi/I7QJb5aUNToAE6pl2pDda2g3Q==
@@ -3852,6 +3852,18 @@
   integrity sha512-+I3VTvlKdj8puHeS2tyaOVv9syDiNLneVZbTfqN+UDOK2i42NwvZr8PVwjTzMlEj9eePJdCZgiipz55xwts5bw==
   dependencies:
     "@storybook/core-events" "8.0.9"
+    "@storybook/global" "^5.0.0"
+    "@types/uuid" "^9.0.1"
+    dequal "^2.0.2"
+    polished "^4.2.2"
+    uuid "^9.0.0"
+
+"@storybook/addon-actions@^8.1.0":
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-8.1.0.tgz#2191c05ca520890da923867c4ac6bb6f295d5115"
+  integrity sha512-6c/uZo8peHh7ZWBsNAPDSdj9keBp1q7Gddci3LIxq9S8gFLEgPwjAv+f6HVx0T61wG5PGnK0ilZsrCrXyoJodA==
+  dependencies:
+    "@storybook/core-events" "8.1.0"
     "@storybook/global" "^5.0.0"
     "@types/uuid" "^9.0.1"
     dequal "^2.0.2"
@@ -4368,6 +4380,14 @@
   dependencies:
     ts-dedent "^2.0.0"
 
+"@storybook/core-events@8.1.0":
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-8.1.0.tgz#1eec094bd0b7e2d7900a72da27bdd94254d65947"
+  integrity sha512-9oCACeyYqH7rZVHglzH//cJXdP0mM5d2nBM4kgFgTTLJpbb0+SrF0rD0EVpHfA1l4Kz7pgzTY6Xj2p4mEiZ0Qg==
+  dependencies:
+    "@storybook/csf" "^0.1.7"
+    ts-dedent "^2.0.0"
+
 "@storybook/core-server@8.0.10":
   version "8.0.10"
   resolved "https://registry.yarnpkg.com/@storybook/core-server/-/core-server-8.0.10.tgz#9e75a5c47299f447b9a9056482ff99482b7f873c"
@@ -4492,6 +4512,13 @@
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@storybook/csf/-/csf-0.1.4.tgz#18224bcd571fa834ccc4bebda8a0ca4cedbc4d91"
   integrity sha512-B9UI/lsQMjF+oEfZCI6YXNoeuBcGZoOP5x8yKbe2tIEmsMjSztFKkpPzi5nLCnBk/MBtl6QJeI3ksJnbsWPkOw==
+  dependencies:
+    type-fest "^2.19.0"
+
+"@storybook/csf@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@storybook/csf/-/csf-0.1.7.tgz#dcc6c16a353bc09c8c619ba1a23ba93b2aab0b9d"
+  integrity sha512-53JeLZBibjQxi0Ep+/AJTfxlofJlxy1jXcSKENlnKxHjWEYyHQCumMP5yTFjf7vhNnMjEpV3zx6t23ssFiGRyw==
   dependencies:
     type-fest "^2.19.0"
 
