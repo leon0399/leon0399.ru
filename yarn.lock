@@ -12,13 +12,13 @@
   resolved "https://registry.yarnpkg.com/@adobe/css-tools/-/css-tools-4.3.3.tgz#90749bde8b89cd41764224f5aac29cd4138f75ff"
   integrity sha512-rE0Pygv0sEZ4vBWHlAgJLGDU7Pm8xoO6p3wsEceb7GYAjScrOHpEo8KK/eVkAcnSM+slAEtXjA2JpdjLp4fJQQ==
 
-"@ai-sdk/openai@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@ai-sdk/openai/-/openai-0.0.11.tgz#a2206a13402e05a586ba6ac4f3768fabb49dbc39"
-  integrity sha512-LZJN1wpjwx6cMwpZIdIBTONjvRl9NPp1NC99NAZ6f5t+y4BfRVkQC4YW4ISODyybmIDHOK7OyZ0NtDU4UWUBfQ==
+"@ai-sdk/openai@^0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/openai/-/openai-0.0.12.tgz#f434ae5870cc87aba1e659a879c1fd9f26bb72a9"
+  integrity sha512-+lWw1SiMy9C4oj/X2je8En8r4v60TYnEbCytOjkqThWIQJULuzqElL+9ncAePpS3XV61CN/4biJUdsbFeiE7NA==
   dependencies:
-    "@ai-sdk/provider" "0.0.4"
-    "@ai-sdk/provider-utils" "0.0.7"
+    "@ai-sdk/provider" "0.0.5"
+    "@ai-sdk/provider-utils" "0.0.8"
 
 "@ai-sdk/provider-utils@0.0.7":
   version "0.0.7"
@@ -30,10 +30,27 @@
     nanoid "3.3.6"
     secure-json-parse "2.7.0"
 
+"@ai-sdk/provider-utils@0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/provider-utils/-/provider-utils-0.0.8.tgz#fcfff6263a0ac4e3868380af2a12262d836f28ee"
+  integrity sha512-J/ZNvFhORd3gCeK3jFvNrxp1Dnvy6PvPq21RJ+OsIEjsoHeKQaHALCWG0aJunXDuzd+Mck/lCg7LqA0qmIbHIg==
+  dependencies:
+    "@ai-sdk/provider" "0.0.5"
+    eventsource-parser "1.1.2"
+    nanoid "3.3.6"
+    secure-json-parse "2.7.0"
+
 "@ai-sdk/provider@0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@ai-sdk/provider/-/provider-0.0.4.tgz#5db7b75352ef7c9cea0235b2574aa55fc720a635"
   integrity sha512-MlKP7WsPkHsxQN5tbWrB1C9XjC3u0Pml5EH8R2hs/JEFbrCAJBprD24DnUErYh3RgFIjkaVCeAMCM+N/psEPvw==
+  dependencies:
+    json-schema "0.4.0"
+
+"@ai-sdk/provider@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/provider/-/provider-0.0.5.tgz#276c2b638267d1586c0d16684f8d0bcbfd6e1017"
+  integrity sha512-TZDldBZ5clAsNwJ2PSeo/b1uILj9a2lvi0rnOj2RCNZDgaVqFRVIAnKyeHusCRv2lzhPIw03B3fiGI6VoLzOAA==
   dependencies:
     json-schema "0.4.0"
 
