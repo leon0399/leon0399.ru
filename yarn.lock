@@ -4166,12 +4166,12 @@
     "@stablelib/random" "^1.0.2"
     "@stablelib/wipe" "^1.0.1"
 
-"@storybook/addon-a11y@^8.1.0":
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-8.1.0.tgz#3265e6a905250c2d6f5bdb2f620364b9a1e48c6b"
-  integrity sha512-oJBi0nxxf6kwjZpUTVX+OynQnNIA3Nj8ZDtCrKhW+bU+bumOgi8I0wu40/pP8LCbNVLGUs8UMookKNMqKdnnLA==
+"@storybook/addon-a11y@^8.1.1":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-8.1.1.tgz#ee7356929c8a1b1d688154a7092a1fa3580651a3"
+  integrity sha512-QNDe2nyyfNMGhqnPPrEbrlKjcWisJTcJDKNWFe8q1LQxnTt1ku1oE64NbA4z52Ps9WsLXusCMzwaTlzzOLpYSg==
   dependencies:
-    "@storybook/addon-highlight" "8.1.0"
+    "@storybook/addon-highlight" "8.1.1"
     axe-core "^4.2.0"
 
 "@storybook/addon-actions@8.1.1", "@storybook/addon-actions@^8.0.4":
