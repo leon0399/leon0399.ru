@@ -4169,12 +4169,24 @@
     "@storybook/addon-highlight" "8.1.0"
     axe-core "^4.2.0"
 
-"@storybook/addon-actions@8.1.0", "@storybook/addon-actions@^8.0.4":
+"@storybook/addon-actions@8.1.0":
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-8.1.0.tgz#2191c05ca520890da923867c4ac6bb6f295d5115"
   integrity sha512-6c/uZo8peHh7ZWBsNAPDSdj9keBp1q7Gddci3LIxq9S8gFLEgPwjAv+f6HVx0T61wG5PGnK0ilZsrCrXyoJodA==
   dependencies:
     "@storybook/core-events" "8.1.0"
+    "@storybook/global" "^5.0.0"
+    "@types/uuid" "^9.0.1"
+    dequal "^2.0.2"
+    polished "^4.2.2"
+    uuid "^9.0.0"
+
+"@storybook/addon-actions@^8.1.1":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-8.1.1.tgz#77d268fcf041aea768ae6c69610823be34761fd5"
+  integrity sha512-EEBjOMuQOdCSVrwPQEkJFc42I0TWj/bK+8lboV0jXi61ZI3okDPCJ/04vu5iTvX0HjRoYqqwBjyYj0Crf7ihag==
+  dependencies:
+    "@storybook/core-events" "8.1.1"
     "@storybook/global" "^5.0.0"
     "@types/uuid" "^9.0.1"
     dequal "^2.0.2"
