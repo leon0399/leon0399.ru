@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/@adobe/css-tools/-/css-tools-4.3.3.tgz#90749bde8b89cd41764224f5aac29cd4138f75ff"
   integrity sha512-rE0Pygv0sEZ4vBWHlAgJLGDU7Pm8xoO6p3wsEceb7GYAjScrOHpEo8KK/eVkAcnSM+slAEtXjA2JpdjLp4fJQQ==
 
-"@ai-sdk/openai@^0.0.12":
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/@ai-sdk/openai/-/openai-0.0.12.tgz#f434ae5870cc87aba1e659a879c1fd9f26bb72a9"
-  integrity sha512-+lWw1SiMy9C4oj/X2je8En8r4v60TYnEbCytOjkqThWIQJULuzqElL+9ncAePpS3XV61CN/4biJUdsbFeiE7NA==
+"@ai-sdk/openai@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/openai/-/openai-0.0.13.tgz#a16f16e0e0f669d757bfc4c4d9933f7b1ca8e325"
+  integrity sha512-V5Jjem+83sVxFNzhNUV25c7uXC33VKIhoo1qN098EMqTriEp9oNCRAaNXf95eVFbFs2bDLVZtkoACv++Go0BUA==
   dependencies:
     "@ai-sdk/provider" "0.0.5"
     "@ai-sdk/provider-utils" "0.0.8"
