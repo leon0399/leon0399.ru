@@ -96,7 +96,7 @@
     "@emotion/babel-preset-css-prop": "^11.10.0",
     "@emotion/eslint-plugin": "^11.11.0",
     "@emotion/jest": "^11.11.0",
-    "@iconify/json": "^2.2.210",
+    "@iconify/json": "^2.2.211",
     "@iconify/react": "^4.1.1",
     "@jest/globals": "^29.7.0",
     "@storybook/addon-a11y": "^8.1.1",
