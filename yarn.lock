@@ -4890,6 +4890,19 @@
     "@vitest/utils" "^1.3.1"
     util "^0.12.4"
 
+"@storybook/instrumenter@8.1.3":
+  version "8.1.3"
+  resolved "https://registry.yarnpkg.com/@storybook/instrumenter/-/instrumenter-8.1.3.tgz#f0d66507e1dc5170713f729f59e69cfac2fa25e2"
+  integrity sha512-FYWXt6Pb7N64I934XxciRHUhy37l//uvXyQOwxIyI9syf2ESixpWHgPKd7XjyjULa3JOA2IAEJ3BEZVpqFirog==
+  dependencies:
+    "@storybook/channels" "8.1.3"
+    "@storybook/client-logger" "8.1.3"
+    "@storybook/core-events" "8.1.3"
+    "@storybook/global" "^5.0.0"
+    "@storybook/preview-api" "8.1.3"
+    "@vitest/utils" "^1.3.1"
+    util "^0.12.4"
+
 "@storybook/manager-api@8.1.1":
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/@storybook/manager-api/-/manager-api-8.1.1.tgz#cc2d9d6f9ee2057d7dc7d2118393a519f615bf49"
@@ -5199,7 +5212,7 @@
     fs-extra "^11.1.0"
     read-pkg-up "^7.0.1"
 
-"@storybook/test@8.1.1", "@storybook/test@^8.1.0":
+"@storybook/test@8.1.1":
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/@storybook/test/-/test-8.1.1.tgz#25f7203e71237fee1f34d64bf847b8d4bf1eab29"
   integrity sha512-JIFgfTINM8TJvfyy/aH1WfIgkGVZIesntDYTcY40ukE6ZPaM98YFrSD5E4D3b0vPFEIU0QJ2xVbOGIAVX/6hBw==
@@ -5208,6 +5221,22 @@
     "@storybook/core-events" "8.1.1"
     "@storybook/instrumenter" "8.1.1"
     "@storybook/preview-api" "8.1.1"
+    "@testing-library/dom" "^9.3.4"
+    "@testing-library/jest-dom" "^6.4.2"
+    "@testing-library/user-event" "^14.5.2"
+    "@vitest/expect" "1.3.1"
+    "@vitest/spy" "^1.3.1"
+    util "^0.12.4"
+
+"@storybook/test@^8.1.3":
+  version "8.1.3"
+  resolved "https://registry.yarnpkg.com/@storybook/test/-/test-8.1.3.tgz#17cbe89c6d8fc787121b9068444c213ebcb27d4e"
+  integrity sha512-9fjigeDBUk1X7el6haYk1Lniak0Se7Ol5f7QSw/64tIbXHp6ucj06FWEK+SfWx1J9GgCdDiFGW5UMmEZOiRCXw==
+  dependencies:
+    "@storybook/client-logger" "8.1.3"
+    "@storybook/core-events" "8.1.3"
+    "@storybook/instrumenter" "8.1.3"
+    "@storybook/preview-api" "8.1.3"
     "@testing-library/dom" "^9.3.4"
     "@testing-library/jest-dom" "^6.4.2"
     "@testing-library/user-event" "^14.5.2"
