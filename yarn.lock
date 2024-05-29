@@ -20,12 +20,12 @@
     "@ai-sdk/provider" "0.0.6"
     "@ai-sdk/provider-utils" "0.0.9"
 
-"@ai-sdk/provider-utils@0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@ai-sdk/provider-utils/-/provider-utils-0.0.10.tgz#46bc92e52ffa71e83318f2709eebd09b12e42a26"
-  integrity sha512-VAtWHXOKMXfo+Uz384wva5oqm6BTmtp3kVCZGcScubJYjIDApwAIER/a3WcTkeoq5ZXaN23bHT0KBfOhhBSgeg==
+"@ai-sdk/provider-utils@0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/provider-utils/-/provider-utils-0.0.11.tgz#f89cced1b016ce4e4700f9776a63cdd0db4c8f47"
+  integrity sha512-JRDrqL2FGDmLh+a4R5qbS8UrWN9Lt7DpDIY1x6owgXjXkz3Umm1czs1X32VlL0M1dpoSxu4hGBFtXd56+kDzXA==
   dependencies:
-    "@ai-sdk/provider" "0.0.7"
+    "@ai-sdk/provider" "0.0.8"
     eventsource-parser "1.1.2"
     nanoid "3.3.6"
     secure-json-parse "2.7.0"
@@ -47,10 +47,10 @@
   dependencies:
     json-schema "0.4.0"
 
-"@ai-sdk/provider@0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@ai-sdk/provider/-/provider-0.0.7.tgz#0406e474ead5544f236ca3ee7d95b48fda9a848f"
-  integrity sha512-PZ3L2FNvw4GHI8UFKt0ZHN5R8LFyDMtP6nlQrqT8N7yAcwBJUMTPYmq6SiWCc/S6JRhUM5pU3aUoFaycoLzxlQ==
+"@ai-sdk/provider@0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/provider/-/provider-0.0.8.tgz#dbdb63dff3f5c3fe2c999924c7cfe4b9043d3354"
+  integrity sha512-+gcMvyPUDfDXV9caN3CG5Le0M5K4CjqTdMV1ODg/AosApQiJW9ByN5imJPdI043zVdt+HS9WG+s0j4am7ca4bg==
   dependencies:
     json-schema "0.4.0"
 
@@ -6836,13 +6836,13 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-ai@^3.1.15:
-  version "3.1.15"
-  resolved "https://registry.yarnpkg.com/ai/-/ai-3.1.15.tgz#4e6d6bf144f4cce28dee78bf5bede062203bc9fd"
-  integrity sha512-vrAiRaGjtjWkPO0g9mpYALM7L5lsHFFAv5ErEd9QQjiYUJPJGqBQhJ68bikupyX+Fkj/oTt27z9qbF0+peuEPw==
+ai@^3.1.16:
+  version "3.1.16"
+  resolved "https://registry.yarnpkg.com/ai/-/ai-3.1.16.tgz#08d748807403847c1580b786dd05eebca03defbf"
+  integrity sha512-qiw8qvktMD27/NhzR4ePm+TL6G2XfADfYY5YgualO2KJIXJMTlJYS543MQFGSyXzVY5AxAPE9lMSDB3XRI891Q==
   dependencies:
-    "@ai-sdk/provider" "0.0.7"
-    "@ai-sdk/provider-utils" "0.0.10"
+    "@ai-sdk/provider" "0.0.8"
+    "@ai-sdk/provider-utils" "0.0.11"
     eventsource-parser "1.1.2"
     json-schema "0.4.0"
     jsondiffpatch "0.6.0"
