@@ -2826,10 +2826,10 @@
   dependencies:
     "@floating-ui/core" "^1.0.1"
 
-"@grammyjs/types@3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@grammyjs/types/-/types-3.7.0.tgz#00ab251e389a924014f06b71fb505c678f41f2c0"
-  integrity sha512-/q8XVwSB7LrN1w1RSaUffO6gYyi5PHOBq1cbLHqDYiy994BxDKVD5N18viWac8Z014UGG2X+s9Fgs7cxsr0q8g==
+"@grammyjs/types@3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@grammyjs/types/-/types-3.8.0.tgz#56b9a7bd55302eda025fbac74fdae1ac2f464863"
+  integrity sha512-5r2rUJ/s939iQEt6j2gyl1owbWwKAYAg2gQH7FfWIP1swL2assZ97vRUl8cBU3UEp7es9c/VioWeQjKbV6g4eg==
 
 "@graphql-typed-document-node/core@^3.2.0":
   version "3.2.0"
@@ -11075,12 +11075,12 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0,
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
 
-grammy@^1.23.1:
-  version "1.23.1"
-  resolved "https://registry.yarnpkg.com/grammy/-/grammy-1.23.1.tgz#15ef60ee938dc83125cdaf79c55224747462c33c"
-  integrity sha512-heiKRFcKuyR/Ck6U+2IyQGlQA7iymvVCAP2pFNM7Sh92jqqerDpFJHcY+ztdvRSjnypg6FF0MnyJofxg/0vIJA==
+grammy@^1.24.0:
+  version "1.24.0"
+  resolved "https://registry.yarnpkg.com/grammy/-/grammy-1.24.0.tgz#7b860a44f0557673c59e01a17e59e9b361814fe1"
+  integrity sha512-cHeUC4jOwqEF4405b0phwr40IwIzudDSBHsSni5z6JyI7u3xCYpvD+11FOmxjgjrk9L9xEumC6VKL1yR1LRWTA==
   dependencies:
-    "@grammyjs/types" "3.7.0"
+    "@grammyjs/types" "3.8.0"
     abort-controller "^3.0.0"
     debug "^4.3.4"
     node-fetch "^2.7.0"
