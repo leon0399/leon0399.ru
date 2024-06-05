@@ -37,7 +37,7 @@
     "yarn": ">=1.22"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^0.0.14",
+    "@ai-sdk/openai": "^0.0.18",
     "@camwiegert/typical": "^0.1.1",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
