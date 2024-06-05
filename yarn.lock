@@ -6811,10 +6811,10 @@ agentkeepalive@^4.5.0:
   dependencies:
     humanize-ms "^1.2.1"
 
-ai@^3.1.23:
-  version "3.1.23"
-  resolved "https://registry.yarnpkg.com/ai/-/ai-3.1.23.tgz#9b8b30fba4284e94754904730aefab1386d4db80"
-  integrity sha512-ztXVK/T4MaPQ5sYupbdqswM8yL6aTAqaxoiX7jW3kjlOpvzKUvvbf4vr7lNmn5dcVb8hhcmymXRBVAkXTWPyww==
+ai@^3.1.26:
+  version "3.1.26"
+  resolved "https://registry.yarnpkg.com/ai/-/ai-3.1.26.tgz#5f48e0591630e2e7fa93feb634dd7f2a4db065d1"
+  integrity sha512-/XM4HHtDQ2nGVSHaOS1pHscHi2c10YXq2xa7LSq6YxUtD1uW7pSJmkwZFOlZcdVtP8RtjvGuxmI8IiURFso91g==
   dependencies:
     "@ai-sdk/provider" "0.0.8"
     "@ai-sdk/provider-utils" "0.0.11"
