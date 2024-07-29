@@ -15082,13 +15082,12 @@ react-colorful@^5.1.2:
   resolved "https://registry.yarnpkg.com/react-colorful/-/react-colorful-5.6.1.tgz#7dc2aed2d7c72fac89694e834d179e32f3da563b"
   integrity sha512-1exovf0uGTGyq5mXQT0zgQ80uvj2PCwvF8zY1RN9/vbJVSjSo3fsB/4L3ObbF7u70NduSiK4xu4Y6q1MHoUGEw==
 
-react-docgen-typescript-plugin@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/react-docgen-typescript-plugin/-/react-docgen-typescript-plugin-1.0.6.tgz#bd036cd22ca437ddce253f212861e2253401a6f1"
-  integrity sha512-01ju9lihtH9G+q1jhyi2HEhNfPeQwmNe6zxrSQCGnL3fiBGUZve5Ll4voxIExMhsjEcmJtpmNr1J3FeBd+6PBw==
+react-docgen-typescript-plugin@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-docgen-typescript-plugin/-/react-docgen-typescript-plugin-1.0.8.tgz#58f039b3063c34c7cd394fe53b75e6d79feafee6"
+  integrity sha512-r+dUkpm/dmiVvvrfOTYbbg0g7bmaeXTodQFIru8ZzCx/HNUAUNSmh1C0seXzDSLqDSXm5EiOAiJZVs4gqAZqzA==
   dependencies:
     debug "^4.1.1"
-    endent "^2.0.1"
     find-cache-dir "^3.3.1"
     flat-cache "^3.0.4"
     micromatch "^4.0.2"
