@@ -2144,12 +2144,12 @@
     "@emotion/weak-memoize" "^0.3.1"
     stylis "4.2.0"
 
-"@emotion/css-prettifier@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@emotion/css-prettifier/-/css-prettifier-1.1.3.tgz#014ff59a87a3be5f2ce555b70f096af66b2dc845"
-  integrity sha512-KNv23+VQ+pcw3ebd1vSEl11CQ6SKAG5EQkrinjVGsfw3ZTWe6/tpWQrsvFLqCtU2LRiLPi04KgFCE4A9+crfpQ==
+"@emotion/css-prettifier@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@emotion/css-prettifier/-/css-prettifier-1.1.4.tgz#3eea88addfd283d0ae58a5a048398710498a2819"
+  integrity sha512-lEjrAxtju83kkF2N7nPoFSPa00o+h1QujXM2F60kudDWuwBbuxJSG1dGKHVnr9tjxmLho2B0HGfmVThpR+scWw==
   dependencies:
-    "@emotion/memoize" "^0.8.1"
+    "@emotion/memoize" "^0.9.0"
     stylis "4.2.0"
 
 "@emotion/eslint-plugin@^11.11.0":
@@ -2174,13 +2174,13 @@
   dependencies:
     "@emotion/memoize" "^0.8.1"
 
-"@emotion/jest@^11.11.0":
-  version "11.11.0"
-  resolved "https://registry.yarnpkg.com/@emotion/jest/-/jest-11.11.0.tgz#4d64b33052308739dcdd7396fd2bc902f7244f82"
-  integrity sha512-XZlnmdUZ32YjQnInsCFk/plKpkV/NXN1Ab4YoNvXN887MeR3Hr5ZsTyoblIW8AWwdfQiZHHphaPMb56lk6Ofdw==
+"@emotion/jest@^11.13.0":
+  version "11.13.0"
+  resolved "https://registry.yarnpkg.com/@emotion/jest/-/jest-11.13.0.tgz#c723fa8e3909a8ce4f5e8ffd17b0747bc973a479"
+  integrity sha512-XyoUbJ9fthKdlXjTvjzd6aQ8yVWe68InZawFdGTFkJQRW44rsLHK1qjKB/+L7RiGgdm0BYFv7+tz8znQzRQOBw==
   dependencies:
     "@babel/runtime" "^7.18.3"
-    "@emotion/css-prettifier" "^1.1.3"
+    "@emotion/css-prettifier" "^1.1.4"
     chalk "^4.1.0"
     specificity "^0.4.1"
     stylis "4.2.0"
