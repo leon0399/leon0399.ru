@@ -2092,13 +2092,6 @@
   dependencies:
     tslib "^2.4.0"
 
-"@emotion/babel-plugin-jsx-pragmatic@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@emotion/babel-plugin-jsx-pragmatic/-/babel-plugin-jsx-pragmatic-0.2.1.tgz#01d3306fde73b60d683f78f3bd9f6b2c919b63b6"
-  integrity sha512-xy1SlgEJygAAIvIuC2idkGKJYa6v5iwoyILkvNKgk347bV+IImXrUat5Z86EmLGyWhEoTplVT9EHqTnHZG4HFw==
-  dependencies:
-    "@babel/plugin-syntax-jsx" "^7.17.12"
-
 "@emotion/babel-plugin-jsx-pragmatic@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin-jsx-pragmatic/-/babel-plugin-jsx-pragmatic-0.3.0.tgz#12bde56c351f5981e5de66c99e62c371df6c42ca"
