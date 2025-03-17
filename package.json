@@ -67,7 +67,7 @@
     "lodash": "^4.17.21",
     "luxon": "^3.4.4",
     "merkletreejs": "^0.4.0",
-    "next": "^14.2.10",
+    "next": "^15.2.2",
     "next-compose-plugins": "^2.2.1",
     "next-connect": "^1.0.0",
     "next-mdx-builder": "^0.4.4",
