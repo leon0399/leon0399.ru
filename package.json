@@ -61,7 +61,7 @@
     "dayjs": "^1.11.12",
     "ethers": "^5.7.2",
     "f0ts": "^0.0.1",
-    "grammy": "^1.29.0",
+    "grammy": "^1.36.1",
     "graphql": "^16.9.0",
     "graphql-request": "^6.1.0",
     "lodash": "^4.17.21",
