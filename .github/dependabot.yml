@@ -26,10 +26,65 @@ updates:
       prefix-development: chore
       include: scope
     groups:
+      # "Mass" groups, but they exclude all the explicitly grouped stacks below.
       production-dependencies:
         dependency-type: "production"
+        exclude-patterns:
+          - storybook
+          - "@storybook*"
+          - react
+          - react-dom
+          - "@react*"
+          - "@types/react*"
+          - next
+          - next.js
+          - "@next*"
+          - "next-*"
+          - "@emotion*"
+          - "@testing-library*"
+          - jest
+          - "@jest*"
+          - "jest-*"
+          - "ts-jest"
+          - tailwindcss
+          - "@tailwindcss*"
+          - eslint
+          - "eslint*"
+          - "@eslint*"
+          - "@typescript-eslint*"
+          - "@octokit*"
+          - "octokit*"
+
       development-dependencies:
         dependency-type: "development"
+        exclude-patterns:
+          - storybook
+          - "@storybook*"
+          - react
+          - react-dom
+          - "@react*"
+          - "@types/react*"
+          - next
+          - next.js
+          - "@next*"
+          - "next-*"
+          - "@emotion*"
+          - "@testing-library*"
+          - jest
+          - "@jest*"
+          - "jest-*"
+          - "ts-jest"
+          - tailwindcss
+          - "@tailwindcss*"
+          - eslint
+          - "eslint*"
+          - "@eslint*"
+          - "@typescript-eslint*"
+          - "@octokit*"
+          - "octokit*"
+
+      # The “special” stacks you only want upgraded together,
+      # never mixed into the general prod/dev bundles.
       storybook:
         applies-to: version-updates
         patterns:
@@ -107,3 +162,9 @@ updates:
         update-types:
           - "minor"
           - "patch"
+
+      github:
+        applies-to: version-updates
+        patterns:
+          - "@octokit*"
+          - "octokit*"
