@@ -54,6 +54,8 @@ updates:
           - "@typescript-eslint*"
           - "@octokit*"
           - "octokit*"
+          - ai
+          - "@ai-sdk/*"
 
       development-dependencies:
         dependency-type: "development"
@@ -82,6 +84,8 @@ updates:
           - "@typescript-eslint*"
           - "@octokit*"
           - "octokit*"
+          - ai
+          - "@ai-sdk/*"
 
       # The “special” stacks you only want upgraded together,
       # never mixed into the general prod/dev bundles.
@@ -168,3 +172,8 @@ updates:
         patterns:
           - "@octokit*"
           - "octokit*"
+
+      ai-sdk:
+        patterns:
+          - ai
+          - "@ai-sdk/*"
