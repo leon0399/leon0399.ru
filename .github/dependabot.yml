@@ -30,6 +30,12 @@ updates:
       prefix-development: chore
       include: scope
     groups:
+      production-dependencies:
+        dependency-type: "production"
+        
+      development-dependencies:
+        dependency-type: "development"
+        
       storybook:
         applies-to: version-updates
         patterns:
