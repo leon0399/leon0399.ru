@@ -22,7 +22,7 @@ export function extrudeCookiePath(path: CookiePath): THREE.Mesh {
   // Calculate bevel parameters
   const bevelEnabled = path.bevelMm > 0
   const bevelThickness = Math.min(path.bevelMm, path.heightMm / 4)
-  const bevelSize = Math.min(path.bevelMm, path.wallThicknessMm / 2 || 2)
+  const bevelSize = Math.min(path.bevelMm, Math.max(path.wallThicknessMm / 2, 2))
 
   const extrudeSettings: THREE.ExtrudeGeometryOptions = {
     depth: path.heightMm,
@@ -50,8 +50,8 @@ export function extrudeCookiePath(path: CookiePath): THREE.Mesh {
 
   const mesh = new THREE.Mesh(geometry, material)
 
-  // Rotate to lay flat (extrusion goes along Z, we want it along Y)
-  mesh.rotation.x = -Math.PI / 2
+  // Rotate to lay flat on the ground plane with extrusion along +Y
+  mesh.rotation.x = Math.PI / 2
 
   // Position so bottom sits on Y=0 plane (after rotation, Z becomes Y)
   mesh.position.y = path.zOffsetMm

@@ -20,6 +20,11 @@ const FileInput = tw.input`
 export function UploadPanel() {
   const setPaths = useCookieStore((s) => s.setPaths)
   const selectPath = useCookieStore((s) => s.selectPath)
+  const defaultHeightMm = useCookieStore((s) => s.defaultHeightMm)
+  const imprintOffsetMm = useCookieStore((s) => s.imprintOffsetMm)
+  const setDefaultHeight = useCookieStore((s) => s.setDefaultHeight)
+  const setImprintOffset = useCookieStore((s) => s.setImprintOffset)
+  const applyDefaultHeights = useCookieStore((s) => s.applyDefaultHeights)
 
   const handleSvgUpload = useCallback(
     async (e: ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +33,10 @@ export function UploadPanel() {
 
       try {
         const text = await file.text()
-        const paths = parseSvgFileToCookiePaths(text)
+        const paths = parseSvgFileToCookiePaths(text, {
+          defaultHeightMm,
+          imprintOffsetMm,
+        })
         setPaths(paths)
 
         // Select the first path if any
@@ -39,7 +47,7 @@ export function UploadPanel() {
         console.error('Failed to parse SVG:', error)
       }
     },
-    [setPaths, selectPath],
+    [defaultHeightMm, imprintOffsetMm, selectPath, setPaths],
   )
 
   return (
@@ -50,6 +58,44 @@ export function UploadPanel() {
         Upload an SVG file with simple paths. Complex paths will be
         approximated. The design will be scaled to ~80mm.
       </Description>
+
+      <Title>2. Defaults</Title>
+      <div tw="space-y-2">
+        <label tw="flex flex-col text-sm gap-1">
+          Default height (mm)
+          <input
+            tw="border rounded px-2 py-1 text-sm"
+            type="number"
+            min={0}
+            step={0.5}
+            value={defaultHeightMm}
+            onChange={(e) => setDefaultHeight(parseFloat(e.target.value) || 0)}
+          />
+        </label>
+
+        <label tw="flex flex-col text-sm gap-1">
+          Imprint offset (mm)
+          <input
+            tw="border rounded px-2 py-1 text-sm"
+            type="number"
+            min={0}
+            step={0.5}
+            value={imprintOffsetMm}
+            onChange={(e) => setImprintOffset(parseFloat(e.target.value) || 0)}
+          />
+          <span tw="text-xs text-gray-500">
+            Imprint paths default to height = default height - offset.
+          </span>
+        </label>
+
+        <button
+          tw="rounded bg-primary-600 px-3 py-1 text-sm font-semibold text-white hover:bg-primary-700"
+          type="button"
+          onClick={applyDefaultHeights}
+        >
+          Apply defaults to current paths
+        </button>
+      </div>
     </Container>
   )
 }

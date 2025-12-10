@@ -9,7 +9,6 @@ const DEFAULT_PATH_CONFIG: Omit<
   'id' | 'points' | 'isClosed' | 'isSelected' | 'isHidden' | 'label'
 > = {
   mode: 'cut',
-  heightMm: 10,
   wallThicknessMm: 0.4,
   bevelMm: 0.5,
   zOffsetMm: 0,
@@ -128,7 +127,27 @@ function normalizePaths(paths: CookiePath[], targetSizeMm = 80): CookiePath[] {
   }))
 }
 
-export function parseSvgFileToCookiePaths(svgContent: string): CookiePath[] {
+const applyDefaultHeights = (
+  paths: CookiePath[],
+  defaultHeightMm: number,
+  imprintOffsetMm: number,
+): CookiePath[] => {
+  const imprintHeight = Math.max(defaultHeightMm - imprintOffsetMm, 0)
+  return paths.map((path) => ({
+    ...path,
+    heightMm: path.mode === 'imprint' ? imprintHeight : defaultHeightMm,
+  }))
+}
+
+export function parseSvgFileToCookiePaths(
+  svgContent: string,
+  options?: {
+    defaultHeightMm?: number
+    imprintOffsetMm?: number
+  },
+): CookiePath[] {
+  const defaultHeightMm = options?.defaultHeightMm ?? 10
+  const imprintOffsetMm = options?.imprintOffsetMm ?? 4
   const loader = new SVGLoader()
   const svgData = loader.parse(svgContent)
 
@@ -147,6 +166,7 @@ export function parseSvgFileToCookiePaths(svgContent: string): CookiePath[] {
           points,
           isClosed: true,
           ...DEFAULT_PATH_CONFIG,
+          heightMm: defaultHeightMm,
           isSelected: pathIndex === 0,
           isHidden: false,
           label: `Path ${pathIndex + 1}`,
@@ -165,6 +185,7 @@ export function parseSvgFileToCookiePaths(svgContent: string): CookiePath[] {
             points: holePoints,
             isClosed: true,
             ...DEFAULT_PATH_CONFIG,
+            heightMm: defaultHeightMm,
             isSelected: false,
             isHidden: false,
             label: `Path ${pathIndex + 1} (hole)`,
@@ -177,5 +198,6 @@ export function parseSvgFileToCookiePaths(svgContent: string): CookiePath[] {
 
   // Normalize and center paths, then mark inner paths as imprints
   const normalized = normalizePaths(paths)
-  return markInternalPaths(normalized)
+  const withImprintModes = markInternalPaths(normalized)
+  return applyDefaultHeights(withImprintModes, defaultHeightMm, imprintOffsetMm)
 }

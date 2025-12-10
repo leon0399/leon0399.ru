@@ -56,16 +56,38 @@ function CookieGeometryGroup({
       group.add(mesh)
     }
 
-    // Center the group and position bottom at Y=0
+    // Add a thin base to hold all shapes together
     if (group.children.length > 0) {
       const box = new THREE.Box3().setFromObject(group)
+      const size = new THREE.Vector3()
       const center = new THREE.Vector3()
+      box.getSize(size)
       box.getCenter(center)
 
-      // Center on X and Z, position bottom at Y=0
-      group.position.x = -center.x
-      group.position.z = -center.z
-      group.position.y = -box.min.y
+      const BASE_THICKNESS = 1
+      const BASE_MARGIN = 1
+      const baseGeometry = new THREE.BoxGeometry(
+        size.x + BASE_MARGIN * 2,
+        BASE_THICKNESS,
+        size.z + BASE_MARGIN * 2,
+      )
+      const baseMaterial = new THREE.MeshStandardMaterial({
+        color: 0xb0b8c0,
+        roughness: 0.9,
+        metalness: 0,
+      })
+      const baseMesh = new THREE.Mesh(baseGeometry, baseMaterial)
+      baseMesh.position.set(center.x, -BASE_THICKNESS / 2, center.z)
+      group.add(baseMesh)
+
+      // Recompute bounds including the base and center on X/Z, bottom on Y=0
+      const finalBox = new THREE.Box3().setFromObject(group)
+      const finalCenter = new THREE.Vector3()
+      finalBox.getCenter(finalCenter)
+
+      group.position.x = -finalCenter.x
+      group.position.z = -finalCenter.z
+      group.position.y = -finalBox.min.y
     }
   }, [paths, selectedId])
 
