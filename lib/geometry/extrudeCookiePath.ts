@@ -22,7 +22,10 @@ export function extrudeCookiePath(path: CookiePath): THREE.Mesh {
   // Calculate bevel parameters
   const bevelEnabled = path.bevelMm > 0
   const bevelThickness = Math.min(path.bevelMm, path.heightMm / 4)
-  const bevelSize = Math.min(path.bevelMm, Math.max(path.wallThicknessMm / 2, 2))
+  const bevelSize = Math.min(
+    path.bevelMm,
+    Math.max(path.wallThicknessMm / 2, 2),
+  )
 
   const extrudeSettings: THREE.ExtrudeGeometryOptions = {
     depth: path.heightMm,

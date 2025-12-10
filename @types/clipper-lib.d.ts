@@ -42,16 +42,8 @@ declare module 'clipper-lib' {
 
   export class Clipper {
     constructor(initOptions?: number)
-    AddPath(
-      path: Path,
-      polyType: PolyType,
-      closed: boolean,
-    ): boolean
-    AddPaths(
-      paths: Paths,
-      polyType: PolyType,
-      closed: boolean,
-    ): boolean
+    AddPath(path: Path, polyType: PolyType, closed: boolean): boolean
+    AddPaths(paths: Paths, polyType: PolyType, closed: boolean): boolean
     Execute(
       clipType: ClipType,
       solution: Paths,
@@ -63,16 +55,8 @@ declare module 'clipper-lib' {
 
   export class ClipperOffset {
     constructor(miterLimit?: number, arcTolerance?: number)
-    AddPath(
-      path: Path,
-      joinType: JoinType,
-      endType: EndType,
-    ): void
-    AddPaths(
-      paths: Paths,
-      joinType: JoinType,
-      endType: EndType,
-    ): void
+    AddPath(path: Path, joinType: JoinType, endType: EndType): void
+    AddPaths(paths: Paths, joinType: JoinType, endType: EndType): void
     Execute(solution: Paths, delta: number): void
     Clear(): void
   }
