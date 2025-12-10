@@ -10,7 +10,7 @@ const DEFAULT_PATH_CONFIG: Omit<
 > = {
   mode: 'cut',
   heightMm: 10,
-  wallThicknessMm: 1,
+  wallThicknessMm: 0.4,
   bevelMm: 0.5,
   zOffsetMm: 0,
 }
