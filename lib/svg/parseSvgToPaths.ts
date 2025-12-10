@@ -6,7 +6,7 @@ import type { CookiePath, Point2D } from '@/types/cookiePath'
 
 const DEFAULT_PATH_CONFIG: Omit<
   CookiePath,
-  'id' | 'points' | 'isClosed' | 'isSelected' | 'label'
+  'id' | 'points' | 'isClosed' | 'isSelected' | 'isHidden' | 'label'
 > = {
   mode: 'cut',
   heightMm: 10,
@@ -95,6 +95,7 @@ export function parseSvgFileToCookiePaths(svgContent: string): CookiePath[] {
           isClosed: true,
           ...DEFAULT_PATH_CONFIG,
           isSelected: pathIndex === 0,
+          isHidden: false,
           label: `Path ${pathIndex + 1}`,
         })
         pathIndex++
@@ -112,6 +113,7 @@ export function parseSvgFileToCookiePaths(svgContent: string): CookiePath[] {
             isClosed: true,
             ...DEFAULT_PATH_CONFIG,
             isSelected: false,
+            isHidden: false,
             label: `Path ${pathIndex + 1} (hole)`,
           })
           pathIndex++

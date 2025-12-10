@@ -54,7 +54,11 @@ export function extrudeCookiePath(path: CookiePath): THREE.Mesh {
   })
 
   const mesh = new THREE.Mesh(geometry, material)
-  mesh.position.z = path.zOffsetMm
+
+  // Rotate to lay flat (extrusion goes along Z, we want it along Y)
+  mesh.rotation.x = -Math.PI / 2
+
+  mesh.position.y = path.zOffsetMm
   mesh.userData.cookiePathId = path.id
 
   return mesh

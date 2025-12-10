@@ -40,8 +40,10 @@ function CookieGeometryGroup({
       }
     }
 
-    // Add new meshes
+    // Add new meshes (skip hidden paths)
     for (const path of paths) {
+      if (path.isHidden) continue
+
       // Update isSelected based on current selection
       const pathWithSelection = {
         ...path,
@@ -82,7 +84,7 @@ function CameraController() {
   useEffect(() => {
     if (paths.length === 0) {
       // Default camera position when no paths
-      camera.position.set(0, -80, 80)
+      camera.position.set(0, -100, 60)
       camera.lookAt(0, 0, 0)
     }
   }, [paths, camera])
@@ -93,7 +95,7 @@ function CameraController() {
 export function CookieScene({ onGroupReady }: CookieSceneProps) {
   return (
     <Canvas
-      camera={{ position: [0, -80, 80], fov: 40 }}
+      camera={{ position: [0, -100, 60], fov: 40 }}
       style={{ background: '#111827' }}
     >
       <ambientLight intensity={0.5} />
@@ -103,7 +105,8 @@ export function CookieScene({ onGroupReady }: CookieSceneProps) {
         infiniteGrid
         cellSize={10}
         sectionSize={50}
-        position={[0, 0, -0.01]}
+        position={[0, -0.01, 0]}
+        rotation={[-Math.PI / 2, 0, 0]}
         cellColor="#374151"
         sectionColor="#4b5563"
         fadeDistance={200}

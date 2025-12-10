@@ -1,3 +1,4 @@
+import { EyeIcon, EyeSlashIcon, TrashIcon } from '@heroicons/react/24/outline'
 import { type ChangeEvent, useCallback } from 'react'
 import tw from 'twin.macro'
 
@@ -14,6 +15,11 @@ const Input = tw.input`border rounded px-2 py-1 text-sm`
 
 const PathList = tw.div`space-y-1 mb-4`
 
+const IconButton = tw.button`
+  p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700
+  text-gray-500 hover:text-gray-700 dark:hover:text-gray-300
+`
+
 type NumericField = 'heightMm' | 'wallThicknessMm' | 'bevelMm' | 'zOffsetMm'
 
 export function PathInspector() {
@@ -21,6 +27,8 @@ export function PathInspector() {
   const selectedId = useCookieStore((s) => s.selectedId)
   const updatePath = useCookieStore((s) => s.updatePath)
   const selectPath = useCookieStore((s) => s.selectPath)
+  const removePath = useCookieStore((s) => s.removePath)
+  const togglePathVisibility = useCookieStore((s) => s.togglePathVisibility)
 
   const selectedPath = paths.find((p) => p.id === selectedId)
 
@@ -57,18 +65,48 @@ export function PathInspector() {
 
       <PathList>
         {paths.map((path) => (
-          <button
+          <div
             key={path.id}
-            tw="w-full rounded px-2 py-1 text-left text-sm"
+            tw="flex items-center gap-1 rounded"
             css={
               path.id === selectedId
-                ? tw`bg-primary-100 text-primary-800`
+                ? tw`bg-primary-100`
                 : tw`hover:bg-gray-100`
             }
-            onClick={() => selectPath(path.id)}
           >
-            {path.label}
-          </button>
+            <button
+              tw="flex-1 rounded px-2 py-1 text-left text-sm"
+              css={[
+                path.id === selectedId && tw`text-primary-800`,
+                path.isHidden && tw`opacity-50 line-through`,
+              ]}
+              onClick={() => selectPath(path.id)}
+            >
+              {path.label}
+            </button>
+            <IconButton
+              onClick={(e) => {
+                e.stopPropagation()
+                togglePathVisibility(path.id)
+              }}
+              title={path.isHidden ? 'Show path' : 'Hide path'}
+            >
+              {path.isHidden ? (
+                <EyeSlashIcon tw="h-4 w-4" />
+              ) : (
+                <EyeIcon tw="h-4 w-4" />
+              )}
+            </IconButton>
+            <IconButton
+              onClick={(e) => {
+                e.stopPropagation()
+                removePath(path.id)
+              }}
+              title="Remove path"
+            >
+              <TrashIcon tw="h-4 w-4" />
+            </IconButton>
+          </div>
         ))}
       </PathList>
 

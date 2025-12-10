@@ -19,5 +19,6 @@ export interface CookiePath {
 
   // UI
   isSelected: boolean
+  isHidden: boolean // hide from 3D view and export
   label: string // "Outer", "Inner #1", etc.
 }

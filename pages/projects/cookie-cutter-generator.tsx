@@ -11,7 +11,6 @@ import {
   PathInspector,
   UploadPanel,
 } from '@/components/molecules/cookie-cutter'
-import ProjectHeader from '@/components/molecules/projects/ProjectHeader'
 import { exportSceneGroupToStl } from '@/lib/geometry/exportToStl'
 import { downloadScadFile } from '@/lib/openscad/cookieToScad'
 import { useCookieStore } from '@/state/useCookieStore'
@@ -46,7 +45,7 @@ const CookieCutterGeneratorPage: FC = () => {
   }, [paths])
 
   return (
-    <div tw="flex min-h-screen flex-col">
+    <div tw="flex h-screen flex-col overflow-hidden">
       <Head>
         <title>Cookie Cutter Generator - Leonid Meleshin</title>
         <meta
@@ -55,30 +54,25 @@ const CookieCutterGeneratorPage: FC = () => {
         />
       </Head>
 
-      <div tw="container mx-auto px-4">
-        <ProjectHeader
-          title="Cookie Cutter Generator"
-          category="Tools"
-          tags={['3D Printing', 'WebGL']}
-          url="https://leon0399.ru/projects/cookie-cutter-generator"
-          displayUrl="leon0399.ru/projects/cookie-cutter-generator"
-        />
+      <div tw="shrink-0 border-b px-4 py-2">
+        <h1 tw="text-xl font-bold">Cookie Cutter Generator</h1>
       </div>
 
-      <main tw="flex flex-1 flex-col lg:flex-row">
-        {/* Left panel - Upload */}
-        <aside tw="w-full border-b bg-gray-50 p-4 lg:w-64 lg:border-b-0 lg:border-r dark:bg-gray-900">
+      <main tw="flex min-h-0 flex-1 flex-col lg:flex-row">
+        {/* Left panel - Upload & Paths */}
+        <aside tw="flex w-full shrink-0 flex-col gap-4 overflow-y-auto border-b bg-gray-50 p-4 lg:w-72 lg:border-b-0 lg:border-r dark:bg-gray-900">
           <UploadPanel />
+          <PathInspector />
         </aside>
 
         {/* Main content - 3D scene */}
-        <section tw="flex min-h-[400px] flex-1 flex-col lg:min-h-0">
-          <div tw="relative flex-1">
+        <section tw="flex min-h-0 flex-1 flex-col">
+          <div tw="relative min-h-0 flex-1">
             <CookieScene onGroupReady={handleGroupReady} />
           </div>
 
           {/* Export buttons */}
-          <div tw="flex justify-end gap-2 border-t bg-gray-50 p-3 dark:bg-gray-900">
+          <div tw="flex shrink-0 justify-end gap-2 border-t bg-gray-50 p-3 dark:bg-gray-900">
             <Button
               onClick={handleExportScad}
               tw="text-sm"
@@ -95,11 +89,6 @@ const CookieCutterGeneratorPage: FC = () => {
             </Button>
           </div>
         </section>
-
-        {/* Right panel - Inspector */}
-        <aside tw="w-full border-t bg-gray-50 p-4 lg:w-80 lg:border-l lg:border-t-0 dark:bg-gray-900">
-          <PathInspector />
-        </aside>
       </main>
     </div>
   )
