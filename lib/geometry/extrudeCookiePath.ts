@@ -34,13 +34,8 @@ export function extrudeCookiePath(path: CookiePath): THREE.Mesh {
 
   const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings)
 
-  // Center the geometry
-  geometry.computeBoundingBox()
-  if (geometry.boundingBox) {
-    const center = new THREE.Vector3()
-    geometry.boundingBox.getCenter(center)
-    geometry.translate(-center.x, -center.y, 0)
-  }
+  // Don't center individually - let the scene handle overall centering
+  // This preserves relative positions between multiple paths
 
   // Select color based on mode and selection state
   const colorSet = path.mode === 'cut' ? COLORS.cut : COLORS.imprint
@@ -58,7 +53,9 @@ export function extrudeCookiePath(path: CookiePath): THREE.Mesh {
   // Rotate to lay flat (extrusion goes along Z, we want it along Y)
   mesh.rotation.x = -Math.PI / 2
 
+  // Position so bottom sits on Y=0 plane (after rotation, Z becomes Y)
   mesh.position.y = path.zOffsetMm
+
   mesh.userData.cookiePathId = path.id
 
   return mesh

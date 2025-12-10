@@ -40,6 +40,9 @@ function CookieGeometryGroup({
       }
     }
 
+    // Reset group position before adding meshes
+    group.position.set(0, 0, 0)
+
     // Add new meshes (skip hidden paths)
     for (const path of paths) {
       if (path.isHidden) continue
@@ -51,6 +54,18 @@ function CookieGeometryGroup({
       }
       const mesh = extrudeCookiePath(pathWithSelection)
       group.add(mesh)
+    }
+
+    // Center the group and position bottom at Y=0
+    if (group.children.length > 0) {
+      const box = new THREE.Box3().setFromObject(group)
+      const center = new THREE.Vector3()
+      box.getCenter(center)
+
+      // Center on X and Z, position bottom at Y=0
+      group.position.x = -center.x
+      group.position.z = -center.z
+      group.position.y = -box.min.y
     }
   }, [paths, selectedId])
 

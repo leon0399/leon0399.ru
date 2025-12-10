@@ -55,6 +55,7 @@ function calculateBounds(paths: CookiePath[]): {
 }
 
 // Normalize paths to be centered at origin and scaled to reasonable mm size
+// Also flips Y axis since SVG has Y pointing down, Three.js has Y pointing up
 function normalizePaths(paths: CookiePath[], targetSizeMm = 80): CookiePath[] {
   if (paths.length === 0 || paths.every((p) => p.points.length === 0)) {
     return paths
@@ -70,7 +71,8 @@ function normalizePaths(paths: CookiePath[], targetSizeMm = 80): CookiePath[] {
     ...path,
     points: path.points.map((p) => ({
       x: (p.x - centerX) * scale,
-      y: (p.y - centerY) * scale,
+      // Flip Y axis: SVG Y increases downward, Three.js Y increases upward
+      y: -(p.y - centerY) * scale,
     })),
   }))
 }
