@@ -12,6 +12,7 @@ const DEFAULT_PATH_CONFIG: Omit<
   wallThicknessMm: 0.4,
   bevelMm: 0.5,
   zOffsetMm: 0,
+  heightMm: 10,
 }
 
 // Sample points from a Three.js Path
