@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react'
-import * as mdx from '@mdx-js/react/lib'
 import clsx from 'clsx'
+import type { MDXComponents } from 'mdx/types'
 import {
   MDXRemote,
   type MDXRemoteProps,
@@ -86,8 +86,8 @@ const IconWrapper = styled.div<{ $color: string }>(({ $color }) => [
   $color === 'red' && tw`bg-red-600 dark:bg-red-400`,
 ])
 
-type Anchor = NonNullable<mdx.Components['a']>
-type Paragraph = NonNullable<mdx.Components['p']>
+type Anchor = NonNullable<MDXComponents['a']>
+type Paragraph = NonNullable<MDXComponents['p']>
 
 const MDXParagraphComponent: Paragraph = ({ children }) => <>{children}</>
 const MDXAnchorComponent: Anchor = ({ children, ...props }) => (
