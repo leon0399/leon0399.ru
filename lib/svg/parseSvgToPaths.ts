@@ -21,6 +21,57 @@ function samplePathToPoints(path: THREE.Path, divisions = 64): Point2D[] {
   return points.map((p) => ({ x: p.x, y: p.y }))
 }
 
+function pointInPolygon(point: Point2D, polygon: Point2D[]): boolean {
+  let inside = false
+
+  for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+    const xi = polygon[i].x
+    const yi = polygon[i].y
+    const xj = polygon[j].x
+    const yj = polygon[j].y
+
+    const intersect =
+      yi > point.y !== yj > point.y &&
+      point.x < ((xj - xi) * (point.y - yi)) / (yj - yi) + xi
+
+    if (intersect) {
+      inside = !inside
+    }
+  }
+
+  return inside
+}
+
+function markInternalPaths(paths: CookiePath[]): CookiePath[] {
+  return paths.map((path, index) => {
+    const isInsideAnother = paths.some((candidate, candidateIndex) => {
+      if (candidateIndex === index || candidate.points.length < 3) return false
+
+      // Cheap bounding box rejection
+      const candidateBounds = calculateBounds([candidate])
+      const pathBounds = calculateBounds([path])
+
+      if (
+        pathBounds.minX < candidateBounds.minX ||
+        pathBounds.maxX > candidateBounds.maxX ||
+        pathBounds.minY < candidateBounds.minY ||
+        pathBounds.maxY > candidateBounds.maxY
+      ) {
+        return false
+      }
+
+      // Require every point to be inside the containing polygon to reduce false positives
+      return path.points.every((pt) => pointInPolygon(pt, candidate.points))
+    })
+
+    if (isInsideAnother && path.mode !== 'imprint') {
+      return { ...path, mode: 'imprint' }
+    }
+
+    return path
+  })
+}
+
 // Calculate SVG bounds to center and scale the paths
 function calculateBounds(paths: CookiePath[]): {
   minX: number
@@ -124,6 +175,7 @@ export function parseSvgFileToCookiePaths(svgContent: string): CookiePath[] {
     }
   }
 
-  // Normalize and center paths
-  return normalizePaths(paths)
+  // Normalize and center paths, then mark inner paths as imprints
+  const normalized = normalizePaths(paths)
+  return markInternalPaths(normalized)
 }
