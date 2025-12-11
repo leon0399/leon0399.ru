@@ -1,8 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import { describe, expect, it } from '@jest/globals'
 import '@testing-library/jest-dom/jest-globals'
+import { describe, expect, it } from '@jest/globals'
 import { render, screen } from '@testing-library/react'
 import { AppProps } from 'next/app'
 
