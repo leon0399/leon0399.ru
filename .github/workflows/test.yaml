@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node ${{ matrix.node-version }}
         uses: actions/setup-node@v6
         with:
-          cache: "yarn"
+          cache: 'yarn'
           node-version: ${{ matrix.node-version }}
 
       - name: Install Dependencies
@@ -42,7 +42,7 @@ jobs:
       - name: Set up Node ${{ matrix.node-version }}
         uses: actions/setup-node@v6
         with:
-          cache: "yarn"
+          cache: 'yarn'
           node-version: ${{ matrix.node-version }}
 
       - name: Install Dependencies

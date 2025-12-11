@@ -33,6 +33,15 @@ const projects: Project[] = [
     logo: '/images/projects/minidegens/logo.gif',
   },
   {
+    slug: 'cookie-cutter-generator',
+    title: 'Cookie Cutter Generator',
+    description:
+      'Upload SVGs and export 3D-printable cookie cutters (STL/OpenSCAD).',
+    category: '3D',
+    tags: ['TypeScript', 'React', 'Three.js'],
+    url: '/projects/cookie-cutter-generator',
+  },
+  {
     slug: 'subgraphs',
     title: 'Subgraphs',
     category: 'Web3',
